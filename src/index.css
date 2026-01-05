@@ -1,0 +1,698 @@
+@import './styles/dark-mode.css';@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+    :root {
+      --background: 60 10% 98%; /* Cream-ish white */
+      --foreground: 215 25% 20%; /* Slate-ish black */
+
+      --card: 0 0% 100%;
+      --card-foreground: 215 25% 20%;
+
+      --popover: 0 0% 100%;
+      --popover-foreground: 215 25% 20%;
+
+      --primary: 174 84% 32%; /* Teal #0D9488 */
+      --primary-foreground: 0 0% 100%;
+
+      --secondary: 210 40% 96.1%;
+      --secondary-foreground: 222.2 47.4% 11.2%;
+
+      --muted: 210 40% 96.1%;
+      --muted-foreground: 215.4 16.3% 46.9%;
+
+      --accent: 174 84% 32%;
+      --accent-foreground: 0 0% 100%;
+
+      --destructive: 0 84.2% 60.2%;
+      --destructive-foreground: 210 40% 98%;
+
+      --border: 214.3 31.8% 91.4%;
+      --input: 214.3 31.8% 91.4%;
+      --ring: 174 84% 32%;
+
+      --radius: 0.5rem;
+
+      --sidebar-background: 0 0% 98%;
+
+      --sidebar-foreground: 240 5.3% 26.1%;
+
+      --sidebar-primary: 240 5.9% 10%;
+
+      --sidebar-primary-foreground: 0 0% 98%;
+
+      --sidebar-accent: 240 4.8% 95.9%;
+
+      --sidebar-accent-foreground: 240 5.9% 10%;
+
+      --sidebar-border: 220 13% 91%;
+
+      --sidebar-ring: 217.2 91.2% 59.8%;
+    }
+
+    .dark {
+      --background: 220 25% 8%; /* Deep slate-navy */
+      --foreground: 60 10% 95%; /* Cream-ish white */
+
+      --card: 220 25% 10%;
+      --card-foreground: 60 10% 95%;
+
+      --popover: 220 25% 10%;
+      --popover-foreground: 60 10% 95%;
+
+      --primary: 174 84% 40%; /* Teal/Emerald for dark mode */
+      --primary-foreground: 220 25% 8%;
+
+      --secondary: 220 20% 16%;
+      --secondary-foreground: 60 10% 95%;
+
+      --muted: 220 20% 16%;
+      --muted-foreground: 215 20% 60%;
+
+      --accent: 174 84% 40%;
+      --accent-foreground: 220 25% 8%;
+
+      --destructive: 0 62.8% 40%;
+      --destructive-foreground: 60 10% 95%;
+
+      --border: 220 20% 18%;
+      --input: 220 20% 18%;
+      --ring: 174 84% 40%;
+      --sidebar-background: 220 25% 6%;
+      --sidebar-foreground: 60 10% 95%;
+      --sidebar-primary: 174 84% 40%;
+      --sidebar-primary-foreground: 220 25% 8%;
+      --sidebar-accent: 220 20% 14%;
+      --sidebar-accent-foreground: 60 10% 95%;
+      --sidebar-border: 220 20% 16%;
+      --sidebar-ring: 174 84% 40%;
+    }
+  }
+
+  @layer base {
+    * {
+      @apply border-border;
+    }
+    html {
+      scroll-behavior: smooth;
+    }
+    body {
+      @apply bg-background text-foreground;
+    }
+  }
+
+  /* Smooth scroll utility */
+  .scroll-smooth {
+    scroll-behavior: smooth;
+  }
+
+  /* Page transition animations */
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(10px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .animate-fade-in {
+    animation: fadeIn 0.4s ease-out forwards;
+  }
+
+  /* Improved focus states for accessibility */
+  *:focus-visible {
+    @apply outline-2 outline-offset-2 outline-texafab-emerald;
+  }
+
+  /* Skip to main content link for accessibility */
+  .skip-link {
+    @apply absolute -top-10 left-4 bg-texafab-emerald text-white px-4 py-2 rounded z-50 transition-all;
+  }
+  .skip-link:focus {
+    @apply top-4;
+  }
+
+  /* RTL specific adjustments */
+  [dir="rtl"] .rtl\:rotate-180 {
+    transform: rotate(180deg);
+  }
+
+  /* Custom scrollbar */
+  ::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+  }
+  ::-webkit-scrollbar-track {
+    background: #f1f1f1;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: #c1c1c1;
+    border-radius: 4px;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: #a8a8a8;
+  }
+
+  /* Selection styling */
+  ::selection {
+    background: rgba(13, 148, 136, 0.2);
+    color: inherit;
+  }
+
+  /* Float animation for dashboard mockups */
+  @keyframes float {
+    0%, 100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-10px);
+    }
+  }
+
+  .animate-float {
+    animation: float 3s ease-in-out infinite;
+  }
+
+  /* Shine effect for cards */
+  @keyframes shine {
+    0% {
+      background-position: -100% 0;
+    }
+    100% {
+      background-position: 200% 0;
+    }
+  }
+
+  .animate-shine {
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.1), transparent);
+    background-size: 200% 100%;
+    animation: shine 2s infinite;
+  }
+
+/* Dark mode styles */
+/* ====================================== */
+
+/* === BASE BACKGROUNDS === */
+.dark .min-h-screen.bg-white,
+.dark section.bg-white {
+  background-color: #111827 !important;
+}
+
+.dark .bg-white {
+  background-color: #1f2937 !important;
+}
+
+.dark .bg-gray-50 {
+  background-color: #1f2937 !important;
+}
+
+.dark .bg-gray-100 {
+  background-color: #374151 !important;
+}
+
+.dark .bg-gray-200 {
+  background-color: #4b5563 !important;
+}
+
+/* === CARDS & CONTAINERS === */
+.dark .bg-cream-50,
+.dark .bg-cream-100 {
+  background-color: #1f2937 !important;
+}
+
+.dark .bg-slate-50,
+.dark .bg-slate-100 {
+  background-color: #1f2937 !important;
+}
+
+/* === TEXT COLORS === */
+.dark .text-gray-900 {
+  color: #f3f4f6 !important;
+}
+
+.dark .text-gray-800 {
+  color: #e5e7eb !important;
+}
+
+.dark .text-gray-700 {
+  color: #d1d5db !important;
+}
+
+.dark .text-gray-600 {
+  color: #9ca3af !important;
+}
+
+.dark .text-slate-900 {
+  color: #f3f4f6 !important;
+}
+
+.dark .text-slate-800 {
+  color: #e5e7eb !important;
+}
+
+.dark .text-slate-700 {
+  color: #d1d5db !important;
+}
+
+/* === BORDERS === */
+.dark .border-gray-100 {
+  border-color: #374151 !important;
+}
+
+.dark .border-gray-200 {
+  border-color: #4b5563 !important;
+}
+
+.dark .border-gray-300 {
+  border-color: #6b7280 !important;
+}
+
+.dark .border-slate-200 {
+  border-color: #4b5563 !important;
+}
+
+/* === SHADOWS === */
+.dark .shadow-sm,
+.dark .shadow,
+.dark .shadow-md,
+.dark .shadow-lg,
+.dark .shadow-xl {
+  --tw-shadow-color: rgba(0, 0, 0, 0.5) !important;
+}
+
+/* === HOVER STATES === */
+.dark .hover\:bg-gray-50:hover {
+  background-color: #374151 !important;
+}
+
+.dark .hover\:bg-gray-100:hover {
+  background-color: #4b5563 !important;
+}
+
+.dark .hover\:bg-white:hover {
+  background-color: #374151 !important;
+}
+
+/* === GRADIENT BACKGROUNDS === */
+.dark .from-white {
+  --tw-gradient-from: #1f2937 !important;
+}
+
+.dark .to-white {
+  --tw-gradient-to: #1f2937 !important;
+}
+
+.dark .from-gray-50 {
+  --tw-gradient-from: #1f2937 !important;
+}
+
+.dark .to-gray-50 {
+  --tw-gradient-to: #1f2937 !important;
+}
+
+.dark .from-gray-100 {
+  --tw-gradient-from: #374151 !important;
+}
+
+.dark .to-gray-100 {
+  --tw-gradient-to: #374151 !important;
+}
+
+/* === RING COLORS === */
+.dark .ring-gray-100 {
+  --tw-ring-color: #374151 !important;
+}
+
+.dark .ring-gray-200 {
+  --tw-ring-color: #4b5563 !important;
+}
+
+/* === DIVIDE COLORS === */
+.dark .divide-gray-100 > :not([hidden]) ~ :not([hidden]) {
+  border-color: #374151 !important;
+}
+
+.dark .divide-gray-200 > :not([hidden]) ~ :not([hidden]) {
+  border-color: #4b5563 !important;
+}
+
+/* === PLACEHOLDER COLORS === */
+.dark .placeholder-gray-400::placeholder {
+  color: #9ca3af !important;
+}
+
+.dark .placeholder-gray-500::placeholder {
+  color: #6b7280 !important;
+}
+
+/* === EMERALD THEME ADJUSTMENTS === */
+.dark .bg-emerald-50 {
+  background-color: rgba(16, 185, 129, 0.1) !important;
+}
+
+.dark .bg-emerald-100 {
+  background-color: rgba(16, 185, 129, 0.2) !important;
+}
+
+.dark .border-emerald-100 {
+  border-color: rgba(16, 185, 129, 0.3) !important;
+}
+
+.dark .border-emerald-200 {
+  border-color: rgba(16, 185, 129, 0.4) !important;
+}
+
+/* === BLUE THEME ADJUSTMENTS === */
+.dark .bg-blue-50 {
+  background-color: rgba(59, 130, 246, 0.1) !important;
+}
+
+.dark .bg-blue-100 {
+  background-color: rgba(59, 130, 246, 0.2) !important;
+}
+
+/* === AMBER/YELLOW THEME ADJUSTMENTS === */
+.dark .bg-amber-50 {
+  background-color: rgba(245, 158, 11, 0.1) !important;
+}
+
+.dark .bg-yellow-50 {
+  background-color: rgba(234, 179, 8, 0.1) !important;
+}
+
+/* === PURPLE THEME ADJUSTMENTS === */
+.dark .bg-purple-50 {
+  background-color: rgba(147, 51, 234, 0.1) !important;
+}
+
+/* === RED THEME ADJUSTMENTS === */
+.dark .bg-red-50 {
+  background-color: rgba(239, 68, 68, 0.1) !important;
+}
+
+/* === INDIGO THEME ADJUSTMENTS === */
+.dark .bg-indigo-50 {
+  background-color: rgba(99, 102, 241, 0.1) !important;
+}
+
+/* === TEAL THEME ADJUSTMENTS === */
+.dark .bg-teal-50 {
+  background-color: rgba(20, 184, 166, 0.1) !important;
+}
+
+/* === ORANGE THEME ADJUSTMENTS === */
+.dark .bg-orange-50 {
+  background-color: rgba(249, 115, 22, 0.1) !important;
+}
+
+/* === PINK THEME ADJUSTMENTS === */
+.dark .bg-pink-50 {
+  background-color: rgba(236, 72, 153, 0.1) !important;
+}
+
+/* === CYAN THEME ADJUSTMENTS === */
+.dark .bg-cyan-50 {
+  background-color: rgba(6, 182, 212, 0.1) !important;
+}
+
+/* === LIME THEME ADJUSTMENTS === */
+.dark .bg-lime-50 {
+  background-color: rgba(132, 204, 22, 0.1) !important;
+}
+
+/* === SPECIFIC COMPONENT OVERRIDES === */
+.dark .bg-white\/80 {
+  background-color: rgba(31, 41, 55, 0.8) !important;
+}
+
+.dark .bg-white\/90 {
+  background-color: rgba(31, 41, 55, 0.9) !important;
+}
+
+.dark .bg-white\/95 {
+  background-color: rgba(31, 41, 55, 0.95) !important;
+}
+
+.dark .bg-gray-50\/80 {
+  background-color: rgba(31, 41, 55, 0.8) !important;
+}
+
+.dark .bg-gray-50\/50 {
+  background-color: rgba(31, 41, 55, 0.5) !important;
+}
+
+/* === INPUT FIELDS === */
+.dark input,
+.dark textarea,
+.dark select {
+  background-color: #374151 !important;
+  border-color: #4b5563 !important;
+  color: #f3f4f6 !important;
+}
+
+.dark input::placeholder,
+.dark textarea::placeholder {
+  color: #9ca3af !important;
+}
+
+/* === BACKDROP/OVERLAY === */
+.dark .backdrop-blur-sm,
+.dark .backdrop-blur,
+.dark .backdrop-blur-md,
+.dark .backdrop-blur-lg {
+  background-color: rgba(17, 24, 39, 0.8) !important;
+}
+
+/* === SCROLLBAR === */
+.dark ::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+.dark ::-webkit-scrollbar-track {
+  background: #1f2937;
+}
+
+.dark ::-webkit-scrollbar-thumb {
+  background: #4b5563;
+  border-radius: 4px;
+}
+
+.dark ::-webkit-scrollbar-thumb:hover {
+  background: #6b7280;
+}
+
+/* === CODE/PRE BLOCKS === */
+.dark pre,
+.dark code {
+  background-color: #1f2937 !important;
+}
+
+/* === FOOTER === */
+.dark footer.bg-white,
+.dark footer .bg-white {
+  background-color: #111827 !important;
+}
+
+/* === HERO SECTION === */
+.dark .hero-gradient {
+  background: linear-gradient(to bottom, #111827, #1f2937) !important;
+}
+
+/* === PRICING CARDS === */
+.dark .pricing-card {
+  background-color: #1f2937 !important;
+  border-color: #374151 !important;
+}
+
+/* === MODAL/DIALOG === */
+.dark [role="dialog"] {
+  background-color: #1f2937 !important;
+}
+
+/* === DROPDOWN/MENU === */
+.dark [role="menu"],
+.dark [role="listbox"] {
+  background-color: #1f2937 !important;
+  border-color: #374151 !important;
+}
+
+/* === TOOLTIP === */
+.dark [role="tooltip"] {
+  background-color: #374151 !important;
+  color: #f3f4f6 !important;
+}
+
+/* === BADGE/TAG === */
+.dark .badge {
+  background-color: #374151 !important;
+}
+
+/* === TABLE === */
+.dark table {
+  background-color: #1f2937 !important;
+}
+
+.dark th {
+  background-color: #111827 !important;
+  color: #f3f4f6 !important;
+}
+
+.dark td {
+  border-color: #374151 !important;
+}
+
+.dark tr:hover {
+  background-color: #374151 !important;
+}
+
+/* === ACCORDION === */
+.dark [data-state="open"],
+.dark [data-state="closed"] {
+  background-color: #1f2937 !important;
+}
+
+/* === TABS === */
+.dark [role="tablist"] {
+  background-color: #1f2937 !important;
+}
+
+.dark [role="tab"][aria-selected="true"] {
+  background-color: #374151 !important;
+}
+
+/* === FORM LABELS === */
+.dark label {
+  color: #e5e7eb !important;
+}
+
+/* === SWITCH/TOGGLE === */
+.dark [role="switch"] {
+  background-color: #374151 !important;
+}
+
+.dark [role="switch"][data-state="checked"] {
+  background-color: #10b981 !important;
+}
+
+/* === SLIDER === */
+.dark [role="slider"] {
+  background-color: #374151 !important;
+}
+
+/* === SKELETON/LOADING === */
+.dark .skeleton,
+.dark .animate-pulse {
+  background-color: #374151 !important;
+}
+
+/* === AVATAR === */
+.dark .avatar-fallback {
+  background-color: #374151 !important;
+  color: #f3f4f6 !important;
+}
+
+/* === NAVIGATION === */
+.dark nav {
+  background-color: #111827 !important;
+}
+
+.dark .nav-link:hover {
+  background-color: #374151 !important;
+}
+
+/* === BREADCRUMB === */
+.dark .breadcrumb {
+  color: #9ca3af !important;
+}
+
+/* === PAGINATION === */
+.dark .pagination-item {
+  background-color: #1f2937 !important;
+  border-color: #374151 !important;
+}
+
+.dark .pagination-item:hover {
+  background-color: #374151 !important;
+}
+
+/* === PROGRESS BAR === */
+.dark [role="progressbar"] {
+  background-color: #374151 !important;
+}
+
+/* === ALERT === */
+.dark [role="alert"] {
+  background-color: #1f2937 !important;
+  border-color: #374151 !important;
+}
+
+/* === POPOVER === */
+.dark [data-radix-popper-content-wrapper] > div {
+  background-color: #1f2937 !important;
+  border-color: #374151 !important;
+}
+
+/* === CALENDAR === */
+.dark .calendar {
+  background-color: #1f2937 !important;
+}
+
+.dark .calendar-day:hover {
+  background-color: #374151 !important;
+}
+
+/* === CHECKBOX/RADIO === */
+.dark [type="checkbox"],
+.dark [type="radio"] {
+  background-color: #374151 !important;
+  border-color: #4b5563 !important;
+}
+
+/* === HOVER CARD === */
+.dark .hover-card-content {
+  background-color: #1f2937 !important;
+}
+
+/* === COMMAND PALETTE === */
+.dark [cmdk-root] {
+  background-color: #1f2937 !important;
+}
+
+.dark [cmdk-input] {
+  background-color: #374151 !important;
+}
+
+.dark [cmdk-item]:hover,
+.dark [cmdk-item][aria-selected="true"] {
+  background-color: #374151 !important;
+}
+
+/* === SHEET/DRAWER === */
+.dark [data-vaul-drawer] {
+  background-color: #1f2937 !important;
+}
+
+/* === SEPARATOR === */
+.dark hr,
+.dark .separator {
+  border-color: #374151 !important;
+  background-color: #374151 !important;
+}
+
+/* === ADDITIONAL WHITE VARIATIONS === */
+.dark .bg-white\/10 {
+  background-color: rgba(255, 255, 255, 0.1) !important;
+}
+
+.dark .bg-white\/20 {
+  background-color: rgba(255, 255, 255, 0.2) !important;
+}
+
+.dark .bg-white\/5 {
+  background-color: rgba(255, 255, 255, 0.05) !important;
+}

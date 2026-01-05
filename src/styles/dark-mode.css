@@ -1,0 +1,533 @@
+/* Dark Mode Global Styles for TexaFab */
+/* ====================================== */
+
+/* === BASE BACKGROUNDS === */
+.dark .min-h-screen.bg-white,
+.dark section.bg-white {
+  background-color: #111827 !important;
+}
+
+.dark .bg-white {
+  background-color: #1f2937 !important;
+}
+
+.dark .bg-gray-50 {
+  background-color: #1f2937 !important;
+}
+
+.dark .bg-gray-100 {
+  background-color: #374151 !important;
+}
+
+/* === HERO AND GRADIENT SECTIONS === */
+.dark section[class*="bg-gradient-to-br from-slate-50"],
+.dark section[class*="bg-gradient-to-b from-slate-50"],
+.dark section[class*="bg-gradient-to-br from-gray-50"],
+.dark section[class*="bg-gradient-to-b from-gray-50"],
+.dark section[class*="bg-gradient-to-b from-white"],
+.dark section[class*="bg-gradient-to-br from-white"] {
+  background: linear-gradient(to bottom right, #111827, #1f2937) !important;
+}
+
+.dark .from-slate-50 { --tw-gradient-from: #111827 !important; }
+.dark .via-white { --tw-gradient-via: #1f2937 !important; }
+.dark .to-teal-50\/30 { --tw-gradient-to: rgba(31, 41, 55, 0.3) !important; }
+.dark .to-white { --tw-gradient-to: #1f2937 !important; }
+.dark .from-gray-50 { --tw-gradient-from: #1f2937 !important; }
+.dark .from-white { --tw-gradient-from: #111827 !important; }
+.dark .from-texafab-cream { --tw-gradient-from: #111827 !important; }
+
+/* === TEXT COLORS === */
+.dark .text-texafab-slate {
+  color: #f3f4f6 !important;
+}
+
+.dark .text-gray-900 {
+  color: #f3f4f6 !important;
+}
+
+.dark .text-gray-800 {
+  color: #e5e7eb !important;
+}
+
+.dark .text-gray-700 {
+  color: #d1d5db !important;
+}
+
+.dark .text-gray-600 {
+  color: #9ca3af !important;
+}
+
+.dark .text-gray-500 {
+  color: #6b7280 !important;
+}
+
+/* === BORDERS === */
+.dark .border-gray-100 {
+  border-color: #374151 !important;
+}
+
+.dark .border-gray-200 {
+  border-color: #4b5563 !important;
+}
+
+.dark .border-gray-50 {
+  border-color: #374151 !important;
+}
+
+/* === CARDS (ShadCN) === */
+.dark [class*="rounded"][class*="border"][class*="shadow"],
+.dark .card,
+.dark [data-slot="card"] {
+  background-color: #1f2937 !important;
+  border-color: #374151 !important;
+}
+
+/* === SECTION BG-WHITE === */
+.dark section.bg-white,
+.dark section[class*="py-"][class*="bg-white"] {
+  background-color: #111827 !important;
+}
+
+/* === CARDS WITH SPECIFIC CLASSES === */
+.dark .p-6.bg-white,
+.dark .p-8.bg-white,
+.dark .p-4.bg-white,
+.dark [class*="Card"][class*="bg-white"],
+.dark [class*="rounded-2xl"][class*="bg-white"],
+.dark [class*="rounded-xl"][class*="bg-white"],
+.dark [class*="rounded-3xl"][class*="bg-white"] {
+  background-color: #1f2937 !important;
+}
+
+/* === GRADIENT CARDS IN DARK MODE === */
+.dark .from-violet-50 { --tw-gradient-from: rgba(139, 92, 246, 0.1) !important; }
+.dark .to-blue-50 { --tw-gradient-to: rgba(59, 130, 246, 0.1) !important; }
+.dark .from-blue-50 { --tw-gradient-from: rgba(59, 130, 246, 0.1) !important; }
+.dark .from-rose-50 { --tw-gradient-from: rgba(244, 63, 94, 0.1) !important; }
+.dark .to-purple-50 { --tw-gradient-to: rgba(168, 85, 247, 0.1) !important; }
+.dark .from-emerald-50 { --tw-gradient-from: rgba(16, 185, 129, 0.1) !important; }
+.dark .to-teal-50 { --tw-gradient-to: rgba(20, 184, 166, 0.1) !important; }
+.dark .from-amber-50 { --tw-gradient-from: rgba(245, 158, 11, 0.1) !important; }
+.dark .to-orange-50 { --tw-gradient-to: rgba(249, 115, 22, 0.1) !important; }
+
+/* === ACCORDION ITEMS === */
+.dark [class*="AccordionItem"][class*="bg-white"],
+.dark [data-radix-accordion-item][class*="bg-white"] {
+  background-color: #1f2937 !important;
+}
+
+/* === INPUT FIELDS === */
+.dark input:not([type="checkbox"]):not([type="radio"]),
+.dark textarea,
+.dark select,
+.dark [data-slot="input"],
+.dark [data-slot="textarea"] {
+  background-color: #374151 !important;
+  border-color: #4b5563 !important;
+  color: #f3f4f6 !important;
+}
+
+.dark input::placeholder,
+.dark textarea::placeholder {
+  color: #9ca3af !important;
+}
+
+.dark input:focus,
+.dark textarea:focus,
+.dark select:focus {
+  border-color: #14b8a6 !important;
+  box-shadow: 0 0 0 2px rgba(20, 184, 166, 0.2) !important;
+}
+
+/* === BUTTONS OUTLINE === */
+/* Only change outline buttons that don't have white border - they're in light sections */
+.dark button[class*="outline"]:not([class*="border-white"]):not([class*="border-2 border-white"]),
+.dark [class*="variant-outline"]:not([class*="border-white"]) {
+  border-color: #4b5563 !important;
+  color: #f3f4f6 !important;
+}
+
+.dark button[class*="outline"]:not([class*="border-white"]):hover {
+  background-color: rgba(55, 65, 81, 0.5) !important;
+}
+
+/* === Keep white border buttons with transparent background (in dark sections like Footer CTA) === */
+.dark button[class*="border-white"],
+.dark button[class*="border-white\\/"] {
+  background-color: transparent !important;
+  color: white !important;
+}
+
+.dark button[class*="border-white"]:hover,
+.dark button[class*="border-white\\/"]:hover {
+  background-color: rgba(255, 255, 255, 0.1) !important;
+}
+
+/* === DROPDOWNS & SELECTS === */
+.dark [data-slot="content"],
+.dark [role="listbox"],
+.dark [data-radix-popper-content-wrapper] > div {
+  background-color: #1f2937 !important;
+  border-color: #374151 !important;
+}
+
+.dark [role="option"]:hover {
+  background-color: #374151 !important;
+}
+
+/* === MODALS & DIALOGS === */
+.dark [role="dialog"],
+.dark [data-state="open"][class*="fixed"] {
+  background-color: #1f2937 !important;
+}
+
+/* === TABS === */
+.dark [role="tablist"] {
+  background-color: #374151 !important;
+}
+
+.dark [role="tab"][aria-selected="true"] {
+  background-color: #1f2937 !important;
+  color: #f3f4f6 !important;
+}
+
+/* === ACCORDION === */
+.dark [data-state="open"] > [class*="accordion"],
+.dark [data-state="closed"] > [class*="accordion"] {
+  background-color: #1f2937 !important;
+  border-color: #374151 !important;
+}
+
+.dark [data-radix-accordion-content] {
+  color: #9ca3af !important;
+}
+
+/* === TABLE === */
+.dark table {
+  background-color: #111827 !important;
+}
+
+.dark thead,
+.dark th {
+  background-color: #1f2937 !important;
+  color: #f3f4f6 !important;
+}
+
+.dark tbody tr {
+  border-color: #374151 !important;
+}
+
+.dark td {
+  color: #d1d5db !important;
+  border-color: #374151 !important;
+}
+
+.dark tr:hover {
+  background-color: #1f2937 !important;
+}
+
+/* === BADGES === */
+.dark .bg-green-100 {
+  background-color: rgba(34, 197, 94, 0.2) !important;
+}
+
+.dark .bg-green-50 {
+  background-color: rgba(34, 197, 94, 0.1) !important;
+}
+
+.dark .text-green-700,
+.dark .text-green-800 {
+  color: #4ade80 !important;
+}
+
+.dark .bg-blue-100 {
+  background-color: rgba(59, 130, 246, 0.2) !important;
+}
+
+.dark .text-blue-700,
+.dark .text-blue-800 {
+  color: #60a5fa !important;
+}
+
+.dark .bg-yellow-100 {
+  background-color: rgba(234, 179, 8, 0.2) !important;
+}
+
+.dark .text-yellow-700,
+.dark .text-yellow-800 {
+  color: #fbbf24 !important;
+}
+
+.dark .bg-red-100 {
+  background-color: rgba(239, 68, 68, 0.2) !important;
+}
+
+.dark .text-red-700,
+.dark .text-red-800 {
+  color: #f87171 !important;
+}
+
+/* === EMERALD TO TEAL IN DARK MODE === */
+.dark .text-texafab-emerald {
+  color: #14b8a6 !important;
+}
+
+.dark .bg-texafab-emerald\/10 {
+  background-color: rgba(20, 184, 166, 0.2) !important;
+}
+
+.dark .bg-texafab-emerald\/5 {
+  background-color: rgba(20, 184, 166, 0.1) !important;
+}
+
+.dark .border-texafab-emerald\/30 {
+  border-color: rgba(20, 184, 166, 0.3) !important;
+}
+
+/* === HOVER STATES === */
+.dark .hover\:bg-gray-50:hover {
+  background-color: #374151 !important;
+}
+
+.dark .hover\:bg-white:hover {
+  background-color: #374151 !important;
+}
+
+.dark .hover\:bg-gray-100:hover {
+  background-color: #4b5563 !important;
+}
+
+/* === SHADOWS === */
+.dark .shadow-lg,
+.dark .shadow-xl,
+.dark .shadow-2xl {
+  --tw-shadow-color: rgba(0, 0, 0, 0.5) !important;
+}
+
+/* === SPECIFIC PAGE SECTIONS === */
+
+/* Pricing Page Cards */
+.dark section.py-20 .bg-white.border.border-gray-100 {
+  background-color: #1f2937 !important;
+  border-color: #374151 !important;
+}
+
+/* Contact Page Form Section */
+.dark section.py-20.bg-gray-50 {
+  background-color: #111827 !important;
+}
+
+/* FAQ Section */
+.dark .bg-gray-50 {
+  background-color: #111827 !important;
+}
+
+/* Solutions Pages Cards */
+.dark [class*="rounded-xl"][class*="p-6"],
+.dark [class*="rounded-2xl"][class*="p-8"] {
+  background-color: #1f2937 !important;
+  border-color: #374151 !important;
+}
+
+/* Hero section badges */
+.dark [class*="rounded-full"][class*="bg-texafab-emerald\/10"] {
+  background-color: rgba(20, 184, 166, 0.15) !important;
+}
+
+/* === LABEL TEXT === */
+.dark label {
+  color: #d1d5db !important;
+}
+
+/* === BACKDROP BLUR ELEMENTS === */
+.dark [class*="backdrop-blur"] {
+  background-color: rgba(17, 24, 39, 0.9) !important;
+}
+
+/* === SELECTION === */
+.dark ::selection {
+  background-color: rgba(20, 184, 166, 0.3) !important;
+}
+
+/* === FOCUS VISIBLE === */
+.dark *:focus-visible {
+  outline-color: #14b8a6 !important;
+}
+
+/* === GRID PATTERNS === */
+.dark [class*="bg-\[linear-gradient"] {
+  opacity: 0.3;
+}
+
+/* === SCROLLBAR === */
+.dark ::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+.dark ::-webkit-scrollbar-track {
+  background: #1f2937;
+}
+
+.dark ::-webkit-scrollbar-thumb {
+  background: #4b5563;
+  border-radius: 4px;
+}
+
+.dark ::-webkit-scrollbar-thumb:hover {
+  background: #6b7280;
+}
+
+/* === FLOATING ACTION BUTTONS === */
+.dark .fixed.bottom-6 {
+  background-color: #1f2937 !important;
+  border-color: #374151 !important;
+}
+
+/* === CODE BLOCKS === */
+.dark pre,
+.dark code {
+  background-color: #1f2937 !important;
+  color: #e5e7eb !important;
+}
+
+/* === SPECIFIC PAGES DARK MODE FIX === */
+
+/* Solutions pages - Feature cards */
+.dark .p-6.bg-white.border-0.shadow-lg,
+.dark .p-6.bg-white.border-0.shadow-xl {
+  background-color: #1f2937 !important;
+}
+
+/* Progress bars backgrounds */
+.dark .bg-gray-200 {
+  background-color: #374151 !important;
+}
+
+/* Specific nested white backgrounds */
+.dark div.bg-white,
+.dark article.bg-white {
+  background-color: #1f2937 !important;
+}
+
+/* Tables inside pages */
+.dark table.bg-white {
+  background-color: #111827 !important;
+}
+
+/* Specific badge colors in dark mode */
+.dark .bg-emerald-100 {
+  background-color: rgba(16, 185, 129, 0.2) !important;
+}
+
+.dark .text-emerald-600 {
+  color: #34d399 !important;
+}
+
+.dark .bg-amber-100 {
+  background-color: rgba(245, 158, 11, 0.2) !important;
+}
+
+.dark .text-amber-600 {
+  color: #fbbf24 !important;
+}
+
+/* Make sure all sections with bg-white get dark backgrounds */
+.dark section[class*="py-12 bg-white"],
+.dark section[class*="py-20 bg-white"] {
+  background-color: #111827 !important;
+}
+
+/* Fix for gradient backgrounds in cards */
+.dark [class*="bg-gradient-to-br from-violet-50"],
+.dark [class*="bg-gradient-to-br from-blue-50"],
+.dark [class*="bg-gradient-to-br from-rose-50"],
+.dark [class*="bg-gradient-to-br from-emerald-50"],
+.dark [class*="bg-gradient-to-br from-purple-50"] {
+  background: linear-gradient(to bottom right, rgba(139, 92, 246, 0.08), rgba(59, 130, 246, 0.08)) !important;
+}
+
+/* Border colors for colored borders */
+.dark .border-blue-100 {
+  border-color: rgba(59, 130, 246, 0.3) !important;
+}
+
+.dark .border-indigo-100 {
+  border-color: rgba(99, 102, 241, 0.3) !important;
+}
+
+.dark .border-rose-100 {
+  border-color: rgba(244, 63, 94, 0.3) !important;
+}
+
+.dark .border-purple-100 {
+  border-color: rgba(168, 85, 247, 0.3) !important;
+}
+
+.dark .border-emerald-100 {
+  border-color: rgba(16, 185, 129, 0.3) !important;
+}
+
+.dark .border-red-100 {
+  border-color: rgba(239, 68, 68, 0.3) !important;
+}
+
+/* Fix colored text in dark mode */
+.dark .text-rose-600 {
+  color: #fb7185 !important;
+}
+
+.dark .text-violet-600 {
+  color: #a78bfa !important;
+}
+
+.dark .text-blue-600 {
+  color: #60a5fa !important;
+}
+
+.dark .text-purple-600 {
+  color: #c084fc !important;
+}
+
+/* Border colored hovers */
+.dark .hover\:border-blue-300:hover {
+  border-color: rgba(59, 130, 246, 0.5) !important;
+}
+
+.dark .hover\:border-indigo-300:hover {
+  border-color: rgba(99, 102, 241, 0.5) !important;
+}
+
+/* White text buttons - don't change */
+.dark button.text-white,
+.dark a.text-white {
+  color: white !important;
+}
+
+/* Preserve gradient backgrounds for colored sections */
+.dark section[class*="bg-gradient-to-br from-violet-900"],
+.dark section[class*="bg-gradient-to-br from-rose-900"],
+.dark section[class*="bg-gradient-to-br from-blue-900"],
+.dark section[class*="bg-gradient-to-r from-violet-500"],
+.dark section[class*="bg-gradient-to-r from-rose-500"],
+.dark section[class*="bg-gradient-to-r from-emerald-500"] {
+  background: inherit !important;
+}
+
+/* Fix white overlay cards */
+.dark .bg-white\/80 {
+  background-color: rgba(31, 41, 55, 0.8) !important;
+}
+
+.dark .bg-white\/10 {
+  background-color: rgba(255, 255, 255, 0.1) !important;
+}
+
+.dark .bg-white\/20 {
+  background-color: rgba(255, 255, 255, 0.2) !important;
+}
+
+.dark .bg-white\/5 {
+  background-color: rgba(255, 255, 255, 0.05) !important;
+}

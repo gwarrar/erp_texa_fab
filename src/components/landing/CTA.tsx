@@ -9,9 +9,11 @@ export function CTA() {
   const { t, dir, language } = useLanguage();
   const [isTrialModalOpen, setIsTrialModalOpen] = useState(false);
 
-  const benefits = language === "ar" 
-    ? ["14 يوم تجربة مجانية", "بدون بطاقة ائتمان", "جميع الميزات متاحة"]
-    : ["14-day free trial", "No credit card required", "Full feature access"];
+  const benefits = [
+    t("cta.benefit1"),
+    t("cta.benefit2"),
+    t("cta.benefit3")
+  ];
 
   return (
     <section className="py-20 bg-gradient-to-br from-texafab-emerald via-teal-600 to-texafab-emerald relative overflow-hidden">
@@ -26,18 +28,15 @@ export function CTA() {
           <div className="text-center mb-10">
             <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/10 backdrop-blur-sm text-white/90 text-sm font-semibold mb-6">
               <Sparkles className="w-4 h-4 text-texafab-gold" />
-              {language === "ar" ? "ابدأ رحلة التحول الرقمي" : "Start Your Digital Transformation"}
+              {t("cta.digitalTransformation")}
             </div>
             
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-black text-white mb-4 leading-tight">
-              {language === "ar" ? "جاهز للبدء؟" : "Ready to Get Started?"}
+              {t("cta.ready")}
             </h2>
             
             <p className="text-lg md:text-xl text-white/80 mb-8 max-w-2xl mx-auto leading-relaxed">
-              {language === "ar" 
-                ? "انضم لأكثر من 500 شركة تستخدم ERPMAX لإدارة أعمالها بكفاءة عالية"
-                : "Join 500+ companies using ERPMAX to manage their business efficiently"
-              }
+              {t("cta.joinCompanies")}
             </p>
             
             {/* Benefits */}
@@ -57,13 +56,13 @@ export function CTA() {
               onClick={() => setIsTrialModalOpen(true)}
               className="group h-14 px-8 bg-white text-texafab-emerald hover:bg-white/95 text-base font-bold shadow-xl shadow-black/20 hover:shadow-black/30 transition-all duration-300 rounded-xl"
             >
-              {language === "ar" ? "ابدأ تجربة مجانية" : "Start Free Trial"}
+              {t("cta.button")}
               <ArrowRight className={`w-5 h-5 transition-transform group-hover:translate-x-1 ${dir === "rtl" ? "rotate-180 me-2" : "ms-2"}`} />
             </Button>
             <Link to="/contact">
               <Button variant="outline" className="group h-14 px-8 border-2 border-white/30 text-white hover:bg-white/10 hover:border-white/50 text-base font-semibold rounded-xl backdrop-blur-sm transition-all duration-300">
                 <Phone className="w-4 h-4 me-2" />
-                {language === "ar" ? "تواصل معنا" : "Contact Sales"}
+                {t("cta.contactSales")}
               </Button>
             </Link>
           </div>

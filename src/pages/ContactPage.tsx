@@ -6,6 +6,7 @@ import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
+import { getText, contactPageTranslations as t } from "@/lib/translations/pages";
 import { 
   Select,
   SelectContent,
@@ -34,61 +35,55 @@ function ContactContent() {
 
   const offices = [
     {
-      city: language === "ar" ? "دبلن، أيرلندا" : "Dublin, Ireland",
-      type: language === "ar" ? "المقر الرئيسي" : "Headquarters",
+      city: getText(t.dublin, language),
+      type: getText(t.headquarters, language),
       address: "123 Tech Quarter, Dublin 2",
       phone: "+353 1 555 0100",
-      email: "hq@erpmax.com"
+      email: "hq@texacore.app"
     },
     {
-      city: language === "ar" ? "برلين، ألمانيا" : "Berlin, Germany",
-      type: language === "ar" ? "مكتب أوروبا" : "Europe Office",
+      city: getText(t.berlin, language),
+      type: getText(t.europeOffice, language),
       address: "Alexanderplatz 5, 10178 Berlin",
       phone: "+49 30 555 0200",
-      email: "europe@erpmax.com"
+      email: "europe@texacore.app"
     },
     {
-      city: language === "ar" ? "الرياض، السعودية" : "Riyadh, Saudi Arabia",
-      type: language === "ar" ? "مكتب الخليج" : "Gulf Office",
-      address: language === "ar" ? "طريق الملك فهد، الرياض" : "King Fahd Road, Riyadh",
+      city: getText(t.riyadh, language),
+      type: getText(t.gulfOffice, language),
+      address: getText(t.riyadhAddress, language),
       phone: "+966 11 555 0300",
-      email: "gulf@erpmax.com"
+      email: "gulf@texacore.app"
     },
     {
-      city: language === "ar" ? "دبي، الإمارات" : "Dubai, UAE",
-      type: language === "ar" ? "مركز الدعم" : "Support Center",
+      city: getText(t.dubai, language),
+      type: getText(t.supportCenter, language),
       address: "Dubai Internet City, Building 12",
       phone: "+971 4 555 0400",
-      email: "support@erpmax.com"
+      email: "support@texacore.app"
     }
   ];
 
   const contactMethods = [
     {
       icon: Phone,
-      titleAr: "اتصل بنا",
-      titleEn: "Call Us",
-      descAr: "تحدث مع فريق المبيعات",
-      descEn: "Talk to our sales team",
+      title: getText(t.callUs, language),
+      desc: getText(t.callUsDesc, language),
       value: "+966 50 000 0000",
       action: "tel:+966500000000"
     },
     {
       icon: Mail,
-      titleAr: "راسلنا",
-      titleEn: "Email Us",
-      descAr: "سنرد خلال 24 ساعة",
-      descEn: "We'll reply within 24 hours",
-      value: "info@erpmax.com",
-      action: "mailto:info@erpmax.com"
+      title: getText(t.emailUs, language),
+      desc: getText(t.emailUsDesc, language),
+      value: "info@texacore.app",
+      action: "mailto:info@texacore.app"
     },
     {
       icon: MessageCircle,
-      titleAr: "محادثة مباشرة",
-      titleEn: "Live Chat",
-      descAr: "متاح على مدار الساعة",
-      descEn: "Available 24/7",
-      value: language === "ar" ? "ابدأ المحادثة" : "Start Chat",
+      title: getText(t.liveChat, language),
+      desc: getText(t.liveChatDesc, language),
+      value: getText(t.startChat, language),
       action: "#"
     }
   ];
@@ -99,7 +94,7 @@ function ContactContent() {
   };
 
   return (
-    <div className="min-h-screen bg-white dark:bg-gray-900" dir={dir}>
+    <div className={`min-h-screen bg-white dark:bg-gray-900 ${dir === "rtl" ? "rtl" : "ltr"}`} dir={dir}>
       <Header />
       
       {/* Hero */}
@@ -109,20 +104,13 @@ function ContactContent() {
           <div className="max-w-4xl mx-auto text-center">
             <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-texafab-emerald/10 text-texafab-emerald text-sm font-semibold mb-6">
               <MessageCircle className="w-4 h-4" />
-              {language === "ar" ? "تواصل معنا" : "Get in Touch"}
+              {getText(t.badge, language)}
             </div>
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-black text-texafab-slate mb-6 leading-tight">
-              {language === "ar" ? (
-                <>نحن هنا <span className="text-texafab-emerald">لمساعدتك</span></>
-              ) : (
-                <>We're Here to <span className="text-texafab-emerald">Help You</span></>
-              )}
+              {getText(t.heroTitle1, language)} <span className="text-texafab-emerald">{getText(t.heroTitle2, language)}</span>
             </h1>
             <p className="text-xl text-gray-600 mb-8 leading-relaxed">
-              {language === "ar"
-                ? "فريقنا جاهز للإجابة على استفساراتك ومساعدتك في تحويل أعمالك"
-                : "Our team is ready to answer your questions and help transform your business"
-              }
+              {getText(t.heroDescription, language)}
             </p>
           </div>
         </div>
@@ -139,10 +127,10 @@ function ContactContent() {
                     <method.icon className="w-7 h-7 text-texafab-emerald" />
                   </div>
                   <h3 className="font-bold text-texafab-slate mb-1">
-                    {language === "ar" ? method.titleAr : method.titleEn}
+                    {method.title}
                   </h3>
                   <p className="text-sm text-gray-500 mb-2">
-                    {language === "ar" ? method.descAr : method.descEn}
+                    {method.desc}
                   </p>
                   <p className="text-texafab-emerald font-semibold">{method.value}</p>
                 </Card>
@@ -168,13 +156,10 @@ function ContactContent() {
                     <CheckCircle2 className="w-8 h-8 text-green-600" />
                   </div>
                   <h3 className="text-xl font-bold text-texafab-slate mb-2">
-                    {language === "ar" ? "شكراً لك!" : "Thank You!"}
+                    {getText(t.thankYou, language)}
                   </h3>
                   <p className="text-gray-600">
-                    {language === "ar" 
-                      ? "تم استلام رسالتك. سنتواصل معك قريباً."
-                      : "Your message has been received. We'll get back to you soon."
-                    }
+                    {getText(t.messageReceived, language)}
                   </p>
                 </div>
               ) : (
@@ -182,48 +167,48 @@ function ContactContent() {
                   <div className="grid md:grid-cols-2 gap-4">
                     <div>
                       <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
-                        {language === "ar" ? "الاسم الأول" : "First Name"}
+                        {getText(t.firstName, language)}
                       </label>
                       <Input placeholder={language === "ar" ? "أحمد" : "John"} required />
                     </div>
                     <div>
                       <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
-                        {language === "ar" ? "الاسم الأخير" : "Last Name"}
+                        {getText(t.lastName, language)}
                       </label>
                       <Input placeholder={language === "ar" ? "محمد" : "Doe"} required />
                     </div>
                   </div>
                   <div>
                     <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
-                      {language === "ar" ? "البريد الإلكتروني" : "Email"}
+                      {getText(t.email, language)}
                     </label>
                     <Input type="email" placeholder="email@company.com" required />
                   </div>
                   <div>
                     <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
-                      {language === "ar" ? "رقم الهاتف" : "Phone Number"}
+                      {getText(t.phone, language)}
                     </label>
                     <Input type="tel" placeholder="+966 50 000 0000" />
                   </div>
                   <div>
                     <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
-                      {language === "ar" ? "اسم الشركة" : "Company Name"}
+                      {getText(t.companyName, language)}
                     </label>
                     <Input placeholder={language === "ar" ? "شركة الأقمشة" : "Fabric Company"} />
                   </div>
                   <div>
                     <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
-                      {language === "ar" ? "كيف يمكننا مساعدتك؟" : "How can we help?"}
+                      {getText(t.howHelp, language)}
                     </label>
                     <Textarea 
-                      placeholder={language === "ar" ? "اكتب رسالتك هنا..." : "Write your message here..."} 
+                      placeholder={getText(t.writeMessage, language)}
                       rows={4}
                       required
                     />
                   </div>
                   <Button type="submit" className="w-full h-12 bg-texafab-emerald hover:bg-texafab-emerald/90 text-white rounded-xl">
                     <Send className="w-4 h-4 me-2" />
-                    {language === "ar" ? "إرسال الرسالة" : "Send Message"}
+                    {getText(t.send, language)}
                   </Button>
                 </form>
               )}
@@ -233,13 +218,10 @@ function ContactContent() {
             <div className="space-y-8">
               <div>
                 <h2 className="text-2xl font-bold text-texafab-slate dark:text-white mb-4">
-                  {language === "ar" ? "معلومات التواصل" : "Contact Information"}
+                  {getText(t.contactInfo, language)}
                 </h2>
                 <p className="text-gray-600 dark:text-gray-300">
-                  {language === "ar"
-                    ? "فريقنا متاح لمساعدتك من الأحد إلى الخميس، 9 صباحاً - 6 مساءً"
-                    : "Our team is available Sunday to Thursday, 9 AM - 6 PM"
-                  }
+                  {getText(t.availability, language)}
                 </p>
               </div>
 
@@ -250,19 +232,13 @@ function ContactContent() {
                   </div>
                   <div>
                     <h3 className="font-bold text-texafab-slate dark:text-white">
-                      {language === "ar" ? "ساعات العمل" : "Business Hours"}
+                      {getText(t.businessHours, language)}
                     </h3>
                     <p className="text-gray-600 dark:text-gray-300">
-                      {language === "ar" 
-                        ? "الأحد - الخميس: 9 ص - 6 م"
-                        : "Sun - Thu: 9 AM - 6 PM"
-                      }
+                      {getText(t.businessHoursValue, language)}
                     </p>
                     <p className="text-gray-600">
-                      {language === "ar" 
-                        ? "الدعم الفني: 24/7"
-                        : "Technical Support: 24/7"
-                      }
+                      {getText(t.techSupport, language)}
                     </p>
                   </div>
                 </div>
@@ -273,13 +249,10 @@ function ContactContent() {
                   </div>
                   <div>
                     <h3 className="font-bold text-texafab-slate dark:text-white">
-                      {language === "ar" ? "اللغات" : "Languages"}
+                      {getText(t.languages, language)}
                     </h3>
                     <p className="text-gray-600 dark:text-gray-300">
-                      {language === "ar" 
-                        ? "العربية، الإنجليزية، الألمانية"
-                        : "Arabic, English, German"
-                      }
+                      {getText(t.languagesList, language)}
                     </p>
                   </div>
                 </div>
@@ -303,7 +276,7 @@ function ContactContent() {
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-bold text-texafab-slate mb-4">
-              {language === "ar" ? "مكاتبنا حول العالم" : "Our Offices Worldwide"}
+              {getText(t.ourOffices, language)}
             </h2>
           </div>
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-6xl mx-auto">
@@ -342,27 +315,24 @@ function ContactContent() {
               <div className="text-white">
                 <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/10 text-white text-sm font-semibold mb-6">
                   <PlayCircle className="w-4 h-4" />
-                  {language === "ar" ? "عرض توضيحي مجاني" : "Free Demo"}
+                  {getText(t.freeDemoBadge, language)}
                 </div>
                 <h2 className="text-3xl md:text-4xl font-bold mb-4">
-                  {language === "ar" ? "احجز عرضاً توضيحياً مخصصاً" : "Book Your Personalized Demo"}
+                  {getText(t.bookDemoTitle, language)}
                 </h2>
                 <p className="text-white/80 mb-6">
-                  {language === "ar"
-                    ? "شاهد كيف يمكن لـ ERPMAX تحويل عمليات شركتك في جلسة مدتها 30 دقيقة"
-                    : "See how ERPMAX can transform your operations in a 30-minute session"
-                  }
+                  {getText(t.bookDemoDesc, language)}
                 </p>
                 <ul className="space-y-3">
                   {[
-                    { ar: "عرض مخصص لاحتياجات شركتك", en: "Demo tailored to your company's needs" },
-                    { ar: "إجابات على جميع استفساراتك", en: "Answers to all your questions" },
-                    { ar: "خطة تنفيذ مقترحة", en: "Proposed implementation plan" },
-                    { ar: "عرض أسعار مخصص", en: "Custom pricing quote" },
+                    getText(t.demoBullet1, language),
+                    getText(t.demoBullet2, language),
+                    getText(t.demoBullet3, language),
+                    getText(t.demoBullet4, language),
                   ].map((item, i) => (
                     <li key={i} className="flex items-center gap-3">
                       <CheckCircle2 className="w-5 h-5 text-texafab-emerald" />
-                      <span>{language === "ar" ? item.ar : item.en}</span>
+                      <span>{item}</span>
                     </li>
                   ))}
                 </ul>
@@ -370,51 +340,51 @@ function ContactContent() {
 
               <Card className="p-6 bg-white">
                 <h3 className="text-xl font-bold text-texafab-slate mb-4">
-                  {language === "ar" ? "احجز موعدك الآن" : "Schedule Your Demo"}
+                  {getText(t.scheduleDemoFormTitle, language)}
                 </h3>
                 <form className="space-y-4">
                   <div>
                     <label className="block text-sm font-medium text-gray-700 mb-1">
-                      {language === "ar" ? "الاسم الكامل" : "Full Name"}
+                      {getText(t.fullName, language)}
                     </label>
                     <Input placeholder={language === "ar" ? "أحمد محمد" : "John Doe"} required />
                   </div>
                   <div>
                     <label className="block text-sm font-medium text-gray-700 mb-1">
-                      {language === "ar" ? "البريد الإلكتروني" : "Email"}
+                      {getText(t.email, language)}
                     </label>
                     <Input type="email" placeholder="email@company.com" required />
                   </div>
                   <div>
                     <label className="block text-sm font-medium text-gray-700 mb-1">
-                      {language === "ar" ? "رقم الهاتف" : "Phone"}
+                      {getText(t.phone, language)}
                     </label>
                     <Input type="tel" placeholder="+966 50 000 0000" />
                   </div>
                   <div>
                     <label className="block text-sm font-medium text-gray-700 mb-1">
-                      {language === "ar" ? "اسم الشركة" : "Company Name"}
+                      {getText(t.companyName, language)}
                     </label>
                     <Input placeholder={language === "ar" ? "شركة الأقمشة" : "Textile Co."} />
                   </div>
                   <div>
                     <label className="block text-sm font-medium text-gray-700 mb-1">
-                      {language === "ar" ? "الوقت المفضل" : "Preferred Time"}
+                      {getText(t.preferredTime, language)}
                     </label>
                     <Select>
                       <SelectTrigger>
-                        <SelectValue placeholder={language === "ar" ? "اختر وقتاً" : "Select time"} />
+                        <SelectValue placeholder={getText(t.selectTime, language)} />
                       </SelectTrigger>
                       <SelectContent>
-                        <SelectItem value="morning">{language === "ar" ? "صباحاً (9-12)" : "Morning (9-12)"}</SelectItem>
-                        <SelectItem value="afternoon">{language === "ar" ? "ظهراً (12-3)" : "Afternoon (12-3)"}</SelectItem>
-                        <SelectItem value="evening">{language === "ar" ? "مساءً (3-6)" : "Evening (3-6)"}</SelectItem>
+                        <SelectItem value="morning">{getText(t.timeMorning, language)}</SelectItem>
+                        <SelectItem value="afternoon">{getText(t.timeAfternoon, language)}</SelectItem>
+                        <SelectItem value="evening">{getText(t.timeEvening, language)}</SelectItem>
                       </SelectContent>
                     </Select>
                   </div>
                   <Button type="submit" className="w-full h-12 bg-texafab-emerald hover:bg-texafab-emerald/90 text-white rounded-xl font-semibold">
                     <Calendar className="w-4 h-4 me-2" />
-                    {language === "ar" ? "احجز العرض التوضيحي" : "Book Demo"}
+                    {getText(t.bookDemoBtn, language)}
                   </Button>
                 </form>
               </Card>

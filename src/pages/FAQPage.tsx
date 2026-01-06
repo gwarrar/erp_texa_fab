@@ -1,6 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { useLanguage } from "@/components/landing/LanguageContext";
+import { getText, faqPageTranslations as t } from "@/lib/translations/pages";
 import { Header } from "@/components/landing/Header";
 import { Footer } from "@/components/landing/Footer";
 import { Button } from "@/components/ui/button";
@@ -31,26 +32,22 @@ function FAQContent() {
   const categories = [
     {
       icon: Package,
-      titleAr: "المنتج والميزات",
-      titleEn: "Product & Features",
+      title: getText(t.catProduct, language),
       color: "from-emerald-500 to-emerald-600"
     },
     {
       icon: CreditCard,
-      titleAr: "الأسعار والدفع",
-      titleEn: "Pricing & Billing",
+      title: getText(t.catPricing, language),
       color: "from-blue-500 to-blue-600"
     },
     {
       icon: Settings,
-      titleAr: "الإعداد والتكامل",
-      titleEn: "Setup & Integration",
+      title: getText(t.catSetup, language),
       color: "from-purple-500 to-purple-600"
     },
     {
       icon: Shield,
-      titleAr: "الأمان والخصوصية",
-      titleEn: "Security & Privacy",
+      title: getText(t.catSecurity, language),
       color: "from-orange-500 to-orange-600"
     }
   ];
@@ -58,94 +55,66 @@ function FAQContent() {
   const faqs = {
     product: [
       {
-        questionAr: "ما هو ERPMAX وكيف يمكنه مساعدة شركتي؟",
-        questionEn: "What is ERPMAX and how can it help my company?",
-        answerAr: "ERPMAX هو نظام متكامل لإدارة موارد المؤسسات مصمم خصيصاً لصناعة الأقمشة والنسيج. يوفر حلولاً شاملة لإدارة المخزون، تتبع الرولونات، نقاط البيع، إدارة الكونتينرات، التقارير والتحليلات، وأكثر من ذلك.",
-        answerEn: "ERPMAX is an integrated enterprise resource planning system designed specifically for the textile and fabric industry. It provides comprehensive solutions for inventory management, roll tracking, POS, container management, reporting and analytics, and much more."
+        question: getText(t.prodQ1, language),
+        answer: getText(t.prodA1, language)
       },
       {
-        questionAr: "هل يدعم النظام اللغة العربية والاتجاه من اليمين لليسار؟",
-        questionEn: "Does the system support Arabic and RTL direction?",
-        answerAr: "نعم، يدعم ERPMAX اللغة العربية بشكل كامل مع واجهة مستخدم تتكيف تلقائياً مع اتجاه RTL. كما ندعم الإنجليزية والألمانية.",
-        answerEn: "Yes, ERPMAX fully supports Arabic with a user interface that automatically adapts to RTL direction. We also support English and German."
+        question: getText(t.prodQ2, language),
+        answer: getText(t.prodA2, language)
       },
       {
-        questionAr: "كم عدد المستخدمين الذين يمكنهم استخدام النظام؟",
-        questionEn: "How many users can use the system?",
-        answerAr: "يعتمد ذلك على الباقة التي تختارها. باقة البداية تدعم حتى 5 مستخدمين، الاحترافية حتى 20 مستخدم، وباقة المؤسسات تدعم عدداً غير محدود.",
-        answerEn: "It depends on the plan you choose. Starter plan supports up to 5 users, Professional up to 20 users, and Enterprise plan supports unlimited users."
+        question: getText(t.prodQ3, language),
+        answer: getText(t.prodA3, language)
       },
       {
-        questionAr: "هل يمكنني تجربة النظام قبل الشراء؟",
-        questionEn: "Can I try the system before purchasing?",
-        answerAr: "نعم، نوفر تجربة مجانية لمدة 14 يوماً بدون الحاجة لإدخال بطاقة ائتمان. كما يمكنك حجز عرض توضيحي مخصص مع فريقنا.",
-        answerEn: "Yes, we offer a 14-day free trial without requiring a credit card. You can also book a personalized demo with our team."
+        question: getText(t.prodQ4, language),
+        answer: getText(t.prodA4, language)
       }
     ],
     pricing: [
       {
-        questionAr: "ما هي خطط الأسعار المتاحة؟",
-        questionEn: "What pricing plans are available?",
-        answerAr: "نوفر ثلاث خطط: البداية (799 ر.س/شهر)، الاحترافية (1,499 ر.س/شهر)، والمؤسسات (سعر مخصص). جميع الخطط تتضمن دعماً فنياً وتحديثات مجانية.",
-        answerEn: "We offer three plans: Starter ($199/month), Professional ($399/month), and Enterprise (custom pricing). All plans include technical support and free updates."
+        question: getText(t.priceQ1, language),
+        answer: getText(t.priceA1, language)
       },
       {
-        questionAr: "هل هناك خصم للدفع السنوي؟",
-        questionEn: "Is there a discount for annual payment?",
-        answerAr: "نعم، عند الدفع السنوي تحصل على خصم 20% وشهرين مجاناً.",
-        answerEn: "Yes, with annual payment you get 20% off and two months free."
+        question: getText(t.priceQ2, language),
+        answer: getText(t.priceA2, language)
       },
       {
-        questionAr: "ما هي طرق الدفع المتاحة؟",
-        questionEn: "What payment methods are available?",
-        answerAr: "نقبل الدفع بالبطاقات الائتمانية (فيزا، ماستركارد، أمريكان إكسبريس)، التحويل البنكي، وmada للعملاء في السعودية.",
-        answerEn: "We accept credit cards (Visa, Mastercard, American Express), bank transfer, and mada for Saudi customers."
+        question: getText(t.priceQ3, language),
+        answer: getText(t.priceA3, language)
       },
       {
-        questionAr: "هل يمكنني تغيير الباقة لاحقاً؟",
-        questionEn: "Can I change my plan later?",
-        answerAr: "نعم، يمكنك الترقية أو تخفيض الباقة في أي وقت. يتم احتساب الفرق بشكل تناسبي.",
-        answerEn: "Yes, you can upgrade or downgrade your plan at any time. The difference is calculated proportionally."
+        question: getText(t.priceQ4, language),
+        answer: getText(t.priceA4, language)
       }
     ],
     setup: [
       {
-        questionAr: "كم يستغرق إعداد النظام؟",
-        questionEn: "How long does it take to set up the system?",
-        answerAr: "الإعداد الأساسي يستغرق بضع ساعات. للإعداد الكامل مع نقل البيانات والتدريب، عادة ما يستغرق 1-2 أسبوع حسب حجم الشركة.",
-        answerEn: "Basic setup takes a few hours. For complete setup with data migration and training, it usually takes 1-2 weeks depending on company size."
+        question: getText(t.setupQ1, language),
+        answer: getText(t.setupA1, language)
       },
       {
-        questionAr: "هل تساعدون في نقل البيانات من الأنظمة القديمة؟",
-        questionEn: "Do you help with data migration from old systems?",
-        answerAr: "نعم، فريقنا يساعد في نقل البيانات من أي نظام سابق. نوفر أدوات استيراد للإكسل والأنظمة المحاسبية الشائعة.",
-        answerEn: "Yes, our team helps migrate data from any previous system. We provide import tools for Excel and common accounting systems."
+        question: getText(t.setupQ2, language),
+        answer: getText(t.setupA2, language)
       },
       {
-        questionAr: "هل يتكامل مع أنظمة أخرى مثل المحاسبة؟",
-        questionEn: "Does it integrate with other systems like accounting?",
-        answerAr: "نعم، ERPMAX يتكامل مع أنظمة المحاسبة الشائعة مثل QuickBooks، Xero، وZoho. كما نوفر API للتكامل مع أي نظام آخر.",
-        answerEn: "Yes, ERPMAX integrates with popular accounting systems like QuickBooks, Xero, and Zoho. We also provide an API for integration with any other system."
+        question: getText(t.setupQ3, language),
+        answer: getText(t.setupA3, language)
       }
     ],
     security: [
       {
-        questionAr: "كيف تحمون بياناتي؟",
-        questionEn: "How do you protect my data?",
-        answerAr: "نستخدم تشفير AES-256 لجميع البيانات. خوادمنا موجودة في مراكز بيانات معتمدة ISO 27001 في أوروبا والخليج.",
-        answerEn: "We use AES-256 encryption for all data. Our servers are located in ISO 27001 certified data centers in Europe and the Gulf."
+        question: getText(t.secQ1, language),
+        answer: getText(t.secA1, language)
       },
       {
-        questionAr: "هل تمتثلون لقوانين حماية البيانات؟",
-        questionEn: "Do you comply with data protection laws?",
-        answerAr: "نعم، نمتثل لـ GDPR الأوروبي ونظام حماية البيانات الشخصية السعودي (PDPL).",
-        answerEn: "Yes, we comply with European GDPR and Saudi Personal Data Protection Law (PDPL)."
+        question: getText(t.secQ2, language),
+        answer: getText(t.secA2, language)
       },
       {
-        questionAr: "هل يمكنني تصدير بياناتي؟",
-        questionEn: "Can I export my data?",
-        answerAr: "نعم، يمكنك تصدير جميع بياناتك في أي وقت بصيغ متعددة (Excel، CSV، PDF).",
-        answerEn: "Yes, you can export all your data at any time in multiple formats (Excel, CSV, PDF)."
+        question: getText(t.secQ3, language),
+        answer: getText(t.secA3, language)
       }
     ]
   };
@@ -166,22 +135,16 @@ function FAQContent() {
             <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-emerald-500/10 border border-emerald-500/20 mb-6">
               <HelpCircle className="w-4 h-4 text-emerald-500" />
               <span className="text-sm font-semibold text-emerald-600">
-                {language === "ar" ? "الأسئلة الشائعة" : "FAQ"}
+                {getText(t.pageBadge, language)}
               </span>
             </div>
 
             <h1 className="text-4xl md:text-6xl font-black text-texafab-slate mb-6 leading-tight">
-              {language === "ar" ? (
-                <>كيف يمكننا <span className="text-emerald-500">مساعدتك؟</span></>
-              ) : (
-                <>How Can We <span className="text-emerald-500">Help You?</span></>
-              )}
+              {getText(t.pageTitle1, language)} <span className="text-emerald-500">{getText(t.pageTitle2, language)}</span>
             </h1>
 
             <p className="text-xl text-gray-600 mb-8 leading-relaxed max-w-3xl mx-auto">
-              {language === "ar" 
-                ? "ابحث في الأسئلة الشائعة أو تواصل مع فريق الدعم"
-                : "Search our FAQ or contact our support team"}
+              {getText(t.pageSubtitle, language)}
             </p>
 
             {/* Search Bar */}
@@ -189,7 +152,7 @@ function FAQContent() {
               <Search className="absolute start-4 top-1/2 -translate-y-1/2 w-5 h-5 text-gray-400" />
               <Input 
                 className="ps-12 h-14 rounded-xl border-gray-200 focus:border-emerald-500 focus:ring-emerald-500"
-                placeholder={language === "ar" ? "ابحث عن سؤالك..." : "Search for your question..."}
+                placeholder={getText(t.searchPlaceholder, language)}
               />
             </div>
           </div>
@@ -206,7 +169,7 @@ function FAQContent() {
                   <category.icon className="w-6 h-6 text-white" />
                 </div>
                 <h3 className="text-lg font-bold text-texafab-slate dark:text-white">
-                  {language === "ar" ? category.titleAr : category.titleEn}
+                  {category.title}
                 </h3>
               </Card>
             ))}
@@ -224,17 +187,17 @@ function FAQContent() {
                 <Package className="w-5 h-5 text-white" />
               </div>
               <h2 className="text-2xl font-bold text-texafab-slate dark:text-white">
-                {language === "ar" ? "المنتج والميزات" : "Product & Features"}
+                {getText(t.catProduct, language)}
               </h2>
             </div>
             <Accordion type="single" collapsible className="space-y-3">
               {faqs.product.map((faq, index) => (
                 <AccordionItem key={index} value={`product-${index}`} className="bg-white dark:bg-gray-900 rounded-xl border-0 shadow-sm">
                   <AccordionTrigger className="px-6 py-4 text-start hover:no-underline font-semibold text-texafab-slate dark:text-white">
-                    {language === "ar" ? faq.questionAr : faq.questionEn}
+                    {faq.question}
                   </AccordionTrigger>
                   <AccordionContent className="px-6 pb-4 text-gray-600 dark:text-gray-300">
-                    {language === "ar" ? faq.answerAr : faq.answerEn}
+                    {faq.answer}
                   </AccordionContent>
                 </AccordionItem>
               ))}
@@ -248,17 +211,17 @@ function FAQContent() {
                 <CreditCard className="w-5 h-5 text-white" />
               </div>
               <h2 className="text-2xl font-bold text-texafab-slate dark:text-white">
-                {language === "ar" ? "الأسعار والدفع" : "Pricing & Billing"}
+                {getText(t.catPricing, language)}
               </h2>
             </div>
             <Accordion type="single" collapsible className="space-y-3">
               {faqs.pricing.map((faq, index) => (
                 <AccordionItem key={index} value={`pricing-${index}`} className="bg-white dark:bg-gray-900 rounded-xl border-0 shadow-sm">
                   <AccordionTrigger className="px-6 py-4 text-start hover:no-underline font-semibold text-texafab-slate dark:text-white">
-                    {language === "ar" ? faq.questionAr : faq.questionEn}
+                    {faq.question}
                   </AccordionTrigger>
                   <AccordionContent className="px-6 pb-4 text-gray-600 dark:text-gray-300">
-                    {language === "ar" ? faq.answerAr : faq.answerEn}
+                    {faq.answer}
                   </AccordionContent>
                 </AccordionItem>
               ))}
@@ -272,17 +235,17 @@ function FAQContent() {
                 <Settings className="w-5 h-5 text-white" />
               </div>
               <h2 className="text-2xl font-bold text-texafab-slate dark:text-white">
-                {language === "ar" ? "الإعداد والتكامل" : "Setup & Integration"}
+                {getText(t.catSetup, language)}
               </h2>
             </div>
             <Accordion type="single" collapsible className="space-y-3">
               {faqs.setup.map((faq, index) => (
                 <AccordionItem key={index} value={`setup-${index}`} className="bg-white dark:bg-gray-900 rounded-xl border-0 shadow-sm">
                   <AccordionTrigger className="px-6 py-4 text-start hover:no-underline font-semibold text-texafab-slate dark:text-white">
-                    {language === "ar" ? faq.questionAr : faq.questionEn}
+                    {faq.question}
                   </AccordionTrigger>
                   <AccordionContent className="px-6 pb-4 text-gray-600 dark:text-gray-300">
-                    {language === "ar" ? faq.answerAr : faq.answerEn}
+                    {faq.answer}
                   </AccordionContent>
                 </AccordionItem>
               ))}
@@ -296,17 +259,17 @@ function FAQContent() {
                 <Shield className="w-5 h-5 text-white" />
               </div>
               <h2 className="text-2xl font-bold text-texafab-slate dark:text-white">
-                {language === "ar" ? "الأمان والخصوصية" : "Security & Privacy"}
+                {getText(t.catSecurity, language)}
               </h2>
             </div>
             <Accordion type="single" collapsible className="space-y-3">
               {faqs.security.map((faq, index) => (
                 <AccordionItem key={index} value={`security-${index}`} className="bg-white dark:bg-gray-900 rounded-xl border-0 shadow-sm">
                   <AccordionTrigger className="px-6 py-4 text-start hover:no-underline font-semibold text-texafab-slate dark:text-white">
-                    {language === "ar" ? faq.questionAr : faq.questionEn}
+                    {faq.question}
                   </AccordionTrigger>
                   <AccordionContent className="px-6 pb-4 text-gray-600 dark:text-gray-300">
-                    {language === "ar" ? faq.answerAr : faq.answerEn}
+                    {faq.answer}
                   </AccordionContent>
                 </AccordionItem>
               ))}
@@ -323,22 +286,20 @@ function FAQContent() {
               <Headphones className="w-8 h-8 text-white" />
             </div>
             <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
-              {language === "ar" ? "لم تجد إجابة سؤالك؟" : "Still Have Questions?"}
+              {getText(t.stillQTitle, language)}
             </h2>
             <p className="text-lg text-white/80 mb-8 max-w-2xl mx-auto">
-              {language === "ar" 
-                ? "فريق الدعم جاهز لمساعدتك على مدار الساعة"
-                : "Our support team is ready to help you 24/7"}
+              {getText(t.stillQDesc, language)}
             </p>
             <div className="flex flex-col sm:flex-row justify-center gap-4">
               <Link to="/contact">
                 <Button className="h-14 px-8 bg-white text-texafab-slate hover:bg-white/90 text-base font-bold rounded-xl">
                   <MessageCircle className="w-5 h-5 me-2" />
-                  {language === "ar" ? "تواصل معنا" : "Contact Us"}
+                  {getText(t.contactBtn, language)}
                 </Button>
               </Link>
               <Button variant="outline" className="h-14 px-8 border-2 border-white/30 text-white hover:bg-white/10 text-base font-semibold rounded-xl">
-                {language === "ar" ? "ابدأ محادثة مباشرة" : "Start Live Chat"}
+                {getText(t.liveChatBtn, language)}
               </Button>
             </div>
           </div>

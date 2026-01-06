@@ -98,7 +98,7 @@ export default function RegisterPage() {
   ];
 
   return (
-    <div className="min-h-screen flex" dir={dir}>
+    <div className={`min-h-screen flex ${dir === "rtl" ? "rtl" : "ltr"}`} dir={dir}>
       {/* Left Side - Register Form */}
       <div className="flex-1 flex flex-col justify-center px-8 py-12 lg:px-16 bg-white dark:bg-gray-900 overflow-y-auto">
         <div className="max-w-md mx-auto w-full">
@@ -119,8 +119,8 @@ export default function RegisterPage() {
             </h1>
             <p className="text-gray-600 dark:text-gray-400">
               {language === "ar"
-                ? "ابدأ رحلتك مع نظام ERPMAX"
-                : "Start your journey with ERPMAX"}
+                ? "ابدأ رحلتك مع نظام TexaCore"
+                : "Start your journey with TexaCore"}
             </p>
           </div>
 
@@ -367,8 +367,8 @@ export default function RegisterPage() {
             </h2>
             <p className="text-white/80 text-lg">
               {language === "ar"
-                ? "انضم لأكثر من 500 شركة تستخدم ERPMAX لإدارة أعمالها"
-                : "Join over 500 companies using ERPMAX to manage their business"}
+                ? "انضم لأكثر من 500 شركة تستخدم TexaCore لإدارة أعمالها"
+                : "Join over 500 companies using TexaCore to manage their business"}
             </p>
           </div>
 
@@ -398,8 +398,8 @@ export default function RegisterPage() {
           <div className="mt-12 p-6 bg-white/10 rounded-2xl backdrop-blur-sm">
             <p className="text-white/90 mb-4 leading-relaxed">
               {language === "ar"
-                ? '"نظام ERPMAX غيّر طريقة إدارتنا للمخزون. الآن نتتبع كل رولون بدقة تامة."'
-                : '"ERPMAX changed how we manage inventory. Now we track every roll with complete precision."'}
+                ? '"نظام TexaCore غيّر طريقة إدارتنا للمخزون. الآن نتتبع كل رولون بدقة تامة."'
+                : '"TexaCore changed how we manage inventory. Now we track every roll with complete precision."'}
             </p>
             <div className="flex items-center gap-3">
               <div className="w-10 h-10 rounded-full bg-white/20 flex items-center justify-center">

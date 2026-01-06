@@ -5,6 +5,7 @@ import { Header } from "@/components/landing/Header";
 import { Footer } from "@/components/landing/Footer";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
+import { getText, workflowPageTranslations as t } from "@/lib/translations/pages";
 import { 
   Factory,
   Package,
@@ -35,89 +36,65 @@ function WorkflowContent() {
     {
       step: 1,
       icon: Factory,
-      titleAr: "حجز من المصنع",
-      titleEn: "Factory Booking",
-      descAr: "حجز الأقمشة مباشرة من المصانع العالمية مع تحديد المواصفات والكميات والألوان المطلوبة",
-      descEn: "Book fabrics directly from global factories with specifications, quantities, and required colors",
-      featuresAr: ["تحديد المواصفات الدقيقة", "اختيار الألوان والدرجات", "تحديد الكميات بالمتر/الرولون", "جدولة التسليم"],
-      featuresEn: ["Precise specifications", "Color and grade selection", "Quantity in meters/rolls", "Delivery scheduling"],
+      title: getText(t.step1Title, language),
+      desc: getText(t.step1Desc, language),
+      features: [getText(t.step1Feat1, language), getText(t.step1Feat2, language), getText(t.step1Feat3, language), getText(t.step1Feat4, language)],
       color: "from-blue-500 to-blue-600"
     },
     {
       step: 2,
       icon: Package,
-      titleAr: "التعبئة بالكونتينر",
-      titleEn: "Container Packing",
-      descAr: "متابعة عملية تعبئة الكونتينر بالتفصيل مع تسجيل جميع المواد والتكاليف",
-      descEn: "Track container packing in detail with recording all materials and costs",
-      featuresAr: ["قائمة تفصيلية بالمحتويات", "حساب التكاليف التقديرية", "وثائق الشحن", "تسجيل الأوزان"],
-      featuresEn: ["Detailed content list", "Cost estimation", "Shipping documents", "Weight recording"],
+      title: getText(t.step2Title, language),
+      desc: getText(t.step2Desc, language),
+      features: [getText(t.step2Feat1, language), getText(t.step2Feat2, language), getText(t.step2Feat3, language), getText(t.step2Feat4, language)],
       color: "from-purple-500 to-purple-600"
     },
     {
       step: 3,
       icon: Ship,
-      titleAr: "الشحن البحري",
-      titleEn: "Sea Freight",
-      descAr: "تتبع الكونتينر من لحظة المغادرة حتى الوصول مع جميع التفاصيل والتكاليف",
-      descEn: "Track container from departure to arrival with all details and costs",
-      featuresAr: ["تتبع GPS مباشر", "تواريخ الوصول المتوقعة", "تكاليف الشحن والجمارك", "إشعارات تلقائية"],
-      featuresEn: ["Live GPS tracking", "Expected arrival dates", "Shipping & customs costs", "Auto notifications"],
+      title: getText(t.step3Title, language),
+      desc: getText(t.step3Desc, language),
+      features: [getText(t.step3Feat1, language), getText(t.step3Feat2, language), getText(t.step3Feat3, language), getText(t.step3Feat4, language)],
       color: "from-cyan-500 to-cyan-600"
     },
     {
       step: 4,
       icon: MapPin,
-      titleAr: "استلام الكونتينر",
-      titleEn: "Container Reception",
-      descAr: "استلام الكونتينر في الميناء مع التوثيق الكامل وفحص المحتويات",
-      descEn: "Receive container at port with full documentation and content inspection",
-      featuresAr: ["فحص الجودة", "مطابقة الكميات", "توثيق الأضرار", "التخليص الجمركي"],
-      featuresEn: ["Quality inspection", "Quantity matching", "Damage documentation", "Customs clearance"],
+      title: getText(t.step4Title, language),
+      desc: getText(t.step4Desc, language),
+      features: [getText(t.step4Feat1, language), getText(t.step4Feat2, language), getText(t.step4Feat3, language), getText(t.step4Feat4, language)],
       color: "from-emerald-500 to-emerald-600"
     },
     {
       step: 5,
       icon: Warehouse,
-      titleAr: "تفصيل الرولونات",
-      titleEn: "Roll Processing",
-      descAr: "تفريغ الكونتينر وتسجيل كل رولون بشكل منفصل مع باركود فريد",
-      descEn: "Unload container and register each roll separately with unique barcode",
-      featuresAr: ["باركود لكل رولون", "قياس الأطوال الفعلية", "تسجيل الألوان والدرجات", "تحديد موقع التخزين"],
-      featuresEn: ["Barcode per roll", "Actual length measurement", "Color & grade recording", "Storage location"],
+      title: getText(t.step5Title, language),
+      desc: getText(t.step5Desc, language),
+      features: [getText(t.step5Feat1, language), getText(t.step5Feat2, language), getText(t.step5Feat3, language), getText(t.step5Feat4, language)],
       color: "from-orange-500 to-orange-600"
     },
     {
       step: 6,
       icon: ScanBarcode,
-      titleAr: "إدارة المخزون",
-      titleEn: "Inventory Management",
-      descAr: "تتبع كل رولون في المستودع مع تحديثات فورية لكل عملية",
-      descEn: "Track each roll in warehouse with real-time updates for every operation",
-      featuresAr: ["جرد تلقائي", "تنبيهات النقص", "تحويل بين المستودعات", "تقارير لحظية"],
-      featuresEn: ["Auto inventory", "Low stock alerts", "Warehouse transfers", "Real-time reports"],
+      title: getText(t.step6Title, language),
+      desc: getText(t.step6Desc, language),
+      features: [getText(t.step6Feat1, language), getText(t.step6Feat2, language), getText(t.step6Feat3, language), getText(t.step6Feat4, language)],
       color: "from-pink-500 to-pink-600"
     },
     {
       step: 7,
       icon: Scissors,
-      titleAr: "عمليات القص والبيع",
-      titleEn: "Cutting & Sales",
-      descAr: "بيع الأقمشة بالمتر أو بالرولون مع تحديث تلقائي للمخزون",
-      descEn: "Sell fabrics by meter or roll with automatic inventory update",
-      featuresAr: ["قص بالمتر", "قص عينات", "حساب الباقي تلقائياً", "تحديث فوري للجرد"],
-      featuresEn: ["Cut by meter", "Sample cutting", "Auto remainder calculation", "Instant inventory update"],
+      title: getText(t.step7Title, language),
+      desc: getText(t.step7Desc, language),
+      features: [getText(t.step7Feat1, language), getText(t.step7Feat2, language), getText(t.step7Feat3, language), getText(t.step7Feat4, language)],
       color: "from-red-500 to-red-600"
     },
     {
       step: 8,
       icon: BarChart3,
-      titleAr: "التقارير والتحليلات",
-      titleEn: "Reports & Analytics",
-      descAr: "تقارير شاملة عن المبيعات والأرباح والمخزون وأداء الفريق",
-      descEn: "Comprehensive reports on sales, profits, inventory, and team performance",
-      featuresAr: ["Dashboard تفاعلي", "تقارير مخصصة", "تصدير Excel/PDF", "KPIs شاملة"],
-      featuresEn: ["Interactive Dashboard", "Custom reports", "Excel/PDF export", "Comprehensive KPIs"],
+      title: getText(t.step8Title, language),
+      desc: getText(t.step8Desc, language),
+      features: [getText(t.step8Feat1, language), getText(t.step8Feat2, language), getText(t.step8Feat3, language), getText(t.step8Feat4, language)],
       color: "from-indigo-500 to-indigo-600"
     }
   ];
@@ -125,31 +102,23 @@ function WorkflowContent() {
   const benefits = [
     {
       icon: Clock,
-      titleAr: "توفير الوقت",
-      titleEn: "Time Saving",
-      descAr: "تقليل الوقت اللازم لإدارة العمليات بنسبة 70%",
-      descEn: "Reduce operations management time by 70%"
+      title: getText(t.benefitTimeTitle, language),
+      desc: getText(t.benefitTimeDesc, language)
     },
     {
       icon: Shield,
-      titleAr: "دقة عالية",
-      titleEn: "High Accuracy",
-      descAr: "دقة 99.9% في تتبع المخزون والعمليات",
-      descEn: "99.9% accuracy in inventory and operations tracking"
+      title: getText(t.benefitAccuracyTitle, language),
+      desc: getText(t.benefitAccuracyDesc, language)
     },
     {
       icon: Eye,
-      titleAr: "رؤية شاملة",
-      titleEn: "Complete Visibility",
-      descAr: "متابعة كل شيء من لوحة تحكم واحدة",
-      descEn: "Monitor everything from a single dashboard"
+      title: getText(t.benefitVisibilityTitle, language),
+      desc: getText(t.benefitVisibilityDesc, language)
     },
     {
       icon: Zap,
-      titleAr: "سرعة فائقة",
-      titleEn: "Super Fast",
-      descAr: "تحديثات فورية Real-time لجميع العمليات",
-      descEn: "Real-time updates for all operations"
+      title: getText(t.benefitSpeedTitle, language),
+      desc: getText(t.benefitSpeedDesc, language)
     }
   ];
 
@@ -170,34 +139,28 @@ function WorkflowContent() {
             <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-texafab-emerald/10 border border-texafab-emerald/20 mb-8">
               <RefreshCcw className="w-4 h-4 text-texafab-emerald" />
               <span className="text-sm font-semibold text-texafab-emerald">
-                {language === "ar" ? "سير العمل المتكامل" : "Integrated Workflow"}
+                {getText(t.pageBadge, language)}
               </span>
             </div>
 
             <h1 className="text-4xl md:text-6xl font-black text-texafab-slate mb-6 leading-tight">
-              {language === "ar" ? (
-                <>من المصنع <span className="text-texafab-emerald">إلى العميل</span></>
-              ) : (
-                <>From Factory <span className="text-texafab-emerald">to Customer</span></>
-              )}
+              {getText(t.pageTitle1, language)} <span className="text-texafab-emerald">{getText(t.pageTitle2, language)}</span>
             </h1>
 
             <p className="text-xl text-gray-600 mb-8 leading-relaxed max-w-3xl mx-auto">
-              {language === "ar" 
-                ? "سير عمل متكامل يغطي جميع مراحل تجارة الأقمشة من حجز المواد من المصانع العالمية وحتى توصيلها للعميل النهائي"
-                : "Complete workflow covering all stages of fabric trading from booking materials from global factories to delivering to the final customer"}
+              {getText(t.pageSubtitle, language)}
             </p>
 
             <div className="flex flex-col sm:flex-row justify-center gap-4">
               <Link to="/contact">
                 <Button className="h-14 px-8 bg-texafab-emerald hover:bg-texafab-emerald/90 text-white text-base font-semibold rounded-xl shadow-lg shadow-texafab-emerald/25">
-                  {language === "ar" ? "احجز عرض توضيحي" : "Book a Demo"}
+                  {getText(t.ctaBook, language)}
                   <ArrowRight className={`w-5 h-5 ${dir === "rtl" ? "rotate-180 me-2" : "ms-2"}`} />
                 </Button>
               </Link>
               <Link to="/features">
                 <Button variant="outline" className="h-14 px-8 border-2 text-base font-semibold rounded-xl">
-                  {language === "ar" ? "استكشف الميزات" : "Explore Features"}
+                  {getText(t.ctaExplore, language)}
                 </Button>
               </Link>
             </div>
@@ -210,12 +173,10 @@ function WorkflowContent() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6">
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-bold text-texafab-slate mb-4">
-              {language === "ar" ? "مراحل سير العمل" : "Workflow Stages"}
+              {getText(t.sectionStagesTitle, language)}
             </h2>
             <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-              {language === "ar" 
-                ? "8 مراحل متكاملة تغطي كامل دورة حياة الأقمشة في شركتك"
-                : "8 integrated stages covering the complete fabric lifecycle in your company"}
+              {getText(t.sectionStagesDesc, language)}
             </p>
           </div>
 
@@ -238,15 +199,15 @@ function WorkflowContent() {
                     </div>
 
                     <h3 className="text-xl font-bold text-texafab-slate mb-2">
-                      {language === "ar" ? step.titleAr : step.titleEn}
+                      {step.title}
                     </h3>
 
                     <p className="text-gray-600 text-sm mb-4">
-                      {language === "ar" ? step.descAr : step.descEn}
+                      {step.desc}
                     </p>
 
                     <ul className="space-y-2">
-                      {(language === "ar" ? step.featuresAr : step.featuresEn).map((feature, i) => (
+                      {step.features.map((feature, i) => (
                         <li key={i} className="flex items-center gap-2 text-sm text-gray-600">
                           <CheckCircle2 className="w-4 h-4 text-texafab-emerald flex-shrink-0" />
                           <span>{feature}</span>
@@ -285,15 +246,15 @@ function WorkflowContent() {
                     </div>
 
                     <h3 className="text-xl font-bold text-texafab-slate mb-2">
-                      {language === "ar" ? step.titleAr : step.titleEn}
+                      {step.title}
                     </h3>
 
                     <p className="text-gray-600 text-sm mb-4">
-                      {language === "ar" ? step.descAr : step.descEn}
+                      {step.desc}
                     </p>
 
                     <ul className="space-y-2">
-                      {(language === "ar" ? step.featuresAr : step.featuresEn).map((feature, i) => (
+                      {step.features.map((feature, i) => (
                         <li key={i} className="flex items-center gap-2 text-sm text-gray-600">
                           <CheckCircle2 className="w-4 h-4 text-texafab-emerald flex-shrink-0" />
                           <span>{feature}</span>
@@ -320,12 +281,10 @@ function WorkflowContent() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6">
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
-              {language === "ar" ? "فوائد سير العمل المتكامل" : "Benefits of Integrated Workflow"}
+              {getText(t.sectionBenefitsTitle, language)}
             </h2>
             <p className="text-lg text-gray-300 max-w-2xl mx-auto">
-              {language === "ar" 
-                ? "نظام واحد يربط جميع عملياتك من البداية للنهاية"
-                : "One system connecting all your operations from start to finish"}
+              {getText(t.sectionBenefitsDesc, language)}
             </p>
           </div>
 
@@ -336,10 +295,10 @@ function WorkflowContent() {
                   <benefit.icon className="w-7 h-7 text-texafab-emerald" />
                 </div>
                 <h3 className="text-xl font-bold text-white mb-2">
-                  {language === "ar" ? benefit.titleAr : benefit.titleEn}
+                  {benefit.title}
                 </h3>
                 <p className="text-gray-300 text-sm">
-                  {language === "ar" ? benefit.descAr : benefit.descEn}
+                  {benefit.desc}
                 </p>
               </Card>
             ))}
@@ -352,12 +311,10 @@ function WorkflowContent() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6">
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-bold text-texafab-slate mb-4">
-              {language === "ar" ? "الصورة الكاملة" : "The Complete Picture"}
+              {getText(t.sectionVisualTitle, language)}
             </h2>
             <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-              {language === "ar" 
-                ? "نظرة شاملة على كيفية ربط جميع العمليات في نظام واحد متكامل"
-                : "A comprehensive view of how all operations connect in one integrated system"}
+              {getText(t.sectionVisualDesc, language)}
             </p>
           </div>
 
@@ -378,15 +335,15 @@ function WorkflowContent() {
                   <Factory className="w-10 h-10 text-white" />
                 </div>
                 <h3 className="text-xl font-bold text-texafab-slate mb-2">
-                  {language === "ar" ? "المصدر" : "Source"}
+                  {getText(t.visualSource, language)}
                 </h3>
                 <p className="text-gray-600 text-sm">
-                  {language === "ar" ? "المصانع العالمية" : "Global Factories"}
+                  {getText(t.visualFactories, language)}
                 </p>
                 <div className="mt-4 space-y-2 text-sm text-gray-500">
                   <div className="flex items-center justify-center gap-2">
                     <Globe className="w-4 h-4" />
-                    <span>{language === "ar" ? "الصين، تركيا، الهند" : "China, Turkey, India"}</span>
+                    <span>{getText(t.visualCountries, language)}</span>
                   </div>
                 </div>
               </div>
@@ -397,15 +354,15 @@ function WorkflowContent() {
                   <RefreshCcw className="w-10 h-10 text-white" />
                 </div>
                 <h3 className="text-xl font-bold text-texafab-slate mb-2">
-                  {language === "ar" ? "العمليات" : "Operations"}
+                  {getText(t.visualOperations, language)}
                 </h3>
                 <p className="text-gray-600 text-sm">
-                  {language === "ar" ? "نظام ERPMAX" : "ERPMAX System"}
+                  {getText(t.visualSystem, language)}
                 </p>
                 <div className="mt-4 space-y-2 text-sm text-gray-500">
                   <div className="flex items-center justify-center gap-2">
                     <Calculator className="w-4 h-4" />
-                    <span>{language === "ar" ? "إدارة متكاملة" : "Integrated Management"}</span>
+                    <span>{getText(t.visualManagement, language)}</span>
                   </div>
                 </div>
               </div>
@@ -416,15 +373,15 @@ function WorkflowContent() {
                   <Users className="w-10 h-10 text-white" />
                 </div>
                 <h3 className="text-xl font-bold text-texafab-slate mb-2">
-                  {language === "ar" ? "الوجهة" : "Destination"}
+                  {getText(t.visualDestination, language)}
                 </h3>
                 <p className="text-gray-600 text-sm">
-                  {language === "ar" ? "العملاء السعداء" : "Happy Customers"}
+                  {getText(t.visualCustomers, language)}
                 </p>
                 <div className="mt-4 space-y-2 text-sm text-gray-500">
                   <div className="flex items-center justify-center gap-2">
                     <Truck className="w-4 h-4" />
-                    <span>{language === "ar" ? "توصيل سريع" : "Fast Delivery"}</span>
+                    <span>{getText(t.visualDelivery, language)}</span>
                   </div>
                 </div>
               </div>

@@ -87,7 +87,7 @@ function EnterpriseLandingContent() {
     }
   ];
 
-  const texaflowAdvantages = [
+  const texaCoreAdvantages = [
     {
       icon: Globe,
       titleAr: "منصة موحدة واحدة",
@@ -323,7 +323,7 @@ function EnterpriseLandingContent() {
                         <Warehouse className="w-5 h-5 text-white" />
                       </div>
                       <div>
-                        <p className="font-bold text-slate-800">TexaFlow</p>
+                        <p className="font-bold text-slate-800">TexaCore</p>
                         <p className="text-xs text-slate-500">{language === "ar" ? "لوحة التحكم" : "Dashboard"}</p>
                       </div>
                     </div>
@@ -425,9 +425,9 @@ function EnterpriseLandingContent() {
             
             <h2 className="text-3xl md:text-5xl font-black text-slate-800 mb-4">
               {language === "ar" ? (
-                <>لماذا يختار القادة <span className="text-emerald-600">TexaFlow</span></>
+                <>لماذا يختار القادة <span className="text-emerald-600">TexaCore</span></>
               ) : (
-                <>Why Leaders Choose <span className="text-emerald-600">TexaFlow</span></>
+                <>Why Leaders Choose <span className="text-emerald-600">TexaCore</span></>
               )}
             </h2>
             <p className="text-xl text-slate-600 max-w-2xl mx-auto">
@@ -492,7 +492,7 @@ function EnterpriseLandingContent() {
               </div>
             </Card>
 
-            {/* TexaFlow Advantage Side */}
+            {/* TexaCore Advantage Side */}
             <Card className="p-8 border-2 border-emerald-100 bg-gradient-to-br from-emerald-50/50 to-white rounded-3xl relative overflow-hidden">
               <div className="absolute top-0 end-0 w-32 h-32 bg-emerald-100/50 rounded-full blur-3xl" />
               
@@ -503,7 +503,7 @@ function EnterpriseLandingContent() {
                   </div>
                   <div>
                     <h3 className="text-xl font-bold text-emerald-700">
-                      {language === "ar" ? "ميزة TexaFlow" : "The TexaFlow Advantage"}
+                      {language === "ar" ? "ميزة TexaCore" : "The TexaCore Advantage"}
                     </h3>
                     <p className="text-sm text-emerald-500">
                       {language === "ar" ? "الطريقة الذكية" : "The Smart Way"}
@@ -512,7 +512,7 @@ function EnterpriseLandingContent() {
                 </div>
 
                 <div className="space-y-4">
-                  {texaflowAdvantages.map((item, index) => (
+                  {texaCoreAdvantages.map((item, index) => (
                     <div key={index} className="flex items-start gap-4 p-4 bg-white/80 rounded-xl border border-emerald-100">
                       <div className="w-10 h-10 rounded-lg bg-emerald-100 flex items-center justify-center flex-shrink-0">
                         <item.icon className="w-5 h-5 text-emerald-600" />

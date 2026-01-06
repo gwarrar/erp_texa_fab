@@ -1,46 +1,39 @@
 import React from "react";
 import { useLanguage } from "./LanguageContext";
+import { getText, landingPageTranslations as t } from "@/lib/translations/pages";
 import { Shield, Award, Clock, Headphones, CheckCircle2, Building2, Cloud, Globe } from "lucide-react";
 
 export function Trust() {
-  const { t, language } = useLanguage();
+  const { language } = useLanguage();
 
   const benefits = [
     { 
-      nameAr: "نظام سحابي", 
-      nameEn: "Cloud Based", 
+      name: getText(t.cloudBased, language), 
       icon: Cloud, 
-      descAr: "الوصول من أي مكان", 
-      descEn: "Access from anywhere" 
+      desc: getText(t.cloudDesc, language) 
     },
     { 
-      nameAr: "دعم فني 24/7", 
-      nameEn: "24/7 Support", 
+      name: getText(t.support247, language), 
       icon: Headphones, 
-      descAr: "فريق دعم متاح دائماً", 
-      descEn: "Always available support" 
+      desc: getText(t.supportDesc, language) 
     },
     { 
-      nameAr: "تحديثات مستمرة", 
-      nameEn: "Regular Updates", 
+      name: getText(t.regularUpdates, language), 
       icon: Clock, 
-      descAr: "ميزات جديدة باستمرار", 
-      descEn: "New features constantly" 
+      desc: getText(t.updatesDesc, language) 
     },
     { 
-      nameAr: "آمن ومحمي", 
-      nameEn: "Secure & Protected", 
+      name: getText(t.secureProtected, language), 
       icon: Shield, 
-      descAr: "حماية بيانات متقدمة", 
-      descEn: "Advanced data protection" 
+      desc: getText(t.secureDesc, language) 
     },
   ];
 
   const stats = [
-    { value: "15+", labelAr: "سنة خبرة", labelEn: "Years Experience" },
-    { value: "200+", labelAr: "ميزة متقدمة", labelEn: "Advanced Features" },
-    { value: "5 دقائق", labelAr: "متوسط وقت الرد", labelEn: "Avg. Response Time" },
-    { value: "100%", labelAr: "رضا العملاء", labelEn: "Customer Satisfaction" },
+    { value: "15+", label: getText(t.yearsExperience, language) },
+    { value: "200+", label: getText(t.advancedFeatures, language) },
+    { value: "5 دقائق", label: getText(t.avgResponseTime, language) },
+    { value: "100%", label: getText(t.customerSatisfaction, language) },
   ];
 
   return (
@@ -53,16 +46,13 @@ export function Trust() {
         <div className="text-center mb-12">
           <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-texafab-emerald/10 text-texafab-emerald text-sm font-semibold mb-6">
             <Building2 className="w-4 h-4" />
-            {language === "ar" ? "لماذا ERPMAX؟" : "Why ERPMAX?"}
+            {getText(t.whyTexaCore, language)}
           </div>
           <h2 className="text-3xl md:text-4xl font-bold text-texafab-slate dark:text-white mb-4">
-            {language === "ar" ? "مميزات تجعلنا الخيار الأمثل" : "Features That Make Us the Best Choice"}
+            {getText(t.featuresBestChoice, language)}
           </h2>
           <p className="text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
-            {language === "ar" 
-              ? "نقدم لك نظام ERP متكامل مع دعم فني على مدار الساعة وتحديثات مستمرة"
-              : "We provide a complete ERP system with 24/7 support and continuous updates"
-            }
+            {getText(t.trustDesc, language)}
           </p>
         </div>
         
@@ -78,8 +68,8 @@ export function Trust() {
                 <div className="w-14 h-14 mx-auto mb-3 rounded-xl bg-gradient-to-br from-texafab-emerald/10 to-texafab-emerald/5 flex items-center justify-center group-hover:scale-110 group-hover:bg-texafab-emerald transition-all duration-300">
                   <Icon className="w-7 h-7 text-texafab-emerald group-hover:text-white transition-colors" />
                 </div>
-                <h3 className="font-bold text-texafab-slate dark:text-white mb-1 text-sm">{language === "ar" ? benefit.nameAr : benefit.nameEn}</h3>
-                <p className="text-xs text-gray-500 dark:text-gray-400">{language === "ar" ? benefit.descAr : benefit.descEn}</p>
+                <h3 className="font-bold text-texafab-slate dark:text-white mb-1 text-sm">{benefit.name}</h3>
+                <p className="text-xs text-gray-500 dark:text-gray-400">{benefit.desc}</p>
                 
                 {/* Check Badge */}
                 <div className="absolute top-2 right-2 w-5 h-5 rounded-full bg-green-100 flex items-center justify-center">
@@ -96,7 +86,7 @@ export function Trust() {
             {stats.map((stat, i) => (
               <div key={i} className="text-center relative">
                 <div className="text-3xl md:text-4xl font-black text-white mb-1">{stat.value}</div>
-                <div className="text-sm text-white/80 font-medium">{language === "ar" ? stat.labelAr : stat.labelEn}</div>
+                <div className="text-sm text-white/80 font-medium">{stat.label}</div>
                 {i < stats.length - 1 && (
                   <div className="hidden md:block absolute right-0 top-1/2 -translate-y-1/2 w-px h-12 bg-white/20" />
                 )}

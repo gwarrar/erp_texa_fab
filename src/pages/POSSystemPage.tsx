@@ -5,6 +5,7 @@ import { Header } from "@/components/landing/Header";
 import { Footer } from "@/components/landing/Footer";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
+import { getText, posPageTranslations as t } from "@/lib/translations/pages";
 import { BrowserMockup, LaptopMockup } from "@/components/landing/SystemScreenshots";
 import { 
   ShoppingCart,
@@ -38,65 +39,53 @@ function POSSystemContent() {
   const features = [
     {
       icon: ScanBarcode,
-      titleAr: "مسح الباركود السريع",
-      titleEn: "Fast Barcode Scanning",
-      descAr: "امسح باركود الرولون وستظهر كل المعلومات فوراً",
-      descEn: "Scan roll barcode and all information appears instantly",
+      title: getText(t.featureFastScan, language),
+      desc: getText(t.featureFastScanDesc, language),
       color: "from-blue-500 to-blue-600"
     },
     {
       icon: Ruler,
-      titleAr: "بيع بوحدات متعددة",
-      titleEn: "Sell in Multiple Units",
-      descAr: "بيع بالمتر، الياردة، الرولون الكامل، أو بالوزن",
-      descEn: "Sell by meter, yard, full roll, or by weight",
+      title: getText(t.featureMultiUnit, language),
+      desc: getText(t.featureMultiUnitDesc, language),
       color: "from-emerald-500 to-emerald-600"
     },
     {
       icon: Percent,
-      titleAr: "خصومات وعروض",
-      titleEn: "Discounts & Offers",
-      descAr: "تطبيق خصومات بنسبة أو مبلغ ثابت مع إدارة العروض",
-      descEn: "Apply percentage or fixed discounts with offers management",
+      title: getText(t.featureDiscounts, language),
+      desc: getText(t.featureDiscountsDesc, language),
       color: "from-orange-500 to-orange-600"
     },
     {
       icon: CreditCard,
-      titleAr: "طرق دفع متعددة",
-      titleEn: "Multiple Payment Methods",
-      descAr: "نقدي، بطاقة، تحويل، دفع لاحق، أو مختلط",
-      descEn: "Cash, card, transfer, credit, or mixed payment",
+      title: getText(t.featurePayment, language),
+      desc: getText(t.featurePaymentDesc, language),
       color: "from-purple-500 to-purple-600"
     },
     {
       icon: Printer,
-      titleAr: "طباعة فورية",
-      titleEn: "Instant Printing",
-      descAr: "طباعة فواتير وإيصالات بتصميم احترافي",
-      descEn: "Print invoices and receipts with professional design",
+      title: getText(t.featurePrinting, language),
+      desc: getText(t.featurePrintingDesc, language),
       color: "from-pink-500 to-pink-600"
     },
     {
       icon: RefreshCcw,
-      titleAr: "تحديث فوري للمخزون",
-      titleEn: "Real-time Inventory Update",
-      descAr: "المخزون يتحدث تلقائياً مع كل عملية بيع",
-      descEn: "Inventory updates automatically with every sale",
+      title: getText(t.featureInventory, language),
+      desc: getText(t.featureInventoryDesc, language),
       color: "from-cyan-500 to-cyan-600"
     }
   ];
 
   const devices = [
-    { icon: Monitor, labelAr: "كمبيوتر", labelEn: "Desktop" },
-    { icon: Tablet, labelAr: "تابلت", labelEn: "Tablet" },
-    { icon: Smartphone, labelAr: "موبايل", labelEn: "Mobile" }
+    { icon: Monitor, label: getText(t.deviceDesktop, language) },
+    { icon: Tablet, label: getText(t.deviceTablet, language) },
+    { icon: Smartphone, label: getText(t.deviceMobile, language) }
   ];
 
   const sampleInvoice = {
     items: [
-      { name: "قماش بوليستر - أزرق", qty: "15 م", price: "$37.50", barcode: "RF-001" },
-      { name: "قماش قطن - أبيض", qty: "8 م", price: "$24.00", barcode: "RF-002" },
-      { name: "قماش كتان - بيج", qty: "1 رولون", price: "$180.00", barcode: "RF-003" }
+      { name: "Polyester Fabric - Blue", qty: "15 m", price: "$37.50", barcode: "RF-001" },
+      { name: "Cotton Fabric - White", qty: "8 m", price: "$24.00", barcode: "RF-002" },
+      { name: "Linen Fabric - Beige", qty: "1 roll", price: "$180.00", barcode: "RF-003" }
     ],
     subtotal: "$241.50",
     discount: "-$24.15",
@@ -105,10 +94,10 @@ function POSSystemContent() {
   };
 
   const stats = [
-    { valueAr: "2 ثانية", valueEn: "2 Seconds", labelAr: "متوسط وقت المعاملة", labelEn: "Avg. Transaction Time" },
-    { valueAr: "99.9%", valueEn: "99.9%", labelAr: "دقة الجرد", labelEn: "Inventory Accuracy" },
-    { valueAr: "50%", valueEn: "50%", labelAr: "زيادة سرعة البيع", labelEn: "Sales Speed Increase" },
-    { valueAr: "0", valueEn: "0", labelAr: "أخطاء في الفواتير", labelEn: "Invoice Errors" }
+    { value: "2s", label: getText(t.statTransactionTime, language) },
+    { value: "99.9%", label: getText(t.statAccuracy, language) },
+    { value: "50%", label: getText(t.statSpeed, language) },
+    { value: "0", label: getText(t.statErrors, language) }
   ];
 
   return (
@@ -128,31 +117,25 @@ function POSSystemContent() {
               <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-emerald-500/10 border border-emerald-500/20 mb-6">
                 <ShoppingCart className="w-4 h-4 text-emerald-500" />
                 <span className="text-sm font-semibold text-emerald-600">
-                  {language === "ar" ? "نقاط البيع" : "Point of Sale"}
+                  {getText(t.pageTitle1, language)}
                 </span>
               </div>
 
               <h1 className="text-4xl md:text-5xl font-black text-texafab-slate mb-6 leading-tight">
-                {language === "ar" ? (
-                  <>نظام نقاط بيع <span className="text-emerald-500">متخصص للأقمشة</span></>
-                ) : (
-                  <>POS System <span className="text-emerald-500">Specialized for Fabrics</span></>
-                )}
+                {getText(t.pageTitle1, language)} <span className="text-emerald-500">{getText(t.pageTitle2, language)}</span>
               </h1>
 
               <p className="text-xl text-gray-600 mb-8 leading-relaxed">
-                {language === "ar" 
-                  ? "واجهة سريعة وسهلة الاستخدام مصممة خصيصاً لبيع الأقمشة بالمتر أو بالرولون مع تحديث فوري للمخزون"
-                  : "Fast and easy-to-use interface designed specifically for selling fabrics by meter or roll with real-time inventory updates"}
+                {getText(t.pageSubtitle, language)}
               </p>
 
               {/* Device Support */}
               <div className="flex items-center gap-6 mb-8">
-                <span className="text-sm text-gray-500">{language === "ar" ? "يعمل على:" : "Works on:"}</span>
+                <span className="text-sm text-gray-500">{getText(t.worksOn, language)}</span>
                 {devices.map((device, index) => (
                   <div key={index} className="flex items-center gap-2 text-gray-600">
                     <device.icon className="w-5 h-5" />
-                    <span className="text-sm">{language === "ar" ? device.labelAr : device.labelEn}</span>
+                    <span className="text-sm">{device.label}</span>
                   </div>
                 ))}
               </div>
@@ -160,7 +143,7 @@ function POSSystemContent() {
               <div className="flex flex-col sm:flex-row gap-4">
                 <Link to="/contact">
                   <Button className="h-14 px-8 bg-emerald-500 hover:bg-emerald-600 text-white text-base font-semibold rounded-xl shadow-lg shadow-emerald-500/25">
-                    {language === "ar" ? "طلب عرض توضيحي" : "Request Demo"}
+                    {getText(t.ctaRequest, language)}
                     <ArrowRight className={`w-5 h-5 ${dir === "rtl" ? "rotate-180 me-2" : "ms-2"}`} />
                   </Button>
                 </Link>
@@ -254,16 +237,14 @@ function POSSystemContent() {
             <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-blue-500/10 border border-blue-500/20 mb-6">
               <Monitor className="w-4 h-4 text-blue-500" />
               <span className="text-sm font-semibold text-blue-600">
-                {language === "ar" ? "واجهة البيع" : "Sales Interface"}
+                {getText(t.salesInterface, language)}
               </span>
             </div>
             <h2 className="text-3xl md:text-4xl font-bold text-texafab-slate dark:text-white mb-4">
-              {language === "ar" ? "لوحة المبيعات" : "Sales Dashboard"}
+              {getText(t.salesDashboard, language)}
             </h2>
             <p className="text-lg text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
-              {language === "ar" 
-                ? "تحليلات مبيعات تفصيلية لاتخاذ قرارات أفضل"
-                : "Detailed sales analytics for better decision making"}
+              {getText(t.salesDashboardDesc, language)}
             </p>
           </div>
 
@@ -271,11 +252,11 @@ function POSSystemContent() {
             <div className="group">
               <LaptopMockup 
                 src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=1200&q=90" 
-                alt={language === "ar" ? "لوحة المبيعات" : "Sales Dashboard"}
+                alt={getText(t.salesDashboard, language)}
                 className="transform group-hover:scale-[1.02] transition-transform duration-300"
               />
               <p className="mt-4 text-center font-medium text-gray-700 dark:text-gray-300">
-                {language === "ar" ? "لوحة تحليلات المبيعات الشاملة" : "Comprehensive Sales Analytics Dashboard"}
+                {getText(t.comprehensiveDashboard, language)}
               </p>
             </div>
           </div>
@@ -289,10 +270,10 @@ function POSSystemContent() {
             {stats.map((stat, index) => (
               <div key={index} className="text-center">
                 <p className="text-3xl md:text-4xl font-bold text-texafab-gold mb-2">
-                  {language === "ar" ? stat.valueAr : stat.valueEn}
+                  {stat.value}
                 </p>
                 <p className="text-sm text-gray-300">
-                  {language === "ar" ? stat.labelAr : stat.labelEn}
+                  {stat.label}
                 </p>
               </div>
             ))}
@@ -305,12 +286,10 @@ function POSSystemContent() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6">
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-bold text-texafab-slate mb-4">
-              {language === "ar" ? "مميزات نقاط البيع" : "POS Features"}
+              {getText(t.sectionPOSFeatures, language)}
             </h2>
             <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-              {language === "ar" 
-                ? "نظام متكامل يغطي كل احتياجات نقاط البيع لشركات الأقمشة"
-                : "Complete system covering all POS needs for fabric companies"}
+              {getText(t.sectionPOSFeaturesDesc, language)}
             </p>
           </div>
 
@@ -321,10 +300,10 @@ function POSSystemContent() {
                   <feature.icon className="w-7 h-7 text-white" />
                 </div>
                 <h3 className="text-xl font-bold text-texafab-slate mb-2">
-                  {language === "ar" ? feature.titleAr : feature.titleEn}
+                  {feature.title}
                 </h3>
                 <p className="text-gray-600">
-                  {language === "ar" ? feature.descAr : feature.descEn}
+                  {feature.desc}
                 </p>
               </Card>
             ))}
@@ -337,12 +316,10 @@ function POSSystemContent() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6">
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-bold text-texafab-slate mb-4">
-              {language === "ar" ? "مميزات خاصة بالأقمشة" : "Fabric-Specific Features"}
+              {getText(t.fabricFeatTitle, language)}
             </h2>
             <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-              {language === "ar" 
-                ? "ميزات فريدة صممت خصيصاً لتجارة الأقمشة"
-                : "Unique features designed specifically for fabric trading"}
+              {getText(t.fabricFeatDesc, language)}
             </p>
           </div>
 
@@ -353,25 +330,25 @@ function POSSystemContent() {
                 <Ruler className="w-7 h-7 text-white" />
               </div>
               <h3 className="text-xl font-bold text-texafab-slate mb-4">
-                {language === "ar" ? "البيع بالمتر" : "Sell by Meter"}
+                {getText(t.sellByMeter, language)}
               </h3>
               <div className="space-y-3">
                 <div className="p-3 bg-gray-50 rounded-xl">
                   <div className="flex justify-between items-center">
-                    <span className="text-gray-600">{language === "ar" ? "الرولون" : "Roll"}</span>
+                    <span className="text-gray-600">{getText(t.labelRoll, language)}</span>
                     <span className="font-medium">RF-2024-001</span>
                   </div>
                 </div>
                 <div className="p-3 bg-gray-50 rounded-xl">
                   <div className="flex justify-between items-center">
-                    <span className="text-gray-600">{language === "ar" ? "المتبقي" : "Remaining"}</span>
-                    <span className="font-medium text-emerald-500">73.5 م</span>
+                    <span className="text-gray-600">{getText(t.labelRemaining, language)}</span>
+                    <span className="font-medium text-emerald-500">73.5 {language === "ar" ? "م" : "m"}</span>
                   </div>
                 </div>
                 <div className="p-3 bg-blue-50 rounded-xl border border-blue-200">
                   <div className="flex justify-between items-center">
-                    <span className="text-blue-600">{language === "ar" ? "الكمية المطلوبة" : "Requested Qty"}</span>
-                    <span className="font-bold text-blue-600">15 م</span>
+                    <span className="text-blue-600">{getText(t.labelRequested, language)}</span>
+                    <span className="font-bold text-blue-600">15 {language === "ar" ? "م" : "m"}</span>
                   </div>
                 </div>
               </div>
@@ -383,16 +360,14 @@ function POSSystemContent() {
                 <Scissors className="w-7 h-7 text-white" />
               </div>
               <h3 className="text-xl font-bold text-texafab-slate mb-4">
-                {language === "ar" ? "قص سريع" : "Quick Cut"}
+                {getText(t.quickCut, language)}
               </h3>
               <p className="text-gray-600 mb-4">
-                {language === "ar" 
-                  ? "عند البيع بالمتر، يتم تسجيل عملية القص تلقائياً وتحديث المخزون فوراً"
-                  : "When selling by meter, the cut operation is recorded automatically and inventory updates instantly"}
+                {getText(t.quickCutDesc, language)}
               </p>
               <div className="flex items-center gap-2 text-sm text-emerald-600 bg-emerald-50 p-3 rounded-xl">
                 <RefreshCcw className="w-4 h-4" />
-                <span>{language === "ar" ? "تحديث فوري للمخزون" : "Real-time inventory update"}</span>
+                <span>{getText(t.realtimeUpdate, language)}</span>
               </div>
             </Card>
 
@@ -402,12 +377,10 @@ function POSSystemContent() {
                 <Tag className="w-7 h-7 text-white" />
               </div>
               <h3 className="text-xl font-bold text-texafab-slate mb-4">
-                {language === "ar" ? "البحث بالألوان" : "Search by Color"}
+                {getText(t.searchByColor, language)}
               </h3>
               <p className="text-gray-600 mb-4">
-                {language === "ar" 
-                  ? "ابحث عن الأقمشة المتوفرة حسب اللون أو الدرجة بسهولة"
-                  : "Easily search for available fabrics by color or grade"}
+                {getText(t.searchByColorDesc, language)}
               </p>
               <div className="flex gap-2 flex-wrap">
                 {["#2B4B6F", "#8B4513", "#228B22", "#DC143C", "#FFD700"].map((color, i) => (

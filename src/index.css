@@ -696,3 +696,39 @@
 .dark .bg-white\/5 {
   background-color: rgba(255, 255, 255, 0.05) !important;
 }
+
+/* RTL Support */
+[dir="rtl"] {
+  direction: rtl;
+  text-align: right;
+}
+
+[dir="rtl"] .text-left {
+  text-align: right;
+}
+
+[dir="rtl"] .text-right {
+  text-align: left;
+}
+
+.rtl {
+  direction: rtl;
+  text-align: right;
+}
+
+.rtl .text-left {
+  text-align: right;
+}
+
+.rtl .text-right {
+  text-align: left;
+}
+
+/* RTL flex adjustments */
+[dir="rtl"] .ms-auto {
+  margin-inline-start: auto;
+}
+
+[dir="rtl"] .me-auto {
+  margin-inline-end: auto;
+}

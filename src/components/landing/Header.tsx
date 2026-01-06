@@ -14,28 +14,28 @@ export function Header() {
   const [isSolutionsMenuOpen, setIsSolutionsMenuOpen] = useState(false);
   const [isThemeMenuOpen, setIsThemeMenuOpen] = useState(false);
 
-  const themeOptions: { value: Theme; labelAr: string; labelEn: string; icon: typeof Sun }[] = [
-    { value: "light", labelAr: "فاتح", labelEn: "Light", icon: Sun },
-    { value: "dark", labelAr: "داكن", labelEn: "Dark", icon: Moon },
-    { value: "system", labelAr: "تلقائي", labelEn: "Auto", icon: Monitor },
+  const themeOptions: { value: Theme; labelKey: string; icon: typeof Sun }[] = [
+    { value: "light", labelKey: "theme.light", icon: Sun },
+    { value: "dark", labelKey: "theme.dark", icon: Moon },
+    { value: "system", labelKey: "theme.auto", icon: Monitor },
   ];
 
   const solutionLinks = [
-    { href: "/container-tracking", labelAr: "تتبع الكونتينرات", labelEn: "Container Tracking", icon: Package },
-    { href: "/roll-management", labelAr: "إدارة الرولونات", labelEn: "Roll Management", icon: ScanBarcode },
-    { href: "/warehouse-management", labelAr: "إدارة المستودعات", labelEn: "Warehouse Management", icon: Warehouse },
-    { href: "/fabric-management", labelAr: "إدارة الأقمشة", labelEn: "Fabric Management", icon: Scissors },
-    { href: "/pos-system", labelAr: "نقاط البيع", labelEn: "POS System", icon: ShoppingCart },
-    { href: "/workflow-complete", labelAr: "سير العمل المتكامل", labelEn: "Complete Workflow", icon: RefreshCw },
-    { href: "/ecommerce", labelAr: "المتجر الإلكتروني", labelEn: "E-Commerce", icon: ShoppingBag },
-    { href: "/crm", labelAr: "إدارة العملاء CRM", labelEn: "CRM", icon: Heart },
-    { href: "/employee-management", labelAr: "إدارة الموظفين", labelEn: "Employee Management", icon: Users },
-    { href: "/accounting", labelAr: "المحاسبة والأرباح", labelEn: "Accounting & Profits", icon: Calculator },
-    { href: "/fabric-manufacturing", labelAr: "تصنيع الأقمشة", labelEn: "Fabric Manufacturing", icon: Factory },
-    { href: "/garment-manufacturing", labelAr: "تصنيع الألبسة", labelEn: "Garment Manufacturing", icon: Shirt },
-    { href: "/ai-analytics", labelAr: "الذكاء الاصطناعي", labelEn: "AI & Analytics", icon: Brain },
-    { href: "/reports-analytics", labelAr: "التقارير", labelEn: "Reports & Analytics", icon: BarChart3 },
-    { href: "/shipping", labelAr: "الشحن والتوصيل", labelEn: "Shipping & Delivery", icon: Truck },
+    { href: "/container-tracking", labelKey: "solutions.containerTracking", icon: Package },
+    { href: "/roll-management", labelKey: "solutions.rollManagement", icon: ScanBarcode },
+    { href: "/warehouse-management", labelKey: "solutions.warehouseManagement", icon: Warehouse },
+    { href: "/fabric-management", labelKey: "solutions.fabricManagement", icon: Scissors },
+    { href: "/pos-system", labelKey: "solutions.posSystem", icon: ShoppingCart },
+    { href: "/workflow-complete", labelKey: "solutions.completeWorkflow", icon: RefreshCw },
+    { href: "/ecommerce", labelKey: "solutions.ecommerce", icon: ShoppingBag },
+    { href: "/crm", labelKey: "solutions.crm", icon: Heart },
+    { href: "/employee-management", labelKey: "solutions.employeeManagement", icon: Users },
+    { href: "/accounting", labelKey: "solutions.accounting", icon: Calculator },
+    { href: "/fabric-manufacturing", labelKey: "solutions.fabricManufacturing", icon: Factory },
+    { href: "/garment-manufacturing", labelKey: "solutions.garmentManufacturing", icon: Shirt },
+    { href: "/ai-analytics", labelKey: "solutions.aiAnalytics", icon: Brain },
+    { href: "/reports-analytics", labelKey: "solutions.reportsAnalytics", icon: BarChart3 },
+    { href: "/shipping", labelKey: "solutions.shipping", icon: Truck },
   ];
 
   useEffect(() => {
@@ -75,7 +75,7 @@ export function Header() {
   };
 
   return (
-    <header className={`fixed top-0 start-0 end-0 z-40 transition-all duration-500 ${
+    <header className={`fixed top-0 left-0 right-0 z-40 transition-all duration-500 ${
       isScrolled 
         ? "bg-white/95 dark:bg-gray-900/95 backdrop-blur-xl shadow-lg shadow-gray-900/5 dark:shadow-black/20 border-b border-gray-100 dark:border-gray-800" 
         : "bg-transparent"
@@ -85,41 +85,75 @@ export function Header() {
           {/* Logo */}
           <Link to="/" onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })} className="flex items-center gap-3">
             <div className="relative group">
-              <div className="w-10 h-10 bg-gradient-to-br from-texafab-emerald to-teal-600 rounded-xl flex items-center justify-center shadow-lg shadow-texafab-emerald/20 group-hover:shadow-texafab-emerald/40 transition-shadow">
-                <span className="text-white font-black text-xl">E</span>
-              </div>
+              {/* TexaCore Logo - Hexagon with Thread */}
+              <svg width="44" height="44" viewBox="0 0 44 44" className="drop-shadow-lg group-hover:drop-shadow-xl transition-all">
+                {/* Hexagon Background */}
+                <defs>
+                  <linearGradient id="hexGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                    <stop offset="0%" stopColor="#047857" />
+                    <stop offset="100%" stopColor="#0d9488" />
+                  </linearGradient>
+                  <linearGradient id="threadGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                    <stop offset="0%" stopColor="#d97706" />
+                    <stop offset="100%" stopColor="#f59e0b" />
+                  </linearGradient>
+                </defs>
+                {/* Hexagon Shape */}
+                <polygon 
+                  points="22,2 40,12 40,32 22,42 4,32 4,12" 
+                  fill="url(#hexGradient)"
+                  className="group-hover:filter group-hover:brightness-110 transition-all"
+                />
+                {/* Thread/Fabric Wave */}
+                <path 
+                  d="M12,22 Q17,14 22,22 T32,22" 
+                  stroke="url(#threadGradient)" 
+                  strokeWidth="3" 
+                  fill="none" 
+                  strokeLinecap="round"
+                />
+                {/* Core Dot */}
+                <circle cx="22" cy="22" r="4" fill="white" opacity="0.95"/>
+              </svg>
               <div className="absolute -inset-1 bg-texafab-emerald/20 rounded-xl blur-lg opacity-0 group-hover:opacity-100 transition-opacity" />
             </div>
             <div className="flex flex-col">
-              <div className="flex items-baseline">
-                <span className="text-xl font-black text-texafab-emerald tracking-tight">ERP</span>
-                <span className="text-xl font-black text-texafab-gold tracking-tight">MAX</span>
-              </div>
-              <span className="text-[10px] text-gray-400 font-medium tracking-wide">{language === "ar" ? "جودة تستحق الثقة" : "Quality You Can Trust"}</span>
+              {dir === "rtl" ? (
+                <div className="flex items-baseline">
+                  <span className="text-xl font-black text-texafab-gold tracking-tight">Core</span>
+                  <span className="text-xl font-black text-texafab-emerald tracking-tight">Texa</span>
+                </div>
+              ) : (
+                <div className="flex items-baseline">
+                  <span className="text-xl font-black text-texafab-emerald tracking-tight">Texa</span>
+                  <span className="text-xl font-black text-texafab-gold tracking-tight">Core</span>
+                </div>
+              )}
+              <span className="text-[9px] sm:text-[10px] text-gray-400 font-medium tracking-wide whitespace-nowrap max-w-[100px] sm:max-w-none overflow-hidden text-ellipsis">{t("hero.tagline")}</span>
             </div>
           </Link>
 
           {/* Desktop Navigation */}
-          <nav className="hidden lg:flex items-center gap-1">
+          <nav className="hidden lg:flex items-center gap-0.5 xl:gap-1">
             <Link 
               to="/features" 
-              className="relative px-4 py-2 text-sm font-medium text-gray-600 dark:text-gray-300 hover:text-texafab-emerald dark:hover:text-texafab-teal transition-colors group"
+              className="relative px-2 xl:px-4 py-2 text-xs xl:text-sm font-medium text-gray-600 dark:text-gray-300 hover:text-texafab-emerald dark:hover:text-texafab-teal transition-colors group whitespace-nowrap"
             >
-              {language === "ar" ? "الميزات" : "Features"}
+              {t("nav.features")}
               <span className="absolute bottom-0 left-1/2 -translate-x-1/2 w-0 h-0.5 bg-texafab-emerald rounded-full group-hover:w-6 transition-all duration-300" />
             </Link>
             <Link 
               to="/comparison" 
-              className="relative px-4 py-2 text-sm font-medium text-gray-600 dark:text-gray-300 hover:text-texafab-emerald dark:hover:text-texafab-teal transition-colors group"
+              className="relative px-2 xl:px-4 py-2 text-xs xl:text-sm font-medium text-gray-600 dark:text-gray-300 hover:text-texafab-emerald dark:hover:text-texafab-teal transition-colors group whitespace-nowrap"
             >
-              {language === "ar" ? "لماذا TexaFab؟" : "Why TexaFab?"}
+              {t("nav.whyTexaCore")}
               <span className="absolute bottom-0 left-1/2 -translate-x-1/2 w-0 h-0.5 bg-texafab-emerald rounded-full group-hover:w-6 transition-all duration-300" />
             </Link>
             <Link 
               to="/workflow" 
-              className="relative px-4 py-2 text-sm font-medium text-gray-600 dark:text-gray-300 hover:text-texafab-emerald dark:hover:text-texafab-teal transition-colors group"
+              className="relative px-2 xl:px-4 py-2 text-xs xl:text-sm font-medium text-gray-600 dark:text-gray-300 hover:text-texafab-emerald dark:hover:text-texafab-teal transition-colors group whitespace-nowrap"
             >
-              {language === "ar" ? "سير العمل" : "Workflow"}
+              {t("nav.workflow")}
               <span className="absolute bottom-0 left-1/2 -translate-x-1/2 w-0 h-0.5 bg-texafab-emerald rounded-full group-hover:w-6 transition-all duration-300" />
             </Link>
             
@@ -127,9 +161,9 @@ export function Header() {
             <div className="relative solutions-dropdown">
               <button
                 onClick={() => setIsSolutionsMenuOpen(!isSolutionsMenuOpen)}
-                className="solutions-trigger relative px-4 py-2 text-sm font-medium text-gray-600 dark:text-gray-300 hover:text-texafab-emerald dark:hover:text-texafab-teal transition-colors group flex items-center gap-1"
+                className="solutions-trigger relative px-2 xl:px-4 py-2 text-xs xl:text-sm font-medium text-gray-600 dark:text-gray-300 hover:text-texafab-emerald dark:hover:text-texafab-teal transition-colors group flex items-center gap-1 whitespace-nowrap"
               >
-                {language === "ar" ? "الحلول" : "Solutions"}
+                {t("nav.solutions")}
                 <ChevronDown className={`w-3 h-3 transition-transform ${isSolutionsMenuOpen ? "rotate-180" : ""}`} />
               </button>
               
@@ -142,7 +176,7 @@ export function Header() {
                     className="flex items-center gap-3 px-4 py-3 text-texafab-emerald dark:text-texafab-teal bg-texafab-emerald/5 dark:bg-texafab-teal/10 border-b border-gray-100 dark:border-gray-700 mb-2"
                   >
                     <ChevronRight className="w-4 h-4" />
-                    <span className="text-sm font-bold">{language === "ar" ? "عرض جميع الحلول" : "View All Solutions"}</span>
+                    <span className="text-sm font-bold">{t("nav.viewAllSolutions")}</span>
                   </Link>
                   {solutionLinks.map((link, index) => (
                     <Link
@@ -152,7 +186,7 @@ export function Header() {
                       className="flex items-center gap-3 px-4 py-2.5 text-gray-600 dark:text-gray-300 hover:text-texafab-emerald dark:hover:text-texafab-teal hover:bg-texafab-emerald/5 dark:hover:bg-texafab-teal/10 transition-colors"
                     >
                       <link.icon className="w-4 h-4" />
-                      <span className="text-sm font-medium">{language === "ar" ? link.labelAr : link.labelEn}</span>
+                      <span className="text-sm font-medium">{t(link.labelKey)}</span>
                     </Link>
                   ))}
                 </div>
@@ -161,16 +195,16 @@ export function Header() {
 
             <Link 
               to="/pricing" 
-              className="relative px-4 py-2 text-sm font-medium text-gray-600 dark:text-gray-300 hover:text-texafab-emerald dark:hover:text-texafab-teal transition-colors group"
+              className="relative px-2 xl:px-4 py-2 text-xs xl:text-sm font-medium text-gray-600 dark:text-gray-300 hover:text-texafab-emerald dark:hover:text-texafab-teal transition-colors group whitespace-nowrap"
             >
-              {language === "ar" ? "الأسعار" : "Pricing"}
+              {t("nav.pricing")}
               <span className="absolute bottom-0 left-1/2 -translate-x-1/2 w-0 h-0.5 bg-texafab-emerald rounded-full group-hover:w-6 transition-all duration-300" />
             </Link>
             <Link 
               to="/contact" 
-              className="relative px-4 py-2 text-sm font-medium text-gray-600 dark:text-gray-300 hover:text-texafab-emerald dark:hover:text-texafab-teal transition-colors group"
+              className="relative px-2 xl:px-4 py-2 text-xs xl:text-sm font-medium text-gray-600 dark:text-gray-300 hover:text-texafab-emerald dark:hover:text-texafab-teal transition-colors group whitespace-nowrap"
             >
-              {language === "ar" ? "تواصل معنا" : "Contact"}
+              {t("nav.contact")}
               <span className="absolute bottom-0 left-1/2 -translate-x-1/2 w-0 h-0.5 bg-texafab-emerald rounded-full group-hover:w-6 transition-all duration-300" />
             </Link>
           </nav>
@@ -230,7 +264,7 @@ export function Header() {
                       }`}
                     >
                       <option.icon className="w-4 h-4" />
-                      {language === "ar" ? option.labelAr : option.labelEn}
+                      {t(option.labelKey)}
                     </button>
                   ))}
                 </div>
@@ -240,13 +274,13 @@ export function Header() {
             {/* Login Button */}
             <Link to="/login">
               <Button variant="ghost" className="hidden sm:flex h-10 px-4 text-gray-600 dark:text-gray-300 hover:text-texafab-emerald dark:hover:text-texafab-teal font-medium">
-                {language === "ar" ? "تسجيل الدخول" : "Sign In"}
+                {t("nav.signIn")}
               </Button>
             </Link>
             
             <Link to="/register">
               <Button className="hidden sm:flex h-10 px-6 bg-gradient-to-r from-texafab-emerald to-texafab-emerald/90 hover:from-texafab-emerald/90 hover:to-texafab-emerald text-white font-semibold shadow-lg shadow-texafab-emerald/20 hover:shadow-texafab-emerald/30 transition-all rounded-full">
-                {language === "ar" ? "ابدأ مجاناً" : "Start Free"}
+                {t("nav.startFree")}
                 <ChevronRight className="w-4 h-4 ms-1" />
               </Button>
             </Link>
@@ -270,17 +304,17 @@ export function Header() {
       }`}>
         <div className="container mx-auto px-4 py-6 space-y-2">
           {[
-            { href: "/features", label: language === "ar" ? "الميزات" : "Features" },
-            { href: "/comparison", label: language === "ar" ? "لماذا TexaFab؟" : "Why TexaFab?" },
-            { href: "/workflow", label: language === "ar" ? "سير العمل" : "Workflow" },
-            { href: "/container-tracking", label: language === "ar" ? "تتبع الكونتينرات" : "Container Tracking" },
-            { href: "/roll-management", label: language === "ar" ? "إدارة الرولونات" : "Roll Management" },
-            { href: "/pos-system", label: language === "ar" ? "نقاط البيع" : "POS System" },
-            { href: "/agents-dealers", label: language === "ar" ? "الوكلاء" : "Agents & Dealers" },
-            { href: "/reports-analytics", label: language === "ar" ? "التقارير" : "Reports" },
-            { href: "/shipping", label: language === "ar" ? "الشحن والتوصيل" : "Shipping" },
-            { href: "/pricing", label: language === "ar" ? "الأسعار" : "Pricing" },
-            { href: "/contact", label: language === "ar" ? "تواصل معنا" : "Contact" },
+            { href: "/features", labelKey: "nav.features" },
+            { href: "/comparison", labelKey: "nav.whyTexaCore" },
+            { href: "/workflow", labelKey: "nav.workflow" },
+            { href: "/container-tracking", labelKey: "solutions.containerTracking" },
+            { href: "/roll-management", labelKey: "solutions.rollManagement" },
+            { href: "/pos-system", labelKey: "solutions.posSystem" },
+            { href: "/agents-dealers", labelKey: "solutions.agentsDealers" },
+            { href: "/reports-analytics", labelKey: "solutions.reportsAnalytics" },
+            { href: "/shipping", labelKey: "solutions.shipping" },
+            { href: "/pricing", labelKey: "nav.pricing" },
+            { href: "/contact", labelKey: "nav.contact" },
           ].map((item) => (
             <Link 
               key={item.href}
@@ -288,11 +322,11 @@ export function Header() {
               className="block px-4 py-3 text-gray-600 dark:text-gray-300 hover:text-texafab-emerald dark:hover:text-texafab-teal hover:bg-texafab-emerald/5 dark:hover:bg-texafab-teal/10 rounded-xl font-medium transition-colors"
               onClick={() => setIsMobileMenuOpen(false)}
             >
-              {item.label}
+              {t(item.labelKey)}
             </Link>
           ))}
           <div className="pt-4 border-t border-gray-100 dark:border-gray-700 space-y-3">
-            <p className="text-sm text-gray-500 dark:text-gray-400 px-2">{t("nav.contact") === "تواصل معنا" ? "اختر اللغة" : "Select Language"}</p>
+            <p className="text-sm text-gray-500 dark:text-gray-400 px-2">{t("nav.selectLanguage")}</p>
             <div className="grid grid-cols-2 gap-2">
               {(Object.keys(languageNames) as Language[]).map((lang) => (
                 <Button
@@ -312,7 +346,7 @@ export function Header() {
             
             {/* Theme Toggle for Mobile */}
             <div className="mt-4 pt-4 border-t border-gray-100 dark:border-gray-700">
-              <p className="text-sm text-gray-500 dark:text-gray-400 px-2 mb-2">{language === "ar" ? "اختر المظهر" : "Select Theme"}</p>
+              <p className="text-sm text-gray-500 dark:text-gray-400 px-2 mb-2">{t("nav.selectTheme")}</p>
               <div className="grid grid-cols-3 gap-2">
                 {themeOptions.map((option) => (
                   <Button
@@ -325,7 +359,7 @@ export function Header() {
                     className={`justify-center ${theme === option.value ? "bg-texafab-emerald hover:bg-texafab-emerald/90" : ""}`}
                   >
                     <option.icon className="w-4 h-4 me-1" />
-                    {language === "ar" ? option.labelAr : option.labelEn}
+                    {t(option.labelKey)}
                   </Button>
                 ))}
               </div>
@@ -334,12 +368,12 @@ export function Header() {
             <div className="flex gap-2 mt-4">
               <Link to="/login" onClick={() => setIsMobileMenuOpen(false)} className="flex-1">
                 <Button variant="outline" className="w-full border-texafab-emerald text-texafab-emerald">
-                  {language === "ar" ? "تسجيل الدخول" : "Sign In"}
+                  {t("nav.signIn")}
                 </Button>
               </Link>
               <Link to="/register" onClick={() => setIsMobileMenuOpen(false)} className="flex-1">
                 <Button className="w-full bg-texafab-emerald hover:bg-texafab-emerald/90 text-white">
-                  {language === "ar" ? "ابدأ مجاناً" : "Start Free"}
+                  {t("nav.startFree")}
                 </Button>
               </Link>
             </div>

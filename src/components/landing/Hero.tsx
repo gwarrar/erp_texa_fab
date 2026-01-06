@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { useLanguage } from "./LanguageContext";
+import { getText, landingPageTranslations as t } from "@/lib/translations/pages";
 import { Button } from "@/components/ui/button";
 import { 
   ArrowRight, 
@@ -22,23 +23,23 @@ import {
 import { TrialSignupModal } from "./TrialSignupModal";
 
 export function Hero() {
-  const { t, dir, language } = useLanguage();
+  const { dir, language } = useLanguage();
   const [isTrialModalOpen, setIsTrialModalOpen] = useState(false);
 
   const stats = [
-    { value: "500+", label: language === "ar" ? "شركة أقمشة" : "Fabric Companies" },
-    { value: "10M+", label: language === "ar" ? "رولون متتبع" : "Rolls Tracked" },
-    { value: "50+", label: language === "ar" ? "دولة" : "Countries" },
-    { value: "#1", label: language === "ar" ? "في صناعة الأقمشة" : "In Fabric Industry" },
+    { value: "500+", label: getText(t.statCompanies, language) },
+    { value: "10M+", label: getText(t.statRolls, language) },
+    { value: "50+", label: getText(t.statCountries, language) },
+    { value: "#1", label: getText(t.statIndustry, language) },
   ];
 
   const features = [
-    { icon: Ruler, label: language === "ar" ? "الأمتار" : "Meters" },
-    { icon: Package, label: language === "ar" ? "الرولونات" : "Rolls" },
-    { icon: Palette, label: language === "ar" ? "الألوان" : "Colors" },
-    { icon: Scissors, label: language === "ar" ? "القص" : "Cutting" },
-    { icon: Warehouse, label: language === "ar" ? "المستودعات" : "Warehouses" },
-    { icon: Calculator, label: language === "ar" ? "المحاسبة" : "Accounting" },
+    { icon: Ruler, label: getText(t.featureMeters, language) },
+    { icon: Package, label: getText(t.featureRolls, language) },
+    { icon: Palette, label: getText(t.featureColors, language) },
+    { icon: Scissors, label: getText(t.featureCutting, language) },
+    { icon: Warehouse, label: getText(t.featureWarehouses, language) },
+    { icon: Calculator, label: getText(t.featureAccounting, language) },
   ];
 
   return (
@@ -56,7 +57,7 @@ export function Hero() {
       <div className="container mx-auto px-4 relative z-10">
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
           {/* Content Side */}
-          <div className={`space-y-8 ${dir === "rtl" ? "lg:order-1" : ""}`}>
+          <div className={`space-y-8 min-h-[400px] ${dir === "rtl" ? "lg:order-1" : ""}`}>
             {/* Badge */}
             <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-gradient-to-r from-texafab-emerald/10 to-texafab-gold/10 border border-texafab-emerald/20 backdrop-blur-sm">
               <span className="relative flex h-2.5 w-2.5">
@@ -64,24 +65,21 @@ export function Hero() {
                 <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-texafab-emerald"></span>
               </span>
               <span className="text-texafab-emerald font-semibold text-sm">
-                {language === "ar" ? "الاختيار الأول في أوروبا والخليج" : "First Choice in Europe & Gulf"}
+                {getText(t.badge, language)}
               </span>
               <Sparkles className="w-4 h-4 text-texafab-gold" />
             </div>
             
             {/* Main Headline */}
-            <div className="space-y-4">
+            <div className="space-y-4 min-h-[180px]">
               <h1 className="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-black text-texafab-slate dark:text-white leading-[1.1] tracking-tight">
-                {language === "ar" ? (
+                {getText(t.heroTitle, language).split(" ").length > 4 ? (
                   <>
-                    <span className="block">أول نظام ERP</span>
-                    <span className="block text-texafab-emerald">متخصص للأقمشة</span>
+                    <span className="block">{getText(t.heroTitle, language).split(" ").slice(0, Math.ceil(getText(t.heroTitle, language).split(" ").length / 2)).join(" ")}</span>
+                    <span className="block text-texafab-emerald">{getText(t.heroTitle, language).split(" ").slice(Math.ceil(getText(t.heroTitle, language).split(" ").length / 2)).join(" ")}</span>
                   </>
                 ) : (
-                  <>
-                    <span className="block">First ERP System</span>
-                    <span className="block text-texafab-emerald">For Fabric Industry</span>
-                  </>
+                  <span className="text-texafab-emerald">{getText(t.heroTitle, language)}</span>
                 )}
               </h1>
               
@@ -89,10 +87,7 @@ export function Hero() {
             </div>
 
             <p className="text-lg sm:text-xl text-gray-600 dark:text-gray-300 max-w-lg leading-relaxed">
-              {language === "ar" 
-                ? "النظام الأول عالمياً المصمم خصيصاً لشركات الأقمشة. يدعم المتر، الرولون، الألوان، القص، وكل ما تحتاجه لإدارة تجارة الأقمشة بدقة متناهية."
-                : "The world's first system designed specifically for fabric companies. Supports meters, rolls, colors, cutting, and everything you need to manage fabric trade with precision."
-              }
+              {getText(t.heroSubtitle, language)}
             </p>
 
             {/* Feature Pills */}
@@ -114,13 +109,13 @@ export function Hero() {
                 onClick={() => setIsTrialModalOpen(true)}
                 className="group h-14 px-8 bg-texafab-emerald hover:bg-texafab-emerald/90 text-white text-base font-semibold shadow-lg shadow-texafab-emerald/25 hover:shadow-xl hover:shadow-texafab-emerald/30 transition-all duration-300 rounded-xl"
               >
-                {language === "ar" ? "ابدأ مجاناً" : "Start Free Trial"}
+                {getText(t.ctaDemo, language)}
                 <ArrowRight className={`w-5 h-5 transition-transform group-hover:translate-x-1 ${dir === "rtl" ? "rotate-180 me-2" : "ms-2"}`} />
               </Button>
               <Link to="/features">
                 <Button variant="outline" className="group h-14 px-8 border-2 border-gray-200 dark:border-gray-700 text-texafab-slate dark:text-white hover:bg-gray-50 dark:hover:bg-gray-800 text-base font-semibold transition-all duration-300 rounded-xl">
                   <Play className="w-5 h-5 me-2 fill-texafab-gold text-texafab-gold" />
-                  {language === "ar" ? "شاهد العرض" : "Watch Demo"}
+                  {getText(t.ctaTrial, language)}
                 </Button>
               </Link>
             </div>
@@ -129,15 +124,15 @@ export function Hero() {
             <div className="flex flex-wrap items-center gap-4 sm:gap-6 pt-4 text-sm text-gray-500 dark:text-gray-400">
               <div className="flex items-center gap-2">
                 <CheckCircle2 className="w-4 h-4 text-texafab-emerald" />
-                <span>{language === "ar" ? "بدون بطاقة ائتمان" : "No credit card"}</span>
+                <span>{getText(t.noCreditCard, language)}</span>
               </div>
               <div className="flex items-center gap-2">
                 <CheckCircle2 className="w-4 h-4 text-texafab-emerald" />
-                <span>{language === "ar" ? "إعداد سريع" : "Quick setup"}</span>
+                <span>{getText(t.quickSetup, language)}</span>
               </div>
               <div className="flex items-center gap-2">
                 <CheckCircle2 className="w-4 h-4 text-texafab-emerald" />
-                <span>{language === "ar" ? "دعم عربي" : "Arabic support"}</span>
+                <span>{getText(t.arabicSupport, language)}</span>
               </div>
             </div>
           </div>
@@ -156,7 +151,7 @@ export function Hero() {
                   </div>
                   <div className="flex-1 mx-4">
                     <div className="h-6 bg-white dark:bg-gray-800 rounded-md border border-gray-200 dark:border-gray-600 flex items-center px-3">
-                      <span className="text-xs text-gray-400">erpmax.app</span>
+                      <span className="text-xs text-gray-400">texacore.app</span>
                     </div>
                   </div>
                 </div>
@@ -166,10 +161,10 @@ export function Hero() {
                   {/* Stats Row */}
                   <div className="grid grid-cols-4 gap-2 sm:gap-3 mb-4">
                     {[
-                      { label: language === "ar" ? "الإيرادات" : "Revenue", value: "$124,500", change: "+12.5%", color: "text-green-600", bg: "bg-green-50" },
-                      { label: language === "ar" ? "المصاريف" : "Expenses", value: "$45,200", change: "-2.4%", color: "text-red-500", bg: "bg-red-50" },
-                      { label: language === "ar" ? "الربح" : "Profit", value: "$79,300", change: "+8.2%", color: "text-green-600", bg: "bg-green-50" },
-                      { label: language === "ar" ? "التدفق" : "Cash", value: "$32,000", change: "+5.1%", color: "text-green-600", bg: "bg-green-50" },
+                      { label: getText(t.revenue, language), value: "$124,500", change: "+12.5%", color: "text-green-600", bg: "bg-green-50" },
+                      { label: getText(t.expenses, language), value: "$45,200", change: "-2.4%", color: "text-red-500", bg: "bg-red-50" },
+                      { label: getText(t.profit, language), value: "$79,300", change: "+8.2%", color: "text-green-600", bg: "bg-green-50" },
+                      { label: getText(t.cash, language), value: "$32,000", change: "+5.1%", color: "text-green-600", bg: "bg-green-50" },
                     ].map((stat, i) => (
                       <div key={i} className="bg-white dark:bg-gray-700 rounded-xl p-3 border border-gray-100 dark:border-gray-600 hover:shadow-md transition-shadow">
                         <div className="text-[10px] text-gray-500 dark:text-gray-400 mb-1">{stat.label}</div>
@@ -183,7 +178,7 @@ export function Hero() {
                   <div className="grid grid-cols-2 gap-3">
                     <div className="bg-white dark:bg-gray-700 rounded-xl p-4 border border-gray-100 dark:border-gray-600">
                       <div className="flex items-center justify-between mb-3">
-                        <span className="text-xs font-semibold text-gray-700 dark:text-gray-200">{language === "ar" ? "التدفق النقدي" : "Cash Flow"}</span>
+                        <span className="text-xs font-semibold text-gray-700 dark:text-gray-200">{getText(t.cashFlow, language)}</span>
                         <BarChart3 className="w-4 h-4 text-texafab-emerald dark:text-texafab-teal" />
                       </div>
                       <div className="flex items-end gap-1 h-20">
@@ -194,25 +189,25 @@ export function Hero() {
                     </div>
                     <div className="bg-white dark:bg-gray-700 rounded-xl p-4 border border-gray-100 dark:border-gray-600">
                       <div className="flex items-center justify-between mb-3">
-                        <span className="text-xs font-semibold text-gray-700 dark:text-gray-200">{language === "ar" ? "الطلبات" : "Orders"}</span>
+                        <span className="text-xs font-semibold text-gray-700 dark:text-gray-200">{getText(t.orders, language)}</span>
                         <ShoppingCart className="w-4 h-4 text-texafab-gold" />
                       </div>
                       <div className="text-2xl sm:text-3xl font-black text-texafab-slate dark:text-white">2,847</div>
                       <div className="flex items-center gap-1 text-green-600 text-xs mt-1 font-medium">
                         <TrendingUp className="w-3 h-3" />
-                        <span>+23% {language === "ar" ? "هذا الشهر" : "this month"}</span>
+                        <span>+23% {getText(t.thisMonth, language)}</span>
                       </div>
                     </div>
                   </div>
 
                   {/* Mini Table */}
                   <div className="mt-3 bg-white dark:bg-gray-700 rounded-xl p-3 border border-gray-100 dark:border-gray-600">
-                    <div className="text-xs font-semibold text-gray-700 dark:text-gray-200 mb-2">{language === "ar" ? "أحدث الطلبات" : "Recent Orders"}</div>
+                    <div className="text-xs font-semibold text-gray-700 dark:text-gray-200 mb-2">{getText(t.recentOrders, language)}</div>
                     <div className="space-y-2">
                       {[
-                        { id: "PO-2024-0125", status: language === "ar" ? "قيد الانتظار" : "Pending", amount: "SAR 15,800", statusColor: "bg-yellow-100 text-yellow-700" },
-                        { id: "PO-2024-0124", status: language === "ar" ? "معتمد" : "Approved", amount: "SAR 28,500", statusColor: "bg-green-100 text-green-700" },
-                        { id: "PO-2024-0123", status: language === "ar" ? "مكتمل" : "Completed", amount: "SAR 42,300", statusColor: "bg-blue-100 text-blue-700" },
+                        { id: "PO-2024-0125", status: getText(t.orderPending, language), amount: "SAR 15,800", statusColor: "bg-yellow-100 text-yellow-700" },
+                        { id: "PO-2024-0124", status: getText(t.orderApproved, language), amount: "SAR 28,500", statusColor: "bg-green-100 text-green-700" },
+                        { id: "PO-2024-0123", status: getText(t.orderCompleted, language), amount: "SAR 42,300", statusColor: "bg-blue-100 text-blue-700" },
                       ].map((order, i) => (
                         <div key={i} className="flex items-center justify-between text-xs py-1.5 border-b border-gray-50 dark:border-gray-600 last:border-0">
                           <span className="font-medium text-gray-700 dark:text-gray-200">{order.id}</span>
@@ -232,13 +227,13 @@ export function Hero() {
                     <Package className="w-4 h-4 text-white" />
                   </div>
                   <div>
-                    <div className="text-[10px] text-gray-500 dark:text-gray-400">{language === "ar" ? "المخزون" : "Inventory"}</div>
+                    <div className="text-[10px] text-gray-500 dark:text-gray-400">{getText(t.inventory, language)}</div>
                     <div className="text-sm font-bold text-texafab-slate dark:text-white">1,450</div>
                   </div>
                 </div>
                 <div className="text-[10px] text-green-600 flex items-center gap-1 font-medium">
                   <span className="w-1.5 h-1.5 bg-green-500 rounded-full animate-pulse" />
-                  {language === "ar" ? "مستوى آمن" : "Healthy"}
+                  {getText(t.healthy, language)}
                 </div>
               </div>
 
@@ -249,7 +244,7 @@ export function Hero() {
                     <TrendingUp className="w-4 h-4 text-white" />
                   </div>
                   <div>
-                    <div className="text-[10px] text-gray-500 dark:text-gray-400">{language === "ar" ? "نمو المبيعات" : "Sales Growth"}</div>
+                    <div className="text-[10px] text-gray-500 dark:text-gray-400">{getText(t.salesGrowth, language)}</div>
                     <div className="text-sm font-bold text-texafab-slate dark:text-white">+18.5%</div>
                   </div>
                 </div>

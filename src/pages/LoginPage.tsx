@@ -5,6 +5,7 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Checkbox } from "@/components/ui/checkbox";
+import { getText, loginPageTranslations as t } from "@/lib/translations/pages";
 import {
   Calculator,
   Boxes,
@@ -44,24 +45,18 @@ export default function LoginPage() {
   const features = [
     {
       icon: Calculator,
-      titleAr: "محاسبة متكاملة",
-      titleEn: "Full Accounting",
-      descAr: "إدارة مالية شاملة مع تقارير احترافية",
-      descEn: "Complete financial management with professional reports",
+      title: getText(t.featureAccounting, language),
+      desc: getText(t.featureAccountingDesc, language),
     },
     {
       icon: Boxes,
-      titleAr: "إدارة المخزون",
-      titleEn: "Inventory Management",
-      descAr: "تتبع الرولونات والألوان بدقة",
-      descEn: "Precise roll and color tracking",
+      title: getText(t.featureInventory, language),
+      desc: getText(t.featureInventoryDesc, language),
     },
     {
       icon: Zap,
-      titleAr: "سرعة فائقة",
-      titleEn: "Lightning Fast",
-      descAr: "أداء عالي وسرعة استجابة فورية",
-      descEn: "High performance with instant response",
+      title: getText(t.featureFast, language),
+      desc: getText(t.featureFastDesc, language),
     },
   ];
 
@@ -77,7 +72,7 @@ export default function LoginPage() {
   ];
 
   return (
-    <div className="min-h-screen flex" dir={dir}>
+    <div className={`min-h-screen flex ${dir === "rtl" ? "rtl" : "ltr"}`} dir={dir}>
       {/* Left Side - Login Form */}
       <div className="flex-1 flex flex-col justify-center px-8 py-12 lg:px-16 bg-white dark:bg-gray-900">
         <div className="max-w-md mx-auto w-full">
@@ -94,12 +89,10 @@ export default function LoginPage() {
           {/* Header */}
           <div className="mb-8">
             <h1 className="text-3xl font-bold text-texafab-slate dark:text-white mb-2">
-              {language === "ar" ? "تسجيل الدخول" : "Sign In"}
+              {getText(t.signIn, language)}
             </h1>
             <p className="text-gray-600 dark:text-gray-400">
-              {language === "ar"
-                ? "مرحباً بعودتك! الرجاء إدخال بياناتك"
-                : "Welcome back! Please enter your details"}
+              {getText(t.welcomeBack, language)}
             </p>
           </div>
 
@@ -108,14 +101,14 @@ export default function LoginPage() {
             {/* Email */}
             <div className="space-y-2">
               <Label htmlFor="email" className="text-texafab-slate dark:text-gray-200">
-                {language === "ar" ? "البريد الإلكتروني" : "Email Address"}
+                {getText(t.emailAddress, language)}
               </Label>
               <div className="relative">
                 <Mail className="absolute start-3 top-1/2 -translate-y-1/2 w-5 h-5 text-gray-400" />
                 <Input
                   id="email"
                   type="email"
-                  placeholder={language === "ar" ? "أدخل بريدك الإلكتروني" : "Enter your email"}
+                  placeholder={getText(t.enterEmail, language)}
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
                   className="ps-10 h-12 bg-gray-50 dark:bg-gray-800 border-gray-200 dark:border-gray-700 focus:border-texafab-emerald"
@@ -128,13 +121,13 @@ export default function LoginPage() {
             <div className="space-y-2">
               <div className="flex items-center justify-between">
                 <Label htmlFor="password" className="text-texafab-slate dark:text-gray-200">
-                  {language === "ar" ? "كلمة المرور" : "Password"}
+                  {getText(t.password, language)}
                 </Label>
                 <Link
                   to="/forgot-password"
                   className="text-sm text-texafab-emerald hover:underline"
                 >
-                  {language === "ar" ? "نسيت كلمة المرور؟" : "Forgot password?"}
+                  {getText(t.forgotPassword, language)}
                 </Link>
               </div>
               <div className="relative">
@@ -142,7 +135,7 @@ export default function LoginPage() {
                 <Input
                   id="password"
                   type={showPassword ? "text" : "password"}
-                  placeholder={language === "ar" ? "أدخل كلمة المرور" : "Enter your password"}
+                  placeholder={getText(t.enterPassword, language)}
                   value={password}
                   onChange={(e) => setPassword(e.target.value)}
                   className="ps-10 pe-10 h-12 bg-gray-50 dark:bg-gray-800 border-gray-200 dark:border-gray-700 focus:border-texafab-emerald"
@@ -169,7 +162,7 @@ export default function LoginPage() {
                 htmlFor="remember"
                 className="text-sm text-gray-600 dark:text-gray-400 cursor-pointer"
               >
-                {language === "ar" ? "تذكرني" : "Remember me"}
+                {getText(t.rememberMe, language)}
               </label>
             </div>
 
@@ -183,7 +176,7 @@ export default function LoginPage() {
                 <div className="w-5 h-5 border-2 border-white/30 border-t-white rounded-full animate-spin" />
               ) : (
                 <>
-                  {language === "ar" ? "تسجيل الدخول" : "Sign In"}
+                  {getText(t.signIn, language)}
                   <ArrowRight className={`w-4 h-4 ${dir === "rtl" ? "rotate-180 me-2" : "ms-2"}`} />
                 </>
               )}
@@ -197,7 +190,7 @@ export default function LoginPage() {
             </div>
             <div className="relative flex justify-center text-sm">
               <span className="px-4 bg-white dark:bg-gray-900 text-gray-500">
-                {language === "ar" ? "أو" : "or"}
+                {getText(t.or, language)}
               </span>
             </div>
           </div>
@@ -210,29 +203,27 @@ export default function LoginPage() {
             className="w-full h-12 border-2 border-gray-200 dark:border-gray-700 hover:border-texafab-emerald rounded-xl font-medium"
           >
             <Sparkles className="w-4 h-4 me-2 text-texafab-gold" />
-            {language === "ar" ? "إرسال رابط سحري بالبريد" : "Send Magic Link"}
+            {getText(t.sendMagicLink, language)}
           </Button>
 
           {/* Sign Up Link */}
           <p className="text-center mt-6 text-gray-600 dark:text-gray-400">
-            {language === "ar" ? "ليس لديك حساب؟" : "Don't have an account?"}{" "}
+            {getText(t.dontHaveAccount, language)}{" "}
             <Link to="/register" className="text-texafab-emerald font-semibold hover:underline">
-              {language === "ar" ? "إنشاء حساب جديد" : "Create Account"}
+              {getText(t.createAccount, language)}
             </Link>
           </p>
 
           {/* Try Without Account */}
           <div className="mt-6 p-4 bg-gray-50 dark:bg-gray-800 rounded-xl text-center">
             <p className="text-sm text-gray-600 dark:text-gray-400 mb-2">
-              {language === "ar"
-                ? "تريد تجربة النظام أولاً؟"
-                : "Want to try the system first?"}
+              {getText(t.trySystemFirst, language)}
             </p>
             <Link
               to="/"
               className="text-texafab-emerald font-semibold text-sm hover:underline inline-flex items-center gap-1"
             >
-              {language === "ar" ? "جرب بدون تسجيل" : "Try without signing up"}
+              {getText(t.tryWithoutSignup, language)}
               <ArrowRight className={`w-3 h-3 ${dir === "rtl" ? "rotate-180" : ""}`} />
             </Link>
           </div>

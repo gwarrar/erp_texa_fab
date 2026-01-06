@@ -8,7 +8,7 @@ interface ScreenshotProps {
   variant?: "laptop" | "tablet" | "browser" | "simple";
 }
 
-// System Screenshots from ERPMAX - High quality dashboard images
+// System Screenshots from TexaCore - High quality dashboard images
 export const SystemScreenshots = {
   // Sales Dashboard - Main overview with KPIs
   salesDashboard: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=1200&q=95",
@@ -106,7 +106,7 @@ export function BrowserMockup({ src, alt, className = "" }: ScreenshotProps) {
           <div className="flex-1 mx-4">
             <div className="h-7 bg-gray-100 dark:bg-gray-800 rounded-md border border-gray-200 dark:border-gray-600 flex items-center px-3">
               <span className="text-xs text-gray-400 dark:text-gray-500">
-                {language === "ar" ? "erpmax.app/dashboard" : "erpmax.app/dashboard"}
+                {language === "ar" ? "texacore.app/dashboard" : "texacore.app/dashboard"}
               </span>
             </div>
           </div>
@@ -188,7 +188,7 @@ export function DashboardPreview({ className = "" }: { className?: string }) {
               <span className="text-xl font-bold">E</span>
             </div>
             <div>
-              <h3 className="font-bold">ERPMAX</h3>
+              <h3 className="font-bold">TexaCore</h3>
               <p className="text-xs text-white/80">{language === "ar" ? "لوحة التحكم" : "Dashboard"}</p>
             </div>
           </div>

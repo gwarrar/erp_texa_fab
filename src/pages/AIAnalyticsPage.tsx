@@ -242,8 +242,8 @@ function AIAnalyticsContent() {
 
               <p className="text-lg text-gray-600 dark:text-gray-300 mb-6">
                 {language === "ar" 
-                  ? "اربط نظام ERPMAX مع مقسم الاتصالات لتتبع وتحليل جميع المكالمات"
-                  : "Connect ERPMAX with your PBX to track and analyze all calls"}
+                  ? "اربط نظام TexaCore مع مقسم الاتصالات لتتبع وتحليل جميع المكالمات"
+                  : "Connect TexaCore with your PBX to track and analyze all calls"}
               </p>
 
               <div className="grid grid-cols-1 gap-3">

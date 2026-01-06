@@ -169,8 +169,8 @@ export function GlobalPresence() {
           </h3>
           <p className="text-white/80 mb-8 max-w-2xl mx-auto">
             {language === "ar"
-              ? "اكتشف لماذا اختارت الشركات الرائدة في أوروبا والخليج ERPMAX"
-              : "Discover why leading companies in Europe and the Gulf chose ERPMAX"
+              ? "اكتشف لماذا اختارت الشركات الرائدة في أوروبا والخليج TexaCore"
+              : "Discover why leading companies in Europe and the Gulf chose TexaCore"
             }
           </p>
           <div className="flex flex-wrap justify-center gap-4">

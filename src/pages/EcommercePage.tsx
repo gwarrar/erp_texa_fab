@@ -174,8 +174,8 @@ function EcommerceContent() {
 
             <p className="text-xl text-gray-600 mb-8 leading-relaxed max-w-3xl mx-auto">
               {language === "ar" 
-                ? "أطلق متجرك الإلكتروني المتكامل مع ERPMAX وابدأ ببيع منتجاتك للعملاء في أي مكان"
-                : "Launch your complete e-commerce store with ERPMAX and start selling your products to customers anywhere"}
+                ? "أطلق متجرك الإلكتروني المتكامل مع TexaCore وابدأ ببيع منتجاتك للعملاء في أي مكان"
+                : "Launch your complete e-commerce store with TexaCore and start selling your products to customers anywhere"}
             </p>
 
             <div className="flex flex-col sm:flex-row justify-center gap-4">

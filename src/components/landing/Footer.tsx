@@ -9,32 +9,32 @@ export function Footer() {
 
   const footerLinks = {
     product: [
-      { labelAr: "الميزات", labelEn: "Features", href: "/features" },
-      { labelAr: "سير العمل", labelEn: "Workflow", href: "/workflow" },
-      { labelAr: "الأسعار", labelEn: "Pricing", href: "/pricing" },
-      { labelAr: "الحلول", labelEn: "Solutions", href: "/solutions" },
+      { labelKey: "nav.features", href: "/features" },
+      { labelKey: "nav.workflow", href: "/workflow" },
+      { labelKey: "nav.pricing", href: "/pricing" },
+      { labelKey: "nav.solutions", href: "/solutions" },
     ],
     solutions: [
-      { labelAr: "الكونتينرات", labelEn: "Container Tracking", href: "/container-tracking" },
-      { labelAr: "إدارة الرولونات", labelEn: "Roll Management", href: "/roll-management" },
-      { labelAr: "إدارة المستودعات", labelEn: "Warehouse", href: "/warehouse-management" },
-      { labelAr: "إدارة الأقمشة", labelEn: "Fabrics", href: "/fabric-management" },
-      { labelAr: "نقاط البيع", labelEn: "POS", href: "/pos-system" },
-      { labelAr: "المتجر الإلكتروني", labelEn: "E-Commerce", href: "/ecommerce" },
-      { labelAr: "إدارة العملاء", labelEn: "CRM", href: "/crm" },
-      { labelAr: "تصنيع الأقمشة", labelEn: "Fabric Mfg", href: "/fabric-manufacturing" },
-      { labelAr: "تصنيع الألبسة", labelEn: "Garment Mfg", href: "/garment-manufacturing" },
-      { labelAr: "الذكاء الاصطناعي", labelEn: "AI Analytics", href: "/ai-analytics" },
-      { labelAr: "المحاسبة", labelEn: "Accounting", href: "/accounting" },
+      { labelKey: "solutions.containerTracking", href: "/container-tracking" },
+      { labelKey: "solutions.rollManagement", href: "/roll-management" },
+      { labelKey: "solutions.warehouseManagement", href: "/warehouse-management" },
+      { labelKey: "solutions.fabricManagement", href: "/fabric-management" },
+      { labelKey: "solutions.posSystem", href: "/pos-system" },
+      { labelKey: "solutions.ecommerce", href: "/ecommerce" },
+      { labelKey: "solutions.crm", href: "/crm" },
+      { labelKey: "solutions.fabricManufacturing", href: "/fabric-manufacturing" },
+      { labelKey: "solutions.garmentManufacturing", href: "/garment-manufacturing" },
+      { labelKey: "solutions.aiAnalytics", href: "/ai-analytics" },
+      { labelKey: "solutions.accounting", href: "/accounting" },
     ],
     company: [
-      { labelAr: "من نحن", labelEn: "About Us", href: "/about" },
-      { labelAr: "تواصل معنا", labelEn: "Contact", href: "/contact" },
+      { labelKey: "footer.about", href: "/about" },
+      { labelKey: "nav.contact", href: "/contact" },
     ],
     resources: [
-      { labelAr: "الأسئلة الشائعة", labelEn: "FAQ", href: "/faq" },
-      { labelAr: "سياسة الخصوصية", labelEn: "Privacy Policy", href: "/privacy" },
-      { labelAr: "الشروط والأحكام", labelEn: "Terms of Service", href: "/terms" },
+      { labelKey: "footer.faq", href: "/faq" },
+      { labelKey: "footer.privacy", href: "/privacy" },
+      { labelKey: "footer.terms", href: "/terms" },
     ],
   };
 
@@ -55,25 +55,18 @@ export function Footer() {
         <div className="py-16 border-b border-white/10">
           <div className="max-w-4xl mx-auto text-center">
             <h2 className="text-2xl md:text-3xl lg:text-4xl font-black mb-4">
-              {language === "ar" ? (
-                <>هل أنت جاهز لتحويل <span className="text-texafab-gold">عملياتك التجارية؟</span></>
-              ) : (
-                <>Ready to Transform Your <span className="text-texafab-gold">Business Operations?</span></>
-              )}
+              {t("footer.transformBusiness")}
             </h2>
             <p className="text-lg text-gray-400 mb-8 max-w-2xl mx-auto">
-              {language === "ar" 
-                ? "انضم لأكثر من 500 شركة تثق بـ ERPMAX لإدارة أعمالها"
-                : "Join 500+ companies that trust ERPMAX for their business management"
-              }
+              {t("footer.trustCompanies")}
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button className="h-12 px-6 bg-texafab-emerald hover:bg-texafab-emerald/90 text-white font-semibold shadow-lg shadow-texafab-emerald/30 rounded-xl">
-                {language === "ar" ? "ابدأ تجربة مجانية" : "Start Free Trial"}
+                {t("cta.button")}
                 <ArrowUpRight className={`w-4 h-4 ${dir === "rtl" ? "rotate-180 me-2" : "ms-2"}`} />
               </Button>
               <Button variant="outline" className="h-12 px-6 border-2 border-white/30 text-white hover:bg-white/15 hover:border-white/50 hover:text-white font-semibold rounded-xl bg-transparent transition-all duration-200 hover:shadow-lg hover:-translate-y-0.5 active:translate-y-0">
-                {language === "ar" ? "احجز عرض توضيحي" : "Schedule Demo"}
+                {t("footer.schedulDemo")}
               </Button>
             </div>
           </div>
@@ -93,21 +86,18 @@ export function Footer() {
                     <span className="text-xl font-black text-texafab-emerald">ERP</span>
                     <span className="text-xl font-black text-texafab-gold">MAX</span>
                   </div>
-                  <div className="text-[10px] text-gray-500 tracking-wide">{language === "ar" ? "جودة تستحق الثقة" : "Quality You Can Trust"}</div>
+                  <div className="text-[10px] text-gray-500 tracking-wide">{t("hero.tagline")}</div>
                 </div>
               </div>
               <p className="text-gray-400 leading-relaxed max-w-sm text-sm">
-                {language === "ar" 
-                  ? "نظام ERP سحابي متكامل مصمم للشركات الحديثة. موثوق به من قبل أكثر من 500 شركة."
-                  : "Complete cloud ERP system designed for modern enterprises. Trusted by 500+ companies."
-                }
+                {t("footer.description")}
               </p>
               
               {/* Contact Info */}
               <div className="space-y-2 pt-3">
-                <a href="mailto:info@erpmax.com" className="flex items-center gap-3 text-gray-400 hover:text-white transition-colors group text-sm">
+                <a href="mailto:info@texacore.app" className="flex items-center gap-3 text-gray-400 hover:text-white transition-colors group text-sm">
                   <Mail className="w-4 h-4 text-texafab-emerald" />
-                  <span>info@erpmax.com</span>
+                  <span>info@texacore.app</span>
                 </a>
                 <a href="tel:+966-50-000-0000" className="flex items-center gap-3 text-gray-400 hover:text-white transition-colors group text-sm">
                   <Phone className="w-4 h-4 text-texafab-emerald" />
@@ -115,7 +105,7 @@ export function Footer() {
                 </a>
                 <div className="flex items-start gap-3 text-gray-400 text-sm">
                   <MapPin className="w-4 h-4 text-texafab-emerald flex-shrink-0 mt-0.5" />
-                  <span>{language === "ar" ? "الرياض، المملكة العربية السعودية" : "Riyadh, Saudi Arabia"}</span>
+                  <span>{t("footer.location")}</span>
                 </div>
               </div>
               
@@ -139,12 +129,12 @@ export function Footer() {
 
             {/* Links Columns */}
             <div>
-              <h4 className="font-bold text-white mb-4 text-sm">{language === "ar" ? "المنتج" : "Product"}</h4>
+              <h4 className="font-bold text-white mb-4 text-sm">{t("footer.product")}</h4>
               <ul className="space-y-2">
                 {footerLinks.product.map((link, i) => (
                   <li key={i}>
                     <Link to={link.href} className="text-gray-400 hover:text-white transition-colors text-sm">
-                      {language === "ar" ? link.labelAr : link.labelEn}
+                      {t(link.labelKey)}
                     </Link>
                   </li>
                 ))}
@@ -152,12 +142,12 @@ export function Footer() {
             </div>
 
             <div>
-              <h4 className="font-bold text-white mb-4 text-sm">{language === "ar" ? "الحلول" : "Solutions"}</h4>
+              <h4 className="font-bold text-white mb-4 text-sm">{t("footer.solutions")}</h4>
               <ul className="space-y-2">
                 {footerLinks.solutions.map((link, i) => (
                   <li key={i}>
                     <Link to={link.href} className="text-gray-400 hover:text-white transition-colors text-sm">
-                      {language === "ar" ? link.labelAr : link.labelEn}
+                      {t(link.labelKey)}
                     </Link>
                   </li>
                 ))}
@@ -165,12 +155,12 @@ export function Footer() {
             </div>
 
             <div>
-              <h4 className="font-bold text-white mb-4 text-sm">{language === "ar" ? "الشركة" : "Company"}</h4>
+              <h4 className="font-bold text-white mb-4 text-sm">{t("footer.company")}</h4>
               <ul className="space-y-2">
                 {footerLinks.company.map((link, i) => (
                   <li key={i}>
                     <Link to={link.href} className="text-gray-400 hover:text-white transition-colors text-sm">
-                      {language === "ar" ? link.labelAr : link.labelEn}
+                      {t(link.labelKey)}
                     </Link>
                   </li>
                 ))}
@@ -178,12 +168,12 @@ export function Footer() {
             </div>
 
             <div>
-              <h4 className="font-bold text-white mb-4 text-sm">{language === "ar" ? "الموارد" : "Resources"}</h4>
+              <h4 className="font-bold text-white mb-4 text-sm">{t("footer.resources")}</h4>
               <ul className="space-y-2">
                 {footerLinks.resources.map((link, i) => (
                   <li key={i}>
                     <a href={link.href} className="text-gray-400 hover:text-white transition-colors text-sm">
-                      {language === "ar" ? link.labelAr : link.labelEn}
+                      {t(link.labelKey)}
                     </a>
                   </li>
                 ))}
@@ -191,11 +181,11 @@ export function Footer() {
               
               {/* Newsletter */}
               <div className="mt-6 p-3 bg-white/5 rounded-lg">
-                <h5 className="font-semibold text-white mb-2 text-sm">{language === "ar" ? "اشترك في النشرة" : "Stay Updated"}</h5>
+                <h5 className="font-semibold text-white mb-2 text-sm">{t("footer.newsletter")}</h5>
                 <div className="flex gap-2">
                   <input 
                     type="email" 
-                    placeholder={language === "ar" ? "بريدك الإلكتروني" : "Your email"}
+                    placeholder={t("footer.emailPlaceholder")}
                     className="flex-1 px-3 py-2 bg-white/10 rounded-lg text-sm text-white placeholder:text-gray-500 border border-white/10 focus:outline-none focus:border-texafab-emerald"
                   />
                   <Button size="icon" className="bg-texafab-emerald hover:bg-texafab-emerald/90 h-9 w-9">
@@ -207,23 +197,39 @@ export function Footer() {
           </div>
         </div>
 
+        {/* Next Revolution Credit */}
+        <div className="py-6 border-t border-white/10">
+          <div className="text-center">
+            <p className="text-gray-400 text-sm mb-2">
+              {t("footer.developedBy")}{" "}
+              <Link 
+                to="/next-revolution" 
+                className="text-texafab-emerald hover:text-texafab-gold font-semibold transition-colors inline-flex items-center gap-1"
+              >
+                Next Revolution
+                <ArrowUpRight className="w-3.5 h-3.5" />
+              </Link>
+            </p>
+            <p className="text-gray-500 text-xs">
+              {t("footer.nextRevolutionTagline")}
+            </p>
+          </div>
+        </div>
+
         {/* Bottom Bar */}
         <div className="py-6 border-t border-white/10 flex flex-col md:flex-row justify-between items-center gap-4">
           <p className="text-gray-500 text-xs">
-            {language === "ar" 
-              ? "© 2024 ERPMAX. جميع الحقوق محفوظة."
-              : "© 2024 ERPMAX. All rights reserved."
-            }
+            {t("footer.rights")}
           </p>
           <div className="flex flex-wrap justify-center gap-4 text-xs">
             <Link to="/privacy" className="text-gray-500 hover:text-white transition-colors">
-              {language === "ar" ? "سياسة الخصوصية" : "Privacy Policy"}
+              {t("footer.privacy")}
             </Link>
             <Link to="/terms" className="text-gray-500 hover:text-white transition-colors">
-              {language === "ar" ? "الشروط والأحكام" : "Terms of Service"}
+              {t("footer.terms")}
             </Link>
             <Link to="/faq" className="text-gray-500 hover:text-white transition-colors">
-              {language === "ar" ? "الأسئلة الشائعة" : "FAQ"}
+              {t("footer.faq")}
             </Link>
           </div>
         </div>

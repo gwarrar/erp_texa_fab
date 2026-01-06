@@ -1,31 +1,32 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { useLanguage } from "./LanguageContext";
+import { getText, landingPageTranslations as t, pricingPageTranslations as pt } from "@/lib/translations/pages";
 import { Button } from "@/components/ui/button";
 import { Check, Sparkles, ArrowRight, Zap, Crown, Building, Rocket, ShoppingCart, Shield, Server, Clock, Gift, Users, Globe, Cpu, TrendingUp, Heart, DollarSign, Target, Building2, Briefcase, User, Smartphone, Warehouse, Truck } from "lucide-react";
 import { Card } from "@/components/ui/card";
 import { TrialSignupModal } from "./TrialSignupModal";
 
 // Currency configuration
-const currencyConfig: Record<string, { symbol: string; code: string; rate: number; nameAr: string; nameEn: string }> = {
-  USD: { symbol: "$", code: "USD", rate: 1, nameAr: "دولار أمريكي", nameEn: "US Dollar" },
-  SAR: { symbol: "ر.س", code: "SAR", rate: 3.75, nameAr: "ريال سعودي", nameEn: "Saudi Riyal" },
-  AED: { symbol: "د.إ", code: "AED", rate: 3.67, nameAr: "درهم إماراتي", nameEn: "UAE Dirham" },
-  EUR: { symbol: "€", code: "EUR", rate: 0.92, nameAr: "يورو", nameEn: "Euro" },
-  GBP: { symbol: "£", code: "GBP", rate: 0.79, nameAr: "جنيه إسترليني", nameEn: "British Pound" },
-  UAH: { symbol: "₴", code: "UAH", rate: 41, nameAr: "هريفنيا أوكرانية", nameEn: "Ukrainian Hryvnia" },
-  RUB: { symbol: "₽", code: "RUB", rate: 92, nameAr: "روبل روسي", nameEn: "Russian Ruble" },
-  PLN: { symbol: "zł", code: "PLN", rate: 4, nameAr: "زلوتي بولندي", nameEn: "Polish Zloty" },
-  TRY: { symbol: "₺", code: "TRY", rate: 32, nameAr: "ليرة تركية", nameEn: "Turkish Lira" },
-  EGP: { symbol: "ج.م", code: "EGP", rate: 50, nameAr: "جنيه مصري", nameEn: "Egyptian Pound" },
-  KWD: { symbol: "د.ك", code: "KWD", rate: 0.31, nameAr: "دينار كويتي", nameEn: "Kuwaiti Dinar" },
-  QAR: { symbol: "ر.ق", code: "QAR", rate: 3.64, nameAr: "ريال قطري", nameEn: "Qatari Riyal" },
-  BHD: { symbol: "د.ب", code: "BHD", rate: 0.38, nameAr: "دينار بحريني", nameEn: "Bahraini Dinar" },
-  OMR: { symbol: "ر.ع", code: "OMR", rate: 0.39, nameAr: "ريال عماني", nameEn: "Omani Rial" },
+const currencyConfig: Record<string, { symbol: string; code: string; rate: number; nameKey: string }> = {
+  USD: { symbol: "$", code: "USD", rate: 1, nameKey: "currUSD" },
+  SAR: { symbol: "ر.س", code: "SAR", rate: 3.75, nameKey: "currSAR" },
+  AED: { symbol: "د.إ", code: "AED", rate: 3.67, nameKey: "currAED" },
+  EUR: { symbol: "€", code: "EUR", rate: 0.92, nameKey: "currEUR" },
+  GBP: { symbol: "£", code: "GBP", rate: 0.79, nameKey: "currGBP" },
+  UAH: { symbol: "₴", code: "UAH", rate: 41, nameKey: "currUAH" },
+  RUB: { symbol: "₽", code: "RUB", rate: 92, nameKey: "currRUB" },
+  PLN: { symbol: "zł", code: "PLN", rate: 4, nameKey: "currPLN" },
+  TRY: { symbol: "₺", code: "TRY", rate: 32, nameKey: "currTRY" },
+  EGP: { symbol: "ج.م", code: "EGP", rate: 50, nameKey: "currEGP" },
+  KWD: { symbol: "د.ك", code: "KWD", rate: 0.31, nameKey: "currKWD" },
+  QAR: { symbol: "ر.ق", code: "QAR", rate: 3.64, nameKey: "currQAR" },
+  BHD: { symbol: "د.ب", code: "BHD", rate: 0.38, nameKey: "currBHD" },
+  OMR: { symbol: "ر.ع", code: "OMR", rate: 0.39, nameKey: "currOMR" },
 };
 
 export function Pricing() {
-  const { t, language } = useLanguage();
+  const { language, dir } = useLanguage();
   const [isTrialModalOpen, setIsTrialModalOpen] = useState(false);
   const [selectedCurrency, setSelectedCurrency] = useState("USD");
 
@@ -47,81 +48,47 @@ export function Pricing() {
 
   // Feature categories for organized display
   const featureCategories = {
-    ar: {
-      business: "📦 إدارة الأعمال",
-      digital: "🌐 التواجد الرقمي",
-      ai: "🤖 الذكاء الاصطناعي",
-      mobile: "📱 تطبيقات الموبايل",
-      returns: "💰 العائد المتوقع",
-      target: "🎯 مناسب لـ"
-    },
-    en: {
-      business: "📦 Business Management",
-      digital: "🌐 Digital Presence",
-      ai: "🤖 Artificial Intelligence",
-      mobile: "📱 Mobile Apps",
-      returns: "💰 Expected Returns",
-      target: "🎯 Ideal For"
-    }
+    business: getText(t.catBusiness, language),
+    digital: getText(t.catDigital, language),
+    ai: getText(t.catAI, language),
+    mobile: getText(t.catMobile, language),
+    returns: getText(t.catReturns, language),
+    target: getText(t.catTarget, language)
   };
 
   const plans = [
     {
-      nameAr: "الأساسية",
-      nameEn: "Basic",
+      name: getText(pt.basicPlan, language),
       priceUSD: basePrices.basic,
-      descAr: "للشركات الخاصة والناشئة",
-      descEn: "For private & startup companies",
-      targetAr: "الشركة الخاصة الواحدة",
-      targetEn: "Single Private Company",
+      desc: getText(pt.basicDesc, language),
+      target: getText(t.targetSingle, language),
       targetIcon: User,
       // Business Management Features
-      businessFeaturesAr: [
-        "إدارة شركة واحدة",
-        "3 مستخدمين",
-        "نقطتي بيع",
-        "شؤون الموظفين الأساسية"
-      ],
-      businessFeaturesEn: [
-        "Manage 1 Company",
-        "3 Users",
-        "2 POS Terminals",
-        "Basic HR Module"
+      businessFeatures: [
+        getText(t.manageOneCompany, language),
+        getText(t.threeUsers, language),
+        getText(t.twoPOS, language),
+        getText(t.basicHR, language)
       ],
       // Digital Presence Features
-      digitalFeaturesAr: [
-        "استضافة Hetzner مشتركة",
-        "المتجر الإلكتروني (100 منتج)",
-        "شهادة SSL مجانية"
-      ],
-      digitalFeaturesEn: [
-        "Shared Hetzner Hosting",
-        "E-commerce (100 products)",
-        "Free SSL Certificate"
+      digitalFeatures: [
+        getText(t.sharedHosting, language),
+        getText(t.ecommerce100, language),
+        getText(t.freeSSL, language)
       ],
       // AI Features
-      aiFeaturesAr: [],
-      aiFeaturesEn: [],
+      aiFeatures: [],
       // Mobile Apps Features
-      mobileFeaturesAr: [],
-      mobileFeaturesEn: [],
+      mobileFeatures: [],
       // Expected Returns
-      returnsAr: {
+      returns: {
         salesIncrease: "$2,000 - $4,000",
         customerRetention: "$1,500 - $4,000",
         totalReturn: "$8,000 - $15,000",
         netProfit: "+$6,800 - $13,800",
         roi: "573% - 1,162%"
       },
-      returnsEn: {
-        salesIncrease: "$2,000 - $4,000",
-        customerRetention: "$1,500 - $4,000",
-        totalReturn: "$8,000 - $15,000",
-        netProfit: "+$6,800 - $13,800",
-        roi: "573% - 1,162%"
-      },
-      ctaAr: "ابدأ تجربة مجانية",
-      ctaEn: "Start Free Trial",
+      cta: getText(t.ctaDemo, language),
       popular: false,
       hasEcommerce: true,
       icon: Rocket,
@@ -129,54 +96,34 @@ export function Pricing() {
       iconBg: "from-blue-500 to-blue-600",
     },
     {
-      nameAr: "الاحترافية",
-      nameEn: "Professional",
+      name: getText(pt.professionalPlan, language),
       priceUSD: basePrices.professional,
-      descAr: "لمدير الأعمال الواعد والطموح",
-      descEn: "For the ambitious business leader",
-      targetAr: "رائد الأعمال الطموح",
-      targetEn: "Ambitious Entrepreneur",
+      desc: getText(pt.professionalDesc, language),
+      target: getText(t.targetAmbitious, language),
       targetIcon: Briefcase,
       // Business Management Features
-      businessFeaturesAr: [
-        "إدارة شركتين",
-        "10 مستخدمين",
-        "نقاط بيع غير محدودة",
-        "شؤون الموظفين المتقدمة",
-        "إدارة الوكلاء والموزعين"
-      ],
-      businessFeaturesEn: [
-        "Manage 2 Companies",
-        "10 Users",
-        "Unlimited POS Terminals",
-        "Advanced HR Module",
-        "Agents & Dealers Management"
+      businessFeatures: [
+        getText(t.manageTwoCompanies, language),
+        getText(t.tenUsers, language),
+        getText(t.unlimitedPOS, language),
+        getText(t.advancedHR, language),
+        getText(t.agentsManagement, language)
       ],
       // Digital Presence Features
-      digitalFeaturesAr: [
-        "استضافة Hetzner مخصصة",
-        "موقع إلكتروني مجاني لمدة سنة 🎁",
-        "المتجر الإلكتروني (غير محدود)",
-        "شهادة SSL + دومين مخصص"
-      ],
-      digitalFeaturesEn: [
-        "Dedicated Hetzner Hosting",
-        "Free Website for 1 Year 🎁",
-        "E-commerce (Unlimited)",
-        "SSL + Custom Domain"
+      digitalFeatures: [
+        getText(t.dedicatedHosting, language),
+        getText(t.freeWebsite1Year, language),
+        getText(t.ecommerceUnlimited, language),
+        getText(t.sslCustomDomain, language)
       ],
       // AI Features
-      aiFeaturesAr: [
-        "تقارير ذكية أسبوعية"
-      ],
-      aiFeaturesEn: [
-        "Weekly Smart Reports"
+      aiFeatures: [
+        getText(t.weeklyReports, language)
       ],
       // Mobile Apps Features
-      mobileFeaturesAr: [],
-      mobileFeaturesEn: [],
+      mobileFeatures: [],
       // Expected Returns
-      returnsAr: {
+      returns: {
         salesIncrease: "$12,000 - $20,000",
         customerRetention: "$8,000 - $15,000",
         totalReturn: "$45,000 - $75,000",
@@ -184,16 +131,7 @@ export function Pricing() {
         roi: "652% - 1,152%",
         competitiveEdge: "25-35%"
       },
-      returnsEn: {
-        salesIncrease: "$12,000 - $20,000",
-        customerRetention: "$8,000 - $15,000",
-        totalReturn: "$45,000 - $75,000",
-        netProfit: "+$39,000 - $69,000",
-        roi: "652% - 1,152%",
-        competitiveEdge: "25-35%"
-      },
-      ctaAr: "ابدأ تجربة مجانية",
-      ctaEn: "Start Free Trial",
+      cta: getText(t.ctaDemo, language),
       popular: true,
       hasEcommerce: true,
       icon: Crown,
@@ -201,72 +139,43 @@ export function Pricing() {
       iconBg: "from-white to-white/90",
     },
     {
-      nameAr: "المؤسساتية",
-      nameEn: "Enterprise",
+      name: getText(pt.enterprisePlan, language),
       priceUSD: basePrices.enterprise,
-      descAr: "للشركات الكبيرة والمجموعات التجارية",
-      descEn: "For large enterprises & business groups",
-      targetAr: "الشركات الكبيرة والمجموعات",
-      targetEn: "Large Enterprises & Groups",
+      desc: getText(pt.enterpriseDesc, language),
+      target: getText(t.targetLarge, language),
       targetIcon: Building2,
       // Business Management Features
-      businessFeaturesAr: [
-        "إدارة عدد غير محدود من الشركات ♾️",
-        "مستخدمين غير محدود",
-        "نقاط بيع غير محدودة",
-        "شؤون الموظفين الموسعة",
-        "نظام الوكلاء المتقدم",
-        "مدير حساب مخصص"
-      ],
-      businessFeaturesEn: [
-        "Unlimited Companies ♾️",
-        "Unlimited Users",
-        "Unlimited POS Terminals",
-        "Extended HR Module",
-        "Advanced Agents System",
-        "Dedicated Account Manager"
+      businessFeatures: [
+        getText(t.manageUnlimitedCompanies, language),
+        getText(t.unlimitedUsersLanding, language),
+        getText(t.unlimitedPOS, language),
+        getText(t.extendedHR, language),
+        getText(t.advancedAgents, language),
+        getText(t.dedicatedManager, language)
       ],
       // Digital Presence Features
-      digitalFeaturesAr: [
-        "استضافة Hetzner Premium مخصصة",
-        "موقع إلكتروني مجاني دائماً 🎁",
-        "تخصيص التصميم بألوان الشركة 🎨",
-        "المتجر الإلكتروني المتقدم",
-        "SLA 99.9%"
-      ],
-      digitalFeaturesEn: [
-        "Premium Dedicated Hetzner",
-        "Free Website Forever 🎁",
-        "Custom Brand Design 🎨",
-        "Advanced E-commerce",
-        "99.9% SLA"
+      digitalFeatures: [
+        getText(t.premiumHosting, language),
+        getText(t.freeWebsiteForever, language),
+        getText(t.customDesign, language),
+        getText(t.advancedEcommerce, language),
+        getText(t.sla999, language)
       ],
       // AI Features
-      aiFeaturesAr: [
-        "تحليلات الذكاء الاصطناعي 🧠",
-        "الإدخال الآلي بالذكاء الاصطناعي",
-        "تنبؤات المبيعات الذكية",
-        "تقارير لحظية ومتقدمة"
-      ],
-      aiFeaturesEn: [
-        "AI Analytics 🧠",
-        "AI Auto Data Entry",
-        "Smart Sales Predictions",
-        "Real-time Advanced Reports"
+      aiFeatures: [
+        getText(t.aiAnalytics, language),
+        getText(t.aiDataEntry, language),
+        getText(t.salesPredictions, language),
+        getText(t.realtimeReports, language)
       ],
       // Mobile Apps Features
-      mobileFeaturesAr: [
-        "تطبيق الإدارة للمدراء 👔",
-        "تطبيق المستودعات والجرد 📦",
-        "تطبيق السائقين والتوصيل 🚚"
-      ],
-      mobileFeaturesEn: [
-        "Management App for Executives 👔",
-        "Warehouse & Inventory App 📦",
-        "Drivers & Delivery App 🚚"
+      mobileFeatures: [
+        getText(t.adminApp, language),
+        getText(t.warehouseApp, language),
+        getText(t.driverApp, language)
       ],
       // Expected Returns
-      returnsAr: {
+      returns: {
         salesIncrease: "$25,000 - $50,000",
         customerRetention: "$15,000 - $35,000",
         totalReturn: "$120,000 - $250,000",
@@ -274,16 +183,7 @@ export function Pricing() {
         roi: "901% - 1,985%",
         competitiveEdge: "40-50%"
       },
-      returnsEn: {
-        salesIncrease: "$25,000 - $50,000",
-        customerRetention: "$15,000 - $35,000",
-        totalReturn: "$120,000 - $250,000",
-        netProfit: "+$108,000 - $238,000",
-        roi: "901% - 1,985%",
-        competitiveEdge: "40-50%"
-      },
-      ctaAr: "تواصل معنا",
-      ctaEn: "Contact Us",
+      cta: getText(pt.contactUs, language),
       popular: false,
       icon: Building,
       gradient: "from-slate-50 to-white",
@@ -302,16 +202,13 @@ export function Pricing() {
         <div className="text-center mb-12">
           <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-texafab-emerald/10 text-texafab-emerald text-sm font-semibold mb-6">
             <Sparkles className="w-4 h-4" />
-            {language === "ar" ? "أسعار شفافة" : "Transparent Pricing"}
+            {getText(t.transparentPricing, language)}
           </div>
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-black text-texafab-slate dark:text-white mb-6 leading-tight">
-            {language === "ar" ? "اختر الباقة المناسبة لك" : "Choose Your Perfect Plan"}
+            {getText(t.choosePlan, language)}
           </h2>
           <p className="text-lg text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
-            {language === "ar" 
-              ? "أسعار واضحة بدون رسوم خفية. جرب مجاناً لمدة 14 يوم"
-              : "Clear pricing with no hidden fees. Start with a 14-day free trial"
-            }
+            {getText(t.pricingDescLanding, language)}
           </p>
         </div>
 
@@ -319,7 +216,7 @@ export function Pricing() {
         <div className="mb-8 flex justify-center">
           <div className="flex items-center gap-3 p-3 bg-white dark:bg-gray-800 rounded-xl shadow-sm border border-gray-200 dark:border-gray-700">
             <span className="text-sm font-medium text-gray-600 dark:text-gray-300">
-              {language === "ar" ? "العملة:" : "Currency:"}
+              {getText(t.currencyLabel, language)}
             </span>
             <select
               value={selectedCurrency}
@@ -328,7 +225,7 @@ export function Pricing() {
             >
               {Object.entries(currencyConfig).map(([code, info]) => (
                 <option key={code} value={code}>
-                  {info.symbol} {language === "ar" ? info.nameAr : info.nameEn} ({code})
+                  {info.symbol} {getText(pt[info.nameKey as keyof typeof pt], language)} ({code})
                 </option>
               ))}
             </select>
@@ -340,9 +237,7 @@ export function Pricing() {
           <div className="flex items-center justify-center gap-3">
             <Gift className="w-6 h-6 text-emerald-600 dark:text-emerald-400" />
             <p className="text-sm font-semibold text-emerald-800 dark:text-emerald-300 text-center">
-              {language === "ar" 
-                ? "🎁 المتجر الإلكتروني مشمول بدون رسوم تصميم أو تشغيل إضافية!" 
-                : "🎁 E-commerce store included with NO design or setup fees!"}
+              {getText(t.ecommerceIncluded, language)}
             </p>
           </div>
         </div>
@@ -352,14 +247,14 @@ export function Pricing() {
           {plans.map((plan, i) => {
             const Icon = plan.icon;
             const TargetIcon = plan.targetIcon;
-            const businessFeatures = language === "ar" ? plan.businessFeaturesAr : plan.businessFeaturesEn;
-            const digitalFeatures = language === "ar" ? plan.digitalFeaturesAr : plan.digitalFeaturesEn;
-            const aiFeatures = language === "ar" ? plan.aiFeaturesAr : plan.aiFeaturesEn;
-            const mobileFeatures = language === "ar" ? plan.mobileFeaturesAr : plan.mobileFeaturesEn;
-            const returns = language === "ar" ? plan.returnsAr : plan.returnsEn;
+            const businessFeatures = plan.businessFeatures;
+            const digitalFeatures = plan.digitalFeatures;
+            const aiFeatures = plan.aiFeatures;
+            const mobileFeatures = plan.mobileFeatures;
+            const returns = plan.returns;
             const localPrice = convertPrice(plan.priceUSD);
             const displayPrice = localPrice.toLocaleString();
-            const categories = language === "ar" ? featureCategories.ar : featureCategories.en;
+            const categories = featureCategories;
             
             return (
               <Card 
@@ -373,7 +268,7 @@ export function Pricing() {
                 {/* Popular Badge */}
                 {plan.popular && (
                   <div className="absolute top-0 right-0 left-0 bg-texafab-gold text-texafab-slate px-4 py-1 text-xs font-bold uppercase tracking-wider text-center">
-                    {language === "ar" ? "الأكثر طلباً" : "Best Value"}
+                    {getText(t.bestValue, language)}
                   </div>
                 )}
                 
@@ -384,7 +279,7 @@ export function Pricing() {
                   </div>
                   
                   <h3 className={`text-lg font-bold mb-1 ${plan.popular ? "text-white" : "text-texafab-slate dark:text-white"}`}>
-                    {language === "ar" ? plan.nameAr : plan.nameEn}
+                    {plan.name}
                   </h3>
                   
                   <div className="flex items-baseline gap-1 mb-2">
@@ -395,12 +290,12 @@ export function Pricing() {
                       {displayPrice}
                     </span>
                     <span className={`text-xs ${plan.popular ? "text-white/70" : "text-gray-500"}`}>
-                      /{language === "ar" ? "شهر" : "mo"}
+                      {getText(t.perMonth, language)}
                     </span>
                   </div>
                   
                   <p className={`text-xs mb-3 ${plan.popular ? "text-white/80" : "text-gray-600 dark:text-gray-300"}`}>
-                    {language === "ar" ? plan.descAr : plan.descEn}
+                    {plan.desc}
                   </p>
 
                   {/* Target Audience Badge */}
@@ -411,7 +306,7 @@ export function Pricing() {
                   }`}>
                     <TargetIcon className={`w-4 h-4 ${plan.popular ? "text-texafab-gold" : "text-texafab-emerald"}`} />
                     <span className={`text-xs font-medium ${plan.popular ? "text-white" : "text-gray-700 dark:text-gray-200"}`}>
-                      {language === "ar" ? plan.targetAr : plan.targetEn}
+                      {plan.target}
                     </span>
                   </div>
                 </div>
@@ -521,25 +416,25 @@ export function Pricing() {
                       <div className="flex justify-between items-center">
                         <span className={`text-[10px] ${plan.popular ? "text-white/70" : "text-gray-600 dark:text-gray-400"}`}>
                           <TrendingUp className="w-2.5 h-2.5 inline me-1" />
-                          {language === "ar" ? "زيادة المبيعات" : "Sales Increase"}
+                          {getText(t.metricSales, language)}
                         </span>
                         <span className={`text-[10px] font-bold ${plan.popular ? "text-texafab-gold" : "text-green-600 dark:text-green-400"}`}>
-                          {returns.salesIncrease}/{language === "ar" ? "سنة" : "yr"}
+                          {returns.salesIncrease}{getText(t.perYear, language)}
                         </span>
                       </div>
                       <div className="flex justify-between items-center">
                         <span className={`text-[10px] ${plan.popular ? "text-white/70" : "text-gray-600 dark:text-gray-400"}`}>
                           <Heart className="w-2.5 h-2.5 inline me-1" />
-                          {language === "ar" ? "الاحتفاظ بالزبائن" : "Customer Retention"}
+                          {getText(t.metricRetention, language)}
                         </span>
                         <span className={`text-[10px] font-bold ${plan.popular ? "text-texafab-gold" : "text-green-600 dark:text-green-400"}`}>
-                          {returns.customerRetention}/{language === "ar" ? "سنة" : "yr"}
+                          {returns.customerRetention}{getText(t.perYear, language)}
                         </span>
                       </div>
                       <div className={`pt-1 mt-1 border-t ${plan.popular ? "border-white/20" : "border-green-200 dark:border-green-700"}`}>
                         <div className="flex justify-between items-center">
                           <span className={`text-[10px] font-medium ${plan.popular ? "text-white" : "text-gray-700 dark:text-gray-300"}`}>
-                            {language === "ar" ? "صافي الربح السنوي" : "Annual Net Profit"}
+                            {getText(t.metricProfit, language)}
                           </span>
                           <span className={`text-xs font-black ${plan.popular ? "text-white" : "text-green-600 dark:text-green-400"}`}>
                             {returns.netProfit}
@@ -556,7 +451,7 @@ export function Pricing() {
                         {returns.competitiveEdge && (
                           <div className="flex justify-between items-center mt-0.5">
                             <span className={`text-[10px] ${plan.popular ? "text-white/70" : "text-gray-500 dark:text-gray-400"}`}>
-                              {language === "ar" ? "التفوق التنافسي" : "Competitive Edge"}
+                              {getText(t.metricEdge, language)}
                             </span>
                             <span className={`text-[10px] font-bold ${plan.popular ? "text-texafab-gold" : "text-blue-600 dark:text-blue-400"}`}>
                               {returns.competitiveEdge}
@@ -583,8 +478,8 @@ export function Pricing() {
                           : "bg-texafab-emerald hover:bg-texafab-emerald/90 text-white"
                     }`}
                   >
-                    {language === "ar" ? plan.ctaAr : plan.ctaEn}
-                    <ArrowRight className={`w-3 h-3 transition-transform group-hover:translate-x-1 ${language === "ar" ? "rotate-180 me-1" : "ms-1"}`} />
+                    {plan.cta}
+                    <ArrowRight className={`w-3 h-3 transition-transform group-hover:translate-x-1 ${dir === "rtl" ? "rotate-180 me-1" : "ms-1"}`} />
                   </Button>
                 </div>
                 
@@ -605,19 +500,19 @@ export function Pricing() {
           <div className="flex items-center gap-2 px-3 py-1.5 bg-gray-100 dark:bg-gray-800 rounded-lg">
             <Shield className="w-4 h-4 text-green-500" />
             <span className="text-xs font-medium text-gray-700 dark:text-gray-300">
-              {language === "ar" ? "تشفير AES-256" : "AES-256 Encryption"}
+              {getText(t.aesEncryption, language)}
             </span>
           </div>
           <div className="flex items-center gap-2 px-3 py-1.5 bg-gray-100 dark:bg-gray-800 rounded-lg">
             <Server className="w-4 h-4 text-blue-500" />
             <span className="text-xs font-medium text-gray-700 dark:text-gray-300">
-              {language === "ar" ? "سيرفرات Hetzner الألمانية" : "German Hetzner Servers"}
+              {getText(t.germanServers, language)}
             </span>
           </div>
           <div className="flex items-center gap-2 px-3 py-1.5 bg-gray-100 dark:bg-gray-800 rounded-lg">
             <Clock className="w-4 h-4 text-emerald-500" />
             <span className="text-xs font-medium text-gray-700 dark:text-gray-300">
-              {language === "ar" ? "عمل مستمر 24/7" : "24/7 Uptime"}
+              {getText(t.uptime247, language)}
             </span>
           </div>
         </div>
@@ -627,14 +522,14 @@ export function Pricing() {
           <div className="inline-flex items-center gap-3 px-5 py-2.5 rounded-full bg-green-50 dark:bg-green-900/20 border border-green-100 dark:border-green-800">
             <Check className="w-4 h-4 text-green-600 dark:text-green-400" />
             <span className="text-green-800 dark:text-green-300 font-medium text-sm">
-              {language === "ar" ? "ضمان استرداد الأموال خلال 30 يوم" : "30-day money-back guarantee"}
+              {getText(t.moneyBack, language)}
             </span>
           </div>
           <div>
             <Link to="/pricing">
               <Button variant="outline" className="h-11 px-6 border-2 border-gray-200 dark:border-gray-700 text-texafab-slate dark:text-white font-semibold rounded-xl">
-                {language === "ar" ? "مقارنة جميع الباقات" : "Compare All Plans"}
-                <ArrowRight className="w-4 h-4 ms-2" />
+                {getText(t.compareAllPlans, language)}
+                <ArrowRight className={`w-4 h-4 ${dir === "rtl" ? "rotate-180 me-2" : "ms-2"}`} />
               </Button>
             </Link>
           </div>

@@ -9,8 +9,8 @@ export function Testimonials() {
 
   const testimonials = [
     {
-      textAr: "ERPMAX غيّر طريقة تتبعنا للرولونات والأمتار بشكل كامل. الآن نعرف بالضبط كم متر تبقى في كل رولون.",
-      textEn: "ERPMAX completely changed how we track rolls and meters. Now we know exactly how many meters remain in each roll.",
+      textAr: "TexaCore غيّر طريقة تتبعنا للرولونات والأمتار بشكل كامل. الآن نعرف بالضبط كم متر تبقى في كل رولون.",
+      textEn: "TexaCore completely changed how we track rolls and meters. Now we know exactly how many meters remain in each roll.",
       author: language === "ar" ? "هانز مولر" : "Hans Müller",
       roleAr: "مدير العمليات",
       roleEn: "Operations Director",
@@ -84,8 +84,8 @@ export function Testimonials() {
           </h2>
           <p className="text-lg text-texafab-slate/70 max-w-2xl mx-auto">
             {language === "ar" 
-              ? "اكتشف كيف حوّلت الشركات الرائدة عملياتها مع ERPMAX"
-              : "See how leading companies have transformed their operations with ERPMAX"
+              ? "اكتشف كيف حوّلت الشركات الرائدة عملياتها مع TexaCore"
+              : "See how leading companies have transformed their operations with TexaCore"
             }
           </p>
         </div>

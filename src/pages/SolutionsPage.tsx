@@ -156,7 +156,7 @@ function SolutionsContent() {
   ];
 
   return (
-    <div className="min-h-screen bg-white dark:bg-gray-900" dir={dir}>
+    <div className={`min-h-screen bg-white dark:bg-gray-900 ${dir === "rtl" ? "rtl" : "ltr"}`} dir={dir}>
       <Header />
       
       {/* Hero */}

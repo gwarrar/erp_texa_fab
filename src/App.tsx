@@ -1,7 +1,8 @@
-import { Routes, Route } from "react-router-dom";
+import { Routes, Route, useLocation } from "react-router-dom";
 import { ScrollRestoration } from "./components/ui/scroll-restoration";
 import { ThemeProvider } from "./components/landing/ThemeContext";
 import { LanguageProvider } from "./components/landing/LanguageContext";
+import { FloatingBoostButton } from "./components/landing/FloatingBoostButton";
 import Home from "./components/home";
 import FeaturesPage from "./pages/FeaturesPage";
 import PricingPage from "./pages/PricingPage";
@@ -33,13 +34,18 @@ import EnterpriseLandingPage from "./pages/EnterpriseLandingPage";
 import LoginPage from "./pages/LoginPage";
 import RegisterPage from "./pages/RegisterPage";
 import AllSolutionsPage from "./pages/AllSolutionsPage";
+import NextRevolutionPage from "./pages/NextRevolutionPage";
 
-function App() {
+function AppContent() {
+  const location = useLocation();
+  const hideOnPages = ["/comparison"]; // لا نعرض الزر في صفحة المقارنة
+  const showButton = !hideOnPages.includes(location.pathname);
+  
   return (
-    <ThemeProvider>
-      <LanguageProvider>
-        <ScrollRestoration />
-        <Routes>
+    <>
+      <ScrollRestoration />
+      {showButton && <FloatingBoostButton />}
+      <Routes>
         <Route path="/" element={<Home />} />
       <Route path="/comparison" element={<EnterpriseLandingPage />} />
       <Route path="/features" element={<FeaturesPage />} />
@@ -71,7 +77,17 @@ function App() {
       <Route path="/login" element={<LoginPage />} />
       <Route path="/register" element={<RegisterPage />} />
       <Route path="/all-solutions" element={<AllSolutionsPage />} />
-        </Routes>
+      <Route path="/next-revolution" element={<NextRevolutionPage />} />
+      </Routes>
+    </>
+  );
+}
+
+function App() {
+  return (
+    <ThemeProvider>
+      <LanguageProvider>
+        <AppContent />
       </LanguageProvider>
     </ThemeProvider>
   );

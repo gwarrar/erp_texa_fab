@@ -353,7 +353,7 @@ function AccountingContent() {
                   </div>
                   <div className="flex-1 mx-4">
                     <div className="h-7 bg-white dark:bg-gray-800 rounded-md border border-gray-200 dark:border-gray-600 flex items-center px-3">
-                      <span className="text-xs text-gray-400 dark:text-gray-500">erpmax.app/accounting</span>
+                      <span className="text-xs text-gray-400 dark:text-gray-500">texacore.app/accounting</span>
                     </div>
                   </div>
                 </div>

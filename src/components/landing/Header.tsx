@@ -134,27 +134,27 @@ export function Header() {
           </Link>
 
           {/* Desktop Navigation */}
-          <nav className="hidden lg:flex items-center gap-0.5 xl:gap-1">
+          <nav className="hidden lg:flex items-center gap-0.5 xl:gap-1" dir="ltr">
             <Link 
               to="/features" 
               className="relative px-2 xl:px-4 py-2 text-xs xl:text-sm font-medium text-gray-600 dark:text-gray-300 hover:text-texafab-emerald dark:hover:text-texafab-teal transition-colors group whitespace-nowrap"
             >
               {t("nav.features")}
-              <span className="absolute bottom-0 left-1/2 -translate-x-1/2 w-0 h-0.5 bg-texafab-emerald rounded-full group-hover:w-6 transition-all duration-300" />
+              <span className="absolute bottom-0 left-0 right-0 mx-auto w-0 h-0.5 bg-texafab-emerald rounded-full group-hover:w-6 transition-all duration-300" />
             </Link>
             <Link 
               to="/comparison" 
               className="relative px-2 xl:px-4 py-2 text-xs xl:text-sm font-medium text-gray-600 dark:text-gray-300 hover:text-texafab-emerald dark:hover:text-texafab-teal transition-colors group whitespace-nowrap"
             >
               {t("nav.whyTexaCore")}
-              <span className="absolute bottom-0 left-1/2 -translate-x-1/2 w-0 h-0.5 bg-texafab-emerald rounded-full group-hover:w-6 transition-all duration-300" />
+              <span className="absolute bottom-0 left-0 right-0 mx-auto w-0 h-0.5 bg-texafab-emerald rounded-full group-hover:w-6 transition-all duration-300" />
             </Link>
             <Link 
               to="/workflow" 
               className="relative px-2 xl:px-4 py-2 text-xs xl:text-sm font-medium text-gray-600 dark:text-gray-300 hover:text-texafab-emerald dark:hover:text-texafab-teal transition-colors group whitespace-nowrap"
             >
               {t("nav.workflow")}
-              <span className="absolute bottom-0 left-1/2 -translate-x-1/2 w-0 h-0.5 bg-texafab-emerald rounded-full group-hover:w-6 transition-all duration-300" />
+              <span className="absolute bottom-0 left-0 right-0 mx-auto w-0 h-0.5 bg-texafab-emerald rounded-full group-hover:w-6 transition-all duration-300" />
             </Link>
             
             {/* Solutions Dropdown */}
@@ -198,14 +198,14 @@ export function Header() {
               className="relative px-2 xl:px-4 py-2 text-xs xl:text-sm font-medium text-gray-600 dark:text-gray-300 hover:text-texafab-emerald dark:hover:text-texafab-teal transition-colors group whitespace-nowrap"
             >
               {t("nav.pricing")}
-              <span className="absolute bottom-0 left-1/2 -translate-x-1/2 w-0 h-0.5 bg-texafab-emerald rounded-full group-hover:w-6 transition-all duration-300" />
+              <span className="absolute bottom-0 left-0 right-0 mx-auto w-0 h-0.5 bg-texafab-emerald rounded-full group-hover:w-6 transition-all duration-300" />
             </Link>
             <Link 
               to="/contact" 
               className="relative px-2 xl:px-4 py-2 text-xs xl:text-sm font-medium text-gray-600 dark:text-gray-300 hover:text-texafab-emerald dark:hover:text-texafab-teal transition-colors group whitespace-nowrap"
             >
               {t("nav.contact")}
-              <span className="absolute bottom-0 left-1/2 -translate-x-1/2 w-0 h-0.5 bg-texafab-emerald rounded-full group-hover:w-6 transition-all duration-300" />
+              <span className="absolute bottom-0 left-0 right-0 mx-auto w-0 h-0.5 bg-texafab-emerald rounded-full group-hover:w-6 transition-all duration-300" />
             </Link>
           </nav>
 

@@ -6014,7 +6014,7 @@ We do not share your data with third parties for marketing purposes without your
 • **Object**: Object to processing your data for certain purposes
 • **Withdraw Consent**: Withdraw your consent at any time
 
-To exercise any of these rights, contact us at privacy@texacore.app`,
+To exercise any of these rights, contact us at privacy@erpmax.app`,
     ar: `لديك الحقوق التالية فيما يتعلق ببياناتك:
 
 • **الوصول**: طلب نسخة من بياناتك الشخصية
@@ -6024,7 +6024,7 @@ To exercise any of these rights, contact us at privacy@texacore.app`,
 • **الاعتراض**: الاعتراض على معالجة بياناتك لأغراض معينة
 • **سحب الموافقة**: سحب موافقتك في أي وقت
 
-لممارسة أي من هذه الحقوق، تواصل معنا عبر privacy@texacore.app`
+لممارسة أي من هذه الحقوق، تواصل معنا عبر privacy@erpmax.app`
   },
   
   // Contact

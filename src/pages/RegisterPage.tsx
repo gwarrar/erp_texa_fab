@@ -80,10 +80,10 @@ export default function RegisterPage() {
   ];
 
   const benefits = [
-    { ar: "14 يوم تجربة مجانية", en: "14-day free trial" },
-    { ar: "بدون بطاقة ائتمان", en: "No credit card required" },
-    { ar: "إعداد سريع خلال دقائق", en: "Quick setup in minutes" },
-    { ar: "دعم فني 24/7", en: "24/7 support" },
+    { ar: "14 يوم تجربة مجانية", en: "14-day free trial", ru: "14-дневная бесплатная пробная версия", uk: "14-денний безкоштовний пробний період", ro: "14 zile de probă gratuită", pl: "14-dniowy bezpłatny okres próbny", it: "14 giorni di prova gratuita", tr: "14 günlük ücretsiz deneme" },
+    { ar: "بدون بطاقة ائتمان", en: "No credit card required", ru: "Без кредитной карты", uk: "Без кредитної картки", ro: "Fără card de credit", pl: "Bez karty kredytowej", it: "Nessuna carta di credito richiesta", tr: "Kredi kartı gerekmez" },
+    { ar: "إعداد سريع خلال دقائق", en: "Quick setup in minutes", ru: "Быстрая настройка за минуты", uk: "Швидке налаштування за хвилини", ro: "Configurare rapidă în minute", pl: "Szybka konfiguracja w minuty", it: "Configurazione rapida in minuti", tr: "Dakikalar içinde hızlı kurulum" },
+    { ar: "دعم فني 24/7", en: "24/7 support", ru: "Поддержка 24/7", uk: "Підтримка 24/7", ro: "Suport 24/7", pl: "Wsparcie 24/7", it: "Supporto 24/7", tr: "7/24 destek" },
   ];
 
   const languages = [
@@ -132,7 +132,7 @@ export default function RegisterPage() {
                   <Check className="w-3 h-3 text-green-600 dark:text-green-400" />
                 </div>
                 <span className="text-gray-600 dark:text-gray-400">
-                  {language === "ar" ? benefit.ar : benefit.en}
+                  {(benefit as any)[language] || benefit.en}
                 </span>
               </div>
             ))}
@@ -211,7 +211,7 @@ export default function RegisterPage() {
                   id="phone"
                   name="phone"
                   type="tel"
-                  placeholder={language === "ar" ? "+966 5XX XXX XXXX" : "+1 XXX XXX XXXX"}
+                  placeholder="+353 XX XXX XXXX"
                   value={formData.phone}
                   onChange={handleChange}
                   className="ps-10 h-12 bg-gray-50 dark:bg-gray-800 border-gray-200 dark:border-gray-700 focus:border-texafab-emerald"

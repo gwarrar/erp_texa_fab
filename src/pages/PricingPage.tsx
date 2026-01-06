@@ -553,48 +553,48 @@ function PricingContent() {
                     )}
 
                     {/* Expected Returns Section */}
-                    <div className={`mb-4 p-3 rounded-lg ${
+                    <div className={`mb-4 p-4 rounded-xl ${
                       plan.popular 
-                        ? "bg-white/10 border border-white/20" 
+                        ? "bg-white/15 border-2 border-white/30" 
                         : "bg-gradient-to-br from-green-50 to-emerald-50 dark:from-green-900/20 dark:to-emerald-900/20 border border-green-200 dark:border-green-800/50"
                     }`}>
-                      <h4 className={`text-xs font-bold mb-2 flex items-center gap-1 ${plan.popular ? "text-white" : "text-green-700 dark:text-green-400"}`}>
-                        <DollarSign className="w-3 h-3" />
+                      <h4 className={`text-sm font-bold mb-3 flex items-center gap-2 ${plan.popular ? "text-white" : "text-green-700 dark:text-green-400"}`}>
+                        <DollarSign className="w-4 h-4" />
                         {categories.returns}
                       </h4>
-                      <div className="space-y-1">
+                      <div className="space-y-2">
                         <div className="flex justify-between items-center">
-                          <span className={`text-[10px] ${plan.popular ? "text-white/70" : "text-gray-600 dark:text-gray-400"}`}>
-                            <TrendingUp className="w-2.5 h-2.5 inline me-1" />
+                          <span className={`text-xs ${plan.popular ? "text-white/90" : "text-gray-600 dark:text-gray-400"}`}>
+                            <TrendingUp className="w-3.5 h-3.5 inline me-1" />
                             {getText(lt.metricSales, language)}
                           </span>
-                          <span className={`text-[10px] font-bold ${plan.popular ? "text-texafab-gold" : "text-green-600 dark:text-green-400"}`}>
+                          <span className={`text-sm font-bold ${plan.popular ? "text-texafab-gold" : "text-green-600 dark:text-green-400"}`}>
                             {returns.salesIncrease}{getText(lt.perYear, language)}
                           </span>
                         </div>
                         <div className="flex justify-between items-center">
-                          <span className={`text-[10px] ${plan.popular ? "text-white/70" : "text-gray-600 dark:text-gray-400"}`}>
-                            <Heart className="w-2.5 h-2.5 inline me-1" />
+                          <span className={`text-xs ${plan.popular ? "text-white/90" : "text-gray-600 dark:text-gray-400"}`}>
+                            <Heart className="w-3.5 h-3.5 inline me-1" />
                             {getText(lt.metricRetention, language)}
                           </span>
-                          <span className={`text-[10px] font-bold ${plan.popular ? "text-texafab-gold" : "text-green-600 dark:text-green-400"}`}>
+                          <span className={`text-sm font-bold ${plan.popular ? "text-texafab-gold" : "text-green-600 dark:text-green-400"}`}>
                             {returns.customerRetention}{getText(lt.perYear, language)}
                           </span>
                         </div>
-                        <div className={`pt-1 mt-1 border-t ${plan.popular ? "border-white/20" : "border-green-200 dark:border-green-700"}`}>
+                        <div className={`pt-2 mt-2 border-t ${plan.popular ? "border-white/30" : "border-green-200 dark:border-green-700"}`}>
                           <div className="flex justify-between items-center">
-                            <span className={`text-[10px] font-medium ${plan.popular ? "text-white" : "text-gray-700 dark:text-gray-300"}`}>
+                            <span className={`text-xs font-semibold ${plan.popular ? "text-white" : "text-gray-700 dark:text-gray-300"}`}>
                               {getText(lt.metricProfit, language)}
                             </span>
-                            <span className={`text-xs font-black ${plan.popular ? "text-white" : "text-green-600 dark:text-green-400"}`}>
+                            <span className={`text-base font-black ${plan.popular ? "text-white" : "text-green-600 dark:text-green-400"}`}>
                               {returns.netProfit}
                             </span>
                           </div>
-                          <div className="flex justify-between items-center mt-0.5">
-                            <span className={`text-[10px] ${plan.popular ? "text-white/70" : "text-gray-500 dark:text-gray-400"}`}>
+                          <div className="flex justify-between items-center mt-1.5">
+                            <span className={`text-xs ${plan.popular ? "text-white/90" : "text-gray-500 dark:text-gray-400"}`}>
                               ROI
                             </span>
-                            <span className={`text-[10px] font-bold ${plan.popular ? "text-texafab-gold" : "text-emerald-600 dark:text-emerald-400"}`}>
+                            <span className={`text-sm font-bold ${plan.popular ? "text-texafab-gold" : "text-emerald-600 dark:text-emerald-400"}`}>
                               {returns.roi}
                             </span>
                           </div>

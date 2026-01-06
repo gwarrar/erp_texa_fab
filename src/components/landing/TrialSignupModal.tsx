@@ -107,7 +107,7 @@ export function TrialSignupModal({ isOpen, onClose }: TrialSignupModalProps) {
                 <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">
                   {language === "ar" ? "رقم الهاتف" : "Phone"}
                 </label>
-                <Input type="tel" placeholder="+966 50 000 0000" />
+                <Input type="tel" placeholder="+353 83 081 3305" />
               </div>
 
               <div>

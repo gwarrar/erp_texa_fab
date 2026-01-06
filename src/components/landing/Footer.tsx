@@ -95,13 +95,13 @@ export function Footer() {
               
               {/* Contact Info */}
               <div className="space-y-2 pt-3">
-                <a href="mailto:info@texacore.app" className="flex items-center gap-3 text-gray-400 hover:text-white transition-colors group text-sm">
+                <a href="mailto:info@erpmax.app" className="flex items-center gap-3 text-gray-400 hover:text-white transition-colors group text-sm">
                   <Mail className="w-4 h-4 text-texafab-emerald" />
-                  <span>info@texacore.app</span>
+                  <span>info@erpmax.app</span>
                 </a>
-                <a href="tel:+966-50-000-0000" className="flex items-center gap-3 text-gray-400 hover:text-white transition-colors group text-sm">
+                <a href="tel:+353830813305" className="flex items-center gap-3 text-gray-400 hover:text-white transition-colors group text-sm">
                   <Phone className="w-4 h-4 text-texafab-emerald" />
-                  <span dir="ltr">+966 50 000 0000</span>
+                  <span dir="ltr">+353 83 081 3305</span>
                 </a>
                 <div className="flex items-start gap-3 text-gray-400 text-sm">
                   <MapPin className="w-4 h-4 text-texafab-emerald flex-shrink-0 mt-0.5" />

@@ -8,6 +8,7 @@ import { Pricing } from "./landing/Pricing";
 import { Footer } from "./landing/Footer";
 import { FabricShowcase } from "./landing/FabricShowcase";
 import { GlobalPresence } from "./landing/GlobalPresence";
+import { WarehouseShowcase } from "./landing/WarehouseShowcase";
 
 function HomeContent() {
   const { dir, language } = useLanguage();
@@ -23,6 +24,7 @@ function HomeContent() {
       
       <main id="main-content">
         <Hero />
+        <WarehouseShowcase />
         <Features />
         <FabricShowcase />
         <Trust />

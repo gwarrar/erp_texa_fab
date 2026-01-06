@@ -29,10 +29,12 @@ export function Trust() {
     },
   ];
 
+  const responseTimeValue = language === "ar" ? "5 دقائق" : "5 Min";
+  
   const stats = [
     { value: "15+", label: getText(t.yearsExperience, language) },
     { value: "200+", label: getText(t.advancedFeatures, language) },
-    { value: "5 دقائق", label: getText(t.avgResponseTime, language) },
+    { value: responseTimeValue, label: getText(t.avgResponseTime, language) },
     { value: "100%", label: getText(t.customerSatisfaction, language) },
   ];
 

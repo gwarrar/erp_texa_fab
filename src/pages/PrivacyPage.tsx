@@ -128,7 +128,7 @@ function PrivacyContent() {
                   {getText(t.contactDesc, language)}
                 </p>
                 <div className="space-y-2 text-white/80">
-                  <p><strong>{getText(t.emailLabel, language)}</strong> privacy@texacore.app</p>
+                  <p><strong>{getText(t.emailLabel, language)}</strong> privacy@erpmax.app</p>
                   <p><strong>{getText(t.addressLabel, language)}</strong> Next Revolution for Software Development, Dublin, Ireland</p>
                 </div>
               </div>

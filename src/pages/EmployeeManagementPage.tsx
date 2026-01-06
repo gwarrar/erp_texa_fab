@@ -34,98 +34,186 @@ import {
 function EmployeeManagementContent() {
   const { language, dir } = useLanguage();
 
+  const getText = (translations: Record<string, string>) => {
+    return translations[language] || translations.en;
+  };
+
   const features = [
     {
       icon: BarChart3,
-      titleAr: "لوحة أداء الموظفين KPIs",
-      titleEn: "Employee KPIs Dashboard",
-      descAr: "مؤشرات أداء شاملة: المبيعات، العملاء الجدد، معدل التحويل، رضا العملاء",
-      descEn: "Comprehensive KPIs: Sales, new customers, conversion rate, customer satisfaction",
+      title: {
+        ar: "لوحة أداء الموظفين KPIs",
+        en: "Employee KPIs Dashboard",
+        ru: "Панель KPI сотрудников",
+        uk: "Панель KPI співробітників",
+        ro: "Tablou de bord KPI angajați",
+        pl: "Panel KPI pracowników",
+        it: "Dashboard KPI dipendenti",
+        tr: "Çalışan KPI Paneli"
+      },
+      desc: {
+        ar: "مؤشرات أداء شاملة: المبيعات، العملاء الجدد، معدل التحويل، رضا العملاء",
+        en: "Comprehensive KPIs: Sales, new customers, conversion rate, customer satisfaction",
+        ru: "Комплексные KPI: Продажи, новые клиенты, коэффициент конверсии, удовлетворенность клиентов",
+        uk: "Комплексні KPI: Продажі, нові клієнти, коефіцієнт конверсії, задоволеність клієнтів",
+        ro: "KPI-uri cuprinzătoare: Vânzări, clienți noi, rata de conversie, satisfacția clienților",
+        pl: "Kompleksowe KPI: Sprzedaż, nowi klienci, współczynnik konwersji, satysfakcja klientów",
+        it: "KPI completi: Vendite, nuovi clienti, tasso di conversione, soddisfazione del cliente",
+        tr: "Kapsamlı KPI'lar: Satışlar, yeni müşteriler, dönüşüm oranı, müşteri memnuniyeti"
+      },
       color: "from-blue-500 to-blue-600"
     },
     {
       icon: Clock,
-      titleAr: "تتبع ساعات العمل والحضور",
-      titleEn: "Work Hours & Attendance",
-      descAr: "تسجيل الحضور والانصراف، الإجازات، العمل الإضافي مع تقارير تفصيلية",
-      descEn: "Check-in/out, leaves, overtime with detailed reports",
+      title: {
+        ar: "تتبع ساعات العمل والحضور",
+        en: "Work Hours & Attendance",
+        ru: "Рабочие часы и посещаемость",
+        uk: "Робочі години та відвідуваність",
+        ro: "Ore de lucru și prezență",
+        pl: "Godziny pracy i obecność",
+        it: "Ore lavorative e presenze",
+        tr: "Çalışma Saatleri ve Devam"
+      },
+      desc: {
+        ar: "تسجيل الحضور والانصراف، الإجازات، العمل الإضافي مع تقارير تفصيلية",
+        en: "Check-in/out, leaves, overtime with detailed reports",
+        ru: "Регистрация прихода/ухода, отпуска, сверхурочные с детальными отчетами",
+        uk: "Реєстрація приходу/відходу, відпустки, понаднормові з детальними звітами",
+        ro: "Check-in/out, concedii, ore suplimentare cu rapoarte detaliate",
+        pl: "Rejestracja wejść/wyjść, urlopy, nadgodziny ze szczegółowymi raportami",
+        it: "Check-in/out, ferie, straordinari con report dettagliati",
+        tr: "Giriş/çıkış, izinler, fazla mesai ve ayrıntılı raporlar"
+      },
       color: "from-emerald-500 to-emerald-600"
     },
     {
       icon: DollarSign,
-      titleAr: "نظام العمولات الذكي",
-      titleEn: "Smart Commission System",
-      descAr: "حساب تلقائي للعمولات حسب المبيعات مع قواعد مرنة قابلة للتخصيص",
-      descEn: "Automatic commission calculation based on sales with flexible customizable rules",
+      title: {
+        ar: "نظام العمولات الذكي",
+        en: "Smart Commission System",
+        ru: "Умная система комиссий",
+        uk: "Розумна система комісій",
+        ro: "Sistem inteligent de comisioane",
+        pl: "Inteligentny system prowizji",
+        it: "Sistema commissioni intelligente",
+        tr: "Akıllı Komisyon Sistemi"
+      },
+      desc: {
+        ar: "حساب تلقائي للعمولات حسب المبيعات مع قواعد مرنة قابلة للتخصيص",
+        en: "Automatic commission calculation based on sales with flexible customizable rules",
+        ru: "Автоматический расчет комиссий на основе продаж с гибкими настраиваемыми правилами",
+        uk: "Автоматичний розрахунок комісій на основі продажів з гнучкими налаштовуваними правилами",
+        ro: "Calcul automat al comisioanelor bazat pe vânzări cu reguli flexibile personalizabile",
+        pl: "Automatyczne obliczanie prowizji na podstawie sprzedaży z elastycznymi, konfigurowalnymi regułami",
+        it: "Calcolo automatico delle commissioni basato sulle vendite con regole flessibili personalizzabili",
+        tr: "Esnek özelleştirilebilir kurallarla satışlara dayalı otomatik komisyon hesaplama"
+      },
       color: "from-amber-500 to-amber-600"
     },
     {
       icon: Shield,
-      titleAr: "صلاحيات متعددة المستويات",
-      titleEn: "Multi-Level Permissions",
-      descAr: "تحكم دقيق في صلاحيات كل مستخدم حسب الدور والقسم",
-      descEn: "Precise control over each user's permissions by role and department",
+      title: {
+        ar: "صلاحيات متعددة المستويات",
+        en: "Multi-Level Permissions",
+        ru: "Многоуровневые разрешения",
+        uk: "Багаторівневі дозволи",
+        ro: "Permisiuni pe mai multe niveluri",
+        pl: "Wielopoziomowe uprawnienia",
+        it: "Permessi multilivello",
+        tr: "Çok Seviyeli İzinler"
+      },
+      desc: {
+        ar: "تحكم دقيق في صلاحيات كل مستخدم حسب الدور والقسم",
+        en: "Precise control over each user's permissions by role and department",
+        ru: "Точный контроль над правами каждого пользователя по роли и отделу",
+        uk: "Точний контроль прав кожного користувача за роллю та відділом",
+        ro: "Control precis asupra permisiunilor fiecărui utilizator după rol și departament",
+        pl: "Precyzyjna kontrola uprawnień każdego użytkownika według roli i działu",
+        it: "Controllo preciso sui permessi di ogni utente per ruolo e dipartimento",
+        tr: "Rol ve departmana göre her kullanıcının izinleri üzerinde hassas kontrol"
+      },
       color: "from-purple-500 to-purple-600"
     },
     {
       icon: Eye,
-      titleAr: "سجل النشاط (Audit Log)",
-      titleEn: "Activity Audit Log",
-      descAr: "تتبع كل إجراء: من فعل ماذا ومتى مع سجل كامل للتعديلات",
-      descEn: "Track every action: who did what and when with complete modification history",
+      title: {
+        ar: "سجل النشاط (Audit Log)",
+        en: "Activity Audit Log",
+        ru: "Журнал аудита активности",
+        uk: "Журнал аудиту активності",
+        ro: "Jurnal de audit al activității",
+        pl: "Dziennik audytu aktywności",
+        it: "Registro audit attività",
+        tr: "Aktivite Denetim Günlüğü"
+      },
+      desc: {
+        ar: "تتبع كل إجراء: من فعل ماذا ومتى مع سجل كامل للتعديلات",
+        en: "Track every action: who did what and when with complete modification history",
+        ru: "Отслеживание каждого действия: кто что сделал и когда с полной историей изменений",
+        uk: "Відстеження кожної дії: хто що зробив і коли з повною історією змін",
+        ro: "Urmăriți fiecare acțiune: cine a făcut ce și când cu istoricul complet al modificărilor",
+        pl: "Śledź każdą akcję: kto co zrobił i kiedy z pełną historią modyfikacji",
+        it: "Traccia ogni azione: chi ha fatto cosa e quando con cronologia completa delle modifiche",
+        tr: "Her eylemi takip edin: kim ne yaptı ve ne zaman, tam değişiklik geçmişiyle"
+      },
       color: "from-red-500 to-red-600"
     },
     {
       icon: Award,
-      titleAr: "تقارير الأداء المقارنة",
-      titleEn: "Comparative Performance Reports",
-      descAr: "ترتيب الموظفين حسب الأداء مع مكافآت تلقائية للمتميزين",
-      descEn: "Employee ranking by performance with automatic rewards for top performers",
+      title: {
+        ar: "تقارير الأداء المقارنة",
+        en: "Comparative Performance Reports",
+        ru: "Сравнительные отчеты о производительности",
+        uk: "Порівняльні звіти про продуктивність",
+        ro: "Rapoarte comparative de performanță",
+        pl: "Porównawcze raporty wydajności",
+        it: "Report prestazioni comparative",
+        tr: "Karşılaştırmalı Performans Raporları"
+      },
+      desc: {
+        ar: "ترتيب الموظفين حسب الأداء مع مكافآت تلقائية للمتميزين",
+        en: "Employee ranking by performance with automatic rewards for top performers",
+        ru: "Рейтинг сотрудников по производительности с автоматическими наградами для лучших",
+        uk: "Рейтинг співробітників за продуктивністю з автоматичними винагородами для найкращих",
+        ro: "Clasamentul angajaților după performanță cu recompense automate pentru cei mai buni",
+        pl: "Ranking pracowników według wydajności z automatycznymi nagrodami dla najlepszych",
+        it: "Classifica dei dipendenti per prestazioni con premi automatici per i migliori",
+        tr: "En iyi performans gösterenler için otomatik ödüllerle performansa göre çalışan sıralaması"
+      },
       color: "from-cyan-500 to-cyan-600"
     }
   ];
 
   const roles = [
     { 
-      titleAr: "مدير النظام",
-      titleEn: "System Admin",
-      descAr: "صلاحيات كاملة للنظام",
-      descEn: "Full system access",
+      title: { ar: "مدير النظام", en: "System Admin", ru: "Системный администратор", uk: "Системний адміністратор", ro: "Admin sistem", pl: "Administrator systemu", it: "Admin sistema", tr: "Sistem Yöneticisi" },
+      desc: { ar: "صلاحيات كاملة للنظام", en: "Full system access", ru: "Полный доступ к системе", uk: "Повний доступ до системи", ro: "Acces complet la sistem", pl: "Pełny dostęp do systemu", it: "Accesso completo al sistema", tr: "Tam sistem erişimi" },
       color: "bg-red-100 text-red-600"
     },
     { 
-      titleAr: "مدير المبيعات",
-      titleEn: "Sales Manager",
-      descAr: "إدارة فريق المبيعات والتقارير",
-      descEn: "Sales team & reports management",
+      title: { ar: "مدير المبيعات", en: "Sales Manager", ru: "Менеджер по продажам", uk: "Менеджер з продажів", ro: "Manager vânzări", pl: "Kierownik sprzedaży", it: "Responsabile vendite", tr: "Satış Müdürü" },
+      desc: { ar: "إدارة فريق المبيعات والتقارير", en: "Sales team & reports management", ru: "Управление командой продаж и отчетами", uk: "Управління командою продажів та звітами", ro: "Gestionarea echipei de vânzări și rapoarte", pl: "Zarządzanie zespołem sprzedaży i raportami", it: "Gestione team vendite e report", tr: "Satış ekibi ve rapor yönetimi" },
       color: "bg-blue-100 text-blue-600"
     },
     { 
-      titleAr: "موظف مبيعات",
-      titleEn: "Sales Rep",
-      descAr: "الوصول للمبيعات والعملاء",
-      descEn: "Access to sales & customers",
+      title: { ar: "موظف مبيعات", en: "Sales Rep", ru: "Торговый представитель", uk: "Торговий представник", ro: "Reprezentant vânzări", pl: "Przedstawiciel handlowy", it: "Rappresentante vendite", tr: "Satış Temsilcisi" },
+      desc: { ar: "الوصول للمبيعات والعملاء", en: "Access to sales & customers", ru: "Доступ к продажам и клиентам", uk: "Доступ до продажів та клієнтів", ro: "Acces la vânzări și clienți", pl: "Dostęp do sprzedaży i klientów", it: "Accesso a vendite e clienti", tr: "Satış ve müşterilere erişim" },
       color: "bg-emerald-100 text-emerald-600"
     },
     { 
-      titleAr: "أمين المستودع",
-      titleEn: "Warehouse Keeper",
-      descAr: "إدارة المخزون والاستلام",
-      descEn: "Inventory & receiving",
+      title: { ar: "أمين المستودع", en: "Warehouse Keeper", ru: "Кладовщик", uk: "Комірник", ro: "Responsabil depozit", pl: "Magazynier", it: "Magazziniere", tr: "Depo Sorumlusu" },
+      desc: { ar: "إدارة المخزون والاستلام", en: "Inventory & receiving", ru: "Инвентарь и приёмка", uk: "Інвентар та приймання", ro: "Inventar și recepție", pl: "Inwentarz i przyjęcie", it: "Inventario e ricezione", tr: "Envanter ve teslim alma" },
       color: "bg-amber-100 text-amber-600"
     },
     { 
-      titleAr: "محاسب",
-      titleEn: "Accountant",
-      descAr: "الحسابات والتقارير المالية",
-      descEn: "Accounts & financial reports",
+      title: { ar: "محاسب", en: "Accountant", ru: "Бухгалтер", uk: "Бухгалтер", ro: "Contabil", pl: "Księgowy", it: "Contabile", tr: "Muhasebeci" },
+      desc: { ar: "الحسابات والتقارير المالية", en: "Accounts & financial reports", ru: "Счета и финансовые отчеты", uk: "Рахунки та фінансові звіти", ro: "Conturi și rapoarte financiare", pl: "Rachunki i raporty finansowe", it: "Conti e report finanziari", tr: "Hesaplar ve mali raporlar" },
       color: "bg-purple-100 text-purple-600"
     },
     { 
-      titleAr: "خدمة العملاء",
-      titleEn: "Customer Service",
-      descAr: "دعم العملاء والشكاوى",
-      descEn: "Customer support & complaints",
+      title: { ar: "خدمة العملاء", en: "Customer Service", ru: "Служба поддержки", uk: "Служба підтримки", ro: "Serviciu clienți", pl: "Obsługa klienta", it: "Servizio clienti", tr: "Müşteri Hizmetleri" },
+      desc: { ar: "دعم العملاء والشكاوى", en: "Customer support & complaints", ru: "Поддержка клиентов и жалобы", uk: "Підтримка клієнтів та скарги", ro: "Suport clienți și reclamații", pl: "Wsparcie klienta i reklamacje", it: "Supporto clienti e reclami", tr: "Müşteri desteği ve şikayetler" },
       color: "bg-cyan-100 text-cyan-600"
     }
   ];
@@ -227,10 +315,10 @@ function EmployeeManagementContent() {
                   <feature.icon className="w-7 h-7 text-white" />
                 </div>
                 <h3 className="text-xl font-bold text-texafab-slate mb-2">
-                  {language === "ar" ? feature.titleAr : feature.titleEn}
+                  {getText(feature.title)}
                 </h3>
                 <p className="text-gray-600">
-                  {language === "ar" ? feature.descAr : feature.descEn}
+                  {getText(feature.desc)}
                 </p>
               </Card>
             ))}
@@ -264,10 +352,10 @@ function EmployeeManagementContent() {
                 {roles.map((role, index) => (
                   <div key={index} className="p-4 bg-gray-50 rounded-xl">
                     <span className={`px-2 py-1 rounded-full text-xs font-semibold ${role.color}`}>
-                      {language === "ar" ? role.titleAr : role.titleEn}
+                      {getText(role.title)}
                     </span>
                     <p className="text-sm text-gray-600 mt-2">
-                      {language === "ar" ? role.descAr : role.descEn}
+                      {getText(role.desc)}
                     </p>
                   </div>
                 ))}

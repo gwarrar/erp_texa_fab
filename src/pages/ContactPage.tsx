@@ -38,29 +38,29 @@ function ContactContent() {
       city: getText(t.dublin, language),
       type: getText(t.headquarters, language),
       address: "123 Tech Quarter, Dublin 2",
-      phone: "+353 1 555 0100",
-      email: "hq@texacore.app"
+      phone: "+353 83 081 3305",
+      email: "hq@erpmax.app"
     },
     {
       city: getText(t.berlin, language),
       type: getText(t.europeOffice, language),
       address: "Alexanderplatz 5, 10178 Berlin",
-      phone: "+49 30 555 0200",
-      email: "europe@texacore.app"
+      phone: "+353 83 081 3305",
+      email: "europe@erpmax.app"
     },
     {
       city: getText(t.riyadh, language),
       type: getText(t.gulfOffice, language),
       address: getText(t.riyadhAddress, language),
-      phone: "+966 11 555 0300",
-      email: "gulf@texacore.app"
+      phone: "+353 83 081 3305",
+      email: "gulf@erpmax.app"
     },
     {
       city: getText(t.dubai, language),
       type: getText(t.supportCenter, language),
       address: "Dubai Internet City, Building 12",
-      phone: "+971 4 555 0400",
-      email: "support@texacore.app"
+      phone: "+353 83 081 3305",
+      email: "support@erpmax.app"
     }
   ];
 
@@ -69,15 +69,15 @@ function ContactContent() {
       icon: Phone,
       title: getText(t.callUs, language),
       desc: getText(t.callUsDesc, language),
-      value: "+966 50 000 0000",
-      action: "tel:+966500000000"
+      value: "+353 83 081 3305",
+      action: "tel:+353830813305"
     },
     {
       icon: Mail,
       title: getText(t.emailUs, language),
       desc: getText(t.emailUsDesc, language),
-      value: "info@texacore.app",
-      action: "mailto:info@texacore.app"
+      value: "info@erpmax.app",
+      action: "mailto:info@erpmax.app"
     },
     {
       icon: MessageCircle,
@@ -188,7 +188,7 @@ function ContactContent() {
                     <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
                       {getText(t.phone, language)}
                     </label>
-                    <Input type="tel" placeholder="+966 50 000 0000" />
+                    <Input type="tel" placeholder="+353 83 081 3305" />
                   </div>
                   <div>
                     <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
@@ -359,7 +359,7 @@ function ContactContent() {
                     <label className="block text-sm font-medium text-gray-700 mb-1">
                       {getText(t.phone, language)}
                     </label>
-                    <Input type="tel" placeholder="+966 50 000 0000" />
+                    <Input type="tel" placeholder="+353 83 081 3305" />
                   </div>
                   <div>
                     <label className="block text-sm font-medium text-gray-700 mb-1">

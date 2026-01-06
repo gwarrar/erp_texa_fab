@@ -34,64 +34,164 @@ import {
 function AccountingContent() {
   const { language, dir } = useLanguage();
 
+  const getText = (translations: Record<string, string>) => {
+    return translations[language] || translations.en;
+  };
+
   const features = [
     {
       icon: Calculator,
-      titleAr: "حساب تكلفة البضاعة المباعة COGS",
-      titleEn: "Cost of Goods Sold (COGS)",
-      descAr: "حساب تلقائي ودقيق لتكلفة البضاعة المباعة بطرق متعددة (FIFO, LIFO, المتوسط)",
-      descEn: "Automatic and precise calculation of COGS using multiple methods (FIFO, LIFO, Average)",
+      title: {
+        ar: "حساب تكلفة البضاعة المباعة COGS",
+        en: "Cost of Goods Sold (COGS)",
+        ru: "Себестоимость проданных товаров (COGS)",
+        uk: "Собівартість проданих товарів (COGS)",
+        ro: "Costul bunurilor vândute (COGS)",
+        pl: "Koszt sprzedanych towarów (COGS)",
+        it: "Costo del venduto (COGS)",
+        tr: "Satılan Malların Maliyeti (COGS)"
+      },
+      desc: {
+        ar: "حساب تلقائي ودقيق لتكلفة البضاعة المباعة بطرق متعددة (FIFO, LIFO, المتوسط)",
+        en: "Automatic and precise calculation of COGS using multiple methods (FIFO, LIFO, Average)",
+        ru: "Автоматический и точный расчет себестоимости несколькими методами (FIFO, LIFO, средний)",
+        uk: "Автоматичний і точний розрахунок собівартості кількома методами (FIFO, LIFO, середній)",
+        ro: "Calcul automat și precis al COGS folosind mai multe metode (FIFO, LIFO, Medie)",
+        pl: "Automatyczne i precyzyjne obliczanie COGS przy użyciu wielu metod (FIFO, LIFO, Średnia)",
+        it: "Calcolo automatico e preciso del COGS utilizzando più metodi (FIFO, LIFO, Media)",
+        tr: "Birden fazla yöntem kullanarak otomatik ve hassas COGS hesaplaması (FIFO, LIFO, Ortalama)"
+      },
       color: "from-emerald-500 to-emerald-600"
     },
     {
       icon: TrendingUp,
-      titleAr: "تقارير الربحية التفصيلية",
-      titleEn: "Detailed Profitability Reports",
-      descAr: "تحليل الربحية حسب المنتج، العميل، الفترة، والفرع",
-      descEn: "Profitability analysis by product, customer, period, and branch",
+      title: {
+        ar: "تقارير الربحية التفصيلية",
+        en: "Detailed Profitability Reports",
+        ru: "Детальные отчеты о прибыльности",
+        uk: "Детальні звіти про прибутковість",
+        ro: "Rapoarte detaliate de profitabilitate",
+        pl: "Szczegółowe raporty rentowności",
+        it: "Report dettagliati di redditività",
+        tr: "Ayrıntılı Karlılık Raporları"
+      },
+      desc: {
+        ar: "تحليل الربحية حسب المنتج، العميل، الفترة، والفرع",
+        en: "Profitability analysis by product, customer, period, and branch",
+        ru: "Анализ прибыльности по продукту, клиенту, периоду и филиалу",
+        uk: "Аналіз прибутковості за продуктом, клієнтом, періодом і філією",
+        ro: "Analiza profitabilității pe produs, client, perioadă și sucursală",
+        pl: "Analiza rentowności według produktu, klienta, okresu i oddziału",
+        it: "Analisi della redditività per prodotto, cliente, periodo e filiale",
+        tr: "Ürün, müşteri, dönem ve şubeye göre karlılık analizi"
+      },
       color: "from-blue-500 to-blue-600"
     },
     {
       icon: Globe,
-      titleAr: "إدارة العملات المتعددة",
-      titleEn: "Multi-Currency Management",
-      descAr: "دعم جميع العملات مع تحديث أسعار الصرف تلقائياً",
-      descEn: "Support for all currencies with automatic exchange rate updates",
+      title: {
+        ar: "إدارة العملات المتعددة",
+        en: "Multi-Currency Management",
+        ru: "Управление несколькими валютами",
+        uk: "Управління кількома валютами",
+        ro: "Gestionarea mai multor valute",
+        pl: "Zarządzanie wieloma walutami",
+        it: "Gestione multi-valuta",
+        tr: "Çoklu Para Birimi Yönetimi"
+      },
+      desc: {
+        ar: "دعم جميع العملات مع تحديث أسعار الصرف تلقائياً",
+        en: "Support for all currencies with automatic exchange rate updates",
+        ru: "Поддержка всех валют с автоматическим обновлением курсов",
+        uk: "Підтримка всіх валют з автоматичним оновленням курсів",
+        ro: "Suport pentru toate valutele cu actualizare automată a cursurilor de schimb",
+        pl: "Obsługa wszystkich walut z automatyczną aktualizacją kursów wymiany",
+        it: "Supporto per tutte le valute con aggiornamento automatico dei tassi di cambio",
+        tr: "Otomatik döviz kuru güncellemeleri ile tüm para birimleri desteği"
+      },
       color: "from-purple-500 to-purple-600"
     },
     {
       icon: Percent,
-      titleAr: "حساب هامش الربح التلقائي",
-      titleEn: "Automatic Profit Margin",
-      descAr: "حساب فوري لهامش الربح عند إدخال السعر أو التكلفة",
-      descEn: "Instant profit margin calculation when entering price or cost",
+      title: {
+        ar: "حساب هامش الربح التلقائي",
+        en: "Automatic Profit Margin",
+        ru: "Автоматическая маржа прибыли",
+        uk: "Автоматична маржа прибутку",
+        ro: "Marjă de profit automată",
+        pl: "Automatyczna marża zysku",
+        it: "Margine di profitto automatico",
+        tr: "Otomatik Kar Marjı"
+      },
+      desc: {
+        ar: "حساب فوري لهامش الربح عند إدخال السعر أو التكلفة",
+        en: "Instant profit margin calculation when entering price or cost",
+        ru: "Мгновенный расчет маржи при вводе цены или себестоимости",
+        uk: "Миттєвий розрахунок маржі при введенні ціни або собівартості",
+        ro: "Calculul instantaneu al marjei de profit la introducerea prețului sau costului",
+        pl: "Natychmiastowe obliczanie marży zysku przy wprowadzaniu ceny lub kosztu",
+        it: "Calcolo istantaneo del margine di profitto quando si inserisce prezzo o costo",
+        tr: "Fiyat veya maliyet girildiğinde anında kar marjı hesaplama"
+      },
       color: "from-orange-500 to-orange-600"
     },
     {
       icon: Users,
-      titleAr: "إدارة الذمم المدينة والدائنة",
-      titleEn: "Receivables & Payables",
-      descAr: "تتبع شامل لمديونيات العملاء ومستحقات الموردين",
-      descEn: "Complete tracking of customer debts and supplier dues",
+      title: {
+        ar: "إدارة الذمم المدينة والدائنة",
+        en: "Receivables & Payables",
+        ru: "Дебиторская и кредиторская задолженность",
+        uk: "Дебіторська та кредиторська заборгованість",
+        ro: "Creanțe și datorii",
+        pl: "Należności i zobowiązania",
+        it: "Crediti e debiti",
+        tr: "Alacaklar ve Borçlar"
+      },
+      desc: {
+        ar: "تتبع شامل لمديونيات العملاء ومستحقات الموردين",
+        en: "Complete tracking of customer debts and supplier dues",
+        ru: "Полное отслеживание долгов клиентов и задолженностей поставщикам",
+        uk: "Повне відстеження боргів клієнтів та заборгованостей постачальникам",
+        ro: "Urmărire completă a datoriilor clienților și obligațiilor furnizorilor",
+        pl: "Pełne śledzenie długów klientów i zobowiązań wobec dostawców",
+        it: "Tracciamento completo dei debiti dei clienti e degli obblighi verso i fornitori",
+        tr: "Müşteri borçları ve tedarikçi alacaklarının tam takibi"
+      },
       color: "from-cyan-500 to-cyan-600"
     },
     {
       icon: Receipt,
-      titleAr: "تقارير الضرائب وVAT",
-      titleEn: "Tax & VAT Reports",
-      descAr: "تقارير ضريبية جاهزة للتقديم مع حساب VAT التلقائي",
-      descEn: "Tax-ready reports with automatic VAT calculation",
+      title: {
+        ar: "تقارير الضرائب وVAT",
+        en: "Tax & VAT Reports",
+        ru: "Налоговые отчеты и НДС",
+        uk: "Податкові звіти та ПДВ",
+        ro: "Rapoarte fiscale și TVA",
+        pl: "Raporty podatkowe i VAT",
+        it: "Report fiscali e IVA",
+        tr: "Vergi ve KDV Raporları"
+      },
+      desc: {
+        ar: "تقارير ضريبية جاهزة للتقديم مع حساب VAT التلقائي",
+        en: "Tax-ready reports with automatic VAT calculation",
+        ru: "Готовые налоговые отчеты с автоматическим расчетом НДС",
+        uk: "Готові податкові звіти з автоматичним розрахунком ПДВ",
+        ro: "Rapoarte gata pentru taxe cu calculul automat al TVA",
+        pl: "Raporty gotowe do podatków z automatycznym obliczaniem VAT",
+        it: "Report pronti per le tasse con calcolo automatico dell'IVA",
+        tr: "Otomatik KDV hesaplama ile vergiye hazır raporlar"
+      },
       color: "from-red-500 to-red-600"
     }
   ];
 
   const reports = [
-    { icon: PieChart, titleAr: "قائمة الدخل", titleEn: "Income Statement" },
-    { icon: Scale, titleAr: "الميزانية العمومية", titleEn: "Balance Sheet" },
-    { icon: BarChart3, titleAr: "التدفق النقدي", titleEn: "Cash Flow" },
-    { icon: FileText, titleAr: "تقادم الذمم", titleEn: "Aging Report" },
-    { icon: TrendingUp, titleAr: "تقرير الأرباح والخسائر", titleEn: "P&L Report" },
-    { icon: Receipt, titleAr: "سجل الضرائب", titleEn: "Tax Ledger" }
+    { icon: PieChart, title: { ar: "قائمة الدخل", en: "Income Statement", ru: "Отчет о доходах", uk: "Звіт про доходи", ro: "Declarație de venit", pl: "Rachunek zysków i strat", it: "Conto economico", tr: "Gelir Tablosu" } },
+    { icon: Scale, title: { ar: "الميزانية العمومية", en: "Balance Sheet", ru: "Баланс", uk: "Баланс", ro: "Bilanț", pl: "Bilans", it: "Bilancio", tr: "Bilanço" } },
+    { icon: BarChart3, title: { ar: "التدفق النقدي", en: "Cash Flow", ru: "Денежный поток", uk: "Грошовий потік", ro: "Flux de numerar", pl: "Przepływy pieniężne", it: "Flusso di cassa", tr: "Nakit Akışı" } },
+    { icon: FileText, title: { ar: "تقادم الذمم", en: "Aging Report", ru: "Отчет о старении", uk: "Звіт про старіння", ro: "Raport de îmbătrânire", pl: "Raport wiekowania", it: "Report aging", tr: "Yaşlandırma Raporu" } },
+    { icon: TrendingUp, title: { ar: "تقرير الأرباح والخسائر", en: "P&L Report", ru: "Отчет о прибылях и убытках", uk: "Звіт про прибутки та збитки", ro: "Raport P&L", pl: "Rachunek zysków i strat", it: "Report P&L", tr: "K&Z Raporu" } },
+    { icon: Receipt, title: { ar: "سجل الضرائب", en: "Tax Ledger", ru: "Налоговый регистр", uk: "Податковий реєстр", ro: "Registru fiscal", pl: "Rejestr podatkowy", it: "Registro fiscale", tr: "Vergi Defteri" } }
   ];
 
   const integrations = [
@@ -119,7 +219,16 @@ function AccountingContent() {
             <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-emerald-500/10 border border-emerald-500/20 mb-6">
               <Calculator className="w-4 h-4 text-emerald-500" />
               <span className="text-sm font-semibold text-emerald-600">
-                {language === "ar" ? "الدقة المحاسبية" : "Accounting Precision"}
+                {getText({
+                  ar: "الدقة المحاسبية",
+                  en: "Accounting Precision",
+                  ru: "Точность учета",
+                  uk: "Точність обліку",
+                  ro: "Precizie contabilă",
+                  pl: "Precyzja księgowa",
+                  it: "Precisione contabile",
+                  tr: "Muhasebe Hassasiyeti"
+                })}
               </span>
             </div>
 
@@ -127,20 +236,57 @@ function AccountingContent() {
               {language === "ar" ? (
                 <>دقة محاسبية <span className="text-emerald-500">لا تضاهى</span></>
               ) : (
-                <>Unmatched <span className="text-emerald-500">Accounting Precision</span></>
+                <>
+                  {getText({
+                    en: "Unmatched ",
+                    ru: "Непревзойденная ",
+                    uk: "Неперевершена ",
+                    ro: "Precizie contabilă ",
+                    pl: "Niezrównana ",
+                    it: "Precisione contabile ",
+                    tr: "Rakipsiz "
+                  })}
+                  <span className="text-emerald-500">
+                    {getText({
+                      en: "Accounting Precision",
+                      ru: "точность учета",
+                      uk: "точність обліку",
+                      ro: "de neegalat",
+                      pl: "precyzja księgowa",
+                      it: "senza pari",
+                      tr: "Muhasebe Hassasiyeti"
+                    })}
+                  </span>
+                </>
               )}
             </h1>
 
             <p className="text-xl text-gray-600 mb-8 leading-relaxed max-w-3xl mx-auto">
-              {language === "ar" 
-                ? "نظام محاسبي متكامل يوفر تقارير مالية دقيقة وتحليلات ربحية شاملة لاتخاذ قرارات أفضل"
-                : "Integrated accounting system providing precise financial reports and comprehensive profitability analysis for better decisions"}
+              {getText({
+                ar: "نظام محاسبي متكامل يوفر تقارير مالية دقيقة وتحليلات ربحية شاملة لاتخاذ قرارات أفضل",
+                en: "Integrated accounting system providing precise financial reports and comprehensive profitability analysis for better decisions",
+                ru: "Интегрированная бухгалтерская система, обеспечивающая точные финансовые отчеты и комплексный анализ прибыльности для лучших решений",
+                uk: "Інтегрована бухгалтерська система, що забезпечує точні фінансові звіти та комплексний аналіз прибутковості для кращих рішень",
+                ro: "Sistem contabil integrat care oferă rapoarte financiare precise și analize complete ale profitabilității pentru decizii mai bune",
+                pl: "Zintegrowany system księgowy zapewniający precyzyjne raporty finansowe i kompleksową analizę rentowności dla lepszych decyzji",
+                it: "Sistema contabile integrato che fornisce report finanziari precisi e analisi complete della redditività per decisioni migliori",
+                tr: "Daha iyi kararlar için hassas finansal raporlar ve kapsamlı karlılık analizi sağlayan entegre muhasebe sistemi"
+              })}
             </p>
 
             <div className="flex flex-col sm:flex-row justify-center gap-4">
               <Link to="/contact">
                 <Button className="h-14 px-8 bg-emerald-500 hover:bg-emerald-600 text-white text-base font-semibold rounded-xl shadow-lg shadow-emerald-500/25">
-                  {language === "ar" ? "احجز عرض توضيحي" : "Book a Demo"}
+                  {getText({
+                    ar: "احجز عرض توضيحي",
+                    en: "Book a Demo",
+                    ru: "Заказать демо",
+                    uk: "Замовити демо",
+                    ro: "Rezervă un demo",
+                    pl: "Zamów demo",
+                    it: "Prenota una demo",
+                    tr: "Demo Rezervasyonu"
+                  })}
                   <ArrowRight className={`w-5 h-5 ${dir === "rtl" ? "rotate-180 me-2" : "ms-2"}`} />
                 </Button>
               </Link>
@@ -160,9 +306,9 @@ function AccountingContent() {
                 </div>
                 <ArrowUpRight className="w-5 h-5 text-emerald-500" />
               </div>
-              <p className="text-sm text-emerald-600 font-medium">{language === "ar" ? "إجمالي المبيعات" : "Total Sales"}</p>
+              <p className="text-sm text-emerald-600 font-medium">{getText({ ar: "إجمالي المبيعات", en: "Total Sales", ru: "Общие продажи", uk: "Загальні продажі", ro: "Vânzări totale", pl: "Łączna sprzedaż", it: "Vendite totali", tr: "Toplam Satışlar" })}</p>
               <p className="text-2xl font-bold text-texafab-slate">$1,234,567</p>
-              <p className="text-xs text-emerald-600 mt-1">+12.5% {language === "ar" ? "عن الشهر السابق" : "vs last month"}</p>
+              <p className="text-xs text-emerald-600 mt-1">+12.5% {getText({ ar: "عن الشهر السابق", en: "vs last month", ru: "к прошлому месяцу", uk: "до минулого місяця", ro: "față de luna trecută", pl: "vs poprzedni miesiąc", it: "vs mese scorso", tr: "geçen aya göre" })}</p>
             </Card>
 
             <Card className="p-6 border-0 shadow-lg rounded-2xl bg-gradient-to-br from-blue-50 to-blue-100">
@@ -172,9 +318,9 @@ function AccountingContent() {
                 </div>
                 <ArrowUpRight className="w-5 h-5 text-blue-500" />
               </div>
-              <p className="text-sm text-blue-600 font-medium">{language === "ar" ? "صافي الربح" : "Net Profit"}</p>
+              <p className="text-sm text-blue-600 font-medium">{getText({ ar: "صافي الربح", en: "Net Profit", ru: "Чистая прибыль", uk: "Чистий прибуток", ro: "Profit net", pl: "Zysk netto", it: "Profitto netto", tr: "Net Kar" })}</p>
               <p className="text-2xl font-bold text-texafab-slate">$234,567</p>
-              <p className="text-xs text-blue-600 mt-1">+8.3% {language === "ar" ? "عن الشهر السابق" : "vs last month"}</p>
+              <p className="text-xs text-blue-600 mt-1">+8.3% {getText({ ar: "عن الشهر السابق", en: "vs last month", ru: "к прошлому месяцу", uk: "до минулого місяця", ro: "față de luna trecută", pl: "vs poprzedni miesiąc", it: "vs mese scorso", tr: "geçen aya göre" })}</p>
             </Card>
 
             <Card className="p-6 border-0 shadow-lg rounded-2xl bg-gradient-to-br from-orange-50 to-orange-100">
@@ -184,9 +330,9 @@ function AccountingContent() {
                 </div>
                 <ArrowDownRight className="w-5 h-5 text-orange-500" />
               </div>
-              <p className="text-sm text-orange-600 font-medium">{language === "ar" ? "المصروفات" : "Expenses"}</p>
+              <p className="text-sm text-orange-600 font-medium">{getText({ ar: "المصروفات", en: "Expenses", ru: "Расходы", uk: "Витрати", ro: "Cheltuieli", pl: "Wydatki", it: "Spese", tr: "Giderler" })}</p>
               <p className="text-2xl font-bold text-texafab-slate">$456,789</p>
-              <p className="text-xs text-orange-600 mt-1">-3.2% {language === "ar" ? "عن الشهر السابق" : "vs last month"}</p>
+              <p className="text-xs text-orange-600 mt-1">-3.2% {getText({ ar: "عن الشهر السابق", en: "vs last month", ru: "к прошлому месяцу", uk: "до минулого місяця", ro: "față de luna trecută", pl: "vs poprzedni miesiąc", it: "vs mese scorso", tr: "geçen aya göre" })}</p>
             </Card>
 
             <Card className="p-6 border-0 shadow-lg rounded-2xl bg-gradient-to-br from-purple-50 to-purple-100">
@@ -195,9 +341,9 @@ function AccountingContent() {
                   <Percent className="w-6 h-6 text-white" />
                 </div>
               </div>
-              <p className="text-sm text-purple-600 font-medium">{language === "ar" ? "هامش الربح" : "Profit Margin"}</p>
+              <p className="text-sm text-purple-600 font-medium">{getText({ ar: "هامش الربح", en: "Profit Margin", ru: "Маржа прибыли", uk: "Маржа прибутку", ro: "Marja de profit", pl: "Marża zysku", it: "Margine di profitto", tr: "Kar Marjı" })}</p>
               <p className="text-2xl font-bold text-texafab-slate">19.0%</p>
-              <p className="text-xs text-purple-600 mt-1">+1.2% {language === "ar" ? "عن الشهر السابق" : "vs last month"}</p>
+              <p className="text-xs text-purple-600 mt-1">+1.2% {getText({ ar: "عن الشهر السابق", en: "vs last month", ru: "к прошлому месяцу", uk: "до минулого місяця", ro: "față de luna trecută", pl: "vs poprzedni miesiąc", it: "vs mese scorso", tr: "geçen aya göre" })}</p>
             </Card>
           </div>
         </div>
@@ -208,12 +354,28 @@ function AccountingContent() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6">
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-bold text-texafab-slate mb-4">
-              {language === "ar" ? "مميزات النظام المحاسبي" : "Accounting System Features"}
+              {getText({
+                ar: "مميزات النظام المحاسبي",
+                en: "Accounting System Features",
+                ru: "Функции бухгалтерской системы",
+                uk: "Функції бухгалтерської системи",
+                ro: "Funcții sistem contabil",
+                pl: "Funkcje systemu księgowego",
+                it: "Funzionalità sistema contabile",
+                tr: "Muhasebe Sistemi Özellikleri"
+              })}
             </h2>
             <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-              {language === "ar" 
-                ? "أدوات محاسبية متقدمة لإدارة مالية فعالة"
-                : "Advanced accounting tools for effective financial management"}
+              {getText({
+                ar: "أدوات محاسبية متقدمة لإدارة مالية فعالة",
+                en: "Advanced accounting tools for effective financial management",
+                ru: "Продвинутые бухгалтерские инструменты для эффективного финансового управления",
+                uk: "Просунуті бухгалтерські інструменти для ефективного фінансового управління",
+                ro: "Instrumente contabile avansate pentru gestionarea financiară eficientă",
+                pl: "Zaawansowane narzędzia księgowe do efektywnego zarządzania finansami",
+                it: "Strumenti contabili avanzati per una gestione finanziaria efficace",
+                tr: "Etkili finansal yönetim için gelişmiş muhasebe araçları"
+              })}
             </p>
           </div>
 
@@ -224,10 +386,10 @@ function AccountingContent() {
                   <feature.icon className="w-7 h-7 text-white" />
                 </div>
                 <h3 className="text-xl font-bold text-texafab-slate mb-2">
-                  {language === "ar" ? feature.titleAr : feature.titleEn}
+                  {getText(feature.title)}
                 </h3>
                 <p className="text-gray-600">
-                  {language === "ar" ? feature.descAr : feature.descEn}
+                  {getText(feature.desc)}
                 </p>
               </Card>
             ))}
@@ -243,18 +405,25 @@ function AccountingContent() {
               <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-emerald-500/10 border border-emerald-500/20 mb-6">
                 <FileText className="w-4 h-4 text-emerald-500" />
                 <span className="text-sm font-semibold text-emerald-600">
-                  {language === "ar" ? "التقارير المالية" : "Financial Reports"}
+                  {getText({ ar: "التقارير المالية", en: "Financial Reports", ru: "Финансовые отчеты", uk: "Фінансові звіти", ro: "Rapoarte financiare", pl: "Raporty finansowe", it: "Report finanziari", tr: "Finansal Raporlar" })}
                 </span>
               </div>
 
               <h2 className="text-3xl md:text-4xl font-bold text-texafab-slate mb-4">
-                {language === "ar" ? "تقارير مالية شاملة ودقيقة" : "Comprehensive & Accurate Financial Reports"}
+                {getText({ ar: "تقارير مالية شاملة ودقيقة", en: "Comprehensive & Accurate Financial Reports", ru: "Полные и точные финансовые отчеты", uk: "Повні та точні фінансові звіти", ro: "Rapoarte financiare cuprinzătoare și precise", pl: "Kompleksowe i dokładne raporty finansowe", it: "Report finanziari completi e accurati", tr: "Kapsamlı ve Doğru Finansal Raporlar" })}
               </h2>
 
               <p className="text-lg text-gray-600 mb-8">
-                {language === "ar" 
-                  ? "احصل على جميع التقارير المالية التي تحتاجها بضغطة واحدة مع إمكانية التخصيص والتصدير"
-                  : "Get all the financial reports you need with one click with customization and export options"}
+                {getText({
+                  ar: "احصل على جميع التقارير المالية التي تحتاجها بضغطة واحدة مع إمكانية التخصيص والتصدير",
+                  en: "Get all the financial reports you need with one click with customization and export options",
+                  ru: "Получите все необходимые финансовые отчеты одним кликом с возможностью настройки и экспорта",
+                  uk: "Отримайте всі потрібні фінансові звіти одним кліком з можливістю налаштування та експорту",
+                  ro: "Obțineți toate rapoartele financiare de care aveți nevoie cu un singur clic cu opțiuni de personalizare și export",
+                  pl: "Uzyskaj wszystkie potrzebne raporty finansowe jednym kliknięciem z opcjami personalizacji i eksportu",
+                  it: "Ottieni tutti i report finanziari di cui hai bisogno con un clic con opzioni di personalizzazione ed esportazione",
+                  tr: "İhtiyacınız olan tüm finansal raporları tek tıkla özelleştirme ve dışa aktarma seçenekleriyle alın"
+                })}
               </p>
 
               <div className="grid grid-cols-2 gap-4">
@@ -264,7 +433,7 @@ function AccountingContent() {
                       <report.icon className="w-5 h-5 text-emerald-500" />
                     </div>
                     <span className="font-medium text-texafab-slate text-sm">
-                      {language === "ar" ? report.titleAr : report.titleEn}
+                      {getText(report.title)}
                     </span>
                   </div>
                 ))}
@@ -273,13 +442,13 @@ function AccountingContent() {
 
             <Card className="p-8 bg-gradient-to-br from-emerald-50 to-teal-50 border-0 shadow-xl rounded-3xl">
               <h3 className="text-xl font-bold text-texafab-slate mb-6">
-                {language === "ar" ? "تقرير الأرباح والخسائر" : "Profit & Loss Report"}
+                {getText({ ar: "تقرير الأرباح والخسائر", en: "Profit & Loss Report", ru: "Отчет о прибылях и убытках", uk: "Звіт про прибутки та збитки", ro: "Raport profit și pierdere", pl: "Rachunek zysków i strat", it: "Conto economico", tr: "Kar ve Zarar Raporu" })}
               </h3>
               
               <div className="space-y-4">
                 <div className="p-4 bg-white rounded-xl">
                   <div className="flex justify-between items-center mb-2">
-                    <span className="text-gray-600">{language === "ar" ? "إجمالي الإيرادات" : "Total Revenue"}</span>
+                    <span className="text-gray-600">{getText({ ar: "إجمالي الإيرادات", en: "Total Revenue", ru: "Общий доход", uk: "Загальний дохід", ro: "Venituri totale", pl: "Całkowite przychody", it: "Ricavi totali", tr: "Toplam Gelir" })}</span>
                     <span className="font-bold text-emerald-600">$1,234,567</span>
                   </div>
                   <div className="w-full bg-gray-200 rounded-full h-2">
@@ -289,7 +458,7 @@ function AccountingContent() {
 
                 <div className="p-4 bg-white rounded-xl">
                   <div className="flex justify-between items-center mb-2">
-                    <span className="text-gray-600">{language === "ar" ? "تكلفة المبيعات" : "Cost of Sales"}</span>
+                    <span className="text-gray-600">{getText({ ar: "تكلفة المبيعات", en: "Cost of Sales", ru: "Себестоимость продаж", uk: "Собівартість продажів", ro: "Costul vânzărilor", pl: "Koszt sprzedaży", it: "Costo del venduto", tr: "Satış Maliyeti" })}</span>
                     <span className="font-bold text-orange-600">$756,789</span>
                   </div>
                   <div className="w-full bg-gray-200 rounded-full h-2">
@@ -299,7 +468,7 @@ function AccountingContent() {
 
                 <div className="p-4 bg-white rounded-xl">
                   <div className="flex justify-between items-center mb-2">
-                    <span className="text-gray-600">{language === "ar" ? "المصروفات التشغيلية" : "Operating Expenses"}</span>
+                    <span className="text-gray-600">{getText({ ar: "المصروفات التشغيلية", en: "Operating Expenses", ru: "Операционные расходы", uk: "Операційні витрати", ro: "Cheltuieli operaționale", pl: "Koszty operacyjne", it: "Spese operative", tr: "İşletme Giderleri" })}</span>
                     <span className="font-bold text-blue-600">$243,211</span>
                   </div>
                   <div className="w-full bg-gray-200 rounded-full h-2">
@@ -309,7 +478,7 @@ function AccountingContent() {
 
                 <div className="p-4 bg-emerald-500 rounded-xl text-white">
                   <div className="flex justify-between items-center">
-                    <span>{language === "ar" ? "صافي الربح" : "Net Profit"}</span>
+                    <span>{getText({ ar: "صافي الربح", en: "Net Profit", ru: "Чистая прибыль", uk: "Чистий прибуток", ro: "Profit net", pl: "Zysk netto", it: "Utile netto", tr: "Net Kar" })}</span>
                     <span className="font-bold text-2xl">$234,567</span>
                   </div>
                 </div>

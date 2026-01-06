@@ -38,7 +38,7 @@ import NextRevolutionPage from "./pages/NextRevolutionPage";
 
 function AppContent() {
   const location = useLocation();
-  const hideOnPages = ["/comparison"]; // لا نعرض الزر في صفحة المقارنة
+  const hideOnPages: string[] = []; // نعرض الزر في كل الصفحات
   const showButton = !hideOnPages.includes(location.pathname);
   
   return (

@@ -11,6 +11,7 @@ import { GlobalPresence } from "./landing/GlobalPresence";
 import { WarehouseShowcase } from "./landing/WarehouseShowcase";
 import { AnnouncementBar } from "./landing/AnnouncementBar";
 import { NewsSection } from "./landing/NewsSection";
+import { AgentsSection } from "./landing/AgentsSection";
 
 function HomeContent() {
   const { dir, language } = useLanguage();
@@ -37,6 +38,7 @@ function HomeContent() {
         <GlobalPresence />
         <NewsSection />
         <Testimonials />
+        <AgentsSection />
         <Pricing />
       </main>
       <Footer />

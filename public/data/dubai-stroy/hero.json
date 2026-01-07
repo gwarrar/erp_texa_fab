@@ -1,0 +1,62 @@
+{
+  "uk": {
+    "badge": "Преміум будівництво в Одесі",
+    "title": "Будуй майбутнє з нами",
+    "subtitle": "Професійне будівництво та внутрішнє оздоблення від Dubai Stroy. Якість, надійність та найкращі ціни для вашого дому.",
+    "cta1": "Замовити консультацію",
+    "cta2": "Наші роботи",
+    "stats": {
+      "projects": "150+",
+      "projectsLabel": "Реалізованих проектів",
+      "experience": "12+",
+      "experienceLabel": "Років досвіду",
+      "clients": "500+",
+      "clientsLabel": "Задоволених клієнтів"
+    }
+  },
+  "ru": {
+    "badge": "Премиум строительство в Одессе",
+    "title": "Строй будущее с нами",
+    "subtitle": "Профессиональное строительство и внутренняя отделка от Dubai Stroy. Качество, надёжность и лучшие цены для вашего дома.",
+    "cta1": "Заказать консультацию",
+    "cta2": "Наши работы",
+    "stats": {
+      "projects": "150+",
+      "projectsLabel": "Реализованных проектов",
+      "experience": "12+",
+      "experienceLabel": "Лет опыта",
+      "clients": "500+",
+      "clientsLabel": "Довольных клиентов"
+    }
+  },
+  "en": {
+    "badge": "Premium Construction in Odessa",
+    "title": "Build Your Future With Us",
+    "subtitle": "Professional construction and interior finishing by Dubai Stroy. Quality, reliability, and the best prices for your home.",
+    "cta1": "Get Consultation",
+    "cta2": "Our Projects",
+    "stats": {
+      "projects": "150+",
+      "projectsLabel": "Completed Projects",
+      "experience": "12+",
+      "experienceLabel": "Years Experience",
+      "clients": "500+",
+      "clientsLabel": "Happy Clients"
+    }
+  },
+  "ar": {
+    "badge": "بناء فاخر في أوديسا",
+    "title": "ابني مستقبلك معنا",
+    "subtitle": "بناء احترافي وتشطيب داخلي من دبي ستروي. الجودة والموثوقية وأفضل الأسعار لمنزلك.",
+    "cta1": "احصل على استشارة",
+    "cta2": "أعمالنا",
+    "stats": {
+      "projects": "+150",
+      "projectsLabel": "مشروع منجز",
+      "experience": "+12",
+      "experienceLabel": "سنة خبرة",
+      "clients": "+500",
+      "clientsLabel": "عميل راضٍ"
+    }
+  }
+}

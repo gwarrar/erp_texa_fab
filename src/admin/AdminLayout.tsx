@@ -4,6 +4,7 @@ import { AdminHeader } from './components/AdminHeader';
 import { StatusBar } from './components/StatusBar';
 import { AdminProvider } from './context/AdminContext';
 import { AuthProvider } from './context/AuthContext';
+import { SiteProvider } from './context/SiteContext';
 import { ProtectedRoute } from './components/ProtectedRoute';
 import { useI18n } from '@/lib/i18n';
 import { cn } from '@/lib/utils';
@@ -32,9 +33,11 @@ export function AdminLayout() {
   return (
     <AuthProvider>
       <ProtectedRoute>
-        <AdminProvider>
-          <AdminLayoutContent />
-        </AdminProvider>
+        <SiteProvider>
+          <AdminProvider>
+            <AdminLayoutContent />
+          </AdminProvider>
+        </SiteProvider>
       </ProtectedRoute>
     </AuthProvider>
   );

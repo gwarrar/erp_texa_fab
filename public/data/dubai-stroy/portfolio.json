@@ -1,0 +1,362 @@
+{
+  "uk": {
+    "sectionTitle": "Наші роботи",
+    "sectionSubtitle": "Проекти, якими ми пишаємось",
+    "viewAll": "Дивитись всі",
+    "viewProject": "Детальніше",
+    "categories": {
+      "all": "Всі",
+      "apartments": "Квартири",
+      "houses": "Будинки",
+      "commercial": "Комерційні",
+      "renovation": "Ремонт"
+    },
+    "items": [
+      {
+        "id": "kadoor-1",
+        "title": "Елітна квартира в Kadoor Group",
+        "description": "Повний ремонт під ключ квартири 120м² в преміум комплексі. Сучасний дизайн з елементами мінімалізму.",
+        "category": "apartments",
+        "area": "120 м²",
+        "location": "Аркадія, Одеса",
+        "duration": "3 місяці",
+        "image": "https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=800&q=80",
+        "gallery": [
+          "https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=800&q=80",
+          "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=800&q=80"
+        ],
+        "featured": true
+      },
+      {
+        "id": "french-1",
+        "title": "Пентхаус на Французькому бульварі",
+        "description": "Дизайнерський ремонт пентхауса з панорамними вікнами та терасою. Неокласичний стиль.",
+        "category": "apartments",
+        "area": "200 м²",
+        "location": "Французький бульвар, Одеса",
+        "duration": "5 місяців",
+        "image": "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=800&q=80",
+        "gallery": [],
+        "featured": true
+      },
+      {
+        "id": "house-1",
+        "title": "Приватний будинок в Аркадії",
+        "description": "Будівництво під ключ сучасного будинку 350м² з басейном та ландшафтним дизайном.",
+        "category": "houses",
+        "area": "350 м²",
+        "location": "Аркадія, Одеса",
+        "duration": "12 місяців",
+        "image": "https://images.unsplash.com/photo-1613490493576-7fde63acd811?w=800&q=80",
+        "gallery": [],
+        "featured": true
+      },
+      {
+        "id": "center-1",
+        "title": "Квартира в історичному центрі",
+        "description": "Реставрація та капітальний ремонт квартири в історичній будівлі. Збереження автентичних елементів.",
+        "category": "renovation",
+        "area": "85 м²",
+        "location": "Центр, Одеса",
+        "duration": "2 місяці",
+        "image": "https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?w=800&q=80",
+        "gallery": [],
+        "featured": false
+      },
+      {
+        "id": "office-1",
+        "title": "Офіс IT компанії",
+        "description": "Дизайн та ремонт сучасного офісу з open space та переговорними кімнатами.",
+        "category": "commercial",
+        "area": "250 м²",
+        "location": "Приморський район, Одеса",
+        "duration": "2 місяці",
+        "image": "https://images.unsplash.com/photo-1497366216548-37526070297c?w=800&q=80",
+        "gallery": [],
+        "featured": false
+      },
+      {
+        "id": "kadoor-2",
+        "title": "Студія в Kadoor Tower",
+        "description": "Оптимізація простору та стильний ремонт студії 45м² з максимальною функціональністю.",
+        "category": "apartments",
+        "area": "45 м²",
+        "location": "Аркадія, Одеса",
+        "duration": "1.5 місяці",
+        "image": "https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?w=800&q=80",
+        "gallery": [],
+        "featured": false
+      }
+    ]
+  },
+  "ru": {
+    "sectionTitle": "Наши работы",
+    "sectionSubtitle": "Проекты, которыми мы гордимся",
+    "viewAll": "Смотреть все",
+    "viewProject": "Подробнее",
+    "categories": {
+      "all": "Все",
+      "apartments": "Квартиры",
+      "houses": "Дома",
+      "commercial": "Коммерческие",
+      "renovation": "Ремонт"
+    },
+    "items": [
+      {
+        "id": "kadoor-1",
+        "title": "Элитная квартира в Kadoor Group",
+        "description": "Полный ремонт под ключ квартиры 120м² в премиум комплексе. Современный дизайн с элементами минимализма.",
+        "category": "apartments",
+        "area": "120 м²",
+        "location": "Аркадия, Одесса",
+        "duration": "3 месяца",
+        "image": "https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=800&q=80",
+        "gallery": [
+          "https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=800&q=80",
+          "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=800&q=80"
+        ],
+        "featured": true
+      },
+      {
+        "id": "french-1",
+        "title": "Пентхаус на Французском бульваре",
+        "description": "Дизайнерский ремонт пентхауса с панорамными окнами и террасой. Неоклассический стиль.",
+        "category": "apartments",
+        "area": "200 м²",
+        "location": "Французский бульвар, Одесса",
+        "duration": "5 месяцев",
+        "image": "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=800&q=80",
+        "gallery": [],
+        "featured": true
+      },
+      {
+        "id": "house-1",
+        "title": "Частный дом в Аркадии",
+        "description": "Строительство под ключ современного дома 350м² с бассейном и ландшафтным дизайном.",
+        "category": "houses",
+        "area": "350 м²",
+        "location": "Аркадия, Одесса",
+        "duration": "12 месяцев",
+        "image": "https://images.unsplash.com/photo-1613490493576-7fde63acd811?w=800&q=80",
+        "gallery": [],
+        "featured": true
+      },
+      {
+        "id": "center-1",
+        "title": "Квартира в историческом центре",
+        "description": "Реставрация и капитальный ремонт квартиры в исторической здании. Сохранение аутентичных элементов.",
+        "category": "renovation",
+        "area": "85 м²",
+        "location": "Центр, Одесса",
+        "duration": "2 месяца",
+        "image": "https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?w=800&q=80",
+        "gallery": [],
+        "featured": false
+      },
+      {
+        "id": "office-1",
+        "title": "Офис IT компании",
+        "description": "Дизайн и ремонт современного офиса с open space и переговорными комнатами.",
+        "category": "commercial",
+        "area": "250 м²",
+        "location": "Приморский район, Одесса",
+        "duration": "2 месяца",
+        "image": "https://images.unsplash.com/photo-1497366216548-37526070297c?w=800&q=80",
+        "gallery": [],
+        "featured": false
+      },
+      {
+        "id": "kadoor-2",
+        "title": "Студия в Kadoor Tower",
+        "description": "Оптимизация пространства и стильный ремонт студии 45м² с максимальной функциональностью.",
+        "category": "apartments",
+        "area": "45 м²",
+        "location": "Аркадия, Одесса",
+        "duration": "1.5 месяца",
+        "image": "https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?w=800&q=80",
+        "gallery": [],
+        "featured": false
+      }
+    ]
+  },
+  "en": {
+    "sectionTitle": "Our Portfolio",
+    "sectionSubtitle": "Projects we're proud of",
+    "viewAll": "View All",
+    "viewProject": "View Details",
+    "categories": {
+      "all": "All",
+      "apartments": "Apartments",
+      "houses": "Houses",
+      "commercial": "Commercial",
+      "renovation": "Renovation"
+    },
+    "items": [
+      {
+        "id": "kadoor-1",
+        "title": "Luxury Apartment in Kadoor Group",
+        "description": "Complete turnkey renovation of 120m² apartment in premium complex. Modern design with minimalist elements.",
+        "category": "apartments",
+        "area": "120 m²",
+        "location": "Arcadia, Odessa",
+        "duration": "3 months",
+        "image": "https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=800&q=80",
+        "gallery": [
+          "https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=800&q=80",
+          "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=800&q=80"
+        ],
+        "featured": true
+      },
+      {
+        "id": "french-1",
+        "title": "Penthouse on French Boulevard",
+        "description": "Designer renovation of penthouse with panoramic windows and terrace. Neoclassical style.",
+        "category": "apartments",
+        "area": "200 m²",
+        "location": "French Boulevard, Odessa",
+        "duration": "5 months",
+        "image": "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=800&q=80",
+        "gallery": [],
+        "featured": true
+      },
+      {
+        "id": "house-1",
+        "title": "Private House in Arcadia",
+        "description": "Turnkey construction of modern 350m² house with pool and landscape design.",
+        "category": "houses",
+        "area": "350 m²",
+        "location": "Arcadia, Odessa",
+        "duration": "12 months",
+        "image": "https://images.unsplash.com/photo-1613490493576-7fde63acd811?w=800&q=80",
+        "gallery": [],
+        "featured": true
+      },
+      {
+        "id": "center-1",
+        "title": "Downtown Historic Apartment",
+        "description": "Restoration and capital renovation of apartment in historic building. Preserving authentic elements.",
+        "category": "renovation",
+        "area": "85 m²",
+        "location": "Downtown, Odessa",
+        "duration": "2 months",
+        "image": "https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?w=800&q=80",
+        "gallery": [],
+        "featured": false
+      },
+      {
+        "id": "office-1",
+        "title": "IT Company Office",
+        "description": "Design and renovation of modern office with open space and meeting rooms.",
+        "category": "commercial",
+        "area": "250 m²",
+        "location": "Primorsky District, Odessa",
+        "duration": "2 months",
+        "image": "https://images.unsplash.com/photo-1497366216548-37526070297c?w=800&q=80",
+        "gallery": [],
+        "featured": false
+      },
+      {
+        "id": "kadoor-2",
+        "title": "Studio in Kadoor Tower",
+        "description": "Space optimization and stylish renovation of 45m² studio with maximum functionality.",
+        "category": "apartments",
+        "area": "45 m²",
+        "location": "Arcadia, Odessa",
+        "duration": "1.5 months",
+        "image": "https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?w=800&q=80",
+        "gallery": [],
+        "featured": false
+      }
+    ]
+  },
+  "ar": {
+    "sectionTitle": "أعمالنا",
+    "sectionSubtitle": "مشاريع نفخر بها",
+    "viewAll": "عرض الكل",
+    "viewProject": "التفاصيل",
+    "categories": {
+      "all": "الكل",
+      "apartments": "شقق",
+      "houses": "منازل",
+      "commercial": "تجاري",
+      "renovation": "تجديد"
+    },
+    "items": [
+      {
+        "id": "kadoor-1",
+        "title": "شقة فاخرة في Kadoor Group",
+        "description": "تجديد كامل تسليم مفتاح لشقة 120م² في مجمع فاخر. تصميم حديث بعناصر مينيماليزم.",
+        "category": "apartments",
+        "area": "120 م²",
+        "location": "الأركاديا، أوديسا",
+        "duration": "3 أشهر",
+        "image": "https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=800&q=80",
+        "gallery": [
+          "https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=800&q=80",
+          "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=800&q=80"
+        ],
+        "featured": true
+      },
+      {
+        "id": "french-1",
+        "title": "بنتهاوس في الفرانسوسكي بولفار",
+        "description": "تجديد تصميمي لبنتهاوس مع نوافذ بانورامية وتراس. طراز نيوكلاسيكي.",
+        "category": "apartments",
+        "area": "200 م²",
+        "location": "الفرانسوسكي بولفار، أوديسا",
+        "duration": "5 أشهر",
+        "image": "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=800&q=80",
+        "gallery": [],
+        "featured": true
+      },
+      {
+        "id": "house-1",
+        "title": "منزل خاص في الأركاديا",
+        "description": "بناء تسليم مفتاح لمنزل حديث 350م² مع مسبح وتصميم المناظر الطبيعية.",
+        "category": "houses",
+        "area": "350 م²",
+        "location": "الأركاديا، أوديسا",
+        "duration": "12 شهر",
+        "image": "https://images.unsplash.com/photo-1613490493576-7fde63acd811?w=800&q=80",
+        "gallery": [],
+        "featured": true
+      },
+      {
+        "id": "center-1",
+        "title": "شقة في وسط المدينة التاريخي",
+        "description": "ترميم وتجديد شامل لشقة في مبنى تاريخي. الحفاظ على العناصر الأصلية.",
+        "category": "renovation",
+        "area": "85 م²",
+        "location": "وسط المدينة، أوديسا",
+        "duration": "شهرين",
+        "image": "https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?w=800&q=80",
+        "gallery": [],
+        "featured": false
+      },
+      {
+        "id": "office-1",
+        "title": "مكتب شركة IT",
+        "description": "تصميم وتجديد مكتب حديث مع مساحة مفتوحة وغرف اجتماعات.",
+        "category": "commercial",
+        "area": "250 م²",
+        "location": "منطقة بريمورسكي، أوديسا",
+        "duration": "شهرين",
+        "image": "https://images.unsplash.com/photo-1497366216548-37526070297c?w=800&q=80",
+        "gallery": [],
+        "featured": false
+      },
+      {
+        "id": "kadoor-2",
+        "title": "استوديو في Kadoor Tower",
+        "description": "تحسين المساحة وتجديد أنيق لاستوديو 45م² بأقصى قدر من الوظائف.",
+        "category": "apartments",
+        "area": "45 م²",
+        "location": "الأركاديا، أوديسا",
+        "duration": "1.5 شهر",
+        "image": "https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?w=800&q=80",
+        "gallery": [],
+        "featured": false
+      }
+    ]
+  }
+}

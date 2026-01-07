@@ -17,6 +17,7 @@ import { useTheme } from '@/components/landing/ThemeContext';
 import { useNavigate } from 'react-router-dom';
 import { useI18n } from '@/lib/i18n';
 import { LanguageSwitcher } from './LanguageSwitcher';
+import { SiteSelector } from './SiteSelector';
 
 export function AdminHeader() {
   const { saveChanges, isSaving, systemStatus } = useAdmin();
@@ -55,6 +56,9 @@ export function AdminHeader() {
 
         {/* Actions */}
         <div className="flex items-center gap-3">
+          {/* Site Selector */}
+          <SiteSelector />
+
           {/* System Status */}
           {systemStatus && (
             <div className="hidden md:flex items-center gap-2 px-3 py-1.5 rounded-full bg-gray-100 dark:bg-gray-800">

@@ -1,0 +1,275 @@
+{
+  "en": {
+    "pageTitle": "News & Updates",
+    "pageSubtitle": "Latest from Next Revolution",
+    "categories": {
+      "all": "All",
+      "news": "News",
+      "updates": "Updates",
+      "projects": "Projects",
+      "partnerships": "Partnerships",
+      "ai": "AI & NEXA"
+    },
+    "readMore": "Read More",
+    "publishedOn": "Published on",
+    "items": [
+      {
+        "id": "nr-1",
+        "title": "NEXA AI Agent: Our Vision for Intelligent Automation",
+        "excerpt": "Introducing NEXA, our revolutionary AI agent designed to transform enterprise workflows. Built on cutting-edge large language models with advanced reasoning capabilities.",
+        "content": "Next Revolution is proud to announce the development of NEXA, our flagship AI agent platform. NEXA represents the culmination of years of research in artificial intelligence and enterprise software integration. Our vision is to create an AI assistant that truly understands business context and can autonomously handle complex workflows.",
+        "date": "2025-01-25",
+        "category": "ai",
+        "image": "https://images.unsplash.com/photo-1677442136019-21780ecad995?w=800&q=80",
+        "author": "Dr. Ahmed Al-Rashid",
+        "featured": true
+      },
+      {
+        "id": "nr-2",
+        "title": "Opening New AI Data Center in Dublin",
+        "excerpt": "Next Revolution announces plans for a state-of-the-art AI infrastructure center in Dublin, Ireland, to support growing computational demands.",
+        "content": "We are excited to announce our plans to establish a new AI data center in Dublin, Ireland. This facility will house advanced GPU clusters optimized for AI training and inference, supporting our growing portfolio of AI-powered solutions including NEXA. The center will be powered by 100% renewable energy sources.",
+        "date": "2025-01-22",
+        "category": "news",
+        "image": "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=800&q=80",
+        "author": "Feras Al-Omari",
+        "featured": true
+      },
+      {
+        "id": "nr-3",
+        "title": "Strategic Partnership with AWS for Cloud AI Infrastructure",
+        "excerpt": "Next Revolution partners with Amazon Web Services to deliver enterprise-grade AI solutions with unmatched scalability and reliability.",
+        "content": "We are thrilled to announce our strategic partnership with Amazon Web Services (AWS). This collaboration will enable us to leverage AWS's world-class cloud infrastructure to deliver our AI solutions at scale. Our clients will benefit from reduced latency, improved reliability, and seamless integration with existing AWS services.",
+        "date": "2025-01-20",
+        "category": "partnerships",
+        "image": "https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=800&q=80",
+        "author": "Tech Team",
+        "featured": false
+      },
+      {
+        "id": "nr-4",
+        "title": "TexaCore ERP 4.0 Development Update",
+        "excerpt": "Major progress on TexaCore 4.0 with enhanced AI analytics, real-time inventory optimization, and multi-warehouse synchronization.",
+        "content": "The TexaCore development team has reached a significant milestone with version 4.0. Key features include: AI-powered demand forecasting, real-time inventory optimization across multiple warehouses, advanced RFID integration with automated quality control, and a completely redesigned mobile experience for warehouse staff.",
+        "date": "2025-01-18",
+        "category": "updates",
+        "image": "https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?w=800&q=80",
+        "author": "Development Team",
+        "featured": false
+      },
+      {
+        "id": "nr-5",
+        "title": "FinCore Banking Platform: New Features Released",
+        "excerpt": "FinCore receives major update with enhanced security features, instant international transfers, and AI-powered fraud detection.",
+        "content": "FinCore banking platform has been updated with several groundbreaking features. The new AI-powered fraud detection system can identify suspicious transactions in real-time with 99.9% accuracy. We've also added support for instant international transfers to 50+ countries and enhanced our security with quantum-resistant encryption.",
+        "date": "2025-01-15",
+        "category": "updates",
+        "image": "https://images.unsplash.com/photo-1563986768494-4dee2763ff3f?w=800&q=80",
+        "author": "FinCore Team",
+        "featured": false
+      },
+      {
+        "id": "nr-6",
+        "title": "Collaboration with European Central Banks",
+        "excerpt": "Next Revolution enters discussions with European central banking authorities for regulatory compliance solutions.",
+        "content": "We are honored to be in active discussions with several European central banking authorities regarding our compliance and regulatory technology solutions. Our GovERP and FinCore platforms have been recognized for their robust security architecture and comprehensive audit trail capabilities.",
+        "date": "2025-01-12",
+        "category": "partnerships",
+        "image": "https://images.unsplash.com/photo-1541354329998-f4d9a9f9297f?w=800&q=80",
+        "author": "Business Development",
+        "featured": false
+      },
+      {
+        "id": "nr-7",
+        "title": "NEXA Development: Language Model Training Progress",
+        "excerpt": "Significant progress in training NEXA's core language model with domain-specific knowledge for enterprise applications.",
+        "content": "Our AI research team has made significant progress in training NEXA's core language model. The model has been fine-tuned with extensive enterprise domain knowledge, enabling it to understand complex business processes and provide accurate, context-aware responses. Initial testing shows 40% improvement in task completion rates compared to generic AI assistants.",
+        "date": "2025-01-10",
+        "category": "ai",
+        "image": "https://images.unsplash.com/photo-1620712943543-bcc4688e7485?w=800&q=80",
+        "author": "AI Research Team",
+        "featured": false
+      },
+      {
+        "id": "nr-8",
+        "title": "New Office Opening in Saudi Arabia",
+        "excerpt": "Expanding our presence in the Middle East with a new regional headquarters in Riyadh to better serve Gulf clients.",
+        "content": "Next Revolution is expanding its Middle Eastern operations with a new regional headquarters in Riyadh, Saudi Arabia. This expansion will allow us to provide localized support to our growing client base in the Gulf region and align with Saudi Arabia's Vision 2030 digital transformation initiatives.",
+        "date": "2025-01-08",
+        "category": "news",
+        "image": "https://images.unsplash.com/photo-1578895101408-1a36b834405b?w=800&q=80",
+        "author": "Corporate",
+        "featured": false
+      }
+    ]
+  },
+  "ar": {
+    "pageTitle": "الأخبار والتحديثات",
+    "pageSubtitle": "آخر المستجدات من نكست ريفوليوشن",
+    "categories": {
+      "all": "الكل",
+      "news": "أخبار",
+      "updates": "تحديثات",
+      "projects": "مشاريع",
+      "partnerships": "شراكات",
+      "ai": "الذكاء الاصطناعي ونيكسا"
+    },
+    "readMore": "اقرأ المزيد",
+    "publishedOn": "نُشر في",
+    "items": [
+      {
+        "id": "nr-1",
+        "title": "وكيل نيكسا للذكاء الاصطناعي: رؤيتنا للأتمتة الذكية",
+        "excerpt": "نقدم لكم نيكسا، وكيل الذكاء الاصطناعي الثوري المصمم لتحويل سير العمل في المؤسسات. مبني على أحدث نماذج اللغة الكبيرة مع قدرات استدلال متقدمة.",
+        "content": "تفخر نكست ريفوليوشن بالإعلان عن تطوير نيكسا، منصة وكيل الذكاء الاصطناعي الرائدة لدينا. نيكسا تمثل ثمرة سنوات من البحث في الذكاء الاصطناعي وتكامل برمجيات المؤسسات. رؤيتنا هي إنشاء مساعد ذكاء اصطناعي يفهم حقاً سياق الأعمال ويمكنه التعامل بشكل مستقل مع سير العمل المعقدة.",
+        "date": "2025-01-25",
+        "category": "ai",
+        "image": "https://images.unsplash.com/photo-1677442136019-21780ecad995?w=800&q=80",
+        "author": "د. أحمد الراشد",
+        "featured": true
+      },
+      {
+        "id": "nr-2",
+        "title": "افتتاح مركز بيانات جديد للذكاء الاصطناعي في دبلن",
+        "excerpt": "نكست ريفوليوشن تعلن عن خطط لإنشاء مركز بنية تحتية متطور للذكاء الاصطناعي في دبلن، أيرلندا.",
+        "content": "يسعدنا الإعلان عن خططنا لإنشاء مركز بيانات جديد للذكاء الاصطناعي في دبلن، أيرلندا. ستضم هذه المنشأة مجموعات GPU متقدمة محسنة للتدريب والاستدلال في الذكاء الاصطناعي، لدعم محفظتنا المتنامية من الحلول المدعومة بالذكاء الاصطناعي بما في ذلك نيكسا. سيعمل المركز بطاقة متجددة 100%.",
+        "date": "2025-01-22",
+        "category": "news",
+        "image": "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=800&q=80",
+        "author": "فراس العمري",
+        "featured": true
+      },
+      {
+        "id": "nr-3",
+        "title": "شراكة استراتيجية مع AWS للبنية التحتية السحابية للذكاء الاصطناعي",
+        "excerpt": "نكست ريفوليوشن تتشارك مع أمازون ويب سيرفيسز لتقديم حلول ذكاء اصطناعي على مستوى المؤسسات.",
+        "content": "يسعدنا الإعلان عن شراكتنا الاستراتيجية مع أمازون ويب سيرفيسز (AWS). ستمكننا هذه التعاون من الاستفادة من البنية التحتية السحابية العالمية لـ AWS لتقديم حلول الذكاء الاصطناعي على نطاق واسع.",
+        "date": "2025-01-20",
+        "category": "partnerships",
+        "image": "https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=800&q=80",
+        "author": "فريق التقنية",
+        "featured": false
+      },
+      {
+        "id": "nr-4",
+        "title": "تحديث تطوير TexaCore ERP 4.0",
+        "excerpt": "تقدم كبير في TexaCore 4.0 مع تحليلات ذكاء اصطناعي محسنة وتحسين المخزون في الوقت الفعلي.",
+        "content": "حقق فريق تطوير TexaCore إنجازاً مهماً مع الإصدار 4.0. تشمل الميزات الرئيسية: التنبؤ بالطلب المدعوم بالذكاء الاصطناعي، وتحسين المخزون في الوقت الفعلي عبر مستودعات متعددة، وتكامل RFID متقدم.",
+        "date": "2025-01-18",
+        "category": "updates",
+        "image": "https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?w=800&q=80",
+        "author": "فريق التطوير",
+        "featured": false
+      },
+      {
+        "id": "nr-5",
+        "title": "منصة FinCore المصرفية: إطلاق ميزات جديدة",
+        "excerpt": "FinCore يحصل على تحديث رئيسي مع ميزات أمان محسنة وتحويلات دولية فورية وكشف احتيال بالذكاء الاصطناعي.",
+        "content": "تم تحديث منصة FinCore المصرفية بعدة ميزات رائدة. نظام كشف الاحتيال الجديد المدعوم بالذكاء الاصطناعي يمكنه تحديد المعاملات المشبوهة في الوقت الفعلي بدقة 99.9%.",
+        "date": "2025-01-15",
+        "category": "updates",
+        "image": "https://images.unsplash.com/photo-1563986768494-4dee2763ff3f?w=800&q=80",
+        "author": "فريق FinCore",
+        "featured": false
+      },
+      {
+        "id": "nr-6",
+        "title": "تعاون مع البنوك المركزية الأوروبية",
+        "excerpt": "نكست ريفوليوشن تدخل في مناقشات مع السلطات المصرفية المركزية الأوروبية لحلول الامتثال التنظيمي.",
+        "content": "نتشرف بأن نكون في مناقشات نشطة مع العديد من السلطات المصرفية المركزية الأوروبية بشأن حلول التكنولوجيا التنظيمية والامتثال لدينا.",
+        "date": "2025-01-12",
+        "category": "partnerships",
+        "image": "https://images.unsplash.com/photo-1541354329998-f4d9a9f9297f?w=800&q=80",
+        "author": "تطوير الأعمال",
+        "featured": false
+      },
+      {
+        "id": "nr-7",
+        "title": "تطوير نيكسا: تقدم في تدريب نموذج اللغة",
+        "excerpt": "تقدم كبير في تدريب نموذج اللغة الأساسي لنيكسا مع معرفة متخصصة في المجال للتطبيقات المؤسسية.",
+        "content": "حقق فريق أبحاث الذكاء الاصطناعي لدينا تقدماً كبيراً في تدريب نموذج اللغة الأساسي لنيكسا. تم ضبط النموذج بدقة مع معرفة واسعة بمجال المؤسسات.",
+        "date": "2025-01-10",
+        "category": "ai",
+        "image": "https://images.unsplash.com/photo-1620712943543-bcc4688e7485?w=800&q=80",
+        "author": "فريق أبحاث الذكاء الاصطناعي",
+        "featured": false
+      },
+      {
+        "id": "nr-8",
+        "title": "افتتاح مكتب جديد في المملكة العربية السعودية",
+        "excerpt": "توسيع حضورنا في الشرق الأوسط بمقر إقليمي جديد في الرياض لخدمة عملاء الخليج بشكل أفضل.",
+        "content": "تقوم نكست ريفوليوشن بتوسيع عملياتها في الشرق الأوسط بمقر إقليمي جديد في الرياض، المملكة العربية السعودية. سيتيح هذا التوسع لنا تقديم دعم محلي لقاعدة عملائنا المتنامية في منطقة الخليج.",
+        "date": "2025-01-08",
+        "category": "news",
+        "image": "https://images.unsplash.com/photo-1578895101408-1a36b834405b?w=800&q=80",
+        "author": "الشركة",
+        "featured": false
+      }
+    ]
+  },
+  "tr": {
+    "pageTitle": "Haberler ve Güncellemeler",
+    "pageSubtitle": "Next Revolution'dan Son Gelişmeler",
+    "categories": {
+      "all": "Tümü",
+      "news": "Haberler",
+      "updates": "Güncellemeler",
+      "projects": "Projeler",
+      "partnerships": "Ortaklıklar",
+      "ai": "AI ve NEXA"
+    },
+    "readMore": "Devamını Oku",
+    "publishedOn": "Yayınlanma tarihi",
+    "items": [
+      {
+        "id": "nr-1",
+        "title": "NEXA AI Agent: Akıllı Otomasyon Vizyonumuz",
+        "excerpt": "Kurumsal iş akışlarını dönüştürmek için tasarlanmış devrimci AI ajanımız NEXA'yı tanıtıyoruz.",
+        "content": "Next Revolution, amiral gemimiz AI ajan platformu NEXA'nın geliştirildiğini duyurmaktan gurur duyar.",
+        "date": "2025-01-25",
+        "category": "ai",
+        "image": "https://images.unsplash.com/photo-1677442136019-21780ecad995?w=800&q=80",
+        "author": "Dr. Ahmed Al-Rashid",
+        "featured": true
+      },
+      {
+        "id": "nr-2",
+        "title": "Dublin'de Yeni AI Veri Merkezi Açılıyor",
+        "excerpt": "Next Revolution, artan hesaplama taleplerini desteklemek için Dublin'de son teknoloji AI altyapı merkezi planlarını açıkladı.",
+        "content": "Dublin, İrlanda'da yeni bir AI veri merkezi kurmayı planladığımızı duyurmaktan heyecan duyuyoruz.",
+        "date": "2025-01-22",
+        "category": "news",
+        "image": "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=800&q=80",
+        "author": "Feras Al-Omari",
+        "featured": true
+      }
+    ]
+  },
+  "ru": {
+    "pageTitle": "Новости и обновления",
+    "pageSubtitle": "Последние новости от Next Revolution",
+    "categories": {
+      "all": "Все",
+      "news": "Новости",
+      "updates": "Обновления",
+      "projects": "Проекты",
+      "partnerships": "Партнерства",
+      "ai": "ИИ и NEXA"
+    },
+    "readMore": "Читать далее",
+    "publishedOn": "Опубликовано",
+    "items": [
+      {
+        "id": "nr-1",
+        "title": "AI-агент NEXA: наше видение интеллектуальной автоматизации",
+        "excerpt": "Представляем NEXA — нашего революционного AI-агента, созданного для трансформации корпоративных рабочих процессов.",
+        "content": "Next Revolution с гордостью объявляет о разработке NEXA — нашей флагманской платформы AI-агентов.",
+        "date": "2025-01-25",
+        "category": "ai",
+        "image": "https://images.unsplash.com/photo-1677442136019-21780ecad995?w=800&q=80",
+        "author": "Д-р Ахмед Аль-Рашид",
+        "featured": true
+      }
+    ]
+  }
+}

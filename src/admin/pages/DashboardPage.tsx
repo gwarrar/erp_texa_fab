@@ -9,16 +9,20 @@ import {
   Activity,
   Building,
   UserPlus,
+  ExternalLink,
+  Globe,
 } from 'lucide-react';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
 import { useAdmin } from '../context/AdminContext';
+import { useSite } from '../context/SiteContext';
 import { Link } from 'react-router-dom';
 import { useI18n } from '@/lib/i18n';
 
 export function DashboardPage() {
   const { pricingPlans, systemStatus } = useAdmin();
+  const { currentSite, siteInfo } = useSite();
   const { t, isRTL, language } = useI18n();
 
   // Load content managers count from localStorage
@@ -70,6 +74,53 @@ export function DashboardPage() {
 
   return (
     <div className="space-y-6">
+      {/* Active Site Banner */}
+      <div 
+        className="rounded-xl border-2 p-4 flex items-center justify-between"
+        style={{ 
+          borderColor: `${siteInfo.primaryColor}40`,
+          backgroundColor: `${siteInfo.primaryColor}08`
+        }}
+      >
+        <div className="flex items-center gap-4">
+          <div 
+            className="w-14 h-14 rounded-xl flex items-center justify-center text-2xl"
+            style={{ backgroundColor: `${siteInfo.primaryColor}20` }}
+          >
+            {siteInfo.logo}
+          </div>
+          <div>
+            <div className="flex items-center gap-2">
+              <h2 className="text-lg font-bold text-gray-900 dark:text-white">
+                {language === 'ar' ? siteInfo.nameAr : siteInfo.name}
+              </h2>
+              <Badge 
+                className="text-white text-xs"
+                style={{ backgroundColor: siteInfo.primaryColor }}
+              >
+                {isRTL ? 'نشط' : 'Active'}
+              </Badge>
+            </div>
+            <p className="text-sm text-gray-500 dark:text-gray-400">
+              {language === 'ar' ? siteInfo.descriptionAr : siteInfo.description}
+            </p>
+          </div>
+        </div>
+        <div className="flex items-center gap-2">
+          <Button 
+            variant="outline" 
+            size="sm"
+            asChild
+            className="border-gray-300"
+          >
+            <a href={siteInfo.url} target="_blank" rel="noopener noreferrer">
+              <ExternalLink className={`h-4 w-4 ${isRTL ? 'ml-2' : 'mr-2'}`} />
+              {isRTL ? 'فتح الموقع' : 'Open Site'}
+            </a>
+          </Button>
+        </div>
+      </div>
+
       {/* Page Header */}
       <div className="flex items-center justify-between">
         <div>
@@ -82,8 +133,12 @@ export function DashboardPage() {
           <Button variant="outline" asChild>
             <Link to="/admin/users/directory">{isRTL ? 'مدراء المحتوى' : 'Content Managers'}</Link>
           </Button>
-          <Button className="bg-teal-600 hover:bg-teal-700" asChild>
-            <Link to="/" target="_blank">
+          <Button 
+            className="text-white" 
+            style={{ backgroundColor: siteInfo.primaryColor }}
+            asChild
+          >
+            <Link to={siteInfo.url} target="_blank">
               <Eye className={`h-4 w-4 ${isRTL ? 'ml-2' : 'mr-2'}`} />
               {isRTL ? 'عرض الموقع' : 'View Site'}
             </Link>
@@ -287,6 +342,102 @@ export function DashboardPage() {
           </Card>
         </div>
       </div>
+
+      {/* Managed Sites Overview */}
+      <Card>
+        <CardHeader>
+          <CardTitle className="flex items-center gap-2">
+            <Globe className="h-5 w-5 text-gray-500" />
+            {isRTL ? 'المواقع المُدارة' : 'Managed Sites'}
+          </CardTitle>
+          <CardDescription>
+            {isRTL ? 'جميع المواقع المتصلة بلوحة التحكم' : 'All websites connected to this admin panel'}
+          </CardDescription>
+        </CardHeader>
+        <CardContent>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+            {/* TexaFab Card */}
+            <div 
+              className={`p-4 rounded-xl border-2 transition-all ${
+                currentSite === 'texafab' 
+                  ? 'border-emerald-500 bg-emerald-50/50 dark:bg-emerald-950/20' 
+                  : 'border-gray-200 dark:border-gray-700 hover:border-emerald-300'
+              }`}
+            >
+              <div className="flex items-center justify-between mb-3">
+                <div className="flex items-center gap-3">
+                  <div className="w-10 h-10 rounded-lg bg-emerald-100 dark:bg-emerald-900/30 flex items-center justify-center text-xl">
+                    🏭
+                  </div>
+                  <div>
+                    <h3 className="font-semibold text-gray-900 dark:text-white">TexaFab ERP</h3>
+                    <p className="text-xs text-gray-500">
+                      {isRTL ? 'نظام ERP لصناعة النسيج' : 'Textile Industry ERP'}
+                    </p>
+                  </div>
+                </div>
+                {currentSite === 'texafab' && (
+                  <Badge className="bg-emerald-500 text-white">
+                    {isRTL ? 'نشط' : 'Active'}
+                  </Badge>
+                )}
+              </div>
+              <div className="flex items-center justify-between text-sm">
+                <span className="text-gray-500">{isRTL ? 'الصفحات' : 'Pages'}: 12</span>
+                <a 
+                  href="/" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="text-emerald-600 hover:text-emerald-700 flex items-center gap-1"
+                >
+                  {isRTL ? 'زيارة' : 'Visit'}
+                  <ExternalLink className="h-3 w-3" />
+                </a>
+              </div>
+            </div>
+
+            {/* Next Revolution Card */}
+            <div 
+              className={`p-4 rounded-xl border-2 transition-all ${
+                currentSite === 'nextrevolution' 
+                  ? 'border-blue-500 bg-blue-50/50 dark:bg-blue-950/20' 
+                  : 'border-gray-200 dark:border-gray-700 hover:border-blue-300'
+              }`}
+            >
+              <div className="flex items-center justify-between mb-3">
+                <div className="flex items-center gap-3">
+                  <div className="w-10 h-10 rounded-lg bg-blue-100 dark:bg-blue-900/30 flex items-center justify-center text-xl">
+                    ✨
+                  </div>
+                  <div>
+                    <h3 className="font-semibold text-gray-900 dark:text-white">Next Revolution</h3>
+                    <p className="text-xs text-gray-500">
+                      {isRTL ? 'موقع الشركة الأم' : 'Parent Company Website'}
+                    </p>
+                  </div>
+                </div>
+                {currentSite === 'nextrevolution' && (
+                  <Badge className="bg-blue-500 text-white">
+                    {isRTL ? 'نشط' : 'Active'}
+                  </Badge>
+                )}
+              </div>
+              <div className="flex items-center justify-between text-sm">
+                <span className="text-gray-500">{isRTL ? 'الصفحات' : 'Pages'}: 5</span>
+                <a 
+                  href="/next-revolution" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="text-blue-600 hover:text-blue-700 flex items-center gap-1"
+                >
+                  {isRTL ? 'زيارة' : 'Visit'}
+                  <ExternalLink className="h-3 w-3" />
+                </a>
+              </div>
+            </div>
+          </div>
+        </CardContent>
+      </Card>
     </div>
   );
 }

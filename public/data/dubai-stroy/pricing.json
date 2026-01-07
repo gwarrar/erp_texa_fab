@@ -1,0 +1,454 @@
+{
+  "uk": {
+    "sectionTitle": "Наші ціни",
+    "sectionSubtitle": "Прозорі ціни без прихованих платежів",
+    "currency": "$/м²",
+    "contactUs": "Зв'язатися з нами",
+    "getQuote": "Отримати розрахунок",
+    "popular": "Популярний",
+    "includes": "Включає:",
+    "categories": {
+      "construction": {
+        "title": "Будівництво під ключ",
+        "subtitle": "Від фундаменту до заселення",
+        "plans": [
+          {
+            "id": "basic",
+            "name": "Стандарт",
+            "price": "від 450",
+            "description": "Якісне будівництво з базовим оздобленням",
+            "features": [
+              "Проектування та документація",
+              "Фундамент та несучі конструкції",
+              "Покрівля та фасад",
+              "Базове оздоблення",
+              "Інженерні комунікації",
+              "Гарантія 3 роки"
+            ],
+            "highlighted": false
+          },
+          {
+            "id": "comfort",
+            "name": "Комфорт",
+            "price": "від 650",
+            "description": "Оптимальне співвідношення ціни та якості",
+            "features": [
+              "Все з пакету Стандарт",
+              "Дизайн-проект інтер'єру",
+              "Преміум матеріали",
+              "Система розумний дім базова",
+              "Ландшафтний дизайн",
+              "Гарантія 5 років"
+            ],
+            "highlighted": true
+          },
+          {
+            "id": "premium",
+            "name": "Преміум",
+            "price": "від 950",
+            "description": "Елітне будівництво найвищого класу",
+            "features": [
+              "Все з пакету Комфорт",
+              "Ексклюзивний дизайн",
+              "Імпортні матеріали",
+              "Повна система розумний дім",
+              "Басейн та СПА зона",
+              "Пожиттєва гарантія"
+            ],
+            "highlighted": false
+          }
+        ]
+      },
+      "renovation": {
+        "title": "Ремонт під ключ",
+        "subtitle": "Повне оновлення вашого простору",
+        "plans": [
+          {
+            "id": "cosmetic",
+            "name": "Косметичний",
+            "price": "від 80",
+            "description": "Швидке оновлення інтер'єру",
+            "features": [
+              "Фарбування стін та стелі",
+              "Заміна шпалер",
+              "Оновлення підлоги",
+              "Дрібний ремонт",
+              "Прибирання після ремонту",
+              "Гарантія 1 рік"
+            ],
+            "highlighted": false
+          },
+          {
+            "id": "capital",
+            "name": "Капітальний",
+            "price": "від 180",
+            "description": "Повне оновлення квартири",
+            "features": [
+              "Демонтажні роботи",
+              "Вирівнювання стін та підлоги",
+              "Заміна комунікацій",
+              "Встановлення сантехніки",
+              "Електромонтажні роботи",
+              "Гарантія 3 роки"
+            ],
+            "highlighted": true
+          },
+          {
+            "id": "designer",
+            "name": "Дизайнерський",
+            "price": "від 350",
+            "description": "Ексклюзивний ремонт за проектом",
+            "features": [
+              "Авторський дизайн-проект",
+              "Все з пакету Капітальний",
+              "Преміум оздоблювальні матеріали",
+              "Дизайнерські меблі",
+              "Декорування та стайлінг",
+              "Гарантія 5 років"
+            ],
+            "highlighted": false
+          }
+        ]
+      }
+    }
+  },
+  "ru": {
+    "sectionTitle": "Наши цены",
+    "sectionSubtitle": "Прозрачные цены без скрытых платежей",
+    "currency": "$/м²",
+    "contactUs": "Связаться с нами",
+    "getQuote": "Получить расчёт",
+    "popular": "Популярный",
+    "includes": "Включает:",
+    "categories": {
+      "construction": {
+        "title": "Строительство под ключ",
+        "subtitle": "От фундамента до заселения",
+        "plans": [
+          {
+            "id": "basic",
+            "name": "Стандарт",
+            "price": "от 450",
+            "description": "Качественное строительство с базовой отделкой",
+            "features": [
+              "Проектирование и документация",
+              "Фундамент и несущие конструкции",
+              "Кровля и фасад",
+              "Базовая отделка",
+              "Инженерные коммуникации",
+              "Гарантия 3 года"
+            ],
+            "highlighted": false
+          },
+          {
+            "id": "comfort",
+            "name": "Комфорт",
+            "price": "от 650",
+            "description": "Оптимальное соотношение цены и качества",
+            "features": [
+              "Всё из пакета Стандарт",
+              "Дизайн-проект интерьера",
+              "Премиум материалы",
+              "Система умный дом базовая",
+              "Ландшафтный дизайн",
+              "Гарантия 5 лет"
+            ],
+            "highlighted": true
+          },
+          {
+            "id": "premium",
+            "name": "Премиум",
+            "price": "от 950",
+            "description": "Элитное строительство высшего класса",
+            "features": [
+              "Всё из пакета Комфорт",
+              "Эксклюзивный дизайн",
+              "Импортные материалы",
+              "Полная система умный дом",
+              "Бассейн и СПА зона",
+              "Пожизненная гарантия"
+            ],
+            "highlighted": false
+          }
+        ]
+      },
+      "renovation": {
+        "title": "Ремонт под ключ",
+        "subtitle": "Полное обновление вашего пространства",
+        "plans": [
+          {
+            "id": "cosmetic",
+            "name": "Косметический",
+            "price": "от 80",
+            "description": "Быстрое обновление интерьера",
+            "features": [
+              "Покраска стен и потолка",
+              "Замена обоев",
+              "Обновление пола",
+              "Мелкий ремонт",
+              "Уборка после ремонта",
+              "Гарантия 1 год"
+            ],
+            "highlighted": false
+          },
+          {
+            "id": "capital",
+            "name": "Капитальный",
+            "price": "от 180",
+            "description": "Полное обновление квартиры",
+            "features": [
+              "Демонтажные работы",
+              "Выравнивание стен и пола",
+              "Замена коммуникаций",
+              "Установка сантехники",
+              "Электромонтажные работы",
+              "Гарантия 3 года"
+            ],
+            "highlighted": true
+          },
+          {
+            "id": "designer",
+            "name": "Дизайнерский",
+            "price": "от 350",
+            "description": "Эксклюзивный ремонт по проекту",
+            "features": [
+              "Авторский дизайн-проект",
+              "Всё из пакета Капитальный",
+              "Премиум отделочные материалы",
+              "Дизайнерская мебель",
+              "Декорирование и стайлинг",
+              "Гарантия 5 лет"
+            ],
+            "highlighted": false
+          }
+        ]
+      }
+    }
+  },
+  "en": {
+    "sectionTitle": "Our Pricing",
+    "sectionSubtitle": "Transparent prices with no hidden fees",
+    "currency": "$/m²",
+    "contactUs": "Contact Us",
+    "getQuote": "Get Quote",
+    "popular": "Popular",
+    "includes": "Includes:",
+    "categories": {
+      "construction": {
+        "title": "Turnkey Construction",
+        "subtitle": "From foundation to move-in",
+        "plans": [
+          {
+            "id": "basic",
+            "name": "Standard",
+            "price": "from 450",
+            "description": "Quality construction with basic finishing",
+            "features": [
+              "Design and documentation",
+              "Foundation and load-bearing structures",
+              "Roofing and facade",
+              "Basic finishing",
+              "Engineering utilities",
+              "3-year warranty"
+            ],
+            "highlighted": false
+          },
+          {
+            "id": "comfort",
+            "name": "Comfort",
+            "price": "from 650",
+            "description": "Optimal price-quality ratio",
+            "features": [
+              "Everything from Standard package",
+              "Interior design project",
+              "Premium materials",
+              "Basic smart home system",
+              "Landscape design",
+              "5-year warranty"
+            ],
+            "highlighted": true
+          },
+          {
+            "id": "premium",
+            "name": "Premium",
+            "price": "from 950",
+            "description": "Elite construction of the highest class",
+            "features": [
+              "Everything from Comfort package",
+              "Exclusive design",
+              "Imported materials",
+              "Full smart home system",
+              "Pool and SPA zone",
+              "Lifetime warranty"
+            ],
+            "highlighted": false
+          }
+        ]
+      },
+      "renovation": {
+        "title": "Turnkey Renovation",
+        "subtitle": "Complete renewal of your space",
+        "plans": [
+          {
+            "id": "cosmetic",
+            "name": "Cosmetic",
+            "price": "from 80",
+            "description": "Quick interior update",
+            "features": [
+              "Wall and ceiling painting",
+              "Wallpaper replacement",
+              "Floor update",
+              "Minor repairs",
+              "Post-renovation cleaning",
+              "1-year warranty"
+            ],
+            "highlighted": false
+          },
+          {
+            "id": "capital",
+            "name": "Capital",
+            "price": "from 180",
+            "description": "Complete apartment renovation",
+            "features": [
+              "Demolition works",
+              "Wall and floor leveling",
+              "Utility replacement",
+              "Plumbing installation",
+              "Electrical works",
+              "3-year warranty"
+            ],
+            "highlighted": true
+          },
+          {
+            "id": "designer",
+            "name": "Designer",
+            "price": "from 350",
+            "description": "Exclusive project-based renovation",
+            "features": [
+              "Custom design project",
+              "Everything from Capital package",
+              "Premium finishing materials",
+              "Designer furniture",
+              "Decoration and styling",
+              "5-year warranty"
+            ],
+            "highlighted": false
+          }
+        ]
+      }
+    }
+  },
+  "ar": {
+    "sectionTitle": "أسعارنا",
+    "sectionSubtitle": "أسعار شفافة بدون رسوم مخفية",
+    "currency": "$/م²",
+    "contactUs": "تواصل معنا",
+    "getQuote": "احصل على عرض سعر",
+    "popular": "الأكثر طلباً",
+    "includes": "يشمل:",
+    "categories": {
+      "construction": {
+        "title": "بناء تسليم مفتاح",
+        "subtitle": "من الأساس إلى السكن",
+        "plans": [
+          {
+            "id": "basic",
+            "name": "ستاندرد",
+            "price": "من 450",
+            "description": "بناء عالي الجودة مع تشطيب أساسي",
+            "features": [
+              "التصميم والتوثيق",
+              "الأساسات والهياكل الحاملة",
+              "السقف والواجهة",
+              "تشطيب أساسي",
+              "المرافق الهندسية",
+              "ضمان 3 سنوات"
+            ],
+            "highlighted": false
+          },
+          {
+            "id": "comfort",
+            "name": "كومفورت",
+            "price": "من 650",
+            "description": "أفضل نسبة جودة للسعر",
+            "features": [
+              "كل شيء من باقة ستاندرد",
+              "تصميم داخلي",
+              "مواد فاخرة",
+              "نظام منزل ذكي أساسي",
+              "تصميم المناظر الطبيعية",
+              "ضمان 5 سنوات"
+            ],
+            "highlighted": true
+          },
+          {
+            "id": "premium",
+            "name": "بريميوم",
+            "price": "من 950",
+            "description": "بناء فاخر من أعلى مستوى",
+            "features": [
+              "كل شيء من باقة كومفورت",
+              "تصميم حصري",
+              "مواد مستوردة",
+              "نظام منزل ذكي كامل",
+              "مسبح ومنطقة سبا",
+              "ضمان مدى الحياة"
+            ],
+            "highlighted": false
+          }
+        ]
+      },
+      "renovation": {
+        "title": "تجديد تسليم مفتاح",
+        "subtitle": "تجديد كامل لمساحتك",
+        "plans": [
+          {
+            "id": "cosmetic",
+            "name": "تجميلي",
+            "price": "من 80",
+            "description": "تحديث سريع للديكور الداخلي",
+            "features": [
+              "طلاء الجدران والسقف",
+              "تبديل ورق الجدران",
+              "تحديث الأرضيات",
+              "إصلاحات صغيرة",
+              "تنظيف بعد التجديد",
+              "ضمان سنة واحدة"
+            ],
+            "highlighted": false
+          },
+          {
+            "id": "capital",
+            "name": "شامل",
+            "price": "من 180",
+            "description": "تجديد كامل للشقة",
+            "features": [
+              "أعمال الهدم",
+              "تسوية الجدران والأرضيات",
+              "استبدال المرافق",
+              "تركيب السباكة",
+              "أعمال الكهرباء",
+              "ضمان 3 سنوات"
+            ],
+            "highlighted": true
+          },
+          {
+            "id": "designer",
+            "name": "تصميمي",
+            "price": "من 350",
+            "description": "تجديد حصري حسب المشروع",
+            "features": [
+              "مشروع تصميم مخصص",
+              "كل شيء من الباقة الشاملة",
+              "مواد تشطيب فاخرة",
+              "أثاث مصمم",
+              "ديكور وتنسيق",
+              "ضمان 5 سنوات"
+            ],
+            "highlighted": false
+          }
+        ]
+      }
+    }
+  }
+}

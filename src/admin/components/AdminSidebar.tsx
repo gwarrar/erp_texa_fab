@@ -19,16 +19,21 @@ import {
   Bell,
   Bot,
   Activity,
+  Sparkles,
+  Newspaper,
+  MessageCircle,
 } from 'lucide-react';
 import { cn } from '@/lib/utils';
 import { Button } from '@/components/ui/button';
 import { useState } from 'react';
 import { useI18n } from '@/lib/i18n';
+import { useSite } from '../context/SiteContext';
 
 export function AdminSidebar() {
   const [isCollapsed, setIsCollapsed] = useState(false);
   const [expandedItems, setExpandedItems] = useState<string[]>([]);
   const { t, isRTL } = useI18n();
+  const { currentSite } = useSite();
 
   // Navigation items with translations
   const sidebarItems = [
@@ -53,6 +58,37 @@ export function AdminSidebar() {
         { label: 'News & Announcements', href: '/admin/cms/news' },
       ],
     },
+    // Next Revolution Content (shown when NR site is selected)
+    ...(currentSite === 'nextrevolution' ? [
+      {
+        icon: Sparkles,
+        label: isRTL ? 'Next Revolution' : 'Next Revolution',
+        href: '/admin/nr-content',
+      },
+      {
+        icon: Newspaper,
+        label: isRTL ? 'مدونة NR' : 'NR Blog',
+        href: '/admin/nr-blog',
+      }
+    ] : []),
+    // Dubai Stroy Content (shown when DS site is selected)
+    ...(currentSite === 'dubaistroy' ? [
+      {
+        icon: Globe,
+        label: isRTL ? 'Dubai Stroy' : 'Dubai Stroy',
+        href: '/admin/ds-content',
+      },
+      {
+        icon: Newspaper,
+        label: isRTL ? 'أخبار DS' : 'DS News',
+        href: '/admin/ds-news',
+      },
+      {
+        icon: Sparkles,
+        label: isRTL ? 'شريط الإعلانات' : 'Announcement Bar',
+        href: '/admin/ds-announcement',
+      }
+    ] : []),
     {
       icon: DollarSign,
       label: t.pricing.title,
@@ -87,6 +123,7 @@ export function AdminSidebar() {
         { label: t.analytics.overview, href: '/admin/analytics/overview' },
         { label: t.system.serverStatus, href: '/admin/analytics/server' },
         { label: t.analytics.visitors, href: '/admin/analytics/visitors' },
+        { label: 'Google Analytics', href: '/admin/analytics/google' },
       ],
     },
     {
@@ -102,6 +139,7 @@ export function AdminSidebar() {
         { label: t.navigation.languages, href: '/admin/settings/languages' },
         { label: t.system.status, href: '/admin/settings/status' },
         { label: t.security.logs, href: '/admin/settings/security' },
+        { label: 'Chat Settings', href: '/admin/settings/chat' },
       ],
     },
   ];

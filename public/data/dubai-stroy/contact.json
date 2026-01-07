@@ -1,0 +1,158 @@
+{
+  "uk": {
+    "sectionTitle": "Зв'яжіться з нами",
+    "sectionSubtitle": "Ми завжди раді вам допомогти",
+    "form": {
+      "name": "Ваше ім'я",
+      "namePlaceholder": "Введіть ваше ім'я",
+      "phone": "Телефон",
+      "phonePlaceholder": "+380 XX XXX XX XX",
+      "email": "Email",
+      "emailPlaceholder": "your@email.com",
+      "service": "Послуга",
+      "servicePlaceholder": "Оберіть послугу",
+      "serviceOptions": {
+        "construction": "Будівництво під ключ",
+        "renovation": "Ремонт під ключ",
+        "design": "Дизайн інтер'єру",
+        "consultation": "Консультація"
+      },
+      "message": "Повідомлення",
+      "messagePlaceholder": "Опишіть ваш проект...",
+      "submit": "Надіслати заявку",
+      "submitting": "Надсилаємо...",
+      "success": "Дякуємо! Ми зв'яжемося з вами найближчим часом.",
+      "error": "Помилка відправки. Спробуйте ще раз."
+    },
+    "contact": {
+      "title": "Контактна інформація",
+      "phone": "+380 67 484 80 29",
+      "email": "dubaistroy@gmail.com",
+      "website": "www.dubaistroy.com",
+      "address": "Одеса, вул. Генуезька 5, офіс 10",
+      "workingHours": "Пн-Сб: 9:00 - 18:00"
+    },
+    "cta": {
+      "call": "Зателефонувати",
+      "whatsapp": "WhatsApp",
+      "telegram": "Telegram"
+    }
+  },
+  "ru": {
+    "sectionTitle": "Свяжитесь с нами",
+    "sectionSubtitle": "Мы всегда рады вам помочь",
+    "form": {
+      "name": "Ваше имя",
+      "namePlaceholder": "Введите ваше имя",
+      "phone": "Телефон",
+      "phonePlaceholder": "+380 XX XXX XX XX",
+      "email": "Email",
+      "emailPlaceholder": "your@email.com",
+      "service": "Услуга",
+      "servicePlaceholder": "Выберите услугу",
+      "serviceOptions": {
+        "construction": "Строительство под ключ",
+        "renovation": "Ремонт под ключ",
+        "design": "Дизайн интерьера",
+        "consultation": "Консультация"
+      },
+      "message": "Сообщение",
+      "messagePlaceholder": "Опишите ваш проект...",
+      "submit": "Отправить заявку",
+      "submitting": "Отправляем...",
+      "success": "Спасибо! Мы свяжемся с вами в ближайшее время.",
+      "error": "Ошибка отправки. Попробуйте снова."
+    },
+    "contact": {
+      "title": "Контактная информация",
+      "phone": "+380 67 484 80 29",
+      "email": "dubaistroy@gmail.com",
+      "website": "www.dubaistroy.com",
+      "address": "Одесса, ул. Генуэзская 5, офис 10",
+      "workingHours": "Пн-Сб: 9:00 - 18:00"
+    },
+    "cta": {
+      "call": "Позвонить",
+      "whatsapp": "WhatsApp",
+      "telegram": "Telegram"
+    }
+  },
+  "en": {
+    "sectionTitle": "Contact Us",
+    "sectionSubtitle": "We're always happy to help",
+    "form": {
+      "name": "Your Name",
+      "namePlaceholder": "Enter your name",
+      "phone": "Phone",
+      "phonePlaceholder": "+380 XX XXX XX XX",
+      "email": "Email",
+      "emailPlaceholder": "your@email.com",
+      "service": "Service",
+      "servicePlaceholder": "Select service",
+      "serviceOptions": {
+        "construction": "Turnkey Construction",
+        "renovation": "Turnkey Renovation",
+        "design": "Interior Design",
+        "consultation": "Consultation"
+      },
+      "message": "Message",
+      "messagePlaceholder": "Describe your project...",
+      "submit": "Submit Request",
+      "submitting": "Submitting...",
+      "success": "Thank you! We'll contact you shortly.",
+      "error": "Submission error. Please try again."
+    },
+    "contact": {
+      "title": "Contact Information",
+      "phone": "+380 67 484 80 29",
+      "email": "dubaistroy@gmail.com",
+      "website": "www.dubaistroy.com",
+      "address": "Odessa, Genuezskaya St. 5, office 10",
+      "workingHours": "Mon-Sat: 9:00 - 18:00"
+    },
+    "cta": {
+      "call": "Call Us",
+      "whatsapp": "WhatsApp",
+      "telegram": "Telegram"
+    }
+  },
+  "ar": {
+    "sectionTitle": "تواصل معنا",
+    "sectionSubtitle": "نحن دائماً سعداء لمساعدتك",
+    "form": {
+      "name": "اسمك",
+      "namePlaceholder": "أدخل اسمك",
+      "phone": "الهاتف",
+      "phonePlaceholder": "+380 XX XXX XX XX",
+      "email": "البريد الإلكتروني",
+      "emailPlaceholder": "your@email.com",
+      "service": "الخدمة",
+      "servicePlaceholder": "اختر الخدمة",
+      "serviceOptions": {
+        "construction": "بناء تسليم مفتاح",
+        "renovation": "تجديد تسليم مفتاح",
+        "design": "تصميم داخلي",
+        "consultation": "استشارة"
+      },
+      "message": "الرسالة",
+      "messagePlaceholder": "صف مشروعك...",
+      "submit": "إرسال الطلب",
+      "submitting": "جاري الإرسال...",
+      "success": "شكراً! سنتواصل معك قريباً.",
+      "error": "خطأ في الإرسال. حاول مرة أخرى."
+    },
+    "contact": {
+      "title": "معلومات الاتصال",
+      "phone": "+380 67 484 80 29",
+      "email": "dubaistroy@gmail.com",
+      "website": "www.dubaistroy.com",
+      "address": "أوديسا، شارع جينويزسكايا 5، مكتب 10",
+      "workingHours": "الاثنين-السبت: 9:00 - 18:00"
+    },
+    "cta": {
+      "call": "اتصل بنا",
+      "whatsapp": "واتساب",
+      "telegram": "تيليجرام"
+    }
+  }
+}

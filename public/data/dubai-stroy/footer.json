@@ -1,0 +1,150 @@
+{
+  "uk": {
+    "company": {
+      "name": "Dubai Stroy",
+      "slogan": "Будуй майбутнє з нами",
+      "description": "Професійне будівництво та ремонт під ключ в Одесі. Якість, надійність та найкращі ціни."
+    },
+    "contact": {
+      "title": "Контакти",
+      "phone": "+380 67 484 80 29",
+      "email": "dubaistroy@gmail.com",
+      "address": "Одеса, вул. Генуезька 5, офіс 10"
+    },
+    "links": {
+      "title": "Навігація",
+      "items": [
+        { "label": "Головна", "href": "/dubai-stroy" },
+        { "label": "Послуги", "href": "/dubai-stroy/services" },
+        { "label": "Портфоліо", "href": "/dubai-stroy/portfolio" },
+        { "label": "Ціни", "href": "/dubai-stroy/pricing" },
+        { "label": "Контакти", "href": "/dubai-stroy/contact" }
+      ]
+    },
+    "services": {
+      "title": "Послуги",
+      "items": [
+        "Будівництво під ключ",
+        "Ремонт квартир",
+        "Дизайн інтер'єру",
+        "Ландшафтний дизайн"
+      ]
+    },
+    "social": {
+      "title": "Ми в соцмережах"
+    },
+    "copyright": "© 2025 Dubai Stroy. Всі права захищено.",
+    "developedBy": "Розроблено"
+  },
+  "ru": {
+    "company": {
+      "name": "Dubai Stroy",
+      "slogan": "Строй будущее с нами",
+      "description": "Профессиональное строительство и ремонт под ключ в Одессе. Качество, надёжность и лучшие цены."
+    },
+    "contact": {
+      "title": "Контакты",
+      "phone": "+380 67 484 80 29",
+      "email": "dubaistroy@gmail.com",
+      "address": "Одесса, ул. Генуэзская 5, офис 10"
+    },
+    "links": {
+      "title": "Навигация",
+      "items": [
+        { "label": "Главная", "href": "/dubai-stroy" },
+        { "label": "Услуги", "href": "/dubai-stroy/services" },
+        { "label": "Портфолио", "href": "/dubai-stroy/portfolio" },
+        { "label": "Цены", "href": "/dubai-stroy/pricing" },
+        { "label": "Контакты", "href": "/dubai-stroy/contact" }
+      ]
+    },
+    "services": {
+      "title": "Услуги",
+      "items": [
+        "Строительство под ключ",
+        "Ремонт квартир",
+        "Дизайн интерьера",
+        "Ландшафтный дизайн"
+      ]
+    },
+    "social": {
+      "title": "Мы в соцсетях"
+    },
+    "copyright": "© 2025 Dubai Stroy. Все права защищены.",
+    "developedBy": "Разработано"
+  },
+  "en": {
+    "company": {
+      "name": "Dubai Stroy",
+      "slogan": "Build Your Future With Us",
+      "description": "Professional turnkey construction and renovation in Odessa. Quality, reliability, and the best prices."
+    },
+    "contact": {
+      "title": "Contact",
+      "phone": "+380 67 484 80 29",
+      "email": "dubaistroy@gmail.com",
+      "address": "Odessa, Genuezskaya St. 5, office 10"
+    },
+    "links": {
+      "title": "Navigation",
+      "items": [
+        { "label": "Home", "href": "/dubai-stroy" },
+        { "label": "Services", "href": "/dubai-stroy/services" },
+        { "label": "Portfolio", "href": "/dubai-stroy/portfolio" },
+        { "label": "Pricing", "href": "/dubai-stroy/pricing" },
+        { "label": "Contact", "href": "/dubai-stroy/contact" }
+      ]
+    },
+    "services": {
+      "title": "Services",
+      "items": [
+        "Turnkey Construction",
+        "Apartment Renovation",
+        "Interior Design",
+        "Landscape Design"
+      ]
+    },
+    "social": {
+      "title": "Follow Us"
+    },
+    "copyright": "© 2025 Dubai Stroy. All rights reserved.",
+    "developedBy": "Developed by"
+  },
+  "ar": {
+    "company": {
+      "name": "دبي ستروي",
+      "slogan": "ابني مستقبلك معنا",
+      "description": "بناء وتجديد احترافي تسليم مفتاح في أوديسا. الجودة والموثوقية وأفضل الأسعار."
+    },
+    "contact": {
+      "title": "اتصل بنا",
+      "phone": "+380 67 484 80 29",
+      "email": "dubaistroy@gmail.com",
+      "address": "أوديسا، شارع جينويزسكايا 5، مكتب 10"
+    },
+    "links": {
+      "title": "التنقل",
+      "items": [
+        { "label": "الرئيسية", "href": "/dubai-stroy" },
+        { "label": "الخدمات", "href": "/dubai-stroy/services" },
+        { "label": "أعمالنا", "href": "/dubai-stroy/portfolio" },
+        { "label": "الأسعار", "href": "/dubai-stroy/pricing" },
+        { "label": "اتصل بنا", "href": "/dubai-stroy/contact" }
+      ]
+    },
+    "services": {
+      "title": "الخدمات",
+      "items": [
+        "بناء تسليم مفتاح",
+        "تجديد الشقق",
+        "تصميم داخلي",
+        "تصميم المناظر الطبيعية"
+      ]
+    },
+    "social": {
+      "title": "تابعنا"
+    },
+    "copyright": "© 2025 دبي ستروي. جميع الحقوق محفوظة.",
+    "developedBy": "تطوير"
+  }
+}

@@ -9,22 +9,11 @@ import {
   Users,
   MapPin,
   DollarSign,
-  Target,
   TrendingUp,
   Award,
-  BarChart3,
   ArrowRight,
-  CheckCircle2,
-  Star,
   Percent,
-  UserPlus,
-  Building,
-  Phone,
-  Mail,
-  Gift,
-  Trophy,
-  Medal,
-  Crown
+  Gift
 } from "lucide-react";
 
 function AgentsDealersContent() {
@@ -32,96 +21,91 @@ function AgentsDealersContent() {
 
   const features = [
     {
-      icon: UserPlus,
-      titleAr: "تسجيل الوكلاء والموزعين",
-      titleEn: "Register Agents & Dealers",
-      descAr: "أضف وكلاء وموزعين مع كل المعلومات المطلوبة ومستنداتهم",
-      descEn: "Add agents and dealers with all required information and documents",
-      color: "from-blue-500 to-blue-600"
+      icon: Percent,
+      titleAr: "عمولة 30% ثابتة",
+      titleEn: "Fixed 30% Commission",
+      descAr: "احصل على 30% من كل عملية بيع تقوم بها - بدون حدود!",
+      descEn: "Earn 30% on every sale you make - no limits!",
+      color: "from-texafab-gold to-amber-500"
     },
     {
       icon: MapPin,
-      titleAr: "توزيع المناطق الجغرافية",
-      titleEn: "Geographic Area Distribution",
-      descAr: "خصص مناطق محددة لكل وكيل لتجنب التداخل",
-      descEn: "Assign specific areas to each agent to avoid overlap",
+      titleAr: "احتكر منطقتك",
+      titleEn: "Own Your Territory",
+      descAr: "كن الممثل الحصري لـ TexaFab في مدينتك أو منطقتك",
+      descEn: "Become the exclusive TexaFab representative in your city or region",
       color: "from-emerald-500 to-emerald-600"
     },
     {
-      icon: Percent,
-      titleAr: "نظام العمولات المرن",
-      titleEn: "Flexible Commission System",
-      descAr: "حدد نسب عمولات مختلفة حسب المنتج أو حجم المبيعات",
-      descEn: "Set different commission rates by product or sales volume",
+      icon: Award,
+      titleAr: "تدريب مجاني كامل",
+      titleEn: "Complete Free Training",
+      descAr: "ندربك على كل شيء: المنتج، البيع، العرض، الإغلاق",
+      descEn: "We train you on everything: product, selling, demos, closing deals",
+      color: "from-blue-500 to-blue-600"
+    },
+    {
+      icon: Gift,
+      titleAr: "مواد تسويقية جاهزة",
+      titleEn: "Ready Marketing Materials",
+      descAr: "نوفر لك عروض وفيديوهات ومحتوى جاهز للتسويق",
+      descEn: "We provide presentations, videos, and ready marketing content",
       color: "from-purple-500 to-purple-600"
     },
     {
-      icon: Target,
-      titleAr: "أهداف المبيعات",
-      titleEn: "Sales Targets",
-      descAr: "ضع أهداف شهرية أو سنوية وتابع تحقيقها",
-      descEn: "Set monthly or annual targets and track achievement",
-      color: "from-orange-500 to-orange-600"
-    },
-    {
-      icon: Users,
-      titleAr: "ربط العملاء بالوكيل",
-      titleEn: "Link Customers to Agent",
-      descAr: "اربط العملاء بالوكيل المسؤول عنهم تلقائياً",
-      descEn: "Automatically link customers to their responsible agent",
+      icon: TrendingUp,
+      titleAr: "دخل متكرر",
+      titleEn: "Recurring Income",
+      descAr: "اكسب عمولات على تجديد الاشتراكات السنوية",
+      descEn: "Earn commissions on annual subscription renewals",
       color: "from-pink-500 to-pink-600"
     },
     {
-      icon: BarChart3,
-      titleAr: "تقارير أداء شاملة",
-      titleEn: "Comprehensive Performance Reports",
-      descAr: "تقارير تفصيلية عن أداء كل وكيل ومقارنات",
-      descEn: "Detailed reports on each agent's performance and comparisons",
+      icon: Users,
+      titleAr: "دعم فني كامل",
+      titleEn: "Full Technical Support",
+      descAr: "فريقنا يتولى الدعم الفني لعملائك - أنت تبيع فقط!",
+      descEn: "Our team handles technical support for your clients - you just sell!",
       color: "from-cyan-500 to-cyan-600"
     }
   ];
 
-  const agentLevels = [
+  const howItWorks = [
     {
-      icon: Medal,
-      level: "Bronze",
-      levelAr: "برونزي",
-      target: "$0 - $10,000",
-      commission: "5%",
-      color: "from-amber-600 to-amber-700"
+      step: "1",
+      titleAr: "سجّل كشريك",
+      titleEn: "Register as Partner",
+      descAr: "أملأ نموذج التسجيل وسنتواصل معك خلال 24 ساعة",
+      descEn: "Fill the registration form and we'll contact you within 24 hours",
+      color: "from-blue-500 to-blue-600"
     },
     {
-      icon: Star,
-      level: "Silver",
-      levelAr: "فضي",
-      target: "$10,000 - $50,000",
-      commission: "7%",
-      color: "from-gray-400 to-gray-500"
+      step: "2",
+      titleAr: "احصل على التدريب",
+      titleEn: "Get Trained",
+      descAr: "ندربك على المنتج وتقنيات البيع والإغلاق",
+      descEn: "We train you on the product, sales techniques, and closing",
+      color: "from-purple-500 to-purple-600"
     },
     {
-      icon: Trophy,
-      level: "Gold",
-      levelAr: "ذهبي",
-      target: "$50,000 - $100,000",
-      commission: "10%",
-      color: "from-yellow-400 to-yellow-500"
+      step: "3",
+      titleAr: "ابدأ التسويق",
+      titleEn: "Start Marketing",
+      descAr: "استخدم المواد الجاهزة وابدأ بالتواصل مع العملاء المحتملين",
+      descEn: "Use ready materials and start reaching potential clients",
+      color: "from-emerald-500 to-emerald-600"
     },
     {
-      icon: Crown,
-      level: "Platinum",
-      levelAr: "بلاتيني",
-      target: "$100,000+",
-      commission: "12%",
-      color: "from-indigo-400 to-indigo-500"
+      step: "4",
+      titleAr: "اكسب 30%",
+      titleEn: "Earn 30%",
+      descAr: "احصل على عمولتك فور إتمام كل صفقة",
+      descEn: "Get your commission upon closing each deal",
+      color: "from-texafab-gold to-amber-500"
     }
   ];
 
-  const topAgents = [
-    { name: "أحمد الصالح", nameEn: "Ahmed Al-Saleh", sales: "$125,000", level: "Platinum", customers: 45 },
-    { name: "محمد العمري", nameEn: "Mohammed Al-Omari", sales: "$89,000", level: "Gold", customers: 32 },
-    { name: "خالد الحسن", nameEn: "Khaled Al-Hassan", sales: "$67,000", level: "Gold", customers: 28 },
-    { name: "سعيد الناصر", nameEn: "Saeed Al-Nasser", sales: "$45,000", level: "Silver", customers: 21 }
-  ];
+  
 
   return (
     <div className={`min-h-screen bg-gradient-to-b from-gray-50 to-white dark:from-gray-900 dark:to-gray-800 ${dir === "rtl" ? "rtl" : "ltr"}`} dir={dir}>
@@ -136,32 +120,35 @@ function AgentsDealersContent() {
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 relative">
           <div className="text-center max-w-4xl mx-auto">
-            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-blue-500/10 border border-blue-500/20 mb-6">
-              <Users className="w-4 h-4 text-blue-500" />
-              <span className="text-sm font-semibold text-blue-600">
-                {language === "ar" ? "إدارة الوكلاء والموزعين" : "Agents & Dealers Management"}
+            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-texafab-gold/10 border border-texafab-gold/20 mb-6">
+              <DollarSign className="w-4 h-4 text-texafab-gold" />
+              <span className="text-sm font-semibold text-texafab-gold">
+                {language === "ar" ? "برنامج الشراكة والتسويق" : "Partnership & Marketing Program"}
               </span>
             </div>
 
-            <h1 className="text-4xl md:text-6xl font-black text-texafab-slate mb-6 leading-tight">
+            <h1 className="text-4xl md:text-6xl font-black text-texafab-slate dark:text-white mb-6 leading-tight">
               {language === "ar" ? (
-                <>أدر فريق مبيعاتك <span className="text-blue-500">باحترافية</span></>
+                <>ابدأ مشروعك الخاص <span className="text-texafab-gold">واكسب 30%</span></>
               ) : (
-                <>Manage Your Sales Team <span className="text-blue-500">Professionally</span></>
+                <>Start Your Own Business <span className="text-texafab-gold">& Earn 30%</span></>
               )}
             </h1>
 
-            <p className="text-xl text-gray-600 mb-8 leading-relaxed max-w-3xl mx-auto">
+            <p className="text-xl text-gray-600 dark:text-gray-300 mb-8 leading-relaxed max-w-3xl mx-auto">
               {language === "ar" 
-                ? "نظام متكامل لإدارة الوكلاء والموزعين مع تتبع الأداء والعمولات والأهداف"
-                : "Complete system for managing agents and dealers with performance, commissions, and targets tracking"}
+                ? "سوّق نظام TexaFab في مدينتك واحصل على عمولة 30% من كل عملية بيع. نوفر لك التدريب والمواد التسويقية والدعم الكامل مجاناً!"
+                : "Market TexaFab in your city and earn 30% commission on every sale. We provide training, marketing materials, and full support for free!"}
             </p>
 
             <div className="flex flex-col sm:flex-row justify-center gap-4">
+              <Button className="h-14 px-8 bg-gradient-to-r from-texafab-gold to-amber-500 hover:from-amber-500 hover:to-texafab-gold text-white text-base font-semibold rounded-xl shadow-lg shadow-amber-500/25" onClick={() => document.getElementById('apply-form')?.scrollIntoView({ behavior: 'smooth' })}>
+                {language === "ar" ? "قدّم طلبك الآن" : "Apply Now"}
+                <ArrowRight className={`w-5 h-5 ${dir === "rtl" ? "rotate-180 me-2" : "ms-2"}`} />
+              </Button>
               <Link to="/contact">
-                <Button className="h-14 px-8 bg-blue-500 hover:bg-blue-600 text-white text-base font-semibold rounded-xl shadow-lg shadow-blue-500/25">
-                  {language === "ar" ? "احجز عرض توضيحي" : "Book a Demo"}
-                  <ArrowRight className={`w-5 h-5 ${dir === "rtl" ? "rotate-180 me-2" : "ms-2"}`} />
+                <Button variant="outline" className="h-14 px-8 border-2 text-base font-semibold rounded-xl">
+                  {language === "ar" ? "تواصل معنا" : "Contact Us"}
                 </Button>
               </Link>
             </div>
@@ -174,8 +161,13 @@ function AgentsDealersContent() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6">
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-bold text-texafab-slate mb-4">
-              {language === "ar" ? "مميزات إدارة الوكلاء" : "Agent Management Features"}
+              {language === "ar" ? "لماذا تصبح شريكاً لـ TexaFab؟" : "Why Become a TexaFab Partner?"}
             </h2>
+            <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+              {language === "ar" 
+                ? "نقدم لك كل ما تحتاجه للنجاح في بيع أفضل نظام ERP للنسيج"
+                : "We provide everything you need to succeed in selling the best textile ERP system"}
+            </p>
           </div>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -196,175 +188,199 @@ function AgentsDealersContent() {
         </div>
       </section>
 
-      {/* Commission Levels */}
-      <section className="py-20 bg-gray-50">
+      {/* How It Works */}
+      <section className="py-20 bg-gray-50 dark:bg-gray-900">
         <div className="max-w-7xl mx-auto px-4 sm:px-6">
           <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold text-texafab-slate mb-4">
-              {language === "ar" ? "نظام مستويات العمولات" : "Commission Levels System"}
+            <h2 className="text-3xl md:text-4xl font-bold text-texafab-slate dark:text-white mb-4">
+              {language === "ar" ? "كيف تعمل الشراكة؟" : "How Does It Work?"}
             </h2>
-            <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+            <p className="text-lg text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
               {language === "ar" 
-                ? "حفز وكلاءك بنظام مستويات يكافئ الأداء المتميز"
-                : "Motivate your agents with a tiered system that rewards outstanding performance"}
+                ? "4 خطوات بسيطة لبدء رحلتك معنا"
+                : "4 simple steps to start your journey with us"}
             </p>
           </div>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-            {agentLevels.map((level, index) => (
-              <Card key={index} className="p-6 bg-white border-0 shadow-lg rounded-2xl text-center hover:shadow-xl transition-all">
-                <div className={`w-16 h-16 mx-auto rounded-2xl bg-gradient-to-r ${level.color} flex items-center justify-center mb-4`}>
-                  <level.icon className="w-8 h-8 text-white" />
+            {howItWorks.map((item, index) => (
+              <Card key={index} className="p-6 bg-white dark:bg-gray-800 border-0 shadow-lg rounded-2xl text-center hover:shadow-xl transition-all relative overflow-hidden">
+                <div className={`w-16 h-16 mx-auto rounded-2xl bg-gradient-to-r ${item.color} flex items-center justify-center mb-4 text-3xl font-bold text-white`}>
+                  {item.step}
                 </div>
-                <h3 className="text-xl font-bold text-texafab-slate mb-1">
-                  {language === "ar" ? level.levelAr : level.level}
+                <h3 className="text-xl font-bold text-texafab-slate dark:text-white mb-2">
+                  {language === "ar" ? item.titleAr : item.titleEn}
                 </h3>
-                <p className="text-sm text-gray-500 mb-4">{level.target}</p>
-                <div className="p-3 bg-gray-50 rounded-xl">
-                  <p className="text-sm text-gray-500">{language === "ar" ? "نسبة العمولة" : "Commission Rate"}</p>
-                  <p className="text-2xl font-bold text-texafab-emerald">{level.commission}</p>
-                </div>
+                <p className="text-gray-600 dark:text-gray-400">
+                  {language === "ar" ? item.descAr : item.descEn}
+                </p>
+                {index < 3 && (
+                  <div className="hidden lg:block absolute top-1/2 -right-4 transform -translate-y-1/2">
+                    <ArrowRight className={`w-8 h-8 text-gray-300 ${dir === "rtl" ? "rotate-180" : ""}`} />
+                  </div>
+                )}
               </Card>
             ))}
           </div>
         </div>
       </section>
 
-      {/* Agent Profile Card */}
-      <section className="py-20 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6">
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
-            <div>
-              <h2 className="text-3xl md:text-4xl font-bold text-texafab-slate mb-4">
-                {language === "ar" ? "ملف الوكيل الشامل" : "Comprehensive Agent Profile"}
-              </h2>
-              <p className="text-lg text-gray-600 mb-6">
-                {language === "ar" 
-                  ? "كل المعلومات التي تحتاجها عن كل وكيل في مكان واحد"
-                  : "All the information you need about each agent in one place"}
-              </p>
-              <ul className="space-y-3">
-                {[
-                  { ar: "معلومات التواصل الكاملة", en: "Complete contact information" },
-                  { ar: "المنطقة الجغرافية المخصصة", en: "Assigned geographic area" },
-                  { ar: "قائمة العملاء المرتبطين", en: "Linked customers list" },
-                  { ar: "سجل المبيعات والعمولات", en: "Sales and commissions history" },
-                  { ar: "تقدم الأهداف", en: "Target progress" },
-                  { ar: "تقييم الأداء", en: "Performance rating" }
-                ].map((item, index) => (
-                  <li key={index} className="flex items-center gap-3">
-                    <CheckCircle2 className="w-5 h-5 text-texafab-emerald" />
-                    <span className="text-gray-700">{language === "ar" ? item.ar : item.en}</span>
-                  </li>
-                ))}
-              </ul>
-            </div>
-
-            {/* Agent Card Preview */}
-            <Card className="p-6 bg-white border-0 shadow-2xl rounded-3xl">
-              <div className="flex items-start justify-between mb-6">
-                <div className="flex items-center gap-4">
-                  <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-blue-500 to-blue-600 flex items-center justify-center text-white font-bold text-xl">
-                    أح
-                  </div>
-                  <div>
-                    <h3 className="text-xl font-bold text-texafab-slate">
-                      {language === "ar" ? "أحمد الصالح" : "Ahmed Al-Saleh"}
-                    </h3>
-                    <p className="text-gray-500">{language === "ar" ? "وكيل معتمد" : "Certified Agent"}</p>
-                  </div>
-                </div>
-                <span className="px-3 py-1 rounded-full bg-gradient-to-r from-indigo-400 to-indigo-500 text-white text-sm font-medium">
-                  Platinum
-                </span>
-              </div>
-
-              <div className="grid grid-cols-2 gap-4 mb-6">
-                <div className="p-3 bg-gray-50 rounded-xl">
-                  <p className="text-sm text-gray-500">{language === "ar" ? "إجمالي المبيعات" : "Total Sales"}</p>
-                  <p className="text-xl font-bold text-texafab-slate">$125,000</p>
-                </div>
-                <div className="p-3 bg-gray-50 rounded-xl">
-                  <p className="text-sm text-gray-500">{language === "ar" ? "العمولات" : "Commissions"}</p>
-                  <p className="text-xl font-bold text-emerald-500">$15,000</p>
-                </div>
-                <div className="p-3 bg-gray-50 rounded-xl">
-                  <p className="text-sm text-gray-500">{language === "ar" ? "العملاء" : "Customers"}</p>
-                  <p className="text-xl font-bold text-texafab-slate">45</p>
-                </div>
-                <div className="p-3 bg-gray-50 rounded-xl">
-                  <p className="text-sm text-gray-500">{language === "ar" ? "تحقيق الهدف" : "Target Achievement"}</p>
-                  <p className="text-xl font-bold text-blue-500">125%</p>
-                </div>
-              </div>
-
-              <div className="flex items-center gap-4 p-4 bg-emerald-50 rounded-xl border border-emerald-200">
-                <MapPin className="w-5 h-5 text-emerald-600" />
-                <div>
-                  <p className="text-sm text-emerald-600">{language === "ar" ? "المنطقة المخصصة" : "Assigned Area"}</p>
-                  <p className="font-semibold text-emerald-700">{language === "ar" ? "الرياض - الشمال" : "Riyadh - North"}</p>
-                </div>
-              </div>
-
-              <div className="flex gap-2 mt-4">
-                <Button variant="outline" className="flex-1 rounded-xl">
-                  <Phone className="w-4 h-4 me-2" />
-                  {language === "ar" ? "اتصال" : "Call"}
-                </Button>
-                <Button variant="outline" className="flex-1 rounded-xl">
-                  <Mail className="w-4 h-4 me-2" />
-                  {language === "ar" ? "إرسال" : "Email"}
-                </Button>
-              </div>
-            </Card>
-          </div>
-        </div>
-      </section>
-
-      {/* Top Agents Leaderboard */}
-      <section className="py-20 bg-gradient-to-br from-texafab-slate to-gray-900">
+      {/* Success Stories */}
+      <section className="py-20 bg-white dark:bg-gray-800">
         <div className="max-w-7xl mx-auto px-4 sm:px-6">
           <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
-              {language === "ar" ? "لوحة الصدارة" : "Leaderboard"}
+            <h2 className="text-3xl md:text-4xl font-bold text-texafab-slate dark:text-white mb-4">
+              {language === "ar" ? "قصص نجاح شركائنا" : "Partner Success Stories"}
             </h2>
-            <p className="text-lg text-gray-300 max-w-2xl mx-auto">
+            <p className="text-lg text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
               {language === "ar" 
-                ? "تابع أفضل الوكلاء أداءً وحفز روح المنافسة"
-                : "Track top-performing agents and foster competitive spirit"}
+                ? "شركاؤنا يحققون نتائج مذهلة - وأنت التالي!"
+                : "Our partners achieve amazing results - you could be next!"}
             </p>
           </div>
 
-          <div className="max-w-2xl mx-auto space-y-4">
-            {topAgents.map((agent, index) => (
-              <Card key={index} className="p-4 bg-white/10 backdrop-blur-xl border-white/20 rounded-2xl">
-                <div className="flex items-center gap-4">
-                  <div className={`w-12 h-12 rounded-xl flex items-center justify-center font-bold text-xl ${
-                    index === 0 ? "bg-yellow-400 text-yellow-900" :
-                    index === 1 ? "bg-gray-300 text-gray-700" :
-                    index === 2 ? "bg-amber-600 text-white" :
-                    "bg-white/20 text-white"
-                  }`}>
-                    #{index + 1}
+          <div className="grid md:grid-cols-3 gap-6">
+            {[
+              { 
+                name: language === "ar" ? "محمد من دبي" : "Mohammed from Dubai",
+                earnings: "$12,000",
+                period: language === "ar" ? "في شهرين" : "in 2 months",
+                quote: language === "ar" ? "بدأت كهواية وأصبحت مصدر دخل رئيسي!" : "Started as a hobby, now it's my main income!"
+              },
+              { 
+                name: language === "ar" ? "سارة من القاهرة" : "Sara from Cairo",
+                earnings: "$8,500",
+                period: language === "ar" ? "في 6 أسابيع" : "in 6 weeks",
+                quote: language === "ar" ? "الدعم والتدريب كانا ممتازين!" : "The support and training were excellent!"
+              },
+              { 
+                name: language === "ar" ? "أحمد من الرياض" : "Ahmed from Riyadh",
+                earnings: "$25,000",
+                period: language === "ar" ? "في 4 أشهر" : "in 4 months",
+                quote: language === "ar" ? "أفضل قرار اتخذته في حياتي المهنية" : "Best decision I've made in my career"
+              }
+            ].map((story, index) => (
+              <Card key={index} className="p-6 bg-gradient-to-br from-gray-50 to-white dark:from-gray-700 dark:to-gray-800 border-0 shadow-lg rounded-2xl">
+                <div className="flex items-center gap-3 mb-4">
+                  <div className="w-12 h-12 rounded-full bg-gradient-to-br from-texafab-gold to-amber-500 flex items-center justify-center text-white font-bold">
+                    {story.name.charAt(0)}
                   </div>
-                  <div className="flex-1">
-                    <h3 className="font-bold text-white">
-                      {language === "ar" ? agent.name : agent.nameEn}
-                    </h3>
-                    <p className="text-sm text-gray-400">
-                      {agent.customers} {language === "ar" ? "عميل" : "customers"}
-                    </p>
-                  </div>
-                  <div className="text-end">
-                    <p className="font-bold text-texafab-gold">{agent.sales}</p>
-                    <span className="text-xs px-2 py-1 rounded-full bg-white/10 text-white">
-                      {agent.level}
-                    </span>
+                  <div>
+                    <h3 className="font-bold text-texafab-slate dark:text-white">{story.name}</h3>
+                    <p className="text-sm text-texafab-gold font-semibold">{story.earnings} {story.period}</p>
                   </div>
                 </div>
+                <p className="text-gray-600 dark:text-gray-300 italic">"{story.quote}"</p>
               </Card>
             ))}
           </div>
+        </div>
+      </section>
+
+      {/* Application Form */}
+      <section id="apply-form" className="py-20 bg-gradient-to-br from-texafab-slate to-gray-900">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
+              {language === "ar" ? "قدّم طلبك الآن" : "Apply Now"}
+            </h2>
+            <p className="text-lg text-gray-300 max-w-2xl mx-auto">
+              {language === "ar" 
+                ? "أملأ النموذج وسنتواصل معك خلال 24 ساعة"
+                : "Fill the form and we'll contact you within 24 hours"}
+            </p>
+          </div>
+
+          <Card className="p-8 bg-white/10 backdrop-blur-xl border-white/20 rounded-3xl">
+            <form className="space-y-6">
+              <div className="grid md:grid-cols-2 gap-6">
+                <div>
+                  <label className="block text-white mb-2 font-medium">
+                    {language === "ar" ? "الاسم الكامل *" : "Full Name *"}
+                  </label>
+                  <input 
+                    type="text" 
+                    className="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-xl text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-texafab-gold"
+                    placeholder={language === "ar" ? "أدخل اسمك" : "Enter your name"}
+                  />
+                </div>
+                <div>
+                  <label className="block text-white mb-2 font-medium">
+                    {language === "ar" ? "البريد الإلكتروني *" : "Email *"}
+                  </label>
+                  <input 
+                    type="email" 
+                    className="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-xl text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-texafab-gold"
+                    placeholder={language === "ar" ? "example@email.com" : "example@email.com"}
+                  />
+                </div>
+                <div>
+                  <label className="block text-white mb-2 font-medium">
+                    {language === "ar" ? "رقم الهاتف (واتساب) *" : "Phone (WhatsApp) *"}
+                  </label>
+                  <input 
+                    type="tel" 
+                    className="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-xl text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-texafab-gold"
+                    placeholder={language === "ar" ? "+971 XX XXX XXXX" : "+971 XX XXX XXXX"}
+                  />
+                </div>
+                <div>
+                  <label className="block text-white mb-2 font-medium">
+                    {language === "ar" ? "المدينة / الدولة *" : "City / Country *"}
+                  </label>
+                  <input 
+                    type="text" 
+                    className="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-xl text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-texafab-gold"
+                    placeholder={language === "ar" ? "مثال: دبي، الإمارات" : "e.g., Dubai, UAE"}
+                  />
+                </div>
+              </div>
+
+              <div>
+                <label className="block text-white mb-2 font-medium">
+                  {language === "ar" ? "خبرتك في المبيعات" : "Your Sales Experience"}
+                </label>
+                <select className="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-xl text-white focus:outline-none focus:ring-2 focus:ring-texafab-gold">
+                  <option value="" className="text-gray-900">{language === "ar" ? "اختر..." : "Select..."}</option>
+                  <option value="none" className="text-gray-900">{language === "ar" ? "لا خبرة سابقة" : "No previous experience"}</option>
+                  <option value="1-2" className="text-gray-900">{language === "ar" ? "1-2 سنوات" : "1-2 years"}</option>
+                  <option value="3-5" className="text-gray-900">{language === "ar" ? "3-5 سنوات" : "3-5 years"}</option>
+                  <option value="5+" className="text-gray-900">{language === "ar" ? "أكثر من 5 سنوات" : "5+ years"}</option>
+                </select>
+              </div>
+
+              <div>
+                <label className="block text-white mb-2 font-medium">
+                  {language === "ar" ? "كيف ستسوّق البرنامج؟" : "How will you market the product?"}
+                </label>
+                <textarea 
+                  rows={3}
+                  className="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-xl text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-texafab-gold resize-none"
+                  placeholder={language === "ar" ? "اشرح لنا خطتك للتسويق..." : "Tell us about your marketing plan..."}
+                />
+              </div>
+
+              <div className="flex items-start gap-3">
+                <input type="checkbox" className="mt-1 w-5 h-5 rounded border-white/20 bg-white/10" />
+                <label className="text-gray-300 text-sm">
+                  {language === "ar" 
+                    ? "أوافق على شروط وأحكام برنامج الشراكة وسياسة الخصوصية"
+                    : "I agree to the partnership program terms and privacy policy"}
+                </label>
+              </div>
+
+              <Button className="w-full h-14 bg-gradient-to-r from-texafab-gold to-amber-500 hover:from-amber-500 hover:to-texafab-gold text-white text-lg font-bold rounded-xl shadow-lg">
+                {language === "ar" ? "إرسال الطلب" : "Submit Application"}
+                <ArrowRight className={`w-5 h-5 ${dir === "rtl" ? "rotate-180 me-2" : "ms-2"}`} />
+              </Button>
+
+              <p className="text-center text-gray-400 text-sm">
+                {language === "ar" 
+                  ? "سنتواصل معك خلال 24 ساعة عبر الواتساب"
+                  : "We'll contact you within 24 hours via WhatsApp"}
+              </p>
+            </form>
+          </Card>
         </div>
       </section>
 

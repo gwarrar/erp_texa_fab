@@ -1,0 +1,170 @@
+{
+  "uk": {
+    "sectionTitle": "Чому обирають нас",
+    "sectionSubtitle": "Dubai Stroy — ваш надійний партнер у будівництві",
+    "items": [
+      {
+        "id": "quality",
+        "icon": "Award",
+        "title": "Найвища якість",
+        "description": "Використовуємо тільки преміум матеріали та сучасні технології будівництва для бездоганного результату."
+      },
+      {
+        "id": "prices",
+        "icon": "BadgeDollarSign",
+        "title": "Найкращі ціни",
+        "description": "Допомагаємо з закупівлею матеріалів за оптовими цінами. Економія до 30% на матеріалах."
+      },
+      {
+        "id": "trust",
+        "icon": "Shield",
+        "title": "Надійність та довіра",
+        "description": "Працюємо з посольствами, державними установами та VIP-клієнтами. Гарантія на всі роботи."
+      },
+      {
+        "id": "experience",
+        "icon": "Building2",
+        "title": "Досвід та експертиза",
+        "description": "Понад 12 років досвіду. Реалізовано 150+ проектів у кращих районах Одеси: Аркадія, Французький бульвар, центр."
+      },
+      {
+        "id": "turnkey",
+        "icon": "Key",
+        "title": "Під ключ",
+        "description": "Повний цикл робіт від проекту до здачі. Ви отримуєте готовий результат без зайвих клопотів."
+      },
+      {
+        "id": "kadoor",
+        "icon": "Building",
+        "title": "Експерти Kadoor Group",
+        "description": "Більшість наших проектів реалізовано в елітних комплексах Kadoor Group в Одесі."
+      }
+    ]
+  },
+  "ru": {
+    "sectionTitle": "Почему выбирают нас",
+    "sectionSubtitle": "Dubai Stroy — ваш надёжный партнёр в строительстве",
+    "items": [
+      {
+        "id": "quality",
+        "icon": "Award",
+        "title": "Высочайшее качество",
+        "description": "Используем только премиум материалы и современные технологии строительства для безупречного результата."
+      },
+      {
+        "id": "prices",
+        "icon": "BadgeDollarSign",
+        "title": "Лучшие цены",
+        "description": "Помогаем с закупкой материалов по оптовым ценам. Экономия до 30% на материалах."
+      },
+      {
+        "id": "trust",
+        "icon": "Shield",
+        "title": "Надёжность и доверие",
+        "description": "Работаем с посольствами, государственными учреждениями и VIP-клиентами. Гарантия на все работы."
+      },
+      {
+        "id": "experience",
+        "icon": "Building2",
+        "title": "Опыт и экспертиза",
+        "description": "Более 12 лет опыта. Реализовано 150+ проектов в лучших районах Одессы: Аркадия, Французский бульвар, центр."
+      },
+      {
+        "id": "turnkey",
+        "icon": "Key",
+        "title": "Под ключ",
+        "description": "Полный цикл работ от проекта до сдачи. Вы получаете готовый результат без лишних хлопот."
+      },
+      {
+        "id": "kadoor",
+        "icon": "Building",
+        "title": "Эксперты Kadoor Group",
+        "description": "Большинство наших проектов реализовано в элитных комплексах Kadoor Group в Одессе."
+      }
+    ]
+  },
+  "en": {
+    "sectionTitle": "Why Choose Us",
+    "sectionSubtitle": "Dubai Stroy — Your Reliable Construction Partner",
+    "items": [
+      {
+        "id": "quality",
+        "icon": "Award",
+        "title": "Premium Quality",
+        "description": "We use only premium materials and modern construction technologies for flawless results."
+      },
+      {
+        "id": "prices",
+        "icon": "BadgeDollarSign",
+        "title": "Best Prices",
+        "description": "We help with material procurement at wholesale prices. Save up to 30% on materials."
+      },
+      {
+        "id": "trust",
+        "icon": "Shield",
+        "title": "Trust & Reliability",
+        "description": "We work with embassies, government institutions, and VIP clients. Warranty on all work."
+      },
+      {
+        "id": "experience",
+        "icon": "Building2",
+        "title": "Experience & Expertise",
+        "description": "Over 12 years of experience. 150+ projects completed in Odessa's best areas: Arcadia, French Boulevard, downtown."
+      },
+      {
+        "id": "turnkey",
+        "icon": "Key",
+        "title": "Turnkey Solutions",
+        "description": "Full cycle of work from design to handover. You get a ready result without extra hassle."
+      },
+      {
+        "id": "kadoor",
+        "icon": "Building",
+        "title": "Kadoor Group Experts",
+        "description": "Most of our projects are completed in elite Kadoor Group complexes in Odessa."
+      }
+    ]
+  },
+  "ar": {
+    "sectionTitle": "لماذا يختاروننا",
+    "sectionSubtitle": "دبي ستروي - شريكك الموثوق في البناء",
+    "items": [
+      {
+        "id": "quality",
+        "icon": "Award",
+        "title": "أعلى جودة",
+        "description": "نستخدم فقط المواد الفاخرة وتقنيات البناء الحديثة للحصول على نتائج مثالية."
+      },
+      {
+        "id": "prices",
+        "icon": "BadgeDollarSign",
+        "title": "أفضل الأسعار",
+        "description": "نساعدك في شراء المواد بأسعار الجملة. وفر حتى 30% على المواد."
+      },
+      {
+        "id": "trust",
+        "icon": "Shield",
+        "title": "الموثوقية والثقة",
+        "description": "نعمل مع السفارات والمؤسسات الحكومية وعملاء VIP. ضمان على جميع الأعمال."
+      },
+      {
+        "id": "experience",
+        "icon": "Building2",
+        "title": "الخبرة والتميز",
+        "description": "أكثر من 12 عاماً من الخبرة. أكثر من 150 مشروعاً في أفضل مناطق أوديسا: الأركاديا، الفرانسوسكي بولفار، وسط المدينة."
+      },
+      {
+        "id": "turnkey",
+        "icon": "Key",
+        "title": "تسليم مفتاح",
+        "description": "دورة عمل كاملة من التصميم إلى التسليم. تحصل على نتيجة جاهزة بدون متاعب إضافية."
+      },
+      {
+        "id": "kadoor",
+        "icon": "Building",
+        "title": "خبراء Kadoor Group",
+        "description": "معظم مشاريعنا منفذة في مجمعات Kadoor Group الفاخرة في أوديسا."
+      }
+    ]
+  }
+}

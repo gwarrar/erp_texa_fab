@@ -1,0 +1,234 @@
+{
+  "uk": {
+    "sectionTitle": "Новини та оновлення",
+    "sectionSubtitle": "Останні новини від Dubai Stroy",
+    "readMore": "Детальніше",
+    "viewAll": "Всі новини",
+    "categories": {
+      "all": "Всі",
+      "news": "Новини",
+      "projects": "Проекти",
+      "tips": "Поради"
+    },
+    "items": [
+      {
+        "id": "news-1",
+        "title": "Завершено проект елітної квартири в Kadoor Tower",
+        "excerpt": "Ми з гордістю представляємо наш новий завершений проект — квартиру 150м² в преміум комплексі Kadoor Tower.",
+        "content": "Наша команда успішно завершила повний ремонт під ключ елітної квартири в комплексі Kadoor Tower. Проект включав повне перепланування, дизайнерське оздоблення та встановлення системи розумний дім.",
+        "date": "2025-01-20",
+        "category": "projects",
+        "image": "https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=800&q=80",
+        "author": "Dubai Stroy",
+        "featured": true
+      },
+      {
+        "id": "news-2",
+        "title": "Відкриття нового шоуруму оздоблювальних матеріалів",
+        "excerpt": "Тепер наші клієнти можуть особисто оглянути та вибрати матеріали для свого проекту в нашому новому шоурумі.",
+        "content": "Ми раді повідомити про відкриття нашого шоуруму за адресою: Генуезька 5. Тепер ви можете особисто оглянути всі матеріали, які ми використовуємо в наших проектах.",
+        "date": "2025-01-15",
+        "category": "news",
+        "image": "https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?w=800&q=80",
+        "author": "Dubai Stroy",
+        "featured": true
+      },
+      {
+        "id": "news-3",
+        "title": "Як обрати підрядника для ремонту: поради від експертів",
+        "excerpt": "Ділимося важливими порадами про те, на що звертати увагу при виборі будівельної компанії.",
+        "content": "При виборі підрядника важливо звертати увагу на портфоліо, відгуки клієнтів, гарантійні умови та прозорість ціноутворення. У цій статті ми детально розповімо про всі аспекти.",
+        "date": "2025-01-10",
+        "category": "tips",
+        "image": "https://images.unsplash.com/photo-1503387762-592deb58ef4e?w=800&q=80",
+        "author": "Dubai Stroy",
+        "featured": false
+      },
+      {
+        "id": "news-4",
+        "title": "Розпочато будівництво приватного будинку в Аркадії",
+        "excerpt": "Новий масштабний проект — будівництво сучасного будинку 400м² з басейном та терасою.",
+        "content": "Ми розпочали роботу над новим захопливим проектом — будівництвом сучасного приватного будинку в одному з найпрестижніших районів Одеси.",
+        "date": "2025-01-05",
+        "category": "projects",
+        "image": "https://images.unsplash.com/photo-1613490493576-7fde63acd811?w=800&q=80",
+        "author": "Dubai Stroy",
+        "featured": false
+      }
+    ]
+  },
+  "ru": {
+    "sectionTitle": "Новости и обновления",
+    "sectionSubtitle": "Последние новости от Dubai Stroy",
+    "readMore": "Подробнее",
+    "viewAll": "Все новости",
+    "categories": {
+      "all": "Все",
+      "news": "Новости",
+      "projects": "Проекты",
+      "tips": "Советы"
+    },
+    "items": [
+      {
+        "id": "news-1",
+        "title": "Завершён проект элитной квартиры в Kadoor Tower",
+        "excerpt": "Мы с гордостью представляем наш новый завершённый проект — квартиру 150м² в премиум комплексе Kadoor Tower.",
+        "content": "Наша команда успешно завершила полный ремонт под ключ элитной квартиры в комплексе Kadoor Tower. Проект включал полную перепланировку, дизайнерскую отделку и установку системы умный дом.",
+        "date": "2025-01-20",
+        "category": "projects",
+        "image": "https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=800&q=80",
+        "author": "Dubai Stroy",
+        "featured": true
+      },
+      {
+        "id": "news-2",
+        "title": "Открытие нового шоурума отделочных материалов",
+        "excerpt": "Теперь наши клиенты могут лично осмотреть и выбрать материалы для своего проекта в нашем новом шоуруме.",
+        "content": "Мы рады сообщить об открытии нашего шоурума по адресу: Генуэзская 5. Теперь вы можете лично осмотреть все материалы, которые мы используем в наших проектах.",
+        "date": "2025-01-15",
+        "category": "news",
+        "image": "https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?w=800&q=80",
+        "author": "Dubai Stroy",
+        "featured": true
+      },
+      {
+        "id": "news-3",
+        "title": "Как выбрать подрядчика для ремонта: советы от экспертов",
+        "excerpt": "Делимся важными советами о том, на что обращать внимание при выборе строительной компании.",
+        "content": "При выборе подрядчика важно обращать внимание на портфолио, отзывы клиентов, гарантийные условия и прозрачность ценообразования. В этой статье мы подробно расскажем обо всех аспектах.",
+        "date": "2025-01-10",
+        "category": "tips",
+        "image": "https://images.unsplash.com/photo-1503387762-592deb58ef4e?w=800&q=80",
+        "author": "Dubai Stroy",
+        "featured": false
+      },
+      {
+        "id": "news-4",
+        "title": "Начато строительство частного дома в Аркадии",
+        "excerpt": "Новый масштабный проект — строительство современного дома 400м² с бассейном и террасой.",
+        "content": "Мы начали работу над новым захватывающим проектом — строительством современного частного дома в одном из самых престижных районов Одессы.",
+        "date": "2025-01-05",
+        "category": "projects",
+        "image": "https://images.unsplash.com/photo-1613490493576-7fde63acd811?w=800&q=80",
+        "author": "Dubai Stroy",
+        "featured": false
+      }
+    ]
+  },
+  "en": {
+    "sectionTitle": "News & Updates",
+    "sectionSubtitle": "Latest news from Dubai Stroy",
+    "readMore": "Read More",
+    "viewAll": "All News",
+    "categories": {
+      "all": "All",
+      "news": "News",
+      "projects": "Projects",
+      "tips": "Tips"
+    },
+    "items": [
+      {
+        "id": "news-1",
+        "title": "Luxury Apartment Project Completed in Kadoor Tower",
+        "excerpt": "We proudly present our newly completed project — a 150m² apartment in premium Kadoor Tower complex.",
+        "content": "Our team successfully completed a full turnkey renovation of a luxury apartment in Kadoor Tower complex. The project included complete redesign, designer finishing, and smart home system installation.",
+        "date": "2025-01-20",
+        "category": "projects",
+        "image": "https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=800&q=80",
+        "author": "Dubai Stroy",
+        "featured": true
+      },
+      {
+        "id": "news-2",
+        "title": "New Finishing Materials Showroom Opening",
+        "excerpt": "Now our clients can personally view and select materials for their project in our new showroom.",
+        "content": "We are happy to announce the opening of our showroom at Genuezskaya 5. Now you can personally view all the materials we use in our projects.",
+        "date": "2025-01-15",
+        "category": "news",
+        "image": "https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?w=800&q=80",
+        "author": "Dubai Stroy",
+        "featured": true
+      },
+      {
+        "id": "news-3",
+        "title": "How to Choose a Contractor: Expert Tips",
+        "excerpt": "We share important tips on what to look for when choosing a construction company.",
+        "content": "When choosing a contractor, it's important to pay attention to portfolio, client reviews, warranty terms, and pricing transparency. In this article, we'll cover all aspects in detail.",
+        "date": "2025-01-10",
+        "category": "tips",
+        "image": "https://images.unsplash.com/photo-1503387762-592deb58ef4e?w=800&q=80",
+        "author": "Dubai Stroy",
+        "featured": false
+      },
+      {
+        "id": "news-4",
+        "title": "Private House Construction Started in Arcadia",
+        "excerpt": "New large-scale project — construction of a modern 400m² house with pool and terrace.",
+        "content": "We have started work on an exciting new project — construction of a modern private house in one of the most prestigious areas of Odessa.",
+        "date": "2025-01-05",
+        "category": "projects",
+        "image": "https://images.unsplash.com/photo-1613490493576-7fde63acd811?w=800&q=80",
+        "author": "Dubai Stroy",
+        "featured": false
+      }
+    ]
+  },
+  "ar": {
+    "sectionTitle": "الأخبار والتحديثات",
+    "sectionSubtitle": "آخر الأخبار من دبي ستروي",
+    "readMore": "اقرأ المزيد",
+    "viewAll": "جميع الأخبار",
+    "categories": {
+      "all": "الكل",
+      "news": "أخبار",
+      "projects": "مشاريع",
+      "tips": "نصائح"
+    },
+    "items": [
+      {
+        "id": "news-1",
+        "title": "اكتمال مشروع شقة فاخرة في Kadoor Tower",
+        "excerpt": "نقدم بفخر مشروعنا المكتمل الجديد - شقة 150م² في مجمع Kadoor Tower الفاخر.",
+        "content": "أكمل فريقنا بنجاح تجديداً كاملاً تسليم مفتاح لشقة فاخرة في مجمع Kadoor Tower. شمل المشروع إعادة تصميم كاملة وتشطيب تصميمي وتركيب نظام المنزل الذكي.",
+        "date": "2025-01-20",
+        "category": "projects",
+        "image": "https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=800&q=80",
+        "author": "Dubai Stroy",
+        "featured": true
+      },
+      {
+        "id": "news-2",
+        "title": "افتتاح صالة عرض مواد التشطيب الجديدة",
+        "excerpt": "الآن يمكن لعملائنا مشاهدة واختيار المواد لمشروعهم شخصياً في صالة العرض الجديدة.",
+        "content": "يسعدنا الإعلان عن افتتاح صالة العرض الخاصة بنا في شارع جينويزسكايا 5. الآن يمكنك مشاهدة جميع المواد التي نستخدمها في مشاريعنا شخصياً.",
+        "date": "2025-01-15",
+        "category": "news",
+        "image": "https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?w=800&q=80",
+        "author": "Dubai Stroy",
+        "featured": true
+      },
+      {
+        "id": "news-3",
+        "title": "كيف تختار المقاول: نصائح من الخبراء",
+        "excerpt": "نشارك نصائح مهمة حول ما يجب الانتباه إليه عند اختيار شركة بناء.",
+        "content": "عند اختيار مقاول، من المهم الانتباه إلى المحفظة ومراجعات العملاء وشروط الضمان وشفافية التسعير. في هذا المقال سنغطي جميع الجوانب بالتفصيل.",
+        "date": "2025-01-10",
+        "category": "tips",
+        "image": "https://images.unsplash.com/photo-1503387762-592deb58ef4e?w=800&q=80",
+        "author": "Dubai Stroy",
+        "featured": false
+      },
+      {
+        "id": "news-4",
+        "title": "بدء بناء منزل خاص في الأركاديا",
+        "excerpt": "مشروع جديد واسع النطاق - بناء منزل حديث 400م² مع مسبح وتراس.",
+        "content": "بدأنا العمل على مشروع جديد مثير - بناء منزل خاص حديث في واحدة من أكثر المناطق المرموقة في أوديسا.",
+        "date": "2025-01-05",
+        "category": "projects",
+        "image": "https://images.unsplash.com/photo-1613490493576-7fde63acd811?w=800&q=80",
+        "author": "Dubai Stroy",
+        "featured": false
+      }
+    ]
+  }
+}

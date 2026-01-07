@@ -3,7 +3,7 @@ import { Link, useLocation } from "react-router-dom";
 import { useLanguage, languageNames, Language } from "./LanguageContext";
 import { useTheme, Theme } from "./ThemeContext";
 import { Button } from "@/components/ui/button";
-import { Globe, Menu, X, ChevronRight, ChevronDown, Package, ScanBarcode, ShoppingCart, Users, BarChart3, Truck, Warehouse, Scissors, Calculator, RefreshCw, ShoppingBag, Heart, Factory, Shirt, Brain, Sun, Moon, Monitor } from "lucide-react";
+import { Globe, Menu, X, ChevronRight, ChevronDown, Package, ScanBarcode, ShoppingCart, Users, BarChart3, Truck, Warehouse, Scissors, Calculator, RefreshCw, ShoppingBag, Heart, Factory, Shirt, Brain, Sun, Moon, Monitor, Handshake } from "lucide-react";
 
 export function Header() {
   const { language, setLanguage, t, dir } = useLanguage();
@@ -250,6 +250,13 @@ export function Header() {
               {t("nav.contact")}
               <span className="absolute bottom-0 left-0 right-0 mx-auto w-0 h-0.5 bg-texafab-emerald rounded-full group-hover:w-6 transition-all duration-300" />
             </Link>
+            <Link 
+              to="/agents-dealers" 
+              className="relative flex items-center gap-1.5 px-3 xl:px-4 py-2 text-xs xl:text-sm font-semibold text-white bg-gradient-to-r from-texafab-gold to-amber-500 hover:from-amber-500 hover:to-texafab-gold rounded-full transition-all shadow-md hover:shadow-lg whitespace-nowrap"
+            >
+              <Handshake className="w-4 h-4" />
+              {t("nav.becomeAgent")}
+            </Link>
           </nav>
 
           {/* Actions */}
@@ -358,6 +365,7 @@ export function Header() {
             { href: "/shipping", labelKey: "solutions.shipping" },
             { href: "/pricing", labelKey: "nav.pricing" },
             { href: "/contact", labelKey: "nav.contact" },
+            { href: "/agents-dealers", labelKey: "nav.becomeAgent" },
           ].map((item) => (
             <Link 
               key={item.href}

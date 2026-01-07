@@ -10,17 +10,262 @@
     <div id="root"></div>
     <script type="module" src="/src/main.tsx"></script>
     <!--Start of Tawk.to Script-->
+    <style>
+      /* Custom Tawk.to button styling */
+      .tawk-custom-button {
+        position: fixed !important;
+        bottom: 20px !important;
+        z-index: 9999 !important;
+        width: 60px !important;
+        height: 60px !important;
+        border-radius: 16px !important;
+        background: linear-gradient(135deg, #059669, #10B981) !important;
+        box-shadow: 0 4px 20px rgba(16, 185, 129, 0.4) !important;
+        cursor: pointer !important;
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        transition: transform 0.3s ease, box-shadow 0.3s ease !important;
+        border: none !important;
+        animation: tawk-pulse 2s infinite, tawk-bounce 3s ease-in-out infinite !important;
+      }
+      .tawk-custom-button:hover {
+        transform: scale(1.15) !important;
+        box-shadow: 0 8px 30px rgba(16, 185, 129, 0.6) !important;
+        animation: none !important;
+      }
+      .tawk-custom-button svg {
+        width: 28px !important;
+        height: 28px !important;
+        fill: white !important;
+        transition: transform 0.3s ease !important;
+      }
+      .tawk-custom-button:hover svg {
+        transform: rotate(15deg) scale(1.15) !important;
+      }
+      /* Pulse animation */
+      @keyframes tawk-pulse {
+        0% { box-shadow: 0 4px 20px rgba(16, 185, 129, 0.4); }
+        50% { box-shadow: 0 4px 30px rgba(16, 185, 129, 0.6), 0 0 0 12px rgba(16, 185, 129, 0.15); }
+        100% { box-shadow: 0 4px 20px rgba(16, 185, 129, 0.4); }
+      }
+      /* Bounce animation */
+      @keyframes tawk-bounce {
+        0%, 100% { transform: translateY(0); }
+        50% { transform: translateY(-5px); }
+      }
+      /* Position based on RTL/LTR */
+      html[dir="rtl"] .tawk-custom-button,
+      html[lang="ar"] .tawk-custom-button {
+        right: 20px !important;
+        left: auto !important;
+      }
+      html:not([dir="rtl"]):not([lang="ar"]) .tawk-custom-button {
+        left: 20px !important;
+        right: auto !important;
+      }
+      /* Hide default Tawk button */
+      #tawk-bubble-container,
+      .tawk-min-container {
+        display: none !important;
+      }
+      /* Force Tawk chat window position - LTR mode (left side) */
+      body.tawk-ltr-mode .widget-visible iframe,
+      body.tawk-ltr-mode iframe[title*="chat"],
+      body.tawk-ltr-mode iframe[title*="Tawk"],
+      body.tawk-ltr-mode [class*="tawk"] iframe,
+      body.tawk-ltr-mode .tawk-min-container,
+      body.tawk-ltr-mode #tawkchat-container,
+      body.tawk-ltr-mode [style*="position: fixed"] iframe[src*="tawk"] {
+        left: 20px !important;
+        right: auto !important;
+      }
+      body.tawk-ltr-mode .widget-visible,
+      body.tawk-ltr-mode [class*="tawk-widget"],
+      body.tawk-ltr-mode #tawkchat-minified-wrapper,
+      body.tawk-ltr-mode #tawkchat-chat-wrapper {
+        left: 20px !important;
+        right: auto !important;
+      }
+      /* Force Tawk chat window position - RTL mode (right side) */
+      body.tawk-rtl-mode .widget-visible iframe,
+      body.tawk-rtl-mode iframe[title*="chat"],
+      body.tawk-rtl-mode iframe[title*="Tawk"],
+      body.tawk-rtl-mode [class*="tawk"] iframe,
+      body.tawk-rtl-mode .tawk-min-container,
+      body.tawk-rtl-mode #tawkchat-container,
+      body.tawk-rtl-mode [style*="position: fixed"] iframe[src*="tawk"] {
+        right: 20px !important;
+        left: auto !important;
+      }
+      body.tawk-rtl-mode .widget-visible,
+      body.tawk-rtl-mode [class*="tawk-widget"],
+      body.tawk-rtl-mode #tawkchat-minified-wrapper,
+      body.tawk-rtl-mode #tawkchat-chat-wrapper {
+        right: 20px !important;
+        left: auto !important;
+      }
+    </style>
     <script type="text/javascript">
     var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+    
+    // Create custom button
+    function createCustomTawkButton() {
+      var btn = document.createElement('div');
+      btn.className = 'tawk-custom-button';
+      btn.id = 'tawk-custom-btn';
+      btn.innerHTML = '<svg viewBox="0 0 24 24"><path d="M20 2H4c-1.1 0-2 .9-2 2v18l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm0 14H6l-2 2V4h16v12z"/><path d="M7 9h2v2H7zm4 0h2v2h-2zm4 0h2v2h-2z"/></svg>';
+      btn.onclick = function() {
+        if(Tawk_API.toggle) {
+          Tawk_API.toggle();
+        } else if(Tawk_API.maximize) {
+          Tawk_API.maximize();
+        }
+        // Force position update after click
+        setTimeout(updateTawkPosition, 50);
+        setTimeout(updateTawkPosition, 150);
+        setTimeout(updateTawkPosition, 300);
+        setTimeout(updateTawkPosition, 500);
+      };
+      document.body.appendChild(btn);
+    }
+    
+    // Check if current language is RTL
+    function isCurrentRTL() {
+      var htmlDir = document.documentElement.dir;
+      var htmlLang = document.documentElement.lang;
+      return htmlDir === 'rtl' || htmlLang === 'ar';
+    }
+    
+    // Update button and chat window position based on language
+    function updateTawkPosition() {
+      var btn = document.getElementById('tawk-custom-btn');
+      var isRTL = isCurrentRTL();
+      
+      // Update body class for CSS targeting
+      document.body.classList.remove('tawk-rtl-mode', 'tawk-ltr-mode');
+      document.body.classList.add(isRTL ? 'tawk-rtl-mode' : 'tawk-ltr-mode');
+      
+      if(btn) {
+        if(isRTL) {
+          btn.style.right = '20px';
+          btn.style.left = 'auto';
+        } else {
+          btn.style.left = '20px';
+          btn.style.right = 'auto';
+        }
+      }
+      
+      // Move all Tawk elements to correct position using inline styles
+      var tawkElements = document.querySelectorAll(
+        'iframe[title*="chat"], iframe[title*="Tawk"], iframe[src*="tawk"], ' +
+        '[class*="tawk"], .widget-visible, #tawkchat-container, ' +
+        '#tawkchat-minified-wrapper, #tawkchat-chat-wrapper'
+      );
+      
+      tawkElements.forEach(function(el) {
+        var computedStyle = window.getComputedStyle(el);
+        if(computedStyle.position === 'fixed' || computedStyle.position === 'absolute') {
+          if(isRTL) {
+            el.style.setProperty('right', '20px', 'important');
+            el.style.setProperty('left', 'auto', 'important');
+          } else {
+            el.style.setProperty('left', '20px', 'important');
+            el.style.setProperty('right', 'auto', 'important');
+          }
+        }
+        // Also check parent elements
+        var parent = el.parentElement;
+        if(parent) {
+          var parentStyle = window.getComputedStyle(parent);
+          if(parentStyle.position === 'fixed' || parentStyle.position === 'absolute') {
+            if(isRTL) {
+              parent.style.setProperty('right', '20px', 'important');
+              parent.style.setProperty('left', 'auto', 'important');
+            } else {
+              parent.style.setProperty('left', '20px', 'important');
+              parent.style.setProperty('right', 'auto', 'important');
+            }
+          }
+        }
+      });
+    }
+    
+    Tawk_API.onLoad = function(){
+      // Hide default widget
+      if(Tawk_API.hideWidget) {
+        Tawk_API.hideWidget();
+      }
+      updateTawkPosition();
+    };
+    
+    Tawk_API.onChatMaximized = function(){
+      setTimeout(updateTawkPosition, 50);
+      setTimeout(updateTawkPosition, 150);
+      setTimeout(updateTawkPosition, 300);
+    };
+    
+    Tawk_API.onChatMinimized = function(){
+      setTimeout(updateTawkPosition, 50);
+    };
+    
+    Tawk_API.onStatusChange = function(status){
+      setTimeout(updateTawkPosition, 100);
+    };
+    
+    // Watch for language changes and DOM changes
+    var observer = new MutationObserver(function(mutations) {
+      var shouldUpdate = false;
+      mutations.forEach(function(mutation) {
+        if(mutation.attributeName === 'dir' || mutation.attributeName === 'lang') {
+          shouldUpdate = true;
+        }
+        // Check for new elements added
+        if(mutation.addedNodes.length) {
+          mutation.addedNodes.forEach(function(node) {
+            if(node.nodeType === 1) { // Element node
+              if(node.tagName === 'IFRAME' || 
+                 (node.className && typeof node.className === 'string' && node.className.includes('tawk')) ||
+                 (node.querySelector && node.querySelector('iframe'))) {
+                shouldUpdate = true;
+              }
+            }
+          });
+        }
+      });
+      if(shouldUpdate) {
+        updateTawkPosition();
+        setTimeout(updateTawkPosition, 100);
+        setTimeout(updateTawkPosition, 300);
+      }
+    });
+    
     window.addEventListener('load', function() {
+      // Set initial mode class
+      document.body.classList.add(isCurrentRTL() ? 'tawk-rtl-mode' : 'tawk-ltr-mode');
+      
+      // Create custom button first
+      createCustomTawkButton();
+      
+      // Observe language changes and DOM changes
+      observer.observe(document.documentElement, { attributes: true });
+      observer.observe(document.body, { childList: true, subtree: true, attributes: true });
+      
+      // Load Tawk.to after delay
       setTimeout(function(){
-        var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
-        s1.async=true;
-        s1.src='https://embed.tawk.to/695da76cdd7cb2197cb9dd71/1jeatbvv1';
-        s1.charset='UTF-8';
-        s1.setAttribute('crossorigin','*');
-        s0.parentNode.insertBefore(s1,s0);
+        try {
+          var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
+          s1.async=true;
+          s1.src='https://embed.tawk.to/695da76cdd7cb2197cb9dd71/1jeatbvv1';
+          s1.charset='UTF-8';
+          s1.setAttribute('crossorigin','*');
+          s1.onerror = function() { console.log('Tawk.to widget loading...'); };
+          s0.parentNode.insertBefore(s1,s0);
+        } catch(e) {}
       }, 2000);
+      
+      // Periodically check and update position
+      setInterval(updateTawkPosition, 1000);
     });
     </script>
     <!--End of Tawk.to Script-->

@@ -1,0 +1,65 @@
+{
+  "en": {
+    "title": "TexaCore by the Numbers",
+    "items": [
+      { "value": "500+", "label": "Active Clients", "description": "Businesses trust TexaCore daily" },
+      { "value": "35+", "label": "Countries", "description": "Global presence across continents" },
+      { "value": "10M+", "label": "Transactions", "description": "Processed monthly" },
+      { "value": "99.9%", "label": "Uptime", "description": "Guaranteed availability" }
+    ]
+  },
+  "ar": {
+    "title": "TexaCore بالأرقام",
+    "items": [
+      { "value": "+500", "label": "عميل نشط", "description": "شركات تثق بـ TexaCore يومياً" },
+      { "value": "+35", "label": "دولة", "description": "تواجد عالمي عبر القارات" },
+      { "value": "+10 مليون", "label": "معاملة", "description": "تُعالج شهرياً" },
+      { "value": "99.9%", "label": "وقت التشغيل", "description": "توفر مضمون" }
+    ]
+  },
+  "tr": {
+    "title": "Rakamlarla TexaCore",
+    "items": [
+      { "value": "500+", "label": "Aktif Müşteri", "description": "Her gün TexaCore'a güvenen işletmeler" },
+      { "value": "35+", "label": "Ülke", "description": "Kıtalar arası küresel varlık" },
+      { "value": "10M+", "label": "İşlem", "description": "Aylık işlenen" },
+      { "value": "%99.9", "label": "Çalışma Süresi", "description": "Garantili kullanılabilirlik" }
+    ]
+  },
+  "ru": {
+    "title": "TexaCore в Цифрах",
+    "items": [
+      { "value": "500+", "label": "Активных Клиентов", "description": "Компании доверяют TexaCore ежедневно" },
+      { "value": "35+", "label": "Стран", "description": "Глобальное присутствие на континентах" },
+      { "value": "10М+", "label": "Транзакций", "description": "Обрабатывается ежемесячно" },
+      { "value": "99.9%", "label": "Время Работы", "description": "Гарантированная доступность" }
+    ]
+  },
+  "uk": {
+    "title": "TexaCore у Цифрах",
+    "items": [
+      { "value": "500+", "label": "Активних Клієнтів", "description": "Компанії довіряють TexaCore щодня" },
+      { "value": "35+", "label": "Країн", "description": "Глобальна присутність на континентах" },
+      { "value": "10М+", "label": "Транзакцій", "description": "Обробляється щомісяця" },
+      { "value": "99.9%", "label": "Час Роботи", "description": "Гарантована доступність" }
+    ]
+  },
+  "pl": {
+    "title": "TexaCore w Liczbach",
+    "items": [
+      { "value": "500+", "label": "Aktywnych Klientów", "description": "Firmy ufają TexaCore codziennie" },
+      { "value": "35+", "label": "Krajów", "description": "Globalna obecność na kontynentach" },
+      { "value": "10M+", "label": "Transakcji", "description": "Przetwarzanych miesięcznie" },
+      { "value": "99.9%", "label": "Czas Pracy", "description": "Gwarantowana dostępność" }
+    ]
+  },
+  "ro": {
+    "title": "TexaCore în Cifre",
+    "items": [
+      { "value": "500+", "label": "Clienți Activi", "description": "Companii care au încredere în TexaCore zilnic" },
+      { "value": "35+", "label": "Țări", "description": "Prezență globală pe continente" },
+      { "value": "10M+", "label": "Tranzacții", "description": "Procesate lunar" },
+      { "value": "99.9%", "label": "Timp de Funcționare", "description": "Disponibilitate garantată" }
+    ]
+  }
+}

@@ -1,0 +1,144 @@
+{
+  "pages": [
+    {
+      "id": "home",
+      "slug": "/",
+      "enabled": true,
+      "title": {
+        "en": "Home",
+        "ar": "الرئيسية",
+        "tr": "Ana Sayfa",
+        "ru": "Главная",
+        "uk": "Головна",
+        "pl": "Strona Główna",
+        "ro": "Acasă"
+      }
+    },
+    {
+      "id": "features",
+      "slug": "/features",
+      "enabled": true,
+      "title": {
+        "en": "Features",
+        "ar": "الميزات",
+        "tr": "Özellikler",
+        "ru": "Функции",
+        "uk": "Функції",
+        "pl": "Funkcje",
+        "ro": "Funcții"
+      }
+    },
+    {
+      "id": "pricing",
+      "slug": "/pricing",
+      "enabled": true,
+      "title": {
+        "en": "Pricing",
+        "ar": "الأسعار",
+        "tr": "Fiyatlandırma",
+        "ru": "Цены",
+        "uk": "Ціни",
+        "pl": "Cennik",
+        "ro": "Prețuri"
+      }
+    },
+    {
+      "id": "solutions",
+      "slug": "/solutions",
+      "enabled": true,
+      "title": {
+        "en": "Solutions",
+        "ar": "الحلول",
+        "tr": "Çözümler",
+        "ru": "Решения",
+        "uk": "Рішення",
+        "pl": "Rozwiązania",
+        "ro": "Soluții"
+      }
+    },
+    {
+      "id": "industries",
+      "slug": "/industries",
+      "enabled": true,
+      "title": {
+        "en": "Industries",
+        "ar": "الصناعات",
+        "tr": "Endüstriler",
+        "ru": "Отрасли",
+        "uk": "Галузі",
+        "pl": "Branże",
+        "ro": "Industrii"
+      }
+    },
+    {
+      "id": "contact",
+      "slug": "/contact",
+      "enabled": true,
+      "title": {
+        "en": "Contact",
+        "ar": "اتصل بنا",
+        "tr": "İletişim",
+        "ru": "Контакты",
+        "uk": "Контакти",
+        "pl": "Kontakt",
+        "ro": "Contact"
+      }
+    },
+    {
+      "id": "faq",
+      "slug": "/faq",
+      "enabled": true,
+      "title": {
+        "en": "FAQ",
+        "ar": "الأسئلة الشائعة",
+        "tr": "SSS",
+        "ru": "FAQ",
+        "uk": "FAQ",
+        "pl": "FAQ",
+        "ro": "FAQ"
+      }
+    },
+    {
+      "id": "about",
+      "slug": "/about",
+      "enabled": true,
+      "title": {
+        "en": "About Us",
+        "ar": "من نحن",
+        "tr": "Hakkımızda",
+        "ru": "О нас",
+        "uk": "Про нас",
+        "pl": "O nas",
+        "ro": "Despre Noi"
+      }
+    },
+    {
+      "id": "privacy",
+      "slug": "/privacy",
+      "enabled": true,
+      "title": {
+        "en": "Privacy Policy",
+        "ar": "سياسة الخصوصية",
+        "tr": "Gizlilik Politikası",
+        "ru": "Политика конфиденциальности",
+        "uk": "Політика конфіденційності",
+        "pl": "Polityka prywatności",
+        "ro": "Politica de confidențialitate"
+      }
+    },
+    {
+      "id": "terms",
+      "slug": "/terms",
+      "enabled": true,
+      "title": {
+        "en": "Terms of Service",
+        "ar": "شروط الخدمة",
+        "tr": "Hizmet Şartları",
+        "ru": "Условия использования",
+        "uk": "Умови використання",
+        "pl": "Warunki korzystania",
+        "ro": "Termeni și condiții"
+      }
+    }
+  ]
+}

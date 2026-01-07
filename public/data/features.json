@@ -1,0 +1,296 @@
+{
+  "en": {
+    "title": "Powerful Features",
+    "subtitle": "Everything you need to manage your textile business efficiently",
+    "items": [
+      {
+        "id": "inventory",
+        "icon": "Package",
+        "title": "Smart Inventory Management",
+        "description": "Real-time stock tracking with barcode and RFID support. Manage fabric rolls, colors, and patterns effortlessly."
+      },
+      {
+        "id": "pos",
+        "icon": "ShoppingCart",
+        "title": "Advanced POS System",
+        "description": "Fast and intuitive point of sale with multi-currency support and instant invoice generation."
+      },
+      {
+        "id": "analytics",
+        "icon": "BarChart3",
+        "title": "Business Analytics",
+        "description": "Comprehensive dashboards and reports to track sales, inventory, and customer behavior."
+      },
+      {
+        "id": "crm",
+        "icon": "Users",
+        "title": "Customer Management",
+        "description": "Complete CRM with customer history, credit limits, and automated follow-ups."
+      },
+      {
+        "id": "warehouse",
+        "icon": "Warehouse",
+        "title": "Warehouse Management",
+        "description": "Multi-location support with bin management and automated stock transfers."
+      },
+      {
+        "id": "accounting",
+        "icon": "Calculator",
+        "title": "Integrated Accounting",
+        "description": "Full accounting suite with ledgers, financial reports, and tax compliance."
+      }
+    ]
+  },
+  "ar": {
+    "title": "ميزات قوية",
+    "subtitle": "كل ما تحتاجه لإدارة أعمالك في الأقمشة بكفاءة",
+    "items": [
+      {
+        "id": "inventory",
+        "icon": "Package",
+        "title": "إدارة المخزون الذكية",
+        "description": "تتبع المخزون في الوقت الفعلي مع دعم الباركود وRFID. إدارة لفات الأقمشة والألوان والأنماط بسهولة."
+      },
+      {
+        "id": "pos",
+        "icon": "ShoppingCart",
+        "title": "نظام نقاط البيع المتقدم",
+        "description": "نقطة بيع سريعة وبديهية مع دعم العملات المتعددة وإنشاء الفواتير الفوري."
+      },
+      {
+        "id": "analytics",
+        "icon": "BarChart3",
+        "title": "تحليلات الأعمال",
+        "description": "لوحات معلومات وتقارير شاملة لتتبع المبيعات والمخزون وسلوك العملاء."
+      },
+      {
+        "id": "crm",
+        "icon": "Users",
+        "title": "إدارة العملاء",
+        "description": "نظام CRM كامل مع سجل العملاء وحدود الائتمان والمتابعات الآلية."
+      },
+      {
+        "id": "warehouse",
+        "icon": "Warehouse",
+        "title": "إدارة المستودعات",
+        "description": "دعم المواقع المتعددة مع إدارة الصناديق والتحويلات الآلية للمخزون."
+      },
+      {
+        "id": "accounting",
+        "icon": "Calculator",
+        "title": "المحاسبة المتكاملة",
+        "description": "مجموعة محاسبة كاملة مع دفاتر الأستاذ والتقارير المالية والامتثال الضريبي."
+      }
+    ]
+  },
+  "tr": {
+    "title": "Güçlü Özellikler",
+    "subtitle": "Tekstil işinizi verimli yönetmek için ihtiyacınız olan her şey",
+    "items": [
+      {
+        "id": "inventory",
+        "icon": "Package",
+        "title": "Akıllı Envanter Yönetimi",
+        "description": "Barkod ve RFID desteği ile gerçek zamanlı stok takibi. Kumaş rulolarını, renkleri ve desenleri zahmetsizce yönetin."
+      },
+      {
+        "id": "pos",
+        "icon": "ShoppingCart",
+        "title": "Gelişmiş POS Sistemi",
+        "description": "Çoklu para birimi desteği ve anında fatura oluşturma ile hızlı ve sezgisel satış noktası."
+      },
+      {
+        "id": "analytics",
+        "icon": "BarChart3",
+        "title": "İş Analitiği",
+        "description": "Satışları, envanteri ve müşteri davranışını izlemek için kapsamlı panolar ve raporlar."
+      },
+      {
+        "id": "crm",
+        "icon": "Users",
+        "title": "Müşteri Yönetimi",
+        "description": "Müşteri geçmişi, kredi limitleri ve otomatik takipler ile eksiksiz CRM."
+      },
+      {
+        "id": "warehouse",
+        "icon": "Warehouse",
+        "title": "Depo Yönetimi",
+        "description": "Bölme yönetimi ve otomatik stok transferleri ile çoklu konum desteği."
+      },
+      {
+        "id": "accounting",
+        "icon": "Calculator",
+        "title": "Entegre Muhasebe",
+        "description": "Defterler, mali raporlar ve vergi uyumu ile tam muhasebe paketi."
+      }
+    ]
+  },
+  "ru": {
+    "title": "Мощные Функции",
+    "subtitle": "Всё, что вам нужно для эффективного управления текстильным бизнесом",
+    "items": [
+      {
+        "id": "inventory",
+        "icon": "Package",
+        "title": "Умное Управление Запасами",
+        "description": "Отслеживание запасов в реальном времени с поддержкой штрих-кодов и RFID. Управляйте рулонами ткани, цветами и узорами без усилий."
+      },
+      {
+        "id": "pos",
+        "icon": "ShoppingCart",
+        "title": "Продвинутая POS-Система",
+        "description": "Быстрая и интуитивная точка продаж с поддержкой нескольких валют и мгновенной генерацией счетов."
+      },
+      {
+        "id": "analytics",
+        "icon": "BarChart3",
+        "title": "Бизнес-Аналитика",
+        "description": "Комплексные панели и отчёты для отслеживания продаж, запасов и поведения клиентов."
+      },
+      {
+        "id": "crm",
+        "icon": "Users",
+        "title": "Управление Клиентами",
+        "description": "Полная CRM с историей клиентов, кредитными лимитами и автоматическими напоминаниями."
+      },
+      {
+        "id": "warehouse",
+        "icon": "Warehouse",
+        "title": "Управление Складом",
+        "description": "Поддержка нескольких локаций с управлением ячейками и автоматическими переводами запасов."
+      },
+      {
+        "id": "accounting",
+        "icon": "Calculator",
+        "title": "Интегрированный Учёт",
+        "description": "Полный бухгалтерский пакет с книгами учёта, финансовыми отчётами и налоговым соответствием."
+      }
+    ]
+  },
+  "uk": {
+    "title": "Потужні Функції",
+    "subtitle": "Все, що вам потрібно для ефективного управління текстильним бізнесом",
+    "items": [
+      {
+        "id": "inventory",
+        "icon": "Package",
+        "title": "Розумне Управління Запасами",
+        "description": "Відстеження запасів у реальному часі з підтримкою штрих-кодів та RFID. Керуйте рулонами тканини, кольорами та візерунками без зусиль."
+      },
+      {
+        "id": "pos",
+        "icon": "ShoppingCart",
+        "title": "Просунута POS-Система",
+        "description": "Швидка та інтуїтивна точка продажу з підтримкою кількох валют та миттєвою генерацією рахунків."
+      },
+      {
+        "id": "analytics",
+        "icon": "BarChart3",
+        "title": "Бізнес-Аналітика",
+        "description": "Комплексні панелі та звіти для відстеження продажів, запасів та поведінки клієнтів."
+      },
+      {
+        "id": "crm",
+        "icon": "Users",
+        "title": "Управління Клієнтами",
+        "description": "Повна CRM з історією клієнтів, кредитними лімітами та автоматичними нагадуваннями."
+      },
+      {
+        "id": "warehouse",
+        "icon": "Warehouse",
+        "title": "Управління Складом",
+        "description": "Підтримка кількох локацій з управлінням комірками та автоматичними переводами запасів."
+      },
+      {
+        "id": "accounting",
+        "icon": "Calculator",
+        "title": "Інтегрований Облік",
+        "description": "Повний бухгалтерський пакет з книгами обліку, фінансовими звітами та податковою відповідністю."
+      }
+    ]
+  },
+  "pl": {
+    "title": "Potężne Funkcje",
+    "subtitle": "Wszystko, czego potrzebujesz do efektywnego zarządzania biznesem tekstylnym",
+    "items": [
+      {
+        "id": "inventory",
+        "icon": "Package",
+        "title": "Inteligentne Zarządzanie Zapasami",
+        "description": "Śledzenie zapasów w czasie rzeczywistym z obsługą kodów kreskowych i RFID. Zarządzaj rolkami tkanin, kolorami i wzorami bez wysiłku."
+      },
+      {
+        "id": "pos",
+        "icon": "ShoppingCart",
+        "title": "Zaawansowany System POS",
+        "description": "Szybki i intuicyjny punkt sprzedaży z obsługą wielu walut i natychmiastowym generowaniem faktur."
+      },
+      {
+        "id": "analytics",
+        "icon": "BarChart3",
+        "title": "Analityka Biznesowa",
+        "description": "Kompleksowe panele i raporty do śledzenia sprzedaży, zapasów i zachowań klientów."
+      },
+      {
+        "id": "crm",
+        "icon": "Users",
+        "title": "Zarządzanie Klientami",
+        "description": "Kompletny CRM z historią klientów, limitami kredytowymi i automatycznymi przypomnieniami."
+      },
+      {
+        "id": "warehouse",
+        "icon": "Warehouse",
+        "title": "Zarządzanie Magazynem",
+        "description": "Obsługa wielu lokalizacji z zarządzaniem pojemnikami i automatycznymi transferami zapasów."
+      },
+      {
+        "id": "accounting",
+        "icon": "Calculator",
+        "title": "Zintegrowana Księgowość",
+        "description": "Pełny pakiet księgowy z księgami, raportami finansowymi i zgodnością podatkową."
+      }
+    ]
+  },
+  "ro": {
+    "title": "Funcții Puternice",
+    "subtitle": "Tot ce aveți nevoie pentru a gestiona eficient afacerea textilă",
+    "items": [
+      {
+        "id": "inventory",
+        "icon": "Package",
+        "title": "Gestionare Inteligentă a Stocurilor",
+        "description": "Urmărirea stocurilor în timp real cu suport pentru coduri de bare și RFID. Gestionați rulouri de țesătură, culori și modele fără efort."
+      },
+      {
+        "id": "pos",
+        "icon": "ShoppingCart",
+        "title": "Sistem POS Avansat",
+        "description": "Punct de vânzare rapid și intuitiv cu suport multi-monedă și generare instantanee de facturi."
+      },
+      {
+        "id": "analytics",
+        "icon": "BarChart3",
+        "title": "Analiză de Business",
+        "description": "Panouri și rapoarte complete pentru urmărirea vânzărilor, stocurilor și comportamentului clienților."
+      },
+      {
+        "id": "crm",
+        "icon": "Users",
+        "title": "Gestionarea Clienților",
+        "description": "CRM complet cu istoricul clienților, limite de credit și urmăriri automate."
+      },
+      {
+        "id": "warehouse",
+        "icon": "Warehouse",
+        "title": "Gestionarea Depozitului",
+        "description": "Suport pentru mai multe locații cu gestionarea compartimentelor și transferuri automate de stoc."
+      },
+      {
+        "id": "accounting",
+        "icon": "Calculator",
+        "title": "Contabilitate Integrată",
+        "description": "Pachet complet de contabilitate cu registre, rapoarte financiare și conformitate fiscală."
+      }
+    ]
+  }
+}

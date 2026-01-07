@@ -1,0 +1,254 @@
+{
+  "en": {
+    "title": "Frequently Asked Questions",
+    "subtitle": "Find answers to common questions about TexaCore",
+    "items": [
+      {
+        "id": "1",
+        "question": "What makes TexaCore different from other ERP systems?",
+        "answer": "TexaCore is specifically designed for the textile industry. It includes features like fabric roll management, color/pattern tracking, RFID integration, and industry-specific reports that generic ERPs don't offer."
+      },
+      {
+        "id": "2",
+        "question": "How long does implementation take?",
+        "answer": "Basic setup takes 1-2 days. Full implementation with data migration and training typically takes 1-2 weeks depending on your business complexity."
+      },
+      {
+        "id": "3",
+        "question": "Can I migrate data from my current system?",
+        "answer": "Yes, we provide full data migration support. Our team will help you transfer your inventory, customer data, and historical transactions."
+      },
+      {
+        "id": "4",
+        "question": "Is there a free trial available?",
+        "answer": "Yes, we offer a 14-day free trial with full access to all Professional plan features. No credit card required."
+      },
+      {
+        "id": "5",
+        "question": "What kind of support do you offer?",
+        "answer": "We offer email support for Starter plans, priority support with live chat for Professional plans, and dedicated account managers for Enterprise clients."
+      },
+      {
+        "id": "6",
+        "question": "Does TexaCore work offline?",
+        "answer": "Yes, our POS system works offline and syncs automatically when connection is restored. This ensures your business never stops."
+      }
+    ]
+  },
+  "ar": {
+    "title": "الأسئلة الشائعة",
+    "subtitle": "اعثر على إجابات للأسئلة الشائعة حول TexaCore",
+    "items": [
+      {
+        "id": "1",
+        "question": "ما الذي يجعل TexaCore مختلفاً عن أنظمة ERP الأخرى؟",
+        "answer": "TexaCore مصمم خصيصاً لصناعة الأقمشة. يتضمن ميزات مثل إدارة لفات الأقمشة، تتبع الألوان/الأنماط، تكامل RFID، وتقارير خاصة بالصناعة لا تقدمها أنظمة ERP العامة."
+      },
+      {
+        "id": "2",
+        "question": "كم يستغرق التطبيق؟",
+        "answer": "الإعداد الأساسي يستغرق 1-2 يوم. التطبيق الكامل مع نقل البيانات والتدريب عادة يستغرق 1-2 أسبوع حسب تعقيد عملك."
+      },
+      {
+        "id": "3",
+        "question": "هل يمكنني نقل البيانات من نظامي الحالي؟",
+        "answer": "نعم، نوفر دعماً كاملاً لنقل البيانات. فريقنا سيساعدك في نقل المخزون وبيانات العملاء والمعاملات التاريخية."
+      },
+      {
+        "id": "4",
+        "question": "هل هناك تجربة مجانية متاحة؟",
+        "answer": "نعم، نقدم تجربة مجانية لمدة 14 يوماً مع وصول كامل لجميع ميزات الخطة الاحترافية. لا حاجة لبطاقة ائتمان."
+      },
+      {
+        "id": "5",
+        "question": "ما نوع الدعم الذي تقدمونه؟",
+        "answer": "نقدم دعم البريد الإلكتروني للخطط المبتدئة، دعم ذو أولوية مع محادثة مباشرة للخطط الاحترافية، ومديري حسابات مخصصين لعملاء المؤسسات."
+      },
+      {
+        "id": "6",
+        "question": "هل يعمل TexaCore بدون إنترنت؟",
+        "answer": "نعم، نظام نقاط البيع لدينا يعمل بدون اتصال ويتزامن تلقائياً عند استعادة الاتصال. هذا يضمن ألا يتوقف عملك أبداً."
+      }
+    ]
+  },
+  "tr": {
+    "title": "Sıkça Sorulan Sorular",
+    "subtitle": "TexaCore hakkında sık sorulan soruların cevaplarını bulun",
+    "items": [
+      {
+        "id": "1",
+        "question": "TexaCore'u diğer ERP sistemlerinden farklı kılan nedir?",
+        "answer": "TexaCore özellikle tekstil endüstrisi için tasarlanmıştır. Kumaş rulosu yönetimi, renk/desen takibi, RFID entegrasyonu ve genel ERP'lerin sunmadığı sektöre özgü raporlar gibi özellikler içerir."
+      },
+      {
+        "id": "2",
+        "question": "Uygulama ne kadar sürer?",
+        "answer": "Temel kurulum 1-2 gün sürer. Veri taşıma ve eğitim ile tam uygulama, iş karmaşıklığınıza bağlı olarak genellikle 1-2 hafta sürer."
+      },
+      {
+        "id": "3",
+        "question": "Mevcut sistemimden veri aktarabilir miyim?",
+        "answer": "Evet, tam veri taşıma desteği sağlıyoruz. Ekibimiz envanterinizi, müşteri verilerinizi ve geçmiş işlemlerinizi aktarmanıza yardımcı olacaktır."
+      },
+      {
+        "id": "4",
+        "question": "Ücretsiz deneme mevcut mu?",
+        "answer": "Evet, tüm Profesyonel plan özelliklerine tam erişimli 14 günlük ücretsiz deneme sunuyoruz. Kredi kartı gerekli değil."
+      },
+      {
+        "id": "5",
+        "question": "Ne tür destek sunuyorsunuz?",
+        "answer": "Başlangıç planları için e-posta desteği, Profesyonel planlar için canlı sohbet ile öncelikli destek ve Kurumsal müşteriler için özel hesap yöneticileri sunuyoruz."
+      },
+      {
+        "id": "6",
+        "question": "TexaCore çevrimdışı çalışır mı?",
+        "answer": "Evet, POS sistemimiz çevrimdışı çalışır ve bağlantı kurulduğunda otomatik olarak senkronize olur. Bu, işinizin asla durmamasını sağlar."
+      }
+    ]
+  },
+  "ru": {
+    "title": "Часто Задаваемые Вопросы",
+    "subtitle": "Найдите ответы на распространённые вопросы о TexaCore",
+    "items": [
+      {
+        "id": "1",
+        "question": "Чем TexaCore отличается от других ERP-систем?",
+        "answer": "TexaCore специально разработан для текстильной отрасли. Он включает такие функции, как управление рулонами ткани, отслеживание цветов/узоров, интеграция RFID и отраслевые отчёты, которые не предлагают универсальные ERP."
+      },
+      {
+        "id": "2",
+        "question": "Сколько времени занимает внедрение?",
+        "answer": "Базовая настройка занимает 1-2 дня. Полное внедрение с миграцией данных и обучением обычно занимает 1-2 недели в зависимости от сложности вашего бизнеса."
+      },
+      {
+        "id": "3",
+        "question": "Могу ли я перенести данные из текущей системы?",
+        "answer": "Да, мы обеспечиваем полную поддержку миграции данных. Наша команда поможет вам перенести ваш инвентарь, данные клиентов и историю транзакций."
+      },
+      {
+        "id": "4",
+        "question": "Доступна ли бесплатная пробная версия?",
+        "answer": "Да, мы предлагаем 14-дневную бесплатную пробную версию с полным доступом ко всем функциям Профессионального плана. Кредитная карта не требуется."
+      },
+      {
+        "id": "5",
+        "question": "Какую поддержку вы предлагаете?",
+        "answer": "Мы предлагаем поддержку по email для Стартовых планов, приоритетную поддержку с чатом для Профессиональных планов и выделенных менеджеров для корпоративных клиентов."
+      },
+      {
+        "id": "6",
+        "question": "Работает ли TexaCore офлайн?",
+        "answer": "Да, наша POS-система работает офлайн и автоматически синхронизируется при восстановлении соединения. Это гарантирует, что ваш бизнес никогда не остановится."
+      }
+    ]
+  },
+  "uk": {
+    "title": "Часті Запитання",
+    "subtitle": "Знайдіть відповіді на поширені запитання про TexaCore",
+    "items": [
+      {
+        "id": "1",
+        "question": "Чим TexaCore відрізняється від інших ERP-систем?",
+        "answer": "TexaCore спеціально розроблений для текстильної галузі. Він включає такі функції, як управління рулонами тканини, відстеження кольорів/візерунків, інтеграція RFID та галузеві звіти, які не пропонують універсальні ERP."
+      },
+      {
+        "id": "2",
+        "question": "Скільки часу займає впровадження?",
+        "answer": "Базове налаштування займає 1-2 дні. Повне впровадження з міграцією даних та навчанням зазвичай займає 1-2 тижні залежно від складності вашого бізнесу."
+      },
+      {
+        "id": "3",
+        "question": "Чи можу я перенести дані з поточної системи?",
+        "answer": "Так, ми забезпечуємо повну підтримку міграції даних. Наша команда допоможе вам перенести ваш інвентар, дані клієнтів та історію транзакцій."
+      },
+      {
+        "id": "4",
+        "question": "Чи доступна безкоштовна пробна версія?",
+        "answer": "Так, ми пропонуємо 14-денну безкоштовну пробну версію з повним доступом до всіх функцій Професійного плану. Кредитна картка не потрібна."
+      },
+      {
+        "id": "5",
+        "question": "Яку підтримку ви пропонуєте?",
+        "answer": "Ми пропонуємо підтримку email для Стартових планів, пріоритетну підтримку з чатом для Професійних планів та виділених менеджерів для корпоративних клієнтів."
+      },
+      {
+        "id": "6",
+        "question": "Чи працює TexaCore офлайн?",
+        "answer": "Так, наша POS-система працює офлайн та автоматично синхронізується при відновленні з'єднання. Це гарантує, що ваш бізнес ніколи не зупиниться."
+      }
+    ]
+  },
+  "pl": {
+    "title": "Często Zadawane Pytania",
+    "subtitle": "Znajdź odpowiedzi na częste pytania o TexaCore",
+    "items": [
+      {
+        "id": "1",
+        "question": "Co wyróżnia TexaCore spośród innych systemów ERP?",
+        "answer": "TexaCore jest specjalnie zaprojektowany dla branży tekstylnej. Zawiera funkcje takie jak zarządzanie rolkami tkanin, śledzenie kolorów/wzorów, integracja RFID i raporty branżowe, których nie oferują ogólne systemy ERP."
+      },
+      {
+        "id": "2",
+        "question": "Jak długo trwa wdrożenie?",
+        "answer": "Podstawowa konfiguracja trwa 1-2 dni. Pełne wdrożenie z migracją danych i szkoleniem zazwyczaj trwa 1-2 tygodnie w zależności od złożoności Twojego biznesu."
+      },
+      {
+        "id": "3",
+        "question": "Czy mogę przenieść dane z mojego obecnego systemu?",
+        "answer": "Tak, zapewniamy pełne wsparcie migracji danych. Nasz zespół pomoże Ci przenieść Twój inwentarz, dane klientów i historię transakcji."
+      },
+      {
+        "id": "4",
+        "question": "Czy dostępna jest bezpłatna wersja próbna?",
+        "answer": "Tak, oferujemy 14-dniową bezpłatną wersję próbną z pełnym dostępem do wszystkich funkcji planu Profesjonalnego. Nie wymaga karty kredytowej."
+      },
+      {
+        "id": "5",
+        "question": "Jakie wsparcie oferujecie?",
+        "answer": "Oferujemy wsparcie email dla planów Startowych, priorytetowe wsparcie z czatem dla planów Profesjonalnych i dedykowanych menedżerów dla klientów korporacyjnych."
+      },
+      {
+        "id": "6",
+        "question": "Czy TexaCore działa offline?",
+        "answer": "Tak, nasz system POS działa offline i automatycznie synchronizuje się po przywróceniu połączenia. To gwarantuje, że Twój biznes nigdy się nie zatrzyma."
+      }
+    ]
+  },
+  "ro": {
+    "title": "Întrebări Frecvente",
+    "subtitle": "Găsiți răspunsuri la întrebările frecvente despre TexaCore",
+    "items": [
+      {
+        "id": "1",
+        "question": "Ce face TexaCore diferit de alte sisteme ERP?",
+        "answer": "TexaCore este conceput special pentru industria textilă. Include funcții precum gestionarea rulelor de țesătură, urmărirea culorilor/modelelor, integrarea RFID și rapoarte specifice industriei pe care ERP-urile generice nu le oferă."
+      },
+      {
+        "id": "2",
+        "question": "Cât durează implementarea?",
+        "answer": "Configurarea de bază durează 1-2 zile. Implementarea completă cu migrarea datelor și instruire durează de obicei 1-2 săptămâni în funcție de complexitatea afacerii dvs."
+      },
+      {
+        "id": "3",
+        "question": "Pot migra datele din sistemul meu actual?",
+        "answer": "Da, oferim suport complet pentru migrarea datelor. Echipa noastră vă va ajuta să transferați stocul, datele clienților și tranzacțiile istorice."
+      },
+      {
+        "id": "4",
+        "question": "Este disponibilă o versiune de probă gratuită?",
+        "answer": "Da, oferim o versiune de probă gratuită de 14 zile cu acces complet la toate funcțiile planului Profesional. Nu este necesară o carte de credit."
+      },
+      {
+        "id": "5",
+        "question": "Ce fel de suport oferiți?",
+        "answer": "Oferim suport email pentru planurile Începător, suport prioritar cu chat live pentru planurile Profesional și manageri de cont dedicați pentru clienții Enterprise."
+      },
+      {
+        "id": "6",
+        "question": "TexaCore funcționează offline?",
+        "answer": "Da, sistemul nostru POS funcționează offline și se sincronizează automat când conexiunea este restabilită. Acest lucru asigură că afacerea dvs. nu se oprește niciodată."
+      }
+    ]
+  }
+}

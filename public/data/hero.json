@@ -1,0 +1,100 @@
+{
+  "en": {
+    "badge": "🚀 #1 Textile ERP in Europe & Gulf",
+    "title": "Transform Your Textile Business",
+    "titleHighlight": "with TexaCore ERP",
+    "subtitle": "Enterprise-grade inventory management, RFID tracking, and real-time analytics designed specifically for textile wholesalers and retailers worldwide.",
+    "primaryCta": "Start Free Trial",
+    "secondaryCta": "Book a Demo",
+    "stats": [
+      { "value": "500+", "label": "Active Clients" },
+      { "value": "35+", "label": "Countries" },
+      { "value": "99.9%", "label": "Uptime" },
+      { "value": "24/7", "label": "Support" }
+    ]
+  },
+  "ar": {
+    "badge": "🚀 نظام ERP الأول للأقمشة في أوروبا والخليج",
+    "title": "حوّل أعمالك في الأقمشة",
+    "titleHighlight": "مع TexaCore ERP",
+    "subtitle": "نظام إدارة المخزون المتقدم، تتبع RFID، والتحليلات الفورية المصممة خصيصاً لتجار الجملة والتجزئة في الأقمشة حول العالم.",
+    "primaryCta": "ابدأ تجربة مجانية",
+    "secondaryCta": "احجز عرض تجريبي",
+    "stats": [
+      { "value": "+500", "label": "عميل نشط" },
+      { "value": "+35", "label": "دولة" },
+      { "value": "99.9%", "label": "وقت التشغيل" },
+      { "value": "24/7", "label": "دعم فني" }
+    ]
+  },
+  "tr": {
+    "badge": "🚀 Avrupa ve Körfez'de #1 Tekstil ERP",
+    "title": "Tekstil İşinizi Dönüştürün",
+    "titleHighlight": "TexaCore ERP ile",
+    "subtitle": "Dünya çapında tekstil toptancıları ve perakendecileri için özel olarak tasarlanmış kurumsal düzeyde envanter yönetimi, RFID takibi ve gerçek zamanlı analitik.",
+    "primaryCta": "Ücretsiz Deneme Başlat",
+    "secondaryCta": "Demo Rezervasyonu",
+    "stats": [
+      { "value": "500+", "label": "Aktif Müşteri" },
+      { "value": "35+", "label": "Ülke" },
+      { "value": "99.9%", "label": "Çalışma Süresi" },
+      { "value": "7/24", "label": "Destek" }
+    ]
+  },
+  "ru": {
+    "badge": "🚀 №1 Текстильная ERP в Европе и Заливе",
+    "title": "Трансформируйте Ваш Текстильный Бизнес",
+    "titleHighlight": "с TexaCore ERP",
+    "subtitle": "Корпоративное управление запасами, RFID-отслеживание и аналитика в реальном времени, разработанные специально для текстильных оптовиков и розничных продавцов по всему миру.",
+    "primaryCta": "Начать Бесплатную Пробную Версию",
+    "secondaryCta": "Заказать Демо",
+    "stats": [
+      { "value": "500+", "label": "Активных Клиентов" },
+      { "value": "35+", "label": "Стран" },
+      { "value": "99.9%", "label": "Время Работы" },
+      { "value": "24/7", "label": "Поддержка" }
+    ]
+  },
+  "uk": {
+    "badge": "🚀 №1 Текстильна ERP в Європі та Затоці",
+    "title": "Трансформуйте Ваш Текстильний Бізнес",
+    "titleHighlight": "з TexaCore ERP",
+    "subtitle": "Корпоративне управління запасами, RFID-відстеження та аналітика в реальному часі, розроблені спеціально для текстильних оптовиків та роздрібних продавців по всьому світу.",
+    "primaryCta": "Почати Безкоштовну Пробну Версію",
+    "secondaryCta": "Замовити Демо",
+    "stats": [
+      { "value": "500+", "label": "Активних Клієнтів" },
+      { "value": "35+", "label": "Країн" },
+      { "value": "99.9%", "label": "Час Роботи" },
+      { "value": "24/7", "label": "Підтримка" }
+    ]
+  },
+  "pl": {
+    "badge": "🚀 #1 Tekstylny ERP w Europie i Zatoce",
+    "title": "Przekształć Swój Biznes Tekstylny",
+    "titleHighlight": "z TexaCore ERP",
+    "subtitle": "Korporacyjne zarządzanie zapasami, śledzenie RFID i analityka w czasie rzeczywistym zaprojektowane specjalnie dla tekstylnych hurtowników i detalistów na całym świecie.",
+    "primaryCta": "Rozpocznij Bezpłatny Okres Próbny",
+    "secondaryCta": "Zarezerwuj Demo",
+    "stats": [
+      { "value": "500+", "label": "Aktywnych Klientów" },
+      { "value": "35+", "label": "Krajów" },
+      { "value": "99.9%", "label": "Czas Pracy" },
+      { "value": "24/7", "label": "Wsparcie" }
+    ]
+  },
+  "ro": {
+    "badge": "🚀 #1 ERP Textil în Europa și Golf",
+    "title": "Transformă-ți Afacerea Textilă",
+    "titleHighlight": "cu TexaCore ERP",
+    "subtitle": "Gestionarea stocurilor la nivel enterprise, urmărire RFID și analize în timp real proiectate special pentru angrosiști și retaileri textili din întreaga lume.",
+    "primaryCta": "Începe Perioada de Probă Gratuită",
+    "secondaryCta": "Rezervă un Demo",
+    "stats": [
+      { "value": "500+", "label": "Clienți Activi" },
+      { "value": "35+", "label": "Țări" },
+      { "value": "99.9%", "label": "Timp de Funcționare" },
+      { "value": "24/7", "label": "Suport" }
+    ]
+  }
+}

@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { useLanguage } from "./LanguageContext";
 import { getText, landingPageTranslations as t, pricingPageTranslations as pt } from "@/lib/translations/pages";
+import { useSiteData, PricingContent } from "@/hooks/useSiteData";
 import { Button } from "@/components/ui/button";
 import { Check, Sparkles, ArrowRight, Zap, Crown, Building, Rocket, ShoppingCart, Shield, Server, Clock, Gift, Users, Globe, Cpu, TrendingUp, Heart, DollarSign, Target, Building2, Briefcase, User, Smartphone, Warehouse, Truck } from "lucide-react";
 import { Card } from "@/components/ui/card";
@@ -29,10 +30,17 @@ export function Pricing() {
   const { language, dir } = useLanguage();
   const [isTrialModalOpen, setIsTrialModalOpen] = useState(false);
   const [selectedCurrency, setSelectedCurrency] = useState("USD");
+  
+  // Load pricing from CMS
+  const { data: cmsPricing } = useSiteData<PricingContent>('pricing', language);
 
   // Currency based on selected currency (default USD)
   const currencyInfo = currencyConfig[selectedCurrency] || currencyConfig.USD;
-  const currency = currencyInfo.symbol;
+  const currency = cmsPricing?.currency || currencyInfo.symbol;
+  
+  // Section titles from CMS
+  const sectionTitle = cmsPricing?.title || getText(pt.mainTitle, language);
+  const sectionSubtitle = cmsPricing?.subtitle || getText(pt.subtitle, language);
 
   // Convert USD price to local currency
   const convertPrice = (usdPrice: number) => {

@@ -2,6 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { useLanguage } from "@/components/landing/LanguageContext";
 import { getText, faqPageTranslations as t } from "@/lib/translations/pages";
+import { useSiteData, FAQContent as FAQData } from "@/hooks/useSiteData";
 import { Header } from "@/components/landing/Header";
 import { Footer } from "@/components/landing/Footer";
 import { Button } from "@/components/ui/button";
@@ -28,6 +29,9 @@ import { Input } from "@/components/ui/input";
 
 function FAQContent() {
   const { language, dir } = useLanguage();
+  
+  // Load FAQ content from CMS
+  const { data: cmsFaq } = useSiteData<FAQData>('faq', language);
 
   const categories = [
     {

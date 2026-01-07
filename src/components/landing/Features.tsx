@@ -2,6 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { useLanguage } from "./LanguageContext";
 import { getText, landingPageTranslations as t } from "@/lib/translations/pages";
+import { useSiteData, FeaturesContent } from "@/hooks/useSiteData";
 import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { 
@@ -22,13 +23,48 @@ import {
   Ruler,
   Palette,
   ScanBarcode,
-  ArrowRight
+  ArrowRight,
+  LucideIcon
 } from "lucide-react";
+
+// Icon mapping for dynamic icons from CMS
+const iconMap: Record<string, LucideIcon> = {
+  BarChart3, Warehouse, ShoppingCart, Calculator, Users, FileText,
+  Zap, ArrowUpRight, Layers, Receipt, CreditCard, Building2,
+  Package, TrendingUp, Ruler, Palette, ScanBarcode, ArrowRight
+};
 
 export function Features() {
   const { language, dir } = useLanguage();
+  
+  // Load features from CMS
+  const { data: cmsFeatures } = useSiteData<FeaturesContent>('features', language);
 
-  const features = [
+  // Default features with gradients and images
+  const defaultFeatures = [
+    { id: "barcode", icon: "ScanBarcode", gradient: "from-blue-500 to-blue-600", image: "https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?w=300&q=80" },
+    { id: "colors", icon: "Palette", gradient: "from-pink-500 to-rose-600", image: "https://images.unsplash.com/photo-1528459801416-a9e53bbf4e17?w=300&q=80" },
+    { id: "fabric", icon: "Ruler", gradient: "from-texafab-emerald to-teal-600", image: "https://images.unsplash.com/photo-1558171813-4c088753af8f?w=300&q=80" },
+    { id: "warehouse", icon: "Warehouse", gradient: "from-texafab-gold to-amber-500", image: "https://images.unsplash.com/photo-1553413077-190dd305871c?w=300&q=80" },
+    { id: "accounting", icon: "Calculator", gradient: "from-purple-500 to-purple-600", image: "https://images.unsplash.com/photo-1554224155-6726b3ff858f?w=300&q=80" },
+    { id: "ecommerce", icon: "ShoppingCart", gradient: "from-indigo-500 to-indigo-600", image: "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=300&q=80" },
+  ];
+
+  // Merge CMS data with default styling
+  const features = cmsFeatures?.items?.map((item, index) => {
+    const defaults = defaultFeatures[index] || defaultFeatures[0];
+    const IconComponent = iconMap[item.icon || defaults.icon] || Package;
+    return {
+      icon: <IconComponent className="w-6 h-6" />,
+      title: item.title,
+      desc: item.description,
+      stat: "",
+      gradient: defaults.gradient,
+      size: "",
+      featured: false,
+      image: defaults.image
+    };
+  }) || [
     {
       icon: <ScanBarcode className="w-6 h-6" />,
       title: getText(t.barcodeTitle, language),
@@ -90,6 +126,10 @@ export function Features() {
       image: "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=300&q=80"
     },
   ];
+  
+  // Section titles from CMS or fallback
+  const sectionTitle = cmsFeatures?.title || getText(t.headerTitle, language);
+  const sectionSubtitle = cmsFeatures?.subtitle || getText(t.headerSubtitle, language);
 
   return (
     <section id="features" className="py-24 bg-gradient-to-b from-white via-gray-50/50 to-white dark:from-gray-900 dark:via-gray-800/50 dark:to-gray-900 relative overflow-hidden">
@@ -105,10 +145,10 @@ export function Features() {
             {getText(t.allFeatures, language)}
           </div>
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-black text-texafab-slate dark:text-white mb-6 leading-tight">
-            {getText(t.headerTitle, language)}
+            {sectionTitle}
           </h2>
           <p className="text-lg text-gray-600 dark:text-gray-300 leading-relaxed">
-            {getText(t.headerSubtitle, language)}
+            {sectionSubtitle}
           </p>
         </div>
 

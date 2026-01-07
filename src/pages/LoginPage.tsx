@@ -72,18 +72,52 @@ export default function LoginPage() {
   ];
 
   return (
-    <div className={`min-h-screen flex ${dir === "rtl" ? "rtl" : "ltr"}`} dir={dir}>
-      {/* Left Side - Login Form */}
+    <div className={`min-h-screen flex ${dir === "rtl" ? "flex-row-reverse rtl" : "flex-row ltr"}`} dir={dir}>
+      {/* Form Side - Left in LTR, Right in RTL */}
       <div className="flex-1 flex flex-col justify-center px-8 py-12 lg:px-16 bg-white dark:bg-gray-900">
         <div className="max-w-md mx-auto w-full">
           {/* Logo */}
-          <Link to="/" className="inline-flex items-center gap-2 mb-8">
-            <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-texafab-emerald to-teal-600 flex items-center justify-center">
-              <span className="text-white font-black text-lg">E</span>
+          <Link to="/" className="inline-flex items-center gap-3 mb-8">
+            <div className="relative group">
+              {/* TexaCore Logo - Hexagon with Thread */}
+              <svg width="44" height="44" viewBox="0 0 44 44" className="drop-shadow-lg group-hover:drop-shadow-xl transition-all">
+                {/* Hexagon Background */}
+                <defs>
+                  <linearGradient id="loginHexGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                    <stop offset="0%" stopColor="#047857" />
+                    <stop offset="100%" stopColor="#0d9488" />
+                  </linearGradient>
+                  <linearGradient id="loginThreadGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                    <stop offset="0%" stopColor="#d97706" />
+                    <stop offset="100%" stopColor="#f59e0b" />
+                  </linearGradient>
+                </defs>
+                {/* Hexagon Shape */}
+                <polygon 
+                  points="22,2 40,12 40,32 22,42 4,32 4,12" 
+                  fill="url(#loginHexGradient)"
+                  className="group-hover:filter group-hover:brightness-110 transition-all"
+                />
+                {/* Thread/Fabric Wave */}
+                <path 
+                  d="M12,22 Q17,14 22,22 T32,22" 
+                  stroke="url(#loginThreadGradient)" 
+                  strokeWidth="3" 
+                  fill="none" 
+                  strokeLinecap="round"
+                />
+                {/* Core Dot */}
+                <circle cx="22" cy="22" r="4" fill="white" opacity="0.95"/>
+              </svg>
+              <div className="absolute -inset-1 bg-texafab-emerald/20 rounded-xl blur-lg opacity-0 group-hover:opacity-100 transition-opacity" />
             </div>
-            <span className="text-2xl font-black text-texafab-slate dark:text-white">
-              ERP<span className="text-texafab-emerald">MAX</span>
-            </span>
+            <div className="flex flex-col">
+              <div className="flex items-baseline" dir="ltr">
+                <span className="text-xl font-black text-texafab-emerald tracking-tight">Texa</span>
+                <span className="text-xl font-black text-texafab-gold tracking-tight">Core</span>
+              </div>
+              <span className="text-[10px] text-gray-400 font-medium tracking-wide">{language === "ar" ? "الخيار الأول في أوروبا والخليج" : "#1 Choice in Europe & Gulf"}</span>
+            </div>
           </Link>
 
           {/* Header */}
@@ -246,21 +280,46 @@ export default function LoginPage() {
         </div>
       </div>
 
-      {/* Right Side - Branding */}
+      {/* Branding Side - Right in LTR, Left in RTL */}
       <div className="hidden lg:flex flex-1 bg-gradient-to-br from-texafab-emerald via-teal-600 to-teal-700 p-12 items-center justify-center relative overflow-hidden">
         {/* Background Pattern */}
         <div className="absolute inset-0 bg-[linear-gradient(to_right,#ffffff10_1px,transparent_1px),linear-gradient(to_bottom,#ffffff10_1px,transparent_1px)] bg-[size:3rem_3rem]" />
         <div className="absolute top-0 left-0 w-96 h-96 bg-white/5 rounded-full blur-3xl" />
         <div className="absolute bottom-0 right-0 w-96 h-96 bg-texafab-gold/10 rounded-full blur-3xl" />
 
-        <div className="relative z-10 max-w-lg text-white">
+        <div className={`relative z-10 max-w-lg text-white ${dir === "rtl" ? "text-right" : "text-left"}`}>
           {/* Logo */}
           <div className="mb-12">
-            <div className="w-16 h-16 rounded-2xl bg-white/20 flex items-center justify-center mb-6">
-              <span className="text-3xl font-black">E</span>
-            </div>
+            <svg width="64" height="64" viewBox="0 0 44 44" className={`drop-shadow-xl mb-6 ${dir === "rtl" ? "mr-auto ml-0" : ""}`}>
+              <defs>
+                <linearGradient id="loginSideHexGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                  <stop offset="0%" stopColor="#ffffff" stopOpacity="0.3" />
+                  <stop offset="100%" stopColor="#ffffff" stopOpacity="0.1" />
+                </linearGradient>
+                <linearGradient id="loginSideThreadGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                  <stop offset="0%" stopColor="#d97706" />
+                  <stop offset="100%" stopColor="#f59e0b" />
+                </linearGradient>
+              </defs>
+              <polygon 
+                points="22,2 40,12 40,32 22,42 4,32 4,12" 
+                fill="url(#loginSideHexGradient)"
+              />
+              <path 
+                d="M12,22 Q17,14 22,22 T32,22" 
+                stroke="url(#loginSideThreadGradient)" 
+                strokeWidth="3" 
+                fill="none" 
+                strokeLinecap="round"
+              />
+              <circle cx="22" cy="22" r="4" fill="white" opacity="0.95"/>
+            </svg>
             <h2 className="text-4xl font-black mb-4">
-              {language === "ar" ? "نظام ERP الأول للأقمشة" : "First ERP for Textile"}
+              {language === "ar" ? (
+                <>نظام <span dir="ltr" className="inline-block">TexaCore</span> الأول للأقمشة</>
+              ) : (
+                "TexaCore - First ERP for Textile"
+              )}
             </h2>
             <p className="text-white/80 text-lg">
               {language === "ar"
@@ -274,16 +333,16 @@ export default function LoginPage() {
             {features.map((feature, i) => {
               const Icon = feature.icon;
               return (
-                <div key={i} className="flex items-start gap-4">
+                <div key={i} className={`flex items-start gap-4 ${dir === "rtl" ? "flex-row-reverse" : ""}`}>
                   <div className="w-12 h-12 rounded-xl bg-white/20 flex items-center justify-center flex-shrink-0">
-                    <Icon className="w-6 h-6" />
+                    <Icon className="w-6 h-6 text-white" />
                   </div>
-                  <div>
-                    <h3 className="font-bold mb-1">
-                      {language === "ar" ? feature.titleAr : feature.titleEn}
+                  <div className={dir === "rtl" ? "text-right" : "text-left"}>
+                    <h3 className="font-bold mb-1 text-white">
+                      {feature.title}
                     </h3>
                     <p className="text-white/70 text-sm">
-                      {language === "ar" ? feature.descAr : feature.descEn}
+                      {feature.desc}
                     </p>
                   </div>
                 </div>
@@ -292,7 +351,7 @@ export default function LoginPage() {
           </div>
 
           {/* Stats */}
-          <div className="mt-12 grid grid-cols-3 gap-6 pt-8 border-t border-white/20">
+          <div className={`mt-12 grid grid-cols-3 gap-6 pt-8 border-t border-white/20 ${dir === "rtl" ? "text-center" : ""}`}>
             <div>
               <div className="text-3xl font-black">500+</div>
               <div className="text-white/70 text-sm">

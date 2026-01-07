@@ -1,0 +1,87 @@
+{
+  "en": {
+    "badge": "Digital Transformation",
+    "title": "Ready to Transform Your Business?",
+    "subtitle": "Join over 500+ textile companies worldwide that trust TexaCore for their operations",
+    "primaryButton": "Start Free Trial",
+    "secondaryButton": "Contact Sales",
+    "benefits": [
+      "14-Day Free Trial",
+      "No Credit Card Required",
+      "24/7 Support"
+    ]
+  },
+  "ar": {
+    "badge": "التحول الرقمي",
+    "title": "هل أنت مستعد لتحويل عملك؟",
+    "subtitle": "انضم إلى أكثر من 500 شركة أقمشة حول العالم تثق بـ TexaCore لعملياتها",
+    "primaryButton": "ابدأ تجربة مجانية",
+    "secondaryButton": "تواصل مع المبيعات",
+    "benefits": [
+      "تجربة مجانية 14 يوم",
+      "بدون بطاقة ائتمان",
+      "دعم على مدار الساعة"
+    ]
+  },
+  "tr": {
+    "badge": "Dijital Dönüşüm",
+    "title": "İşinizi Dönüştürmeye Hazır mısınız?",
+    "subtitle": "TexaCore'a güvenen 500'den fazla tekstil şirketine katılın",
+    "primaryButton": "Ücretsiz Denemeye Başla",
+    "secondaryButton": "Satış ile İletişime Geç",
+    "benefits": [
+      "14 Günlük Ücretsiz Deneme",
+      "Kredi Kartı Gerekmez",
+      "7/24 Destek"
+    ]
+  },
+  "ru": {
+    "badge": "Цифровая трансформация",
+    "title": "Готовы трансформировать свой бизнес?",
+    "subtitle": "Присоединяйтесь к более чем 500 текстильным компаниям по всему миру, которые доверяют TexaCore",
+    "primaryButton": "Начать бесплатную версию",
+    "secondaryButton": "Связаться с отделом продаж",
+    "benefits": [
+      "14 дней бесплатно",
+      "Кредитная карта не требуется",
+      "Поддержка 24/7"
+    ]
+  },
+  "uk": {
+    "badge": "Цифрова трансформація",
+    "title": "Готові трансформувати свій бізнес?",
+    "subtitle": "Приєднуйтесь до понад 500 текстильних компаній по всьому світу, які довіряють TexaCore",
+    "primaryButton": "Почати безкоштовну версію",
+    "secondaryButton": "Зв'язатися з відділом продажів",
+    "benefits": [
+      "14 днів безкоштовно",
+      "Кредитна карта не потрібна",
+      "Підтримка 24/7"
+    ]
+  },
+  "pl": {
+    "badge": "Cyfrowa transformacja",
+    "title": "Gotowy na transformację biznesu?",
+    "subtitle": "Dołącz do ponad 500 firm tekstylnych na całym świecie, które ufają TexaCore",
+    "primaryButton": "Rozpocznij darmowy okres próbny",
+    "secondaryButton": "Skontaktuj się ze sprzedażą",
+    "benefits": [
+      "14 dni za darmo",
+      "Nie wymaga karty kredytowej",
+      "Wsparcie 24/7"
+    ]
+  },
+  "ro": {
+    "badge": "Transformare digitală",
+    "title": "Gata să vă transformați afacerea?",
+    "subtitle": "Alăturați-vă celor peste 500 de companii textile din întreaga lume care au încredere în TexaCore",
+    "primaryButton": "Începe perioada de probă",
+    "secondaryButton": "Contactează vânzările",
+    "benefits": [
+      "14 zile gratuit",
+      "Nu necesită card de credit",
+      "Suport 24/7"
+    ]
+  },
+  "_lastModified": "2025-01-01 00:00:00"
+}

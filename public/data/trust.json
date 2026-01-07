@@ -1,0 +1,219 @@
+{
+  "en": {
+    "title": "Trusted Worldwide",
+    "subtitle": "Enterprise-grade security and reliability",
+    "badges": [
+      {
+        "id": "gdpr",
+        "title": "GDPR Compliant",
+        "description": "Full compliance with European data protection regulations"
+      },
+      {
+        "id": "iso",
+        "title": "ISO 27001",
+        "description": "Information security management certified"
+      },
+      {
+        "id": "ssl",
+        "title": "256-bit SSL",
+        "description": "Bank-grade encryption for all data"
+      },
+      {
+        "id": "uptime",
+        "title": "99.9% Uptime",
+        "description": "Guaranteed availability with SLA"
+      }
+    ],
+    "partners": [
+      { "name": "Microsoft", "logo": "" },
+      { "name": "AWS", "logo": "" },
+      { "name": "Stripe", "logo": "" }
+    ]
+  },
+  "ar": {
+    "title": "موثوق به عالمياً",
+    "subtitle": "أمان وموثوقية على مستوى المؤسسات",
+    "badges": [
+      {
+        "id": "gdpr",
+        "title": "متوافق مع GDPR",
+        "description": "امتثال كامل للوائح حماية البيانات الأوروبية"
+      },
+      {
+        "id": "iso",
+        "title": "ISO 27001",
+        "description": "معتمد في إدارة أمن المعلومات"
+      },
+      {
+        "id": "ssl",
+        "title": "تشفير SSL 256 بت",
+        "description": "تشفير بمستوى البنوك لجميع البيانات"
+      },
+      {
+        "id": "uptime",
+        "title": "99.9% وقت التشغيل",
+        "description": "توفر مضمون مع اتفاقية SLA"
+      }
+    ],
+    "partners": [
+      { "name": "Microsoft", "logo": "" },
+      { "name": "AWS", "logo": "" },
+      { "name": "Stripe", "logo": "" }
+    ]
+  },
+  "tr": {
+    "title": "Dünya Çapında Güvenilir",
+    "subtitle": "Kurumsal düzeyde güvenlik ve güvenilirlik",
+    "badges": [
+      {
+        "id": "gdpr",
+        "title": "GDPR Uyumlu",
+        "description": "Avrupa veri koruma düzenlemelerine tam uyum"
+      },
+      {
+        "id": "iso",
+        "title": "ISO 27001",
+        "description": "Bilgi güvenliği yönetimi sertifikalı"
+      },
+      {
+        "id": "ssl",
+        "title": "256-bit SSL",
+        "description": "Tüm veriler için banka düzeyinde şifreleme"
+      },
+      {
+        "id": "uptime",
+        "title": "%99.9 Çalışma Süresi",
+        "description": "SLA ile garantili kullanılabilirlik"
+      }
+    ],
+    "partners": [
+      { "name": "Microsoft", "logo": "" },
+      { "name": "AWS", "logo": "" },
+      { "name": "Stripe", "logo": "" }
+    ]
+  },
+  "ru": {
+    "title": "Доверие по Всему Миру",
+    "subtitle": "Корпоративный уровень безопасности и надёжности",
+    "badges": [
+      {
+        "id": "gdpr",
+        "title": "Соответствие GDPR",
+        "description": "Полное соответствие европейским нормам защиты данных"
+      },
+      {
+        "id": "iso",
+        "title": "ISO 27001",
+        "description": "Сертификация управления информационной безопасностью"
+      },
+      {
+        "id": "ssl",
+        "title": "256-битный SSL",
+        "description": "Банковский уровень шифрования для всех данных"
+      },
+      {
+        "id": "uptime",
+        "title": "99.9% Время работы",
+        "description": "Гарантированная доступность с SLA"
+      }
+    ],
+    "partners": [
+      { "name": "Microsoft", "logo": "" },
+      { "name": "AWS", "logo": "" },
+      { "name": "Stripe", "logo": "" }
+    ]
+  },
+  "uk": {
+    "title": "Довіра по Всьому Світу",
+    "subtitle": "Корпоративний рівень безпеки та надійності",
+    "badges": [
+      {
+        "id": "gdpr",
+        "title": "Відповідність GDPR",
+        "description": "Повна відповідність європейським нормам захисту даних"
+      },
+      {
+        "id": "iso",
+        "title": "ISO 27001",
+        "description": "Сертифікація управління інформаційною безпекою"
+      },
+      {
+        "id": "ssl",
+        "title": "256-бітний SSL",
+        "description": "Банківський рівень шифрування для всіх даних"
+      },
+      {
+        "id": "uptime",
+        "title": "99.9% Час роботи",
+        "description": "Гарантована доступність з SLA"
+      }
+    ],
+    "partners": [
+      { "name": "Microsoft", "logo": "" },
+      { "name": "AWS", "logo": "" },
+      { "name": "Stripe", "logo": "" }
+    ]
+  },
+  "pl": {
+    "title": "Zaufanie na Całym Świecie",
+    "subtitle": "Korporacyjny poziom bezpieczeństwa i niezawodności",
+    "badges": [
+      {
+        "id": "gdpr",
+        "title": "Zgodność z GDPR",
+        "description": "Pełna zgodność z europejskimi przepisami o ochronie danych"
+      },
+      {
+        "id": "iso",
+        "title": "ISO 27001",
+        "description": "Certyfikat zarządzania bezpieczeństwem informacji"
+      },
+      {
+        "id": "ssl",
+        "title": "256-bitowy SSL",
+        "description": "Szyfrowanie na poziomie bankowym dla wszystkich danych"
+      },
+      {
+        "id": "uptime",
+        "title": "99.9% Czas pracy",
+        "description": "Gwarantowana dostępność z SLA"
+      }
+    ],
+    "partners": [
+      { "name": "Microsoft", "logo": "" },
+      { "name": "AWS", "logo": "" },
+      { "name": "Stripe", "logo": "" }
+    ]
+  },
+  "ro": {
+    "title": "Încredere la Nivel Mondial",
+    "subtitle": "Securitate și fiabilitate la nivel enterprise",
+    "badges": [
+      {
+        "id": "gdpr",
+        "title": "Conformitate GDPR",
+        "description": "Conformitate deplină cu reglementările europene de protecție a datelor"
+      },
+      {
+        "id": "iso",
+        "title": "ISO 27001",
+        "description": "Certificat de management al securității informațiilor"
+      },
+      {
+        "id": "ssl",
+        "title": "SSL 256-biți",
+        "description": "Criptare la nivel bancar pentru toate datele"
+      },
+      {
+        "id": "uptime",
+        "title": "99.9% Timp de funcționare",
+        "description": "Disponibilitate garantată cu SLA"
+      }
+    ],
+    "partners": [
+      { "name": "Microsoft", "logo": "" },
+      { "name": "AWS", "logo": "" },
+      { "name": "Stripe", "logo": "" }
+    ]
+  }
+}

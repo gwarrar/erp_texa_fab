@@ -9,6 +9,8 @@ import { Footer } from "./landing/Footer";
 import { FabricShowcase } from "./landing/FabricShowcase";
 import { GlobalPresence } from "./landing/GlobalPresence";
 import { WarehouseShowcase } from "./landing/WarehouseShowcase";
+import { AnnouncementBar } from "./landing/AnnouncementBar";
+import { NewsSection } from "./landing/NewsSection";
 
 function HomeContent() {
   const { dir, language } = useLanguage();
@@ -20,6 +22,10 @@ function HomeContent() {
         {language === "ar" ? "انتقل إلى المحتوى الرئيسي" : "Skip to main content"}
       </a>
       
+      {/* Fixed top container for announcement bar and header */}
+      <div className="fixed top-0 left-0 right-0 z-50">
+        <AnnouncementBar />
+      </div>
       <Header />
       
       <main id="main-content">
@@ -29,6 +35,7 @@ function HomeContent() {
         <FabricShowcase />
         <Trust />
         <GlobalPresence />
+        <NewsSection />
         <Testimonials />
         <Pricing />
       </main>

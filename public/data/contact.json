@@ -1,0 +1,151 @@
+{
+  "en": {
+    "title": "Contact Us",
+    "subtitle": "We'd love to hear from you",
+    "offices": [
+      {
+        "city": "Dublin",
+        "type": "Headquarters",
+        "address": "123 Tech Quarter, Dublin 2",
+        "phone": "+353 83 081 3305",
+        "email": "hq@erpmax.app"
+      },
+      {
+        "city": "Berlin",
+        "type": "Europe Office",
+        "address": "Alexanderplatz 5, 10178 Berlin",
+        "phone": "+353 83 081 3305",
+        "email": "europe@erpmax.app"
+      },
+      {
+        "city": "Riyadh",
+        "type": "Gulf Office",
+        "address": "King Fahd Road, Al Olaya District",
+        "phone": "+353 83 081 3305",
+        "email": "gulf@erpmax.app"
+      },
+      {
+        "city": "Dubai",
+        "type": "Support Center",
+        "address": "Dubai Internet City, Building 12",
+        "phone": "+353 83 081 3305",
+        "email": "support@erpmax.app"
+      }
+    ],
+    "contactMethods": {
+      "phone": {
+        "title": "Call Us",
+        "description": "Available 24/7 for support",
+        "value": "+353 83 081 3305"
+      },
+      "email": {
+        "title": "Email Us",
+        "description": "We'll respond within 24 hours",
+        "value": "info@erpmax.app"
+      },
+      "whatsapp": {
+        "title": "WhatsApp",
+        "description": "Quick response on WhatsApp",
+        "value": "+353 83 081 3305"
+      }
+    },
+    "form": {
+      "title": "Send us a message",
+      "nameLabel": "Full Name",
+      "emailLabel": "Email Address",
+      "phoneLabel": "Phone Number",
+      "companyLabel": "Company Name",
+      "subjectLabel": "Subject",
+      "messageLabel": "Message",
+      "submitButton": "Send Message",
+      "successMessage": "Thank you! Your message has been sent successfully."
+    }
+  },
+  "ar": {
+    "title": "اتصل بنا",
+    "subtitle": "نحن نحب أن نسمع منك",
+    "offices": [
+      {
+        "city": "دبلن",
+        "type": "المقر الرئيسي",
+        "address": "123 حي التكنولوجيا، دبلن 2",
+        "phone": "+353 83 081 3305",
+        "email": "hq@erpmax.app"
+      },
+      {
+        "city": "برلين",
+        "type": "مكتب أوروبا",
+        "address": "ألكسندر بلاتز 5، 10178 برلين",
+        "phone": "+353 83 081 3305",
+        "email": "europe@erpmax.app"
+      },
+      {
+        "city": "الرياض",
+        "type": "مكتب الخليج",
+        "address": "طريق الملك فهد، حي العليا",
+        "phone": "+353 83 081 3305",
+        "email": "gulf@erpmax.app"
+      },
+      {
+        "city": "دبي",
+        "type": "مركز الدعم",
+        "address": "مدينة دبي للإنترنت، مبنى 12",
+        "phone": "+353 83 081 3305",
+        "email": "support@erpmax.app"
+      }
+    ],
+    "contactMethods": {
+      "phone": {
+        "title": "اتصل بنا",
+        "description": "متاحون على مدار الساعة للدعم",
+        "value": "+353 83 081 3305"
+      },
+      "email": {
+        "title": "راسلنا",
+        "description": "سنرد خلال 24 ساعة",
+        "value": "info@erpmax.app"
+      },
+      "whatsapp": {
+        "title": "واتساب",
+        "description": "رد سريع على واتساب",
+        "value": "+353 83 081 3305"
+      }
+    },
+    "form": {
+      "title": "أرسل لنا رسالة",
+      "nameLabel": "الاسم الكامل",
+      "emailLabel": "البريد الإلكتروني",
+      "phoneLabel": "رقم الهاتف",
+      "companyLabel": "اسم الشركة",
+      "subjectLabel": "الموضوع",
+      "messageLabel": "الرسالة",
+      "submitButton": "إرسال الرسالة",
+      "successMessage": "شكراً لك! تم إرسال رسالتك بنجاح."
+    }
+  },
+  "tr": {
+    "title": "Bize Ulaşın",
+    "subtitle": "Sizden haber almaktan mutluluk duyarız",
+    "offices": [
+      {
+        "city": "Dublin",
+        "type": "Genel Merkez",
+        "address": "123 Tech Quarter, Dublin 2",
+        "phone": "+353 83 081 3305",
+        "email": "hq@erpmax.app"
+      }
+    ],
+    "form": {
+      "title": "Bize mesaj gönderin",
+      "nameLabel": "Ad Soyad",
+      "emailLabel": "E-posta Adresi",
+      "phoneLabel": "Telefon Numarası",
+      "companyLabel": "Şirket Adı",
+      "subjectLabel": "Konu",
+      "messageLabel": "Mesaj",
+      "submitButton": "Mesaj Gönder",
+      "successMessage": "Teşekkürler! Mesajınız başarıyla gönderildi."
+    }
+  },
+  "_lastModified": "2025-01-01 00:00:00"
+}

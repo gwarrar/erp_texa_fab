@@ -1,0 +1,44 @@
+{
+  "siteName": "TexaCore",
+  "siteDescription": "Enterprise ERP for Textile Industry",
+  "defaultLanguage": "en",
+  "supportedLanguages": ["en", "ar", "tr", "ru", "uk", "pl", "ro"],
+  "logo": {
+    "type": "svg",
+    "primaryColor": "#047857",
+    "secondaryColor": "#d97706"
+  },
+  "contact": {
+    "email": "info@texacore.com",
+    "phone": "+353 1 234 5678",
+    "whatsapp": "+353123456789",
+    "address": {
+      "street": "123 Tech Park",
+      "city": "Dublin",
+      "country": "Ireland",
+      "postalCode": "D02 XY45"
+    }
+  },
+  "social": {
+    "linkedin": "https://linkedin.com/company/texacore",
+    "twitter": "https://twitter.com/texacore",
+    "facebook": "https://facebook.com/texacore",
+    "youtube": "https://youtube.com/@texacore"
+  },
+  "seo": {
+    "defaultTitle": "TexaCore - Enterprise ERP for Textile Industry",
+    "titleTemplate": "%s | TexaCore",
+    "defaultDescription": "The leading ERP solution for textile wholesalers and retailers. Inventory management, POS, CRM, and analytics in one platform.",
+    "keywords": ["textile ERP", "fabric management", "inventory software", "POS system", "wholesale ERP", "retail ERP"]
+  },
+  "analytics": {
+    "googleAnalyticsId": "",
+    "facebookPixelId": ""
+  },
+  "features": {
+    "trialDays": 14,
+    "showPricing": true,
+    "enableChat": true,
+    "enableNewsletter": true
+  }
+}

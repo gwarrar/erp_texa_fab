@@ -1,0 +1,282 @@
+/* RTL (Right-to-Left) Support Styles */
+
+/* Base RTL direction */
+html[dir="rtl"],
+html.rtl {
+  direction: rtl;
+}
+
+/* Text alignment for RTL */
+html.rtl .text-left {
+  text-align: right;
+}
+
+html.rtl .text-right {
+  text-align: left;
+}
+
+/* Margin and padding utilities */
+html.rtl .ml-auto {
+  margin-left: 0;
+  margin-right: auto;
+}
+
+html.rtl .mr-auto {
+  margin-right: 0;
+  margin-left: auto;
+}
+
+/* Flexbox direction */
+html.rtl .flex-row {
+  flex-direction: row-reverse;
+}
+
+/* Border radius for RTL */
+html.rtl .rounded-l-lg {
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+  border-top-right-radius: 0.5rem;
+  border-bottom-right-radius: 0.5rem;
+}
+
+html.rtl .rounded-r-lg {
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+  border-top-left-radius: 0.5rem;
+  border-bottom-left-radius: 0.5rem;
+}
+
+/* Border utilities for RTL */
+html.rtl .border-l {
+  border-left: none;
+  border-right: 1px solid;
+}
+
+html.rtl .border-r {
+  border-right: none;
+  border-left: 1px solid;
+}
+
+html.rtl .border-l-2 {
+  border-left-width: 0;
+  border-right-width: 2px;
+}
+
+html.rtl .border-r-2 {
+  border-right-width: 0;
+  border-left-width: 2px;
+}
+
+/* Positioning for RTL */
+html.rtl .left-0 {
+  left: auto;
+  right: 0;
+}
+
+html.rtl .right-0 {
+  right: auto;
+  left: 0;
+}
+
+/* Specific component adjustments */
+
+/* Sidebar adjustments */
+html.rtl .sidebar-container {
+  left: auto;
+  right: 0;
+  border-left: 1px solid;
+  border-right: none;
+}
+
+/* Dropdown menus */
+html.rtl [data-radix-popper-content-wrapper] {
+  direction: rtl;
+}
+
+/* Form controls */
+html.rtl input,
+html.rtl textarea,
+html.rtl select {
+  text-align: right;
+}
+
+html.rtl input[type="email"],
+html.rtl input[type="url"],
+html.rtl input[type="tel"],
+html.rtl input[type="number"],
+html.rtl input[dir="ltr"] {
+  text-align: left;
+  direction: ltr;
+}
+
+/* Tables */
+html.rtl table {
+  direction: rtl;
+}
+
+html.rtl th,
+html.rtl td {
+  text-align: right;
+}
+
+/* Icons in buttons and inputs */
+html.rtl .icon-left {
+  margin-left: 0.5rem;
+  margin-right: 0;
+}
+
+html.rtl .icon-right {
+  margin-right: 0.5rem;
+  margin-left: 0;
+}
+
+/* Chevron rotation for RTL */
+html.rtl .chevron-expand {
+  transform: rotate(180deg);
+}
+
+html.rtl .chevron-expand.expanded {
+  transform: rotate(90deg);
+}
+
+/* Scrollbar positioning */
+html.rtl ::-webkit-scrollbar {
+  direction: ltr;
+}
+
+/* Card and panel shadows */
+html.rtl .shadow-right {
+  box-shadow: -4px 0 6px -1px rgba(0, 0, 0, 0.1);
+}
+
+html.rtl .shadow-left {
+  box-shadow: 4px 0 6px -1px rgba(0, 0, 0, 0.1);
+}
+
+/* Animation directions */
+html.rtl .slide-in-left {
+  animation-name: slide-in-right;
+}
+
+html.rtl .slide-in-right {
+  animation-name: slide-in-left;
+}
+
+@keyframes slide-in-left {
+  from {
+    transform: translateX(-100%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+
+@keyframes slide-in-right {
+  from {
+    transform: translateX(100%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+
+/* Progress bars */
+html.rtl .progress-bar {
+  direction: rtl;
+}
+
+html.rtl .progress-bar-fill {
+  transform-origin: right;
+}
+
+/* Breadcrumbs */
+html.rtl .breadcrumb-separator {
+  transform: rotate(180deg);
+}
+
+/* Tabs */
+html.rtl .tabs-list {
+  direction: rtl;
+}
+
+/* Tooltips */
+html.rtl [data-radix-tooltip-content] {
+  direction: rtl;
+}
+
+/* Dialog and modals */
+html.rtl [role="dialog"] {
+  direction: rtl;
+}
+
+/* Admin specific */
+html.rtl .admin-content {
+  margin-left: 0;
+  margin-right: 16rem; /* w-64 */
+}
+
+html.rtl .admin-content.collapsed {
+  margin-right: 4rem; /* w-16 */
+}
+
+/* Charts and graphs (keep LTR for numbers) */
+html.rtl .chart-container {
+  direction: ltr;
+}
+
+html.rtl .chart-labels {
+  direction: rtl;
+}
+
+/* Code blocks */
+html.rtl pre,
+html.rtl code {
+  direction: ltr;
+  text-align: left;
+}
+
+/* Number inputs and displays */
+html.rtl .numeric-value {
+  direction: ltr;
+  unicode-bidi: isolate;
+}
+
+/* Date/time displays */
+html.rtl .datetime {
+  direction: ltr;
+  unicode-bidi: isolate;
+}
+
+/* URLs and email addresses */
+html.rtl .url,
+html.rtl .email {
+  direction: ltr;
+  unicode-bidi: isolate;
+}
+
+/* Font adjustments for Arabic */
+html[lang="ar"] {
+  font-family: 'Tajawal', 'Cairo', 'Segoe UI', system-ui, sans-serif;
+  letter-spacing: 0;
+}
+
+html[lang="ar"] h1,
+html[lang="ar"] h2,
+html[lang="ar"] h3,
+html[lang="ar"] h4,
+html[lang="ar"] h5,
+html[lang="ar"] h6 {
+  font-weight: 700;
+}
+
+/* Specific language adjustments */
+html[lang="ru"],
+html[lang="uk"] {
+  font-family: 'Inter', 'Segoe UI', system-ui, sans-serif;
+}
+
+html[lang="tr"],
+html[lang="ro"],
+html[lang="pl"] {
+  font-family: 'Inter', 'Segoe UI', system-ui, sans-serif;
+}

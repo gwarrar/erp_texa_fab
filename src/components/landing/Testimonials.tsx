@@ -1,17 +1,39 @@
 import React from "react";
 import { useLanguage } from "./LanguageContext";
+import { useSiteData, TestimonialsContent } from "@/hooks/useSiteData";
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
 import { Card, CardContent } from "@/components/ui/card";
 import { Star, Quote, MessageSquare } from "lucide-react";
 
+// Default avatars for testimonials
+const defaultAvatars = [
+  "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=100&q=80",
+  "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&q=80",
+  "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=100&q=80",
+  "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=100&q=80",
+  "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=100&q=80",
+];
+
 export function Testimonials() {
   const { dir, language } = useLanguage();
+  
+  // Load testimonials from CMS
+  const { data: cmsData } = useSiteData<TestimonialsContent>('testimonials', language);
   
   const getText = (translations: Record<string, string>) => {
     return translations[language] || translations.en;
   };
 
-  const testimonials = [
+  // Convert CMS data to component format
+  const testimonials = cmsData?.items?.map((item, index) => ({
+    text: { [language]: item.content, en: item.content },
+    author: { [language]: item.name, en: item.name },
+    role: { [language]: item.role, en: item.role },
+    company: item.company,
+    country: { [language]: item.location, en: item.location },
+    rating: item.rating || 5,
+    avatar: item.image || defaultAvatars[index % defaultAvatars.length],
+  })) || [
     {
       text: { ar: "TexaCore غيّر طريقة تتبعنا للرولونات والأمتار بشكل كامل. الآن نعرف بالضبط كم متر تبقى في كل رولون.", en: "TexaCore completely changed how we track rolls and meters. Now we know exactly how many meters remain in each roll.", ru: "TexaCore полностью изменил способ отслеживания рулонов и метров. Теперь мы точно знаем, сколько метров осталось в каждом рулоне.", uk: "TexaCore повністю змінив спосіб відстеження рулонів і метрів. Тепер ми точно знаємо, скільки метрів залишилось у кожному рулоні.", ro: "TexaCore a schimbat complet modul în care urmărim sulurile și metrii. Acum știm exact câți metri au rămas în fiecare sul.", pl: "TexaCore całkowicie zmienił sposób śledzenia rolek i metrów. Teraz dokładnie wiemy, ile metrów zostało w każdej rolce.", it: "TexaCore ha completamente cambiato il modo in cui tracciamo rotoli e metri. Ora sappiamo esattamente quanti metri rimangono in ogni rotolo.", tr: "TexaCore, rulo ve metre takibimizi tamamen değiştirdi. Artık her ruloda kaç metre kaldığını tam olarak biliyoruz." },
       author: { ar: "هانز مولر", en: "Hans Müller", ru: "Ганс Мюллер", uk: "Ганс Мюллер", ro: "Hans Müller", pl: "Hans Müller", it: "Hans Müller", tr: "Hans Müller" },
@@ -25,7 +47,7 @@ export function Testimonials() {
       text: { ar: "النظام الوحيد الذي يفهم طبيعة تجارة الأقمشة. من الألوان إلى القص - كل شيء مغطى.", en: "The only system that understands the fabric trade. From colors to cutting - everything is covered.", ru: "Единственная система, которая понимает специфику торговли тканями. От цветов до раскроя - всё учтено.", uk: "Єдина система, яка розуміє специфіку торгівлі тканинами. Від кольорів до розкрою - все враховано.", ro: "Singurul sistem care înțelege comerțul cu țesături. De la culori la tăiere - totul este acoperit.", pl: "Jedyny system, który rozumie handel tkaninami. Od kolorów po krojenie - wszystko jest uwzględnione.", it: "L'unico sistema che comprende il commercio di tessuti. Dai colori al taglio - tutto è coperto.", tr: "Kumaş ticaretini anlayan tek sistem. Renklerden kesime - her şey kapsanmış." },
       author: { ar: "أحمد الشمري", en: "Ahmed Al-Shamri", ru: "Ахмед Аль-Шамри", uk: "Ахмед Аль-Шамрі", ro: "Ahmed Al-Shamri", pl: "Ahmed Al-Shamri", it: "Ahmed Al-Shamri", tr: "Ahmed Al-Shamri" },
       role: { ar: "الرئيس التنفيذي", en: "CEO", ru: "Генеральный директор", uk: "Генеральний директор", ro: "CEO", pl: "Dyrektor generalny", it: "CEO", tr: "CEO" },
-      company: { ar: "مجموعة الشمري للأقمشة", en: "Al-Shamri Fabrics Group", ru: "Al-Shamri Fabrics Group", uk: "Al-Shamri Fabrics Group", ro: "Al-Shamri Fabrics Group", pl: "Al-Shamri Fabrics Group", it: "Al-Shamri Fabrics Group", tr: "Al-Shamri Fabrics Group" },
+      company: "Al-Shamri Fabrics Group",
       country: { ar: "السعودية", en: "Saudi Arabia", ru: "Саудовская Аравия", uk: "Саудівська Аравія", ro: "Arabia Saudită", pl: "Arabia Saudyjska", it: "Arabia Saudita", tr: "Suudi Arabistan" },
       rating: 5,
       avatar: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&q=80",
@@ -39,29 +61,12 @@ export function Testimonials() {
       rating: 5,
       avatar: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=100&q=80",
     },
-    {
-      text: { ar: "وفرنا 20% من وقت الجرد بفضل نظام الباركود المتقدم. كل رولون له هويته الفريدة.", en: "We saved 20% of inventory time thanks to the advanced barcode system. Every roll has its unique identity.", ru: "Мы сэкономили 20% времени инвентаризации благодаря продвинутой системе штрих-кодов. Каждый рулон имеет уникальную идентификацию.", uk: "Ми заощадили 20% часу інвентаризації завдяки передовій системі штрих-кодів. Кожен рулон має унікальну ідентифікацію.", ro: "Am economisit 20% din timpul de inventariere datorită sistemului avansat de coduri de bare. Fiecare sul are identitatea sa unică.", pl: "Zaoszczędziliśmy 20% czasu inwentaryzacji dzięki zaawansowanemu systemowi kodów kreskowych. Każda rolka ma unikalną tożsamość.", it: "Abbiamo risparmiato il 20% del tempo di inventario grazie al sistema avanzato di codici a barre. Ogni rotolo ha la sua identità unica.", tr: "Gelişmiş barkod sistemi sayesinde envanter süresinden %20 tasarruf ettik. Her rulonun benzersiz kimliği var." },
-      author: { ar: "محمد الراشد", en: "Mohammed Al-Rashid", ru: "Мохаммед Аль-Рашид", uk: "Мохаммед Аль-Рашид", ro: "Mohammed Al-Rashid", pl: "Mohammed Al-Rashid", it: "Mohammed Al-Rashid", tr: "Mohammed Al-Rashid" },
-      role: { ar: "مدير المستودعات", en: "Warehouse Manager", ru: "Менеджер склада", uk: "Менеджер складу", ro: "Manager depozit", pl: "Kierownik magazynu", it: "Responsabile magazzino", tr: "Depo Müdürü" },
-      company: { ar: "شركة الإمارات للأقمشة", en: "Emirates Fabrics Co.", ru: "Emirates Fabrics Co.", uk: "Emirates Fabrics Co.", ro: "Emirates Fabrics Co.", pl: "Emirates Fabrics Co.", it: "Emirates Fabrics Co.", tr: "Emirates Fabrics Co." },
-      country: { ar: "الإمارات", en: "UAE", ru: "ОАЭ", uk: "ОАЕ", ro: "EAU", pl: "ZEA", it: "EAU", tr: "BAE" },
-      rating: 5,
-      avatar: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=100&q=80",
-    },
-    {
-      text: { ar: "أخيراً نظام يحسب الهدر بدقة. قللنا الفاقد بنسبة 15% في أول ثلاثة أشهر.", en: "Finally a system that calculates waste accurately. We reduced loss by 15% in the first three months.", ru: "Наконец система, которая точно рассчитывает отходы. Мы сократили потери на 15% за первые три месяца.", uk: "Нарешті система, яка точно розраховує відходи. Ми скоротили втрати на 15% за перші три місяці.", ro: "În sfârșit un sistem care calculează deșeurile cu precizie. Am redus pierderile cu 15% în primele trei luni.", pl: "Wreszcie system, który dokładnie oblicza odpady. Zmniejszyliśmy straty o 15% w pierwszych trzech miesiącach.", it: "Finalmente un sistema che calcola gli sprechi con precisione. Abbiamo ridotto le perdite del 15% nei primi tre mesi.", tr: "Sonunda israfı doğru hesaplayan bir sistem. İlk üç ayda kayıpları %15 azalttık." },
-      author: { ar: "توماس كوفالسكي", en: "Tomasz Kowalski", ru: "Томаш Ковальски", uk: "Томаш Ковальскі", ro: "Tomasz Kowalski", pl: "Tomasz Kowalski", it: "Tomasz Kowalski", tr: "Tomasz Kowalski" },
-      role: { ar: "مدير الإنتاج", en: "Production Manager", ru: "Менеджер по производству", uk: "Менеджер з виробництва", ro: "Manager producție", pl: "Kierownik produkcji", it: "Responsabile produzione", tr: "Üretim Müdürü" },
-      company: "PolTex Industries",
-      country: { ar: "بولندا", en: "Poland", ru: "Польша", uk: "Польща", ro: "Polonia", pl: "Polska", it: "Polonia", tr: "Polonya" },
-      rating: 5,
-      avatar: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=100&q=80",
-    },
   ];
   
-  const sectionTitle = { ar: "آراء العملاء", en: "Client Testimonials", ru: "Отзывы клиентов", uk: "Відгуки клієнтів", ro: "Testimoniale clienți", pl: "Opinie klientów", it: "Testimonianze clienti", tr: "Müşteri Görüşleri" };
-  const mainTitle = { ar: "قصص نجاح عملائنا", en: "Client Success Stories", ru: "Истории успеха клиентов", uk: "Історії успіху клієнтів", ro: "Povești de succes ale clienților", pl: "Historie sukcesu klientów", it: "Storie di successo dei clienti", tr: "Müşteri Başarı Hikayeleri" };
-  const description = { ar: "اكتشف كيف حوّلت الشركات الرائدة عملياتها مع TexaCore", en: "See how leading companies have transformed their operations with TexaCore", ru: "Узнайте, как ведущие компании трансформировали свои операции с TexaCore", uk: "Дізнайтеся, як провідні компанії трансформували свої операції з TexaCore", ro: "Vedeți cum companiile de top și-au transformat operațiunile cu TexaCore", pl: "Zobacz, jak wiodące firmy przekształciły swoje operacje z TexaCore", it: "Scopri come le aziende leader hanno trasformato le loro operazioni con TexaCore", tr: "Önde gelen şirketlerin operasyonlarını TexaCore ile nasıl dönüştürdüğünü görün" };
+  // Use CMS data for section titles if available
+  const sectionTitle = { [language]: cmsData?.title || "Client Testimonials", ar: "آراء العملاء", en: "Client Testimonials", ru: "Отзывы клиентов", uk: "Відгуки клієнтів", ro: "Testimoniale clienți", pl: "Opinie klientów", it: "Testimonianze clienti", tr: "Müşteri Görüşleri" };
+  const mainTitle = { [language]: cmsData?.title || "Client Success Stories", ar: "قصص نجاح عملائنا", en: "Client Success Stories", ru: "Истории успеха клиентов", uk: "Історії успіху клієнтів", ro: "Povești de succes ale clienților", pl: "Historie sukcesu klientów", it: "Storie di successo dei clienti", tr: "Müşteri Başarı Hikayeleri" };
+  const description = { [language]: cmsData?.subtitle || "See how leading companies have transformed their operations with TexaCore", ar: "اكتشف كيف حوّلت الشركات الرائدة عملياتها مع TexaCore", en: "See how leading companies have transformed their operations with TexaCore", ru: "Узнайте, как ведущие компании трансформировали свои операции с TexaCore", uk: "Дізнайтеся, як провідні компанії трансформували свої операції з TexaCore", ro: "Vedeți cum companiile de top și-au transformat operațiunile cu TexaCore", pl: "Zobacz, jak wiodące firmy przekształciły swoje operacje z TexaCore", it: "Scopri come le aziende leader hanno trasformato le loro operazioni con TexaCore", tr: "Önde gelen şirketlerin operasyonlarını TexaCore ile nasıl dönüştürdüğünü görün" };
 
   return (
     <section className="py-20 bg-texafab-cream relative overflow-hidden">

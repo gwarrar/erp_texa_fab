@@ -1,7 +1,8 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { useLanguage } from "./LanguageContext";
 import { getText, landingPageTranslations as t } from "@/lib/translations/pages";
+import { useSiteData, HeroContent } from "@/hooks/useSiteData";
 import { Button } from "@/components/ui/button";
 import { 
   ArrowRight, 
@@ -25,8 +26,18 @@ import { TrialSignupModal } from "./TrialSignupModal";
 export function Hero() {
   const { dir, language } = useLanguage();
   const [isTrialModalOpen, setIsTrialModalOpen] = useState(false);
+  
+  // Load hero content from JSON
+  const { data: heroData, loading } = useSiteData<HeroContent>('hero', language);
 
-  const stats = [
+  // Use CMS data if available, fallback to static translations
+  const heroTitle = heroData?.title || getText(t.heroTitle, language);
+  const heroSubtitle = heroData?.subtitle || getText(t.heroSubtitle, language);
+  const heroBadge = heroData?.badge || getText(t.badge, language);
+  const primaryCta = heroData?.primaryCta || getText(t.ctaDemo, language);
+  const secondaryCta = heroData?.secondaryCta || getText(t.ctaTrial, language);
+
+  const stats = heroData?.stats || [
     { value: "500+", label: getText(t.statCompanies, language) },
     { value: "10M+", label: getText(t.statRolls, language) },
     { value: "50+", label: getText(t.statCountries, language) },
@@ -43,7 +54,7 @@ export function Hero() {
   ];
 
   return (
-    <section className="relative w-full min-h-screen flex items-center pt-20 pb-12 overflow-hidden bg-gradient-to-br from-slate-50 via-white to-teal-50/30 dark:from-gray-900 dark:via-gray-900 dark:to-gray-800">
+    <section className="relative w-full min-h-screen flex items-center pt-32 md:pt-36 pb-12 overflow-hidden bg-gradient-to-br from-slate-50 via-white to-teal-50/30 dark:from-gray-900 dark:via-gray-900 dark:to-gray-800">
       {/* Background Elements */}
       <div className="absolute inset-0 z-0">
         <div className="absolute inset-0 bg-[linear-gradient(to_right,#0D948808_1px,transparent_1px),linear-gradient(to_bottom,#0D948808_1px,transparent_1px)] bg-[size:3rem_3rem]" />
@@ -65,7 +76,7 @@ export function Hero() {
                 <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-texafab-emerald"></span>
               </span>
               <span className="text-texafab-emerald font-semibold text-sm">
-                {getText(t.badge, language)}
+                {heroBadge}
               </span>
               <Sparkles className="w-4 h-4 text-texafab-gold" />
             </div>
@@ -73,13 +84,13 @@ export function Hero() {
             {/* Main Headline */}
             <div className="space-y-4 min-h-[180px]">
               <h1 className="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-black text-texafab-slate dark:text-white leading-[1.1] tracking-tight">
-                {getText(t.heroTitle, language).split(" ").length > 4 ? (
+                {heroTitle.split(" ").length > 4 ? (
                   <>
-                    <span className="block">{getText(t.heroTitle, language).split(" ").slice(0, Math.ceil(getText(t.heroTitle, language).split(" ").length / 2)).join(" ")}</span>
-                    <span className="block text-texafab-emerald">{getText(t.heroTitle, language).split(" ").slice(Math.ceil(getText(t.heroTitle, language).split(" ").length / 2)).join(" ")}</span>
+                    <span className="block">{heroTitle.split(" ").slice(0, Math.ceil(heroTitle.split(" ").length / 2)).join(" ")}</span>
+                    <span className="block text-texafab-emerald">{heroTitle.split(" ").slice(Math.ceil(heroTitle.split(" ").length / 2)).join(" ")}</span>
                   </>
                 ) : (
-                  <span className="text-texafab-emerald">{getText(t.heroTitle, language)}</span>
+                  <span className="text-texafab-emerald">{heroTitle}</span>
                 )}
               </h1>
               
@@ -87,7 +98,7 @@ export function Hero() {
             </div>
 
             <p className="text-lg sm:text-xl text-gray-600 dark:text-gray-300 max-w-lg leading-relaxed">
-              {getText(t.heroSubtitle, language)}
+              {heroSubtitle}
             </p>
 
             {/* Feature Pills */}
@@ -109,13 +120,13 @@ export function Hero() {
                 onClick={() => setIsTrialModalOpen(true)}
                 className="group h-14 px-8 bg-texafab-emerald hover:bg-texafab-emerald/90 text-white text-base font-semibold shadow-lg shadow-texafab-emerald/25 hover:shadow-xl hover:shadow-texafab-emerald/30 transition-all duration-300 rounded-xl"
               >
-                {getText(t.ctaDemo, language)}
+                {primaryCta}
                 <ArrowRight className={`w-5 h-5 transition-transform group-hover:translate-x-1 ${dir === "rtl" ? "rotate-180 me-2" : "ms-2"}`} />
               </Button>
               <Link to="/features">
                 <Button variant="outline" className="group h-14 px-8 border-2 border-gray-200 dark:border-gray-700 text-texafab-slate dark:text-white hover:bg-gray-50 dark:hover:bg-gray-800 text-base font-semibold transition-all duration-300 rounded-xl">
                   <Play className="w-5 h-5 me-2 fill-texafab-gold text-texafab-gold" />
-                  {getText(t.ctaTrial, language)}
+                  {secondaryCta}
                 </Button>
               </Link>
             </div>

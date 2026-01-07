@@ -13,6 +13,47 @@ export function Header() {
   const [isLanguageMenuOpen, setIsLanguageMenuOpen] = useState(false);
   const [isSolutionsMenuOpen, setIsSolutionsMenuOpen] = useState(false);
   const [isThemeMenuOpen, setIsThemeMenuOpen] = useState(false);
+  const [announcementVisible, setAnnouncementVisible] = useState(true);
+
+  // Check if announcement bar is visible
+  useEffect(() => {
+    const checkAnnouncement = () => {
+      const dismissed = sessionStorage.getItem('announcement_dismissed');
+      const savedData = localStorage.getItem('texacore_admin_data');
+      let isActive = true;
+      
+      if (savedData) {
+        try {
+          const parsed = JSON.parse(savedData);
+          isActive = parsed.announcementBar?.isActive ?? true;
+        } catch (e) {}
+      }
+      
+      setAnnouncementVisible(!dismissed && isActive);
+    };
+    
+    checkAnnouncement();
+    
+    // Listen for storage changes
+    window.addEventListener('storage', checkAnnouncement);
+    
+    // Custom event for same-tab updates
+    const handleDismiss = () => setAnnouncementVisible(false);
+    const handleShown = () => {
+      const dismissed = sessionStorage.getItem('announcement_dismissed');
+      if (!dismissed) {
+        setAnnouncementVisible(true);
+      }
+    };
+    window.addEventListener('announcement-dismissed', handleDismiss);
+    window.addEventListener('announcement-shown', handleShown);
+    
+    return () => {
+      window.removeEventListener('storage', checkAnnouncement);
+      window.removeEventListener('announcement-dismissed', handleDismiss);
+      window.removeEventListener('announcement-shown', handleShown);
+    };
+  }, []);
 
   const themeOptions: { value: Theme; labelKey: string; icon: typeof Sun }[] = [
     { value: "light", labelKey: "theme.light", icon: Sun },
@@ -75,7 +116,9 @@ export function Header() {
   };
 
   return (
-    <header className={`fixed top-0 left-0 right-0 z-40 transition-all duration-500 ${
+    <header className={`fixed left-0 right-0 z-40 transition-all duration-500 ${
+      announcementVisible ? 'top-[40px]' : 'top-0'
+    } ${
       isScrolled 
         ? "bg-white/95 dark:bg-gray-900/95 backdrop-blur-xl shadow-lg shadow-gray-900/5 dark:shadow-black/20 border-b border-gray-100 dark:border-gray-800" 
         : "bg-transparent"
@@ -273,7 +316,7 @@ export function Header() {
 
             {/* Login Button */}
             <Link to="/login">
-              <Button variant="ghost" className="hidden sm:flex h-10 px-4 text-gray-600 dark:text-gray-300 hover:text-texafab-emerald dark:hover:text-texafab-teal font-medium">
+              <Button variant="ghost" className="hidden sm:flex h-10 px-4 text-gray-600 dark:text-gray-300 hover:text-texafab-emerald dark:hover:text-texafab-teal hover:bg-texafab-emerald/10 dark:hover:bg-texafab-teal/10 font-medium">
                 {t("nav.signIn")}
               </Button>
             </Link>

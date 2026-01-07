@@ -1,0 +1,240 @@
+{
+  "en": {
+    "title": "Industry Solutions",
+    "subtitle": "Tailored solutions for every textile business",
+    "items": [
+      {
+        "id": "wholesale",
+        "title": "Wholesale Distribution",
+        "description": "Complete solution for fabric wholesalers with multi-warehouse management and B2B ordering.",
+        "icon": "Warehouse",
+        "href": "/solutions/wholesale"
+      },
+      {
+        "id": "retail",
+        "title": "Retail Stores",
+        "description": "POS system designed for fabric retail with cutting management and customer loyalty programs.",
+        "icon": "Store",
+        "href": "/solutions/retail"
+      },
+      {
+        "id": "manufacturing",
+        "title": "Manufacturing",
+        "description": "Production planning, raw material tracking, and quality control for textile manufacturers.",
+        "icon": "Factory",
+        "href": "/solutions/manufacturing"
+      },
+      {
+        "id": "ecommerce",
+        "title": "E-Commerce",
+        "description": "Integrated online store with inventory sync and multi-channel selling capabilities.",
+        "icon": "Globe",
+        "href": "/solutions/ecommerce"
+      }
+    ]
+  },
+  "ar": {
+    "title": "حلول الصناعة",
+    "subtitle": "حلول مصممة خصيصاً لكل أعمال الأقمشة",
+    "items": [
+      {
+        "id": "wholesale",
+        "title": "توزيع الجملة",
+        "description": "حل متكامل لتجار الأقمشة بالجملة مع إدارة المستودعات المتعددة والطلبات B2B.",
+        "icon": "Warehouse",
+        "href": "/solutions/wholesale"
+      },
+      {
+        "id": "retail",
+        "title": "متاجر التجزئة",
+        "description": "نظام نقاط البيع مصمم لتجزئة الأقمشة مع إدارة القص وبرامج ولاء العملاء.",
+        "icon": "Store",
+        "href": "/solutions/retail"
+      },
+      {
+        "id": "manufacturing",
+        "title": "التصنيع",
+        "description": "تخطيط الإنتاج وتتبع المواد الخام ومراقبة الجودة لمصنعي الأقمشة.",
+        "icon": "Factory",
+        "href": "/solutions/manufacturing"
+      },
+      {
+        "id": "ecommerce",
+        "title": "التجارة الإلكترونية",
+        "description": "متجر إلكتروني متكامل مع مزامنة المخزون وقدرات البيع متعدد القنوات.",
+        "icon": "Globe",
+        "href": "/solutions/ecommerce"
+      }
+    ]
+  },
+  "tr": {
+    "title": "Endüstri Çözümleri",
+    "subtitle": "Her tekstil işletmesi için özel çözümler",
+    "items": [
+      {
+        "id": "wholesale",
+        "title": "Toptan Dağıtım",
+        "description": "Çoklu depo yönetimi ve B2B sipariş ile kumaş toptancıları için eksiksiz çözüm.",
+        "icon": "Warehouse",
+        "href": "/solutions/wholesale"
+      },
+      {
+        "id": "retail",
+        "title": "Perakende Mağazalar",
+        "description": "Kesim yönetimi ve müşteri sadakat programları ile kumaş perakendesi için tasarlanmış POS sistemi.",
+        "icon": "Store",
+        "href": "/solutions/retail"
+      },
+      {
+        "id": "manufacturing",
+        "title": "Üretim",
+        "description": "Tekstil üreticileri için üretim planlaması, hammadde takibi ve kalite kontrolü.",
+        "icon": "Factory",
+        "href": "/solutions/manufacturing"
+      },
+      {
+        "id": "ecommerce",
+        "title": "E-Ticaret",
+        "description": "Envanter senkronizasyonu ve çok kanallı satış yetenekleri ile entegre online mağaza.",
+        "icon": "Globe",
+        "href": "/solutions/ecommerce"
+      }
+    ]
+  },
+  "ru": {
+    "title": "Отраслевые Решения",
+    "subtitle": "Индивидуальные решения для каждого текстильного бизнеса",
+    "items": [
+      {
+        "id": "wholesale",
+        "title": "Оптовая Дистрибуция",
+        "description": "Комплексное решение для оптовиков тканей с управлением несколькими складами и B2B-заказами.",
+        "icon": "Warehouse",
+        "href": "/solutions/wholesale"
+      },
+      {
+        "id": "retail",
+        "title": "Розничные Магазины",
+        "description": "POS-система для розничной торговли тканями с управлением раскроем и программами лояльности.",
+        "icon": "Store",
+        "href": "/solutions/retail"
+      },
+      {
+        "id": "manufacturing",
+        "title": "Производство",
+        "description": "Планирование производства, отслеживание сырья и контроль качества для производителей текстиля.",
+        "icon": "Factory",
+        "href": "/solutions/manufacturing"
+      },
+      {
+        "id": "ecommerce",
+        "title": "Электронная Коммерция",
+        "description": "Интегрированный интернет-магазин с синхронизацией запасов и многоканальными продажами.",
+        "icon": "Globe",
+        "href": "/solutions/ecommerce"
+      }
+    ]
+  },
+  "uk": {
+    "title": "Галузеві Рішення",
+    "subtitle": "Індивідуальні рішення для кожного текстильного бізнесу",
+    "items": [
+      {
+        "id": "wholesale",
+        "title": "Оптова Дистрибуція",
+        "description": "Комплексне рішення для оптовиків тканин з управлінням кількома складами та B2B-замовленнями.",
+        "icon": "Warehouse",
+        "href": "/solutions/wholesale"
+      },
+      {
+        "id": "retail",
+        "title": "Роздрібні Магазини",
+        "description": "POS-система для роздрібної торгівлі тканинами з управлінням розкроєм та програмами лояльності.",
+        "icon": "Store",
+        "href": "/solutions/retail"
+      },
+      {
+        "id": "manufacturing",
+        "title": "Виробництво",
+        "description": "Планування виробництва, відстеження сировини та контроль якості для виробників текстилю.",
+        "icon": "Factory",
+        "href": "/solutions/manufacturing"
+      },
+      {
+        "id": "ecommerce",
+        "title": "Електронна Комерція",
+        "description": "Інтегрований інтернет-магазин з синхронізацією запасів та багатоканальними продажами.",
+        "icon": "Globe",
+        "href": "/solutions/ecommerce"
+      }
+    ]
+  },
+  "pl": {
+    "title": "Rozwiązania Branżowe",
+    "subtitle": "Dopasowane rozwiązania dla każdej firmy tekstylnej",
+    "items": [
+      {
+        "id": "wholesale",
+        "title": "Dystrybucja Hurtowa",
+        "description": "Kompletne rozwiązanie dla hurtowników tkanin z zarządzaniem wieloma magazynami i zamówieniami B2B.",
+        "icon": "Warehouse",
+        "href": "/solutions/wholesale"
+      },
+      {
+        "id": "retail",
+        "title": "Sklepy Detaliczne",
+        "description": "System POS zaprojektowany dla sprzedaży detalicznej tkanin z zarządzaniem krojeniem i programami lojalnościowymi.",
+        "icon": "Store",
+        "href": "/solutions/retail"
+      },
+      {
+        "id": "manufacturing",
+        "title": "Produkcja",
+        "description": "Planowanie produkcji, śledzenie surowców i kontrola jakości dla producentów tekstylnych.",
+        "icon": "Factory",
+        "href": "/solutions/manufacturing"
+      },
+      {
+        "id": "ecommerce",
+        "title": "E-Commerce",
+        "description": "Zintegrowany sklep online z synchronizacją zapasów i wielokanałową sprzedażą.",
+        "icon": "Globe",
+        "href": "/solutions/ecommerce"
+      }
+    ]
+  },
+  "ro": {
+    "title": "Soluții pentru Industrie",
+    "subtitle": "Soluții personalizate pentru fiecare afacere textilă",
+    "items": [
+      {
+        "id": "wholesale",
+        "title": "Distribuție en-gros",
+        "description": "Soluție completă pentru angrosiști de țesături cu gestionarea mai multor depozite și comenzi B2B.",
+        "icon": "Warehouse",
+        "href": "/solutions/wholesale"
+      },
+      {
+        "id": "retail",
+        "title": "Magazine cu Amănuntul",
+        "description": "Sistem POS conceput pentru retail de țesături cu gestionarea tăierii și programe de loialitate.",
+        "icon": "Store",
+        "href": "/solutions/retail"
+      },
+      {
+        "id": "manufacturing",
+        "title": "Producție",
+        "description": "Planificarea producției, urmărirea materiilor prime și controlul calității pentru producătorii textili.",
+        "icon": "Factory",
+        "href": "/solutions/manufacturing"
+      },
+      {
+        "id": "ecommerce",
+        "title": "E-Commerce",
+        "description": "Magazin online integrat cu sincronizarea stocurilor și vânzări multi-canal.",
+        "icon": "Globe",
+        "href": "/solutions/ecommerce"
+      }
+    ]
+  }
+}

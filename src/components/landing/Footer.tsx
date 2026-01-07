@@ -1,11 +1,15 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { useLanguage } from "./LanguageContext";
+import { useSiteData, FooterContent } from "@/hooks/useSiteData";
 import { Facebook, Twitter, Linkedin, Instagram, Mail, Phone, MapPin, ArrowUpRight, Send } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 export function Footer() {
   const { t, language, dir } = useLanguage();
+  
+  // Load footer content from CMS
+  const { data: cmsFooter } = useSiteData<FooterContent>('footer', language);
 
   const footerLinks = {
     product: [
@@ -32,6 +36,7 @@ export function Footer() {
       { labelKey: "nav.contact", href: "/contact" },
     ],
     resources: [
+      { labelKey: "footer.news", href: "/news" },
       { labelKey: "footer.faq", href: "/faq" },
       { labelKey: "footer.privacy", href: "/privacy" },
       { labelKey: "footer.terms", href: "/terms" },

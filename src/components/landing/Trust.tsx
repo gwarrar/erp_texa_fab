@@ -1,10 +1,14 @@
 import React from "react";
 import { useLanguage } from "./LanguageContext";
 import { getText, landingPageTranslations as t } from "@/lib/translations/pages";
+import { useSiteData, TrustContent } from "@/hooks/useSiteData";
 import { Shield, Award, Clock, Headphones, CheckCircle2, Building2, Cloud, Globe } from "lucide-react";
 
 export function Trust() {
   const { language } = useLanguage();
+  
+  // Load trust content from CMS
+  const { data: cmsTrust } = useSiteData<TrustContent>('trust', language);
 
   const benefits = [
     { 

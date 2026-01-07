@@ -1,0 +1,52 @@
+{
+  "en": {
+    "isActive": true,
+    "text": "🎉 New Feature: AI-Powered Analytics is now live!",
+    "link": "/ai-analytics",
+    "linkText": "Learn More",
+    "backgroundColor": "#047857"
+  },
+  "ar": {
+    "isActive": true,
+    "text": "🎉 ميزة جديدة: التحليلات المدعومة بالذكاء الاصطناعي متاحة الآن!",
+    "link": "/ai-analytics",
+    "linkText": "اعرف المزيد",
+    "backgroundColor": "#047857"
+  },
+  "tr": {
+    "isActive": true,
+    "text": "🎉 Yeni Özellik: Yapay Zeka Destekli Analitikler artık yayında!",
+    "link": "/ai-analytics",
+    "linkText": "Daha Fazla",
+    "backgroundColor": "#047857"
+  },
+  "ru": {
+    "isActive": true,
+    "text": "🎉 Новая функция: ИИ-аналитика теперь доступна!",
+    "link": "/ai-analytics",
+    "linkText": "Узнать больше",
+    "backgroundColor": "#047857"
+  },
+  "uk": {
+    "isActive": true,
+    "text": "🎉 Нова функція: ШІ-аналітика тепер доступна!",
+    "link": "/ai-analytics",
+    "linkText": "Дізнатись більше",
+    "backgroundColor": "#047857"
+  },
+  "pl": {
+    "isActive": true,
+    "text": "🎉 Nowa funkcja: Analityka oparta na AI jest już dostępna!",
+    "link": "/ai-analytics",
+    "linkText": "Dowiedz się więcej",
+    "backgroundColor": "#047857"
+  },
+  "ro": {
+    "isActive": true,
+    "text": "🎉 Funcție nouă: Analitica AI este acum disponibilă!",
+    "link": "/ai-analytics",
+    "linkText": "Află mai multe",
+    "backgroundColor": "#047857"
+  },
+  "_lastModified": "2025-01-01 00:00:00"
+}

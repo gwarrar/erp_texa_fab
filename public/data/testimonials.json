@@ -1,0 +1,324 @@
+{
+  "en": {
+    "title": "What Our Clients Say",
+    "subtitle": "Trusted by textile businesses worldwide",
+    "items": [
+      {
+        "id": "1",
+        "name": "Ahmed Al-Rashid",
+        "role": "CEO",
+        "company": "Gulf Textiles Trading",
+        "location": "Dubai, UAE",
+        "content": "TexaCore transformed our business operations completely. The RFID tracking alone saved us countless hours in inventory management.",
+        "rating": 5,
+        "image": ""
+      },
+      {
+        "id": "2",
+        "name": "Maria Schmidt",
+        "role": "Operations Director",
+        "company": "EuroFabrics GmbH",
+        "location": "Frankfurt, Germany",
+        "content": "The best ERP solution we've used in 20 years of business. The multilingual support is perfect for our international operations.",
+        "rating": 5,
+        "image": ""
+      },
+      {
+        "id": "3",
+        "name": "Fatima Hassan",
+        "role": "Managing Director",
+        "company": "Al-Noor Textiles",
+        "location": "Riyadh, Saudi Arabia",
+        "content": "Finally, an ERP that understands the textile industry. The fabric roll management feature is exactly what we needed.",
+        "rating": 5,
+        "image": ""
+      },
+      {
+        "id": "4",
+        "name": "Mehmet Yilmaz",
+        "role": "Owner",
+        "company": "Istanbul Fabric House",
+        "location": "Istanbul, Turkey",
+        "content": "We reduced our inventory errors by 95% after implementing TexaCore. The ROI was visible within the first month.",
+        "rating": 5,
+        "image": ""
+      }
+    ]
+  },
+  "ar": {
+    "title": "ماذا يقول عملاؤنا",
+    "subtitle": "موثوق به من قبل شركات الأقمشة حول العالم",
+    "items": [
+      {
+        "id": "1",
+        "name": "أحمد الراشد",
+        "role": "الرئيس التنفيذي",
+        "company": "تجارة أقمشة الخليج",
+        "location": "دبي، الإمارات",
+        "content": "غيّر TexaCore عمليات أعمالنا بالكامل. تتبع RFID وحده وفّر لنا ساعات لا حصر لها في إدارة المخزون.",
+        "rating": 5,
+        "image": ""
+      },
+      {
+        "id": "2",
+        "name": "ماريا شميدت",
+        "role": "مديرة العمليات",
+        "company": "يوروفابريكس المحدودة",
+        "location": "فرانكفورت، ألمانيا",
+        "content": "أفضل حل ERP استخدمناه في 20 عاماً من العمل. الدعم متعدد اللغات مثالي لعملياتنا الدولية.",
+        "rating": 5,
+        "image": ""
+      },
+      {
+        "id": "3",
+        "name": "فاطمة حسن",
+        "role": "المدير العام",
+        "company": "أقمشة النور",
+        "location": "الرياض، السعودية",
+        "content": "أخيراً، نظام ERP يفهم صناعة الأقمشة. ميزة إدارة لفات الأقمشة هي بالضبط ما كنا نحتاجه.",
+        "rating": 5,
+        "image": ""
+      },
+      {
+        "id": "4",
+        "name": "محمد يلماز",
+        "role": "المالك",
+        "company": "دار أقمشة إسطنبول",
+        "location": "إسطنبول، تركيا",
+        "content": "قللنا أخطاء المخزون بنسبة 95% بعد تطبيق TexaCore. كان العائد على الاستثمار مرئياً في الشهر الأول.",
+        "rating": 5,
+        "image": ""
+      }
+    ]
+  },
+  "tr": {
+    "title": "Müşterilerimiz Ne Diyor",
+    "subtitle": "Dünya çapında tekstil işletmeleri tarafından güveniliyor",
+    "items": [
+      {
+        "id": "1",
+        "name": "Ahmed Al-Rashid",
+        "role": "CEO",
+        "company": "Gulf Textiles Trading",
+        "location": "Dubai, BAE",
+        "content": "TexaCore iş operasyonlarımızı tamamen dönüştürdü. Sadece RFID takibi bile envanter yönetiminde sayısız saat tasarruf ettirdi.",
+        "rating": 5,
+        "image": ""
+      },
+      {
+        "id": "2",
+        "name": "Maria Schmidt",
+        "role": "Operasyon Direktörü",
+        "company": "EuroFabrics GmbH",
+        "location": "Frankfurt, Almanya",
+        "content": "20 yıllık iş hayatımızda kullandığımız en iyi ERP çözümü. Çok dilli destek uluslararası operasyonlarımız için mükemmel.",
+        "rating": 5,
+        "image": ""
+      },
+      {
+        "id": "3",
+        "name": "Fatima Hassan",
+        "role": "Genel Müdür",
+        "company": "Al-Noor Tekstil",
+        "location": "Riyad, Suudi Arabistan",
+        "content": "Sonunda tekstil endüstrisini anlayan bir ERP. Kumaş rulosu yönetimi özelliği tam ihtiyacımız olan şeydi.",
+        "rating": 5,
+        "image": ""
+      },
+      {
+        "id": "4",
+        "name": "Mehmet Yılmaz",
+        "role": "Sahip",
+        "company": "İstanbul Kumaş Evi",
+        "location": "İstanbul, Türkiye",
+        "content": "TexaCore'u uyguladıktan sonra envanter hatalarımızı %95 azalttık. Yatırım getirisi ilk ay içinde görünür oldu.",
+        "rating": 5,
+        "image": ""
+      }
+    ]
+  },
+  "ru": {
+    "title": "Что Говорят Наши Клиенты",
+    "subtitle": "Доверие текстильных компаний по всему миру",
+    "items": [
+      {
+        "id": "1",
+        "name": "Ахмед Аль-Рашид",
+        "role": "Генеральный директор",
+        "company": "Gulf Textiles Trading",
+        "location": "Дубай, ОАЭ",
+        "content": "TexaCore полностью трансформировал нашу бизнес-операцию. Только RFID-отслеживание сэкономило нам бесчисленные часы в управлении запасами.",
+        "rating": 5,
+        "image": ""
+      },
+      {
+        "id": "2",
+        "name": "Мария Шмидт",
+        "role": "Операционный директор",
+        "company": "EuroFabrics GmbH",
+        "location": "Франкфурт, Германия",
+        "content": "Лучшее ERP-решение, которое мы использовали за 20 лет бизнеса. Многоязычная поддержка идеальна для наших международных операций.",
+        "rating": 5,
+        "image": ""
+      },
+      {
+        "id": "3",
+        "name": "Фатима Хасан",
+        "role": "Управляющий директор",
+        "company": "Al-Noor Textiles",
+        "location": "Эр-Рияд, Саудовская Аравия",
+        "content": "Наконец-то ERP, которая понимает текстильную индустрию. Функция управления рулонами ткани — именно то, что нам было нужно.",
+        "rating": 5,
+        "image": ""
+      },
+      {
+        "id": "4",
+        "name": "Мехмет Йылмаз",
+        "role": "Владелец",
+        "company": "Istanbul Fabric House",
+        "location": "Стамбул, Турция",
+        "content": "Мы сократили ошибки инвентаризации на 95% после внедрения TexaCore. ROI был виден уже в первый месяц.",
+        "rating": 5,
+        "image": ""
+      }
+    ]
+  },
+  "uk": {
+    "title": "Що Говорять Наші Клієнти",
+    "subtitle": "Довіра текстильних компаній по всьому світу",
+    "items": [
+      {
+        "id": "1",
+        "name": "Ахмед Аль-Рашид",
+        "role": "Генеральний директор",
+        "company": "Gulf Textiles Trading",
+        "location": "Дубай, ОАЕ",
+        "content": "TexaCore повністю трансформував нашу бізнес-операцію. Тільки RFID-відстеження заощадило нам безліч годин в управлінні запасами.",
+        "rating": 5,
+        "image": ""
+      },
+      {
+        "id": "2",
+        "name": "Марія Шмідт",
+        "role": "Операційний директор",
+        "company": "EuroFabrics GmbH",
+        "location": "Франкфурт, Німеччина",
+        "content": "Найкраще ERP-рішення, яке ми використовували за 20 років бізнесу. Багатомовна підтримка ідеальна для наших міжнародних операцій.",
+        "rating": 5,
+        "image": ""
+      },
+      {
+        "id": "3",
+        "name": "Фатіма Хасан",
+        "role": "Керуючий директор",
+        "company": "Al-Noor Textiles",
+        "location": "Ер-Ріяд, Саудівська Аравія",
+        "content": "Нарешті ERP, яка розуміє текстильну індустрію. Функція управління рулонами тканини — саме те, що нам було потрібно.",
+        "rating": 5,
+        "image": ""
+      },
+      {
+        "id": "4",
+        "name": "Мехмет Йилмаз",
+        "role": "Власник",
+        "company": "Istanbul Fabric House",
+        "location": "Стамбул, Туреччина",
+        "content": "Ми скоротили помилки інвентаризації на 95% після впровадження TexaCore. ROI був видимий вже в перший місяць.",
+        "rating": 5,
+        "image": ""
+      }
+    ]
+  },
+  "pl": {
+    "title": "Co Mówią Nasi Klienci",
+    "subtitle": "Zaufanie firm tekstylnych na całym świecie",
+    "items": [
+      {
+        "id": "1",
+        "name": "Ahmed Al-Rashid",
+        "role": "Dyrektor Generalny",
+        "company": "Gulf Textiles Trading",
+        "location": "Dubaj, ZEA",
+        "content": "TexaCore całkowicie przekształcił nasze operacje biznesowe. Samo śledzenie RFID zaoszczędziło nam niezliczone godziny w zarządzaniu zapasami.",
+        "rating": 5,
+        "image": ""
+      },
+      {
+        "id": "2",
+        "name": "Maria Schmidt",
+        "role": "Dyrektor Operacyjny",
+        "company": "EuroFabrics GmbH",
+        "location": "Frankfurt, Niemcy",
+        "content": "Najlepsze rozwiązanie ERP, jakiego używaliśmy w 20 latach działalności. Wsparcie wielojęzyczne jest idealne dla naszych międzynarodowych operacji.",
+        "rating": 5,
+        "image": ""
+      },
+      {
+        "id": "3",
+        "name": "Fatima Hassan",
+        "role": "Dyrektor Zarządzający",
+        "company": "Al-Noor Textiles",
+        "location": "Rijad, Arabia Saudyjska",
+        "content": "Wreszcie ERP, który rozumie branżę tekstylną. Funkcja zarządzania rolkami tkanin to dokładnie to, czego potrzebowaliśmy.",
+        "rating": 5,
+        "image": ""
+      },
+      {
+        "id": "4",
+        "name": "Mehmet Yilmaz",
+        "role": "Właściciel",
+        "company": "Istanbul Fabric House",
+        "location": "Stambuł, Turcja",
+        "content": "Zmniejszyliśmy błędy inwentaryzacji o 95% po wdrożeniu TexaCore. ROI był widoczny w pierwszym miesiącu.",
+        "rating": 5,
+        "image": ""
+      }
+    ]
+  },
+  "ro": {
+    "title": "Ce Spun Clienții Noștri",
+    "subtitle": "Încrederea companiilor textile din întreaga lume",
+    "items": [
+      {
+        "id": "1",
+        "name": "Ahmed Al-Rashid",
+        "role": "CEO",
+        "company": "Gulf Textiles Trading",
+        "location": "Dubai, EAU",
+        "content": "TexaCore ne-a transformat complet operațiunile de afaceri. Doar urmărirea RFID ne-a economisit nenumărate ore în gestionarea stocurilor.",
+        "rating": 5,
+        "image": ""
+      },
+      {
+        "id": "2",
+        "name": "Maria Schmidt",
+        "role": "Director Operațiuni",
+        "company": "EuroFabrics GmbH",
+        "location": "Frankfurt, Germania",
+        "content": "Cea mai bună soluție ERP pe care am folosit-o în 20 de ani de afaceri. Suportul multilingv este perfect pentru operațiunile noastre internaționale.",
+        "rating": 5,
+        "image": ""
+      },
+      {
+        "id": "3",
+        "name": "Fatima Hassan",
+        "role": "Director General",
+        "company": "Al-Noor Textiles",
+        "location": "Riad, Arabia Saudită",
+        "content": "În sfârșit, un ERP care înțelege industria textilă. Funcția de gestionare a rulelor de țesătură este exact ceea ce aveam nevoie.",
+        "rating": 5,
+        "image": ""
+      },
+      {
+        "id": "4",
+        "name": "Mehmet Yilmaz",
+        "role": "Proprietar",
+        "company": "Istanbul Fabric House",
+        "location": "Istanbul, Turcia",
+        "content": "Am redus erorile de inventar cu 95% după implementarea TexaCore. ROI a fost vizibil în prima lună.",
+        "rating": 5,
+        "image": ""
+      }
+    ]
+  }
+}

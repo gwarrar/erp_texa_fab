@@ -1,0 +1,401 @@
+{
+  "en": {
+    "title": "Simple, Transparent Pricing",
+    "subtitle": "Choose the plan that fits your business needs",
+    "currency": "$",
+    "period": "/month",
+    "plans": [
+      {
+        "id": "starter",
+        "name": "Starter",
+        "price": "99",
+        "description": "Perfect for small textile shops",
+        "features": [
+          "Up to 1,000 SKUs",
+          "1 User Account",
+          "Basic POS",
+          "Email Support",
+          "Monthly Reports"
+        ],
+        "highlighted": false,
+        "cta": "Get Started"
+      },
+      {
+        "id": "professional",
+        "name": "Professional",
+        "price": "299",
+        "description": "Ideal for growing businesses",
+        "features": [
+          "Up to 10,000 SKUs",
+          "5 User Accounts",
+          "Advanced POS + CRM",
+          "RFID Support",
+          "Priority Support",
+          "Real-time Analytics",
+          "Multi-location"
+        ],
+        "highlighted": true,
+        "cta": "Start Free Trial"
+      },
+      {
+        "id": "enterprise",
+        "name": "Enterprise",
+        "price": "Custom",
+        "description": "For large-scale operations",
+        "features": [
+          "Unlimited SKUs",
+          "Unlimited Users",
+          "Full Feature Suite",
+          "Dedicated Support",
+          "Custom Integrations",
+          "On-premise Option",
+          "SLA Guarantee"
+        ],
+        "highlighted": false,
+        "cta": "Contact Sales"
+      }
+    ]
+  },
+  "ar": {
+    "title": "أسعار بسيطة وشفافة",
+    "subtitle": "اختر الخطة التي تناسب احتياجات عملك",
+    "currency": "$",
+    "period": "/شهرياً",
+    "plans": [
+      {
+        "id": "starter",
+        "name": "المبتدئ",
+        "price": "99",
+        "description": "مثالي لمتاجر الأقمشة الصغيرة",
+        "features": [
+          "حتى 1,000 منتج",
+          "حساب مستخدم واحد",
+          "نقطة بيع أساسية",
+          "دعم بالبريد الإلكتروني",
+          "تقارير شهرية"
+        ],
+        "highlighted": false,
+        "cta": "ابدأ الآن"
+      },
+      {
+        "id": "professional",
+        "name": "الاحترافي",
+        "price": "299",
+        "description": "مثالي للأعمال المتنامية",
+        "features": [
+          "حتى 10,000 منتج",
+          "5 حسابات مستخدمين",
+          "نقطة بيع متقدمة + CRM",
+          "دعم RFID",
+          "دعم ذو أولوية",
+          "تحليلات فورية",
+          "مواقع متعددة"
+        ],
+        "highlighted": true,
+        "cta": "ابدأ تجربة مجانية"
+      },
+      {
+        "id": "enterprise",
+        "name": "المؤسسات",
+        "price": "مخصص",
+        "description": "للعمليات الكبيرة",
+        "features": [
+          "منتجات غير محدودة",
+          "مستخدمون غير محدودون",
+          "جميع الميزات",
+          "دعم مخصص",
+          "تكاملات مخصصة",
+          "خيار التثبيت المحلي",
+          "ضمان SLA"
+        ],
+        "highlighted": false,
+        "cta": "تواصل مع المبيعات"
+      }
+    ]
+  },
+  "tr": {
+    "title": "Basit, Şeffaf Fiyatlandırma",
+    "subtitle": "İş ihtiyaçlarınıza uygun planı seçin",
+    "currency": "$",
+    "period": "/ay",
+    "plans": [
+      {
+        "id": "starter",
+        "name": "Başlangıç",
+        "price": "99",
+        "description": "Küçük tekstil mağazaları için mükemmel",
+        "features": [
+          "1.000 SKU'ya kadar",
+          "1 Kullanıcı Hesabı",
+          "Temel POS",
+          "E-posta Desteği",
+          "Aylık Raporlar"
+        ],
+        "highlighted": false,
+        "cta": "Başlayın"
+      },
+      {
+        "id": "professional",
+        "name": "Profesyonel",
+        "price": "299",
+        "description": "Büyüyen işletmeler için ideal",
+        "features": [
+          "10.000 SKU'ya kadar",
+          "5 Kullanıcı Hesabı",
+          "Gelişmiş POS + CRM",
+          "RFID Desteği",
+          "Öncelikli Destek",
+          "Gerçek Zamanlı Analitik",
+          "Çoklu Konum"
+        ],
+        "highlighted": true,
+        "cta": "Ücretsiz Deneme Başlat"
+      },
+      {
+        "id": "enterprise",
+        "name": "Kurumsal",
+        "price": "Özel",
+        "description": "Büyük ölçekli operasyonlar için",
+        "features": [
+          "Sınırsız SKU",
+          "Sınırsız Kullanıcı",
+          "Tam Özellik Paketi",
+          "Özel Destek",
+          "Özel Entegrasyonlar",
+          "Yerinde Seçenek",
+          "SLA Garantisi"
+        ],
+        "highlighted": false,
+        "cta": "Satışla İletişime Geçin"
+      }
+    ]
+  },
+  "ru": {
+    "title": "Простое, Прозрачное Ценообразование",
+    "subtitle": "Выберите план, который подходит вашему бизнесу",
+    "currency": "$",
+    "period": "/месяц",
+    "plans": [
+      {
+        "id": "starter",
+        "name": "Стартовый",
+        "price": "99",
+        "description": "Идеально для небольших текстильных магазинов",
+        "features": [
+          "До 1,000 SKU",
+          "1 Учётная запись",
+          "Базовый POS",
+          "Поддержка по email",
+          "Ежемесячные отчёты"
+        ],
+        "highlighted": false,
+        "cta": "Начать"
+      },
+      {
+        "id": "professional",
+        "name": "Профессиональный",
+        "price": "299",
+        "description": "Идеально для растущего бизнеса",
+        "features": [
+          "До 10,000 SKU",
+          "5 Учётных записей",
+          "Продвинутый POS + CRM",
+          "Поддержка RFID",
+          "Приоритетная поддержка",
+          "Аналитика в реальном времени",
+          "Несколько локаций"
+        ],
+        "highlighted": true,
+        "cta": "Начать Бесплатную Пробную Версию"
+      },
+      {
+        "id": "enterprise",
+        "name": "Корпоративный",
+        "price": "По запросу",
+        "description": "Для крупномасштабных операций",
+        "features": [
+          "Неограниченные SKU",
+          "Неограниченные пользователи",
+          "Полный набор функций",
+          "Выделенная поддержка",
+          "Индивидуальные интеграции",
+          "Вариант on-premise",
+          "Гарантия SLA"
+        ],
+        "highlighted": false,
+        "cta": "Связаться с отделом продаж"
+      }
+    ]
+  },
+  "uk": {
+    "title": "Просте, Прозоре Ціноутворення",
+    "subtitle": "Оберіть план, який підходить вашому бізнесу",
+    "currency": "$",
+    "period": "/місяць",
+    "plans": [
+      {
+        "id": "starter",
+        "name": "Стартовий",
+        "price": "99",
+        "description": "Ідеально для невеликих текстильних магазинів",
+        "features": [
+          "До 1,000 SKU",
+          "1 Обліковий запис",
+          "Базовий POS",
+          "Підтримка email",
+          "Щомісячні звіти"
+        ],
+        "highlighted": false,
+        "cta": "Почати"
+      },
+      {
+        "id": "professional",
+        "name": "Професійний",
+        "price": "299",
+        "description": "Ідеально для зростаючого бізнесу",
+        "features": [
+          "До 10,000 SKU",
+          "5 Облікових записів",
+          "Просунутий POS + CRM",
+          "Підтримка RFID",
+          "Пріоритетна підтримка",
+          "Аналітика в реальному часі",
+          "Кілька локацій"
+        ],
+        "highlighted": true,
+        "cta": "Почати Безкоштовну Пробну Версію"
+      },
+      {
+        "id": "enterprise",
+        "name": "Корпоративний",
+        "price": "За запитом",
+        "description": "Для великомасштабних операцій",
+        "features": [
+          "Необмежені SKU",
+          "Необмежені користувачі",
+          "Повний набір функцій",
+          "Виділена підтримка",
+          "Індивідуальні інтеграції",
+          "Варіант on-premise",
+          "Гарантія SLA"
+        ],
+        "highlighted": false,
+        "cta": "Зв'язатися з відділом продажів"
+      }
+    ]
+  },
+  "pl": {
+    "title": "Proste, Przejrzyste Ceny",
+    "subtitle": "Wybierz plan dopasowany do potrzeb Twojego biznesu",
+    "currency": "$",
+    "period": "/miesiąc",
+    "plans": [
+      {
+        "id": "starter",
+        "name": "Startowy",
+        "price": "99",
+        "description": "Idealny dla małych sklepów tekstylnych",
+        "features": [
+          "Do 1,000 SKU",
+          "1 Konto użytkownika",
+          "Podstawowy POS",
+          "Wsparcie email",
+          "Miesięczne raporty"
+        ],
+        "highlighted": false,
+        "cta": "Rozpocznij"
+      },
+      {
+        "id": "professional",
+        "name": "Profesjonalny",
+        "price": "299",
+        "description": "Idealny dla rozwijających się firm",
+        "features": [
+          "Do 10,000 SKU",
+          "5 Kont użytkowników",
+          "Zaawansowany POS + CRM",
+          "Obsługa RFID",
+          "Priorytetowe wsparcie",
+          "Analityka w czasie rzeczywistym",
+          "Wiele lokalizacji"
+        ],
+        "highlighted": true,
+        "cta": "Rozpocznij Bezpłatny Okres Próbny"
+      },
+      {
+        "id": "enterprise",
+        "name": "Korporacyjny",
+        "price": "Na zamówienie",
+        "description": "Dla operacji na dużą skalę",
+        "features": [
+          "Nieograniczone SKU",
+          "Nieograniczeni użytkownicy",
+          "Pełny zestaw funkcji",
+          "Dedykowane wsparcie",
+          "Niestandardowe integracje",
+          "Opcja on-premise",
+          "Gwarancja SLA"
+        ],
+        "highlighted": false,
+        "cta": "Skontaktuj się z działem sprzedaży"
+      }
+    ]
+  },
+  "ro": {
+    "title": "Prețuri Simple, Transparente",
+    "subtitle": "Alegeți planul care se potrivește nevoilor afacerii dvs.",
+    "currency": "$",
+    "period": "/lună",
+    "plans": [
+      {
+        "id": "starter",
+        "name": "Începător",
+        "price": "99",
+        "description": "Perfect pentru magazinele textile mici",
+        "features": [
+          "Până la 1,000 SKU",
+          "1 Cont de utilizator",
+          "POS de bază",
+          "Suport email",
+          "Rapoarte lunare"
+        ],
+        "highlighted": false,
+        "cta": "Începeți"
+      },
+      {
+        "id": "professional",
+        "name": "Profesional",
+        "price": "299",
+        "description": "Ideal pentru afaceri în creștere",
+        "features": [
+          "Până la 10,000 SKU",
+          "5 Conturi de utilizator",
+          "POS avansat + CRM",
+          "Suport RFID",
+          "Suport prioritar",
+          "Analiză în timp real",
+          "Mai multe locații"
+        ],
+        "highlighted": true,
+        "cta": "Începeți Perioada de Probă Gratuită"
+      },
+      {
+        "id": "enterprise",
+        "name": "Enterprise",
+        "price": "Personalizat",
+        "description": "Pentru operațiuni la scară largă",
+        "features": [
+          "SKU nelimitate",
+          "Utilizatori nelimitați",
+          "Pachet complet de funcții",
+          "Suport dedicat",
+          "Integrări personalizate",
+          "Opțiune on-premise",
+          "Garanție SLA"
+        ],
+        "highlighted": false,
+        "cta": "Contactați Vânzările"
+      }
+    ]
+  }
+}

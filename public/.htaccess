@@ -1,0 +1,77 @@
+# TexaCore Hosting Configuration for Hostinger
+# Enable URL rewriting
+RewriteEngine On
+
+# Prevent directory listing
+Options -Indexes
+
+# Allow access to data folder
+<IfModule mod_headers.c>
+    # CORS headers for API
+    <FilesMatch "\.(php|json)$">
+        Header set Access-Control-Allow-Origin "*"
+        Header set Access-Control-Allow-Methods "GET, POST, PUT, DELETE, OPTIONS"
+        Header set Access-Control-Allow-Headers "Content-Type, Authorization"
+    </FilesMatch>
+</IfModule>
+
+# Serve JSON files with correct MIME type
+<FilesMatch "\.json$">
+    Header set Content-Type "application/json; charset=utf-8"
+</FilesMatch>
+
+# PHP settings for API
+<IfModule mod_php8.c>
+    php_value upload_max_filesize 10M
+    php_value post_max_size 10M
+</IfModule>
+
+# Protect config file
+<Files "config.php">
+    Order Allow,Deny
+    Deny from all
+</Files>
+
+# Protect backup folder
+<IfModule mod_rewrite.c>
+    RewriteRule ^data/backups/ - [F,L]
+</IfModule>
+
+# React SPA routing - send all non-file requests to index.html
+<IfModule mod_rewrite.c>
+    RewriteBase /
+    
+    # Don't rewrite API requests
+    RewriteRule ^api/ - [L]
+    
+    # Don't rewrite data folder
+    RewriteRule ^data/ - [L]
+    
+    # Don't rewrite uploads folder
+    RewriteRule ^uploads/ - [L]
+    
+    # Don't rewrite files and directories that exist
+    RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteCond %{REQUEST_FILENAME} !-d
+    
+    # Send everything else to index.html
+    RewriteRule . /index.html [L]
+</IfModule>
+
+# Caching for static assets
+<IfModule mod_expires.c>
+    ExpiresActive On
+    ExpiresByType image/jpeg "access plus 1 year"
+    ExpiresByType image/png "access plus 1 year"
+    ExpiresByType image/gif "access plus 1 year"
+    ExpiresByType image/webp "access plus 1 year"
+    ExpiresByType image/svg+xml "access plus 1 year"
+    ExpiresByType text/css "access plus 1 month"
+    ExpiresByType application/javascript "access plus 1 month"
+    ExpiresByType application/json "access plus 1 hour"
+</IfModule>
+
+# Gzip compression
+<IfModule mod_deflate.c>
+    AddOutputFilterByType DEFLATE text/html text/plain text/css application/json application/javascript text/xml application/xml
+</IfModule>

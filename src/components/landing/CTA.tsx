@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { useLanguage } from "./LanguageContext";
+import { useSiteData, CTAContent } from "@/hooks/useSiteData";
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Sparkles, CheckCircle2, Play, Phone } from "lucide-react";
 import { TrialSignupModal } from "./TrialSignupModal";
@@ -8,8 +9,18 @@ import { TrialSignupModal } from "./TrialSignupModal";
 export function CTA() {
   const { t, dir, language } = useLanguage();
   const [isTrialModalOpen, setIsTrialModalOpen] = useState(false);
+  
+  // Load CTA content from CMS
+  const { data: ctaData } = useSiteData<CTAContent>('cta', language);
 
-  const benefits = [
+  // Use CMS data or fallback to translations
+  const badge = ctaData?.badge || t("cta.digitalTransformation");
+  const title = ctaData?.title || t("cta.ready");
+  const subtitle = ctaData?.subtitle || t("cta.joinCompanies");
+  const primaryButton = ctaData?.primaryButton || t("cta.button");
+  const secondaryButton = ctaData?.secondaryButton || t("cta.contactSales");
+  
+  const benefits = ctaData?.benefits || [
     t("cta.benefit1"),
     t("cta.benefit2"),
     t("cta.benefit3")
@@ -28,15 +39,15 @@ export function CTA() {
           <div className="text-center mb-10">
             <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/10 backdrop-blur-sm text-white/90 text-sm font-semibold mb-6">
               <Sparkles className="w-4 h-4 text-texafab-gold" />
-              {t("cta.digitalTransformation")}
+              {badge}
             </div>
             
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-black text-white mb-4 leading-tight">
-              {t("cta.ready")}
+              {title}
             </h2>
             
             <p className="text-lg md:text-xl text-white/80 mb-8 max-w-2xl mx-auto leading-relaxed">
-              {t("cta.joinCompanies")}
+              {subtitle}
             </p>
             
             {/* Benefits */}
@@ -56,13 +67,13 @@ export function CTA() {
               onClick={() => setIsTrialModalOpen(true)}
               className="group h-14 px-8 bg-white text-texafab-emerald hover:bg-white/95 text-base font-bold shadow-xl shadow-black/20 hover:shadow-black/30 transition-all duration-300 rounded-xl"
             >
-              {t("cta.button")}
+              {primaryButton}
               <ArrowRight className={`w-5 h-5 transition-transform group-hover:translate-x-1 ${dir === "rtl" ? "rotate-180 me-2" : "ms-2"}`} />
             </Button>
             <Link to="/contact">
               <Button variant="outline" className="group h-14 px-8 border-2 border-white/30 text-white hover:bg-white/10 hover:border-white/50 text-base font-semibold rounded-xl backdrop-blur-sm transition-all duration-300">
                 <Phone className="w-4 h-4 me-2" />
-                {t("cta.contactSales")}
+                {secondaryButton}
               </Button>
             </Link>
           </div>

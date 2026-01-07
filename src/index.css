@@ -2,6 +2,9 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Import RTL styles */
+@import './styles/rtl.css';
+
 @layer base {
     :root {
       --background: 60 10% 98%; /* Cream-ish white */

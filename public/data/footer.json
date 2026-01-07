@@ -1,0 +1,275 @@
+{
+  "en": {
+    "companyName": "TexaCore",
+    "tagline": "Enterprise ERP for Textile Industry",
+    "description": "The leading ERP solution for textile wholesalers and retailers. Trusted by 500+ businesses in 35+ countries.",
+    "contact": {
+      "email": "info@texacore.com",
+      "phone": "+353 1 234 5678",
+      "address": "Dublin, Ireland"
+    },
+    "links": {
+      "product": [
+        { "label": "Features", "href": "/features" },
+        { "label": "Pricing", "href": "/pricing" },
+        { "label": "Solutions", "href": "/solutions" },
+        { "label": "Industries", "href": "/industries" }
+      ],
+      "company": [
+        { "label": "About Us", "href": "/about" },
+        { "label": "Contact", "href": "/contact" },
+        { "label": "Careers", "href": "/careers" }
+      ],
+      "resources": [
+        { "label": "Documentation", "href": "/docs" },
+        { "label": "Blog", "href": "/blog" },
+        { "label": "FAQ", "href": "/faq" }
+      ],
+      "legal": [
+        { "label": "Privacy Policy", "href": "/privacy" },
+        { "label": "Terms of Service", "href": "/terms" }
+      ]
+    },
+    "social": {
+      "linkedin": "https://linkedin.com/company/texacore",
+      "twitter": "https://twitter.com/texacore",
+      "facebook": "https://facebook.com/texacore"
+    },
+    "copyright": "© 2024 TexaCore. All rights reserved.",
+    "developedBy": "Developed by Next Revolution for Software Development"
+  },
+  "ar": {
+    "companyName": "TexaCore",
+    "tagline": "نظام ERP المتكامل لصناعة الأقمشة",
+    "description": "الحل الرائد لنظام ERP لتجار الجملة والتجزئة في الأقمشة. موثوق به من أكثر من 500 شركة في أكثر من 35 دولة.",
+    "contact": {
+      "email": "info@texacore.com",
+      "phone": "+353 1 234 5678",
+      "address": "دبلن، أيرلندا"
+    },
+    "links": {
+      "product": [
+        { "label": "الميزات", "href": "/features" },
+        { "label": "الأسعار", "href": "/pricing" },
+        { "label": "الحلول", "href": "/solutions" },
+        { "label": "الصناعات", "href": "/industries" }
+      ],
+      "company": [
+        { "label": "من نحن", "href": "/about" },
+        { "label": "اتصل بنا", "href": "/contact" },
+        { "label": "الوظائف", "href": "/careers" }
+      ],
+      "resources": [
+        { "label": "التوثيق", "href": "/docs" },
+        { "label": "المدونة", "href": "/blog" },
+        { "label": "الأسئلة الشائعة", "href": "/faq" }
+      ],
+      "legal": [
+        { "label": "سياسة الخصوصية", "href": "/privacy" },
+        { "label": "شروط الخدمة", "href": "/terms" }
+      ]
+    },
+    "social": {
+      "linkedin": "https://linkedin.com/company/texacore",
+      "twitter": "https://twitter.com/texacore",
+      "facebook": "https://facebook.com/texacore"
+    },
+    "copyright": "© 2024 TexaCore. جميع الحقوق محفوظة.",
+    "developedBy": "تم التطوير بواسطة Next Revolution لتطوير البرمجيات"
+  },
+  "tr": {
+    "companyName": "TexaCore",
+    "tagline": "Tekstil Endüstrisi için Kurumsal ERP",
+    "description": "Tekstil toptancıları ve perakendecileri için önde gelen ERP çözümü. 35+ ülkede 500+ işletme tarafından güveniliyor.",
+    "contact": {
+      "email": "info@texacore.com",
+      "phone": "+353 1 234 5678",
+      "address": "Dublin, İrlanda"
+    },
+    "links": {
+      "product": [
+        { "label": "Özellikler", "href": "/features" },
+        { "label": "Fiyatlandırma", "href": "/pricing" },
+        { "label": "Çözümler", "href": "/solutions" },
+        { "label": "Endüstriler", "href": "/industries" }
+      ],
+      "company": [
+        { "label": "Hakkımızda", "href": "/about" },
+        { "label": "İletişim", "href": "/contact" },
+        { "label": "Kariyer", "href": "/careers" }
+      ],
+      "resources": [
+        { "label": "Dokümantasyon", "href": "/docs" },
+        { "label": "Blog", "href": "/blog" },
+        { "label": "SSS", "href": "/faq" }
+      ],
+      "legal": [
+        { "label": "Gizlilik Politikası", "href": "/privacy" },
+        { "label": "Hizmet Şartları", "href": "/terms" }
+      ]
+    },
+    "social": {
+      "linkedin": "https://linkedin.com/company/texacore",
+      "twitter": "https://twitter.com/texacore",
+      "facebook": "https://facebook.com/texacore"
+    },
+    "copyright": "© 2024 TexaCore. Tüm hakları saklıdır.",
+    "developedBy": "Next Revolution for Software Development tarafından geliştirildi"
+  },
+  "ru": {
+    "companyName": "TexaCore",
+    "tagline": "Корпоративная ERP для Текстильной Индустрии",
+    "description": "Ведущее ERP-решение для текстильных оптовиков и розничных продавцов. Доверие 500+ компаний в 35+ странах.",
+    "contact": {
+      "email": "info@texacore.com",
+      "phone": "+353 1 234 5678",
+      "address": "Дублин, Ирландия"
+    },
+    "links": {
+      "product": [
+        { "label": "Функции", "href": "/features" },
+        { "label": "Цены", "href": "/pricing" },
+        { "label": "Решения", "href": "/solutions" },
+        { "label": "Отрасли", "href": "/industries" }
+      ],
+      "company": [
+        { "label": "О нас", "href": "/about" },
+        { "label": "Контакты", "href": "/contact" },
+        { "label": "Карьера", "href": "/careers" }
+      ],
+      "resources": [
+        { "label": "Документация", "href": "/docs" },
+        { "label": "Блог", "href": "/blog" },
+        { "label": "FAQ", "href": "/faq" }
+      ],
+      "legal": [
+        { "label": "Политика конфиденциальности", "href": "/privacy" },
+        { "label": "Условия использования", "href": "/terms" }
+      ]
+    },
+    "social": {
+      "linkedin": "https://linkedin.com/company/texacore",
+      "twitter": "https://twitter.com/texacore",
+      "facebook": "https://facebook.com/texacore"
+    },
+    "copyright": "© 2024 TexaCore. Все права защищены.",
+    "developedBy": "Разработано Next Revolution for Software Development"
+  },
+  "uk": {
+    "companyName": "TexaCore",
+    "tagline": "Корпоративна ERP для Текстильної Індустрії",
+    "description": "Провідне ERP-рішення для текстильних оптовиків та роздрібних продавців. Довіра 500+ компаній у 35+ країнах.",
+    "contact": {
+      "email": "info@texacore.com",
+      "phone": "+353 1 234 5678",
+      "address": "Дублін, Ірландія"
+    },
+    "links": {
+      "product": [
+        { "label": "Функції", "href": "/features" },
+        { "label": "Ціни", "href": "/pricing" },
+        { "label": "Рішення", "href": "/solutions" },
+        { "label": "Галузі", "href": "/industries" }
+      ],
+      "company": [
+        { "label": "Про нас", "href": "/about" },
+        { "label": "Контакти", "href": "/contact" },
+        { "label": "Кар'єра", "href": "/careers" }
+      ],
+      "resources": [
+        { "label": "Документація", "href": "/docs" },
+        { "label": "Блог", "href": "/blog" },
+        { "label": "FAQ", "href": "/faq" }
+      ],
+      "legal": [
+        { "label": "Політика конфіденційності", "href": "/privacy" },
+        { "label": "Умови використання", "href": "/terms" }
+      ]
+    },
+    "social": {
+      "linkedin": "https://linkedin.com/company/texacore",
+      "twitter": "https://twitter.com/texacore",
+      "facebook": "https://facebook.com/texacore"
+    },
+    "copyright": "© 2024 TexaCore. Усі права захищені.",
+    "developedBy": "Розроблено Next Revolution for Software Development"
+  },
+  "pl": {
+    "companyName": "TexaCore",
+    "tagline": "Korporacyjny ERP dla Przemysłu Tekstylnego",
+    "description": "Wiodące rozwiązanie ERP dla hurtowników i detalistów tekstylnych. Zaufanie 500+ firm w 35+ krajach.",
+    "contact": {
+      "email": "info@texacore.com",
+      "phone": "+353 1 234 5678",
+      "address": "Dublin, Irlandia"
+    },
+    "links": {
+      "product": [
+        { "label": "Funkcje", "href": "/features" },
+        { "label": "Cennik", "href": "/pricing" },
+        { "label": "Rozwiązania", "href": "/solutions" },
+        { "label": "Branże", "href": "/industries" }
+      ],
+      "company": [
+        { "label": "O nas", "href": "/about" },
+        { "label": "Kontakt", "href": "/contact" },
+        { "label": "Kariera", "href": "/careers" }
+      ],
+      "resources": [
+        { "label": "Dokumentacja", "href": "/docs" },
+        { "label": "Blog", "href": "/blog" },
+        { "label": "FAQ", "href": "/faq" }
+      ],
+      "legal": [
+        { "label": "Polityka prywatności", "href": "/privacy" },
+        { "label": "Warunki korzystania", "href": "/terms" }
+      ]
+    },
+    "social": {
+      "linkedin": "https://linkedin.com/company/texacore",
+      "twitter": "https://twitter.com/texacore",
+      "facebook": "https://facebook.com/texacore"
+    },
+    "copyright": "© 2024 TexaCore. Wszelkie prawa zastrzeżone.",
+    "developedBy": "Opracowane przez Next Revolution for Software Development"
+  },
+  "ro": {
+    "companyName": "TexaCore",
+    "tagline": "ERP Enterprise pentru Industria Textilă",
+    "description": "Soluția ERP lider pentru angrosiști și retaileri textili. Încrederea a peste 500 de companii din peste 35 de țări.",
+    "contact": {
+      "email": "info@texacore.com",
+      "phone": "+353 1 234 5678",
+      "address": "Dublin, Irlanda"
+    },
+    "links": {
+      "product": [
+        { "label": "Funcții", "href": "/features" },
+        { "label": "Prețuri", "href": "/pricing" },
+        { "label": "Soluții", "href": "/solutions" },
+        { "label": "Industrii", "href": "/industries" }
+      ],
+      "company": [
+        { "label": "Despre Noi", "href": "/about" },
+        { "label": "Contact", "href": "/contact" },
+        { "label": "Cariere", "href": "/careers" }
+      ],
+      "resources": [
+        { "label": "Documentație", "href": "/docs" },
+        { "label": "Blog", "href": "/blog" },
+        { "label": "FAQ", "href": "/faq" }
+      ],
+      "legal": [
+        { "label": "Politica de confidențialitate", "href": "/privacy" },
+        { "label": "Termeni și condiții", "href": "/terms" }
+      ]
+    },
+    "social": {
+      "linkedin": "https://linkedin.com/company/texacore",
+      "twitter": "https://twitter.com/texacore",
+      "facebook": "https://facebook.com/texacore"
+    },
+    "copyright": "© 2024 TexaCore. Toate drepturile rezervate.",
+    "developedBy": "Dezvoltat de Next Revolution for Software Development"
+  }
+}

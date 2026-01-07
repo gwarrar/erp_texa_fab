@@ -27,12 +27,21 @@ export function TrialSignupModal({ isOpen, onClose }: TrialSignupModalProps) {
   const { language, dir } = useLanguage();
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSuccess, setIsSuccess] = useState(false);
+  const [formData, setFormData] = useState({
+    firstName: '',
+    lastName: '',
+    email: '',
+    phone: '',
+    companyName: '',
+    companySize: '',
+  });
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
     
-    // Simulate API call
+    // This form will be connected to your SaaS backend later
+    // For now, simulate submission and show success
     await new Promise(resolve => setTimeout(resolve, 1500));
     
     setIsSubmitting(false);
@@ -41,6 +50,7 @@ export function TrialSignupModal({ isOpen, onClose }: TrialSignupModalProps) {
     // Reset after 3 seconds
     setTimeout(() => {
       setIsSuccess(false);
+      setFormData({ firstName: '', lastName: '', email: '', phone: '', companyName: '', companySize: '' });
       onClose();
     }, 3000);
   };
@@ -86,13 +96,23 @@ export function TrialSignupModal({ isOpen, onClose }: TrialSignupModalProps) {
                   <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">
                     {language === "ar" ? "الاسم الأول" : "First Name"}
                   </label>
-                  <Input placeholder={language === "ar" ? "أحمد" : "John"} required />
+                  <Input 
+                    placeholder={language === "ar" ? "أحمد" : "John"} 
+                    required 
+                    value={formData.firstName}
+                    onChange={(e) => setFormData({...formData, firstName: e.target.value})}
+                  />
                 </div>
                 <div>
                   <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">
                     {language === "ar" ? "الاسم الأخير" : "Last Name"}
                   </label>
-                  <Input placeholder={language === "ar" ? "محمد" : "Doe"} required />
+                  <Input 
+                    placeholder={language === "ar" ? "محمد" : "Doe"} 
+                    required 
+                    value={formData.lastName}
+                    onChange={(e) => setFormData({...formData, lastName: e.target.value})}
+                  />
                 </div>
               </div>
 
@@ -100,28 +120,44 @@ export function TrialSignupModal({ isOpen, onClose }: TrialSignupModalProps) {
                 <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">
                   {language === "ar" ? "البريد الإلكتروني" : "Email"}
                 </label>
-                <Input type="email" placeholder="email@company.com" required />
+                <Input 
+                  type="email" 
+                  placeholder="email@company.com" 
+                  required 
+                  value={formData.email}
+                  onChange={(e) => setFormData({...formData, email: e.target.value})}
+                />
               </div>
 
               <div>
                 <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">
                   {language === "ar" ? "رقم الهاتف" : "Phone"}
                 </label>
-                <Input type="tel" placeholder="+353 83 081 3305" />
+                <Input 
+                  type="tel" 
+                  placeholder="+353 83 081 3305" 
+                  value={formData.phone}
+                  onChange={(e) => setFormData({...formData, phone: e.target.value})}
+                />
               </div>
 
               <div>
                 <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">
                   {language === "ar" ? "اسم الشركة" : "Company Name"}
                 </label>
-                <Input placeholder={language === "ar" ? "شركة الأقمشة" : "Textile Co."} required />
+                <Input 
+                  placeholder={language === "ar" ? "شركة الأقمشة" : "Textile Co."} 
+                  required 
+                  value={formData.companyName}
+                  onChange={(e) => setFormData({...formData, companyName: e.target.value})}
+                />
               </div>
 
               <div>
                 <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">
                   {language === "ar" ? "حجم الشركة" : "Company Size"}
                 </label>
-                <Select>
+                <Select value={formData.companySize} onValueChange={(value) => setFormData({...formData, companySize: value})}>
                   <SelectTrigger>
                     <SelectValue placeholder={language === "ar" ? "اختر حجم الشركة" : "Select company size"} />
                   </SelectTrigger>

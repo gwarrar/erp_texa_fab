@@ -1,0 +1,126 @@
+{
+  "en": {
+    "title": "Choose Your Plan",
+    "subtitle": "Simple, transparent pricing for businesses of all sizes",
+    "plans": [
+      {
+        "id": "starter",
+        "name": "Starter",
+        "price": 49,
+        "currency": "$",
+        "period": "month",
+        "description": "Perfect for small fabric shops",
+        "features": [
+          "Up to 5,000 rolls",
+          "2 Users",
+          "Basic reporting",
+          "Email support",
+          "1 Warehouse"
+        ],
+        "isPopular": false,
+        "ctaText": "Get Started"
+      },
+      {
+        "id": "professional",
+        "name": "Professional",
+        "price": 149,
+        "currency": "$",
+        "period": "month",
+        "description": "For growing businesses",
+        "features": [
+          "Up to 50,000 rolls",
+          "10 Users",
+          "Advanced reporting",
+          "Priority support",
+          "5 Warehouses",
+          "E-Commerce integration",
+          "API Access"
+        ],
+        "isPopular": true,
+        "ctaText": "Start Free Trial"
+      },
+      {
+        "id": "enterprise",
+        "name": "Enterprise",
+        "price": 399,
+        "currency": "$",
+        "period": "month",
+        "description": "For large enterprises",
+        "features": [
+          "Unlimited rolls",
+          "Unlimited users",
+          "Custom reporting",
+          "24/7 support",
+          "Unlimited warehouses",
+          "Full E-Commerce",
+          "Custom integrations",
+          "On-premise option"
+        ],
+        "isPopular": false,
+        "ctaText": "Contact Sales"
+      }
+    ]
+  },
+  "ar": {
+    "title": "اختر خطتك",
+    "subtitle": "أسعار بسيطة وشفافة لجميع أحجام الأعمال",
+    "plans": [
+      {
+        "id": "starter",
+        "name": "المبتدئ",
+        "price": 49,
+        "currency": "$",
+        "period": "شهر",
+        "description": "مثالي لمتاجر الأقمشة الصغيرة",
+        "features": [
+          "حتى 5,000 رولة",
+          "2 مستخدمين",
+          "تقارير أساسية",
+          "دعم بالبريد الإلكتروني",
+          "مخزن واحد"
+        ],
+        "isPopular": false,
+        "ctaText": "ابدأ الآن"
+      },
+      {
+        "id": "professional",
+        "name": "المحترف",
+        "price": 149,
+        "currency": "$",
+        "period": "شهر",
+        "description": "للأعمال النامية",
+        "features": [
+          "حتى 50,000 رولة",
+          "10 مستخدمين",
+          "تقارير متقدمة",
+          "دعم أولوية",
+          "5 مخازن",
+          "تكامل التجارة الإلكترونية",
+          "وصول API"
+        ],
+        "isPopular": true,
+        "ctaText": "ابدأ تجربة مجانية"
+      },
+      {
+        "id": "enterprise",
+        "name": "المؤسسات",
+        "price": 399,
+        "currency": "$",
+        "period": "شهر",
+        "description": "للشركات الكبيرة",
+        "features": [
+          "رولات غير محدودة",
+          "مستخدمين غير محدودين",
+          "تقارير مخصصة",
+          "دعم 24/7",
+          "مخازن غير محدودة",
+          "تجارة إلكترونية كاملة",
+          "تكاملات مخصصة",
+          "خيار داخلي"
+        ],
+        "isPopular": false,
+        "ctaText": "تواصل مع المبيعات"
+      }
+    ]
+  }
+}

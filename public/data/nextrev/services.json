@@ -1,0 +1,98 @@
+{
+  "en": {
+    "title": "Our Services",
+    "subtitle": "Comprehensive software development services",
+    "items": [
+      {
+        "id": "web-dev",
+        "icon": "Globe",
+        "title": "Web Development",
+        "description": "Custom web applications built with modern technologies. React, Vue, Angular, and more.",
+        "href": "/next-revolution/services#web-dev"
+      },
+      {
+        "id": "mobile-dev",
+        "icon": "Smartphone",
+        "title": "Mobile Development",
+        "description": "Native and cross-platform mobile applications. iOS, Android, React Native, Flutter.",
+        "href": "/next-revolution/services#mobile-dev"
+      },
+      {
+        "id": "cloud-services",
+        "icon": "Cloud",
+        "title": "Cloud Services",
+        "description": "Cloud architecture and deployment solutions. AWS, Azure, Google Cloud.",
+        "href": "/next-revolution/services#cloud-services"
+      },
+      {
+        "id": "it-consulting",
+        "icon": "Lightbulb",
+        "title": "IT Consulting",
+        "description": "Strategic technology consulting for your business. Digital transformation experts.",
+        "href": "/next-revolution/services#it-consulting"
+      },
+      {
+        "id": "erp-solutions",
+        "icon": "Building2",
+        "title": "ERP Solutions",
+        "description": "Enterprise resource planning systems. Custom ERP development and integration.",
+        "href": "/next-revolution/services#erp-solutions"
+      },
+      {
+        "id": "ecommerce",
+        "icon": "ShoppingCart",
+        "title": "E-Commerce",
+        "description": "Online store and marketplace development. Full-stack e-commerce solutions.",
+        "href": "/next-revolution/services#ecommerce"
+      }
+    ]
+  },
+  "ar": {
+    "title": "خدماتنا",
+    "subtitle": "خدمات تطوير برمجيات شاملة",
+    "items": [
+      {
+        "id": "web-dev",
+        "icon": "Globe",
+        "title": "تطوير الويب",
+        "description": "تطبيقات ويب مخصصة بأحدث التقنيات. React، Vue، Angular، والمزيد.",
+        "href": "/next-revolution/services#web-dev"
+      },
+      {
+        "id": "mobile-dev",
+        "icon": "Smartphone",
+        "title": "تطوير الموبايل",
+        "description": "تطبيقات جوال أصلية ومتعددة المنصات. iOS، Android، React Native، Flutter.",
+        "href": "/next-revolution/services#mobile-dev"
+      },
+      {
+        "id": "cloud-services",
+        "icon": "Cloud",
+        "title": "الخدمات السحابية",
+        "description": "حلول الهندسة والنشر السحابية. AWS، Azure، Google Cloud.",
+        "href": "/next-revolution/services#cloud-services"
+      },
+      {
+        "id": "it-consulting",
+        "icon": "Lightbulb",
+        "title": "استشارات تقنية",
+        "description": "استشارات تقنية استراتيجية لأعمالك. خبراء التحول الرقمي.",
+        "href": "/next-revolution/services#it-consulting"
+      },
+      {
+        "id": "erp-solutions",
+        "icon": "Building2",
+        "title": "حلول ERP",
+        "description": "أنظمة تخطيط موارد المؤسسات. تطوير وتكامل ERP مخصص.",
+        "href": "/next-revolution/services#erp-solutions"
+      },
+      {
+        "id": "ecommerce",
+        "icon": "ShoppingCart",
+        "title": "التجارة الإلكترونية",
+        "description": "تطوير المتاجر والأسواق الإلكترونية. حلول تجارة إلكترونية متكاملة.",
+        "href": "/next-revolution/services#ecommerce"
+      }
+    ]
+  }
+}

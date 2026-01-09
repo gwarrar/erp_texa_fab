@@ -1,8 +1,9 @@
-import React, { useState } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import { Link } from "react-router-dom";
 import { useLanguage } from "./LanguageContext";
 import { getText, landingPageTranslations as t, pricingPageTranslations as pt } from "@/lib/translations/pages";
 import { useSiteData, PricingContent } from "@/hooks/useSiteData";
+import { cms, type Language } from "@/lib/cms";
 import { Button } from "@/components/ui/button";
 import { Check, Sparkles, ArrowRight, Zap, Crown, Building, Rocket, ShoppingCart, Shield, Server, Clock, Gift, Users, Globe, Cpu, TrendingUp, Heart, DollarSign, Target, Building2, Briefcase, User, Smartphone, Warehouse, Truck } from "lucide-react";
 import { Card } from "@/components/ui/card";
@@ -27,20 +28,45 @@ const currencyConfig: Record<string, { symbol: string; code: string; rate: numbe
 };
 
 export function Pricing() {
-  const { language, dir } = useLanguage();
+  const { language, dir, siteId } = useLanguage();
   const [isTrialModalOpen, setIsTrialModalOpen] = useState(false);
   const [selectedCurrency, setSelectedCurrency] = useState("USD");
+  const [supabasePricing, setSupabasePricing] = useState<any[]>([]);
+  const loadedRef = useRef<string | null>(null);
   
-  // Load pricing from CMS
+  // Load pricing from CMS (JSON fallback)
   const { data: cmsPricing } = useSiteData<PricingContent>('pricing', language);
+  
+  // Load pricing from Supabase (with deduplication)
+  useEffect(() => {
+    const cacheKey = `${siteId}-${language}`;
+    if (loadedRef.current === cacheKey) return;
+    
+    const loadSupabaseData = async () => {
+      try {
+        const cmsLanguage = (language === 'ar' || language === 'en' || language === 'ru') ? language : 'en';
+        const data = await cms.pricing.getAll(siteId as any, cmsLanguage as Language);
+        if (data && data.length > 0) {
+          setSupabasePricing(data);
+          loadedRef.current = cacheKey;
+        }
+      } catch (error) {
+        console.log('Using JSON fallback for pricing data');
+      }
+    };
+    loadSupabaseData();
+  }, [language, siteId]);
 
   // Currency based on selected currency (default USD)
   const currencyInfo = currencyConfig[selectedCurrency] || currencyConfig.USD;
   const currency = cmsPricing?.currency || currencyInfo.symbol;
   
-  // Section titles from CMS
+  // Section titles from CMS or Supabase
   const sectionTitle = cmsPricing?.title || getText(pt.mainTitle, language);
   const sectionSubtitle = cmsPricing?.subtitle || getText(pt.subtitle, language);
+  
+  // Use Supabase pricing if available
+  const hasSupabasePlans = supabasePricing.length > 0;
 
   // Convert USD price to local currency
   const convertPrice = (usdPrice: number) => {
@@ -252,7 +278,24 @@ export function Pricing() {
 
         {/* 3 Plans Grid */}
         <div className="grid md:grid-cols-3 gap-6 max-w-6xl mx-auto items-stretch">
-          {plans.map((plan, i) => {
+          {(hasSupabasePlans ? supabasePricing.map((sp, i) => ({
+            name: sp.name,
+            priceUSD: sp.price,
+            desc: sp.description,
+            target: '',
+            targetIcon: User,
+            businessFeatures: sp.features?.filter((f: string) => f) || [],
+            digitalFeatures: [],
+            aiFeatures: [],
+            mobileFeatures: [],
+            returns: null,
+            cta: getText(t.ctaDemo, language),
+            popular: sp.is_popular,
+            hasEcommerce: false,
+            icon: Rocket,
+            gradient: "from-blue-50 to-white",
+            iconBg: "from-blue-500 to-blue-600",
+          })) : plans).map((plan, i) => {
             const Icon = plan.icon;
             const TargetIcon = plan.targetIcon;
             const businessFeatures = plan.businessFeatures;

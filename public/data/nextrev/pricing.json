@@ -1,0 +1,112 @@
+{
+  "en": {
+    "title": "Our Services Pricing",
+    "subtitle": "Flexible pricing for your software needs",
+    "currency": "USD",
+    "plans": [
+      {
+        "id": "startup",
+        "name": "Startup",
+        "price": 5000,
+        "period": "project",
+        "description": "For startups and MVPs",
+        "features": [
+          "Basic web/mobile app",
+          "3 months support",
+          "Source code included",
+          "Basic documentation",
+          "Email support"
+        ],
+        "highlighted": false
+      },
+      {
+        "id": "business",
+        "name": "Business",
+        "price": 15000,
+        "period": "project",
+        "description": "For established businesses",
+        "features": [
+          "Complex applications",
+          "6 months support",
+          "API integrations",
+          "Full documentation",
+          "Priority support",
+          "Training sessions"
+        ],
+        "highlighted": true
+      },
+      {
+        "id": "enterprise",
+        "name": "Enterprise",
+        "price": 0,
+        "priceLabel": "Custom",
+        "period": "project",
+        "description": "For large scale projects",
+        "features": [
+          "Custom solutions",
+          "Dedicated team",
+          "Long-term partnership",
+          "24/7 support",
+          "On-site consultation",
+          "Custom SLA"
+        ],
+        "highlighted": false
+      }
+    ]
+  },
+  "ar": {
+    "title": "أسعار خدماتنا",
+    "subtitle": "أسعار مرنة لاحتياجاتك البرمجية",
+    "currency": "USD",
+    "plans": [
+      {
+        "id": "startup",
+        "name": "الشركات الناشئة",
+        "price": 5000,
+        "period": "مشروع",
+        "description": "للشركات الناشئة و MVPs",
+        "features": [
+          "تطبيق ويب/موبايل أساسي",
+          "3 أشهر دعم",
+          "الكود المصدري مضمن",
+          "توثيق أساسي",
+          "دعم بالبريد الإلكتروني"
+        ],
+        "highlighted": false
+      },
+      {
+        "id": "business",
+        "name": "الأعمال",
+        "price": 15000,
+        "period": "مشروع",
+        "description": "للشركات القائمة",
+        "features": [
+          "تطبيقات معقدة",
+          "6 أشهر دعم",
+          "تكاملات API",
+          "توثيق كامل",
+          "دعم أولوية",
+          "جلسات تدريب"
+        ],
+        "highlighted": true
+      },
+      {
+        "id": "enterprise",
+        "name": "المؤسسات",
+        "price": 0,
+        "priceLabel": "مخصص",
+        "period": "مشروع",
+        "description": "للمشاريع الكبيرة",
+        "features": [
+          "حلول مخصصة",
+          "فريق مخصص",
+          "شراكة طويلة الأمد",
+          "دعم 24/7",
+          "استشارة في الموقع",
+          "SLA مخصص"
+        ],
+        "highlighted": false
+      }
+    ]
+  }
+}

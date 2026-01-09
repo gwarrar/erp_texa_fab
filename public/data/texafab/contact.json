@@ -1,0 +1,15 @@
+{
+  "email": "support@texafab.com",
+  "phone": "+1 (555) 123-4567",
+  "whatsapp": "+1 555 123 4567",
+  "address": {
+    "en": "123 Tech Park, Innovation District, Dublin, Ireland",
+    "ar": "123 تك بارك، منطقة الابتكار، دبلن، أيرلندا"
+  },
+  "socialLinks": {
+    "facebook": "https://facebook.com/texafab",
+    "twitter": "https://twitter.com/texafab",
+    "linkedin": "https://linkedin.com/company/texafab",
+    "instagram": "https://instagram.com/texafab"
+  }
+}

@@ -1,9 +1,12 @@
 import { useState, useEffect, useCallback } from 'react';
 import { fetchData, saveData, DataFile, getLocalizedData } from '@/lib/api';
+import { cms, type SiteId, type Language } from '@/lib/cms';
 
 interface UseCMSDataOptions {
   language?: string;
   autoFetch?: boolean;
+  useSupabase?: boolean;
+  siteId?: SiteId;
 }
 
 interface UseCMSDataReturn<T> {
@@ -20,7 +23,7 @@ export function useCMSData<T>(
   file: DataFile,
   options: UseCMSDataOptions = {}
 ): UseCMSDataReturn<T> {
-  const { language = 'en', autoFetch = true } = options;
+  const { language = 'en', autoFetch = true, useSupabase = true, siteId = 'texafab' } = options;
   
   const [data, setData] = useState<T | null>(null);
   const [loading, setLoading] = useState(autoFetch);
@@ -31,18 +34,70 @@ export function useCMSData<T>(
     setError(null);
     
     try {
-      const result = await fetchData<T>(file);
-      if (result) {
-        setData(result);
+      if (useSupabase) {
+        const contentType = file.replace('.json', '').split('/').pop() || file;
+        const lang = language as Language;
+        let result: any = null;
+
+        switch (contentType) {
+          case 'hero':
+            result = await cms.hero.get(siteId, lang);
+            break;
+          case 'features':
+            result = await cms.features.getAll(siteId, lang);
+            break;
+          case 'pricing':
+            result = await cms.pricing.getAll(siteId, lang);
+            break;
+          case 'testimonials':
+            result = await cms.testimonials.getAll(siteId, lang);
+            break;
+          case 'news':
+            result = await cms.news.getAll(siteId, lang);
+            break;
+          case 'solutions':
+            result = await cms.solutions.getAll(siteId, lang);
+            break;
+          case 'faq':
+            result = await cms.faq.getAll(siteId, lang);
+            break;
+          case 'contact':
+            result = await cms.contact.get(siteId, lang);
+            break;
+          case 'chat':
+            result = await cms.chat.get(siteId);
+            break;
+          default:
+            const jsonResult = await fetchData<T>(file);
+            result = jsonResult;
+        }
+
+        if (result) {
+          setData(result as T);
+        }
       } else {
-        setError(`Failed to load ${file}`);
+        const result = await fetchData<T>(file);
+        if (result) {
+          setData(result);
+        } else {
+          setError(`Failed to load ${file}`);
+        }
       }
     } catch (err) {
-      setError(err instanceof Error ? err.message : 'Unknown error');
+      console.error('CMS fetch error:', err);
+      // Fallback to JSON on Supabase error
+      try {
+        const result = await fetchData<T>(file);
+        if (result) {
+          setData(result);
+        }
+      } catch {
+        setError(err instanceof Error ? err.message : 'Unknown error');
+      }
     } finally {
       setLoading(false);
     }
-  }, [file]);
+  }, [file, useSupabase, siteId, language]);
 
   const save = useCallback(async (newData: T): Promise<boolean> => {
     try {

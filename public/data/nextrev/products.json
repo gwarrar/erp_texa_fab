@@ -1,0 +1,86 @@
+{
+  "en": {
+    "title": "Our Products",
+    "subtitle": "Innovative software products powering businesses worldwide",
+    "items": [
+      {
+        "id": "texacore",
+        "icon": "Factory",
+        "name": "TexaCore ERP",
+        "description": "First ERP system designed specifically for fabric industry. Supports meters, rolls, colors, cutting, and complete textile workflow.",
+        "href": "/",
+        "image": "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=800&q=80",
+        "stats": {
+          "companies": "500+",
+          "countries": "25+"
+        }
+      },
+      {
+        "id": "fincore",
+        "icon": "Building",
+        "name": "FinCore Banking",
+        "description": "Next-gen banking infrastructure for financial institutions. Real-time transactions, compliance, and multi-currency support.",
+        "href": "/fincore",
+        "image": "https://images.unsplash.com/photo-1563986768494-4dee2763ff3f?w=800&q=80",
+        "stats": {
+          "banks": "100+",
+          "transactions": "$5B+"
+        }
+      },
+      {
+        "id": "dubai-stroy",
+        "icon": "HardHat",
+        "name": "Dubai Stroy",
+        "description": "Construction and interior finishing company platform. Project management and portfolio showcase.",
+        "href": "/dubai-stroy",
+        "image": "https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=800&q=80",
+        "stats": {
+          "projects": "200+",
+          "experience": "15+ years"
+        }
+      }
+    ]
+  },
+  "ar": {
+    "title": "منتجاتنا",
+    "subtitle": "منتجات برمجية مبتكرة تقود الأعمال حول العالم",
+    "items": [
+      {
+        "id": "texacore",
+        "icon": "Factory",
+        "name": "TexaCore ERP",
+        "description": "أول نظام ERP مصمم خصيصاً لصناعة الأقمشة. يدعم الأمتار، الرولات، الألوان، القص، وسير العمل الكامل للنسيج.",
+        "href": "/",
+        "image": "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=800&q=80",
+        "stats": {
+          "companies": "+500",
+          "countries": "+25"
+        }
+      },
+      {
+        "id": "fincore",
+        "icon": "Building",
+        "name": "FinCore Banking",
+        "description": "بنية تحتية مصرفية من الجيل التالي للمؤسسات المالية. معاملات فورية، امتثال، ودعم متعدد العملات.",
+        "href": "/fincore",
+        "image": "https://images.unsplash.com/photo-1563986768494-4dee2763ff3f?w=800&q=80",
+        "stats": {
+          "banks": "+100",
+          "transactions": "+$5B"
+        }
+      },
+      {
+        "id": "dubai-stroy",
+        "icon": "HardHat",
+        "name": "Dubai Stroy",
+        "description": "منصة شركة البناء والتشطيبات الداخلية. إدارة المشاريع وعرض الأعمال.",
+        "href": "/dubai-stroy",
+        "image": "https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=800&q=80",
+        "stats": {
+          "projects": "+200",
+          "experience": "+15 سنة"
+        }
+      }
+    ]
+  }
+}

@@ -1,0 +1,15 @@
+{
+  "enabled": true,
+  "provider": "whatsapp",
+  "whatsappNumber": "+971 50 123 4567",
+  "welcomeMessage": {
+    "en": "Hello! Welcome to Dubai Stroy. How can we help you?",
+    "ar": "مرحباً! أهلاً بك في دبي ستروي. كيف يمكننا مساعدتك؟",
+    "ru": "Здравствуйте! Добро пожаловать в Dubai Stroy. Чем можем помочь?"
+  },
+  "offlineMessage": {
+    "en": "We're currently offline. Please leave a message.",
+    "ar": "نحن غير متصلين حالياً. يرجى ترك رسالة.",
+    "ru": "Мы сейчас не в сети. Пожалуйста, оставьте сообщение."
+  }
+}

@@ -1,15 +1,38 @@
-import React from "react";
+import React, { useState, useEffect, useRef } from "react";
 import { Link } from "react-router-dom";
 import { useLanguage } from "./LanguageContext";
 import { useSiteData, FooterContent } from "@/hooks/useSiteData";
+import { cms, type Language } from "@/lib/cms";
 import { Facebook, Twitter, Linkedin, Instagram, Mail, Phone, MapPin, ArrowUpRight, Send } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 export function Footer() {
-  const { t, language, dir } = useLanguage();
+  const { t, language, dir, siteId } = useLanguage();
+  const [contactInfo, setContactInfo] = useState<any>(null);
+  const loadedRef = useRef<string | null>(null);
   
   // Load footer content from CMS
   const { data: cmsFooter } = useSiteData<FooterContent>('footer', language);
+  
+  // Load contact info from Supabase (with deduplication)
+  useEffect(() => {
+    const cacheKey = `${siteId}-${language}`;
+    if (loadedRef.current === cacheKey) return;
+    
+    const loadContactInfo = async () => {
+      try {
+        const cmsLanguage = (language === 'ar' || language === 'en' || language === 'ru') ? language : 'en';
+        const data = await cms.contact.get(siteId as any, cmsLanguage as Language);
+        if (data) {
+          setContactInfo(data);
+          loadedRef.current = cacheKey;
+        }
+      } catch (error) {
+        console.log('Using default contact info');
+      }
+    };
+    loadContactInfo();
+  }, [language, siteId]);
 
   const footerLinks = {
     product: [
@@ -100,17 +123,17 @@ export function Footer() {
               
               {/* Contact Info */}
               <div className="space-y-2 pt-3">
-                <a href="mailto:info@erpmax.app" className="flex items-center gap-3 text-gray-400 hover:text-white transition-colors group text-sm">
+                <a href={`mailto:${contactInfo?.email || 'info@erpmax.app'}`} className="flex items-center gap-3 text-gray-400 hover:text-white transition-colors group text-sm">
                   <Mail className="w-4 h-4 text-texafab-emerald" />
-                  <span>info@erpmax.app</span>
+                  <span>{contactInfo?.email || 'info@erpmax.app'}</span>
                 </a>
-                <a href="tel:+353830813305" className="flex items-center gap-3 text-gray-400 hover:text-white transition-colors group text-sm">
+                <a href={`tel:${contactInfo?.phone || '+353830813305'}`} className="flex items-center gap-3 text-gray-400 hover:text-white transition-colors group text-sm">
                   <Phone className="w-4 h-4 text-texafab-emerald" />
-                  <span dir="ltr">+353 83 081 3305</span>
+                  <span dir="ltr">{contactInfo?.phone || '+353 83 081 3305'}</span>
                 </a>
                 <div className="flex items-start gap-3 text-gray-400 text-sm">
                   <MapPin className="w-4 h-4 text-texafab-emerald flex-shrink-0 mt-0.5" />
-                  <span>{t("footer.location")}</span>
+                  <span>{contactInfo?.address || t("footer.location")}</span>
                 </div>
               </div>
               

@@ -1,0 +1,13 @@
+{
+  "enabled": true,
+  "provider": "whatsapp",
+  "whatsappNumber": "+1 800 555 2673",
+  "welcomeMessage": {
+    "en": "Hello! Welcome to FinCore. How can we assist you?",
+    "ar": "مرحباً! أهلاً بك في فينكور. كيف يمكننا مساعدتك؟"
+  },
+  "offlineMessage": {
+    "en": "Our team is currently unavailable. Please leave your details and we'll contact you.",
+    "ar": "فريقنا غير متاح حالياً. يرجى ترك بياناتك وسنتواصل معك."
+  }
+}

@@ -1,0 +1,34 @@
+{
+  "en": {
+    "badge": "Trusted by 100+ Banks",
+    "title": "Next-Gen Banking Infrastructure",
+    "subtitle": "Complete banking and money transfer solutions for financial institutions worldwide. Real-time transactions, built-in compliance, multi-currency support.",
+    "ctaDemo": "Request Demo",
+    "ctaTrial": "Learn More",
+    "tagline": "Powering Financial Innovation",
+    "stats": {
+      "banks": { "value": "100+", "label": "Banks & Institutions" },
+      "transactions": { "value": "$5B+", "label": "Processed Monthly" },
+      "countries": { "value": "50+", "label": "Countries Served" },
+      "uptime": { "value": "99.99%", "label": "Uptime SLA" }
+    },
+    "features": ["Real-time", "Compliance", "Multi-Currency", "API-First", "Secure", "Scalable"],
+    "image": "https://images.unsplash.com/photo-1563986768494-4dee2763ff3f?w=1200&q=80"
+  },
+  "ar": {
+    "badge": "موثوق من 100+ بنك",
+    "title": "بنية تحتية مصرفية من الجيل التالي",
+    "subtitle": "حلول مصرفية وتحويل أموال متكاملة للمؤسسات المالية حول العالم. معاملات فورية، امتثال مدمج، دعم متعدد العملات.",
+    "ctaDemo": "اطلب عرض توضيحي",
+    "ctaTrial": "اعرف المزيد",
+    "tagline": "نقود الابتكار المالي",
+    "stats": {
+      "banks": { "value": "+100", "label": "بنك ومؤسسة" },
+      "transactions": { "value": "+$5B", "label": "معاملات شهرية" },
+      "countries": { "value": "+50", "label": "دولة مخدومة" },
+      "uptime": { "value": "99.99%", "label": "ضمان التشغيل" }
+    },
+    "features": ["فوري", "متوافق", "متعدد العملات", "API أولاً", "آمن", "قابل للتوسع"],
+    "image": "https://images.unsplash.com/photo-1563986768494-4dee2763ff3f?w=1200&q=80"
+  }
+}

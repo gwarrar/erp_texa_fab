@@ -1,0 +1,36 @@
+{
+  "sectionTitle": {
+    "en": "Frequently Asked Questions",
+    "ar": "الأسئلة الشائعة"
+  },
+  "sectionSubtitle": {
+    "en": "Find answers to common questions about TexaFab",
+    "ar": "اعثر على إجابات للأسئلة الشائعة حول تكسافاب"
+  },
+  "items": [
+    {
+      "id": "faq_1",
+      "question": {
+        "en": "What makes TexaFab different from other ERP systems?",
+        "ar": "ما الذي يميز تكسافاب عن أنظمة ERP الأخرى؟"
+      },
+      "answer": {
+        "en": "TexaFab is specifically designed for the fabric industry with features like roll tracking, meter management, and color variants that other generic ERP systems don't offer.",
+        "ar": "تم تصميم تكسافاب خصيصًا لصناعة الأقمشة مع ميزات مثل تتبع الرولات وإدارة الأمتار ومتغيرات الألوان التي لا توفرها أنظمة ERP العامة الأخرى."
+      },
+      "category": "General"
+    },
+    {
+      "id": "faq_2",
+      "question": {
+        "en": "Is there a free trial available?",
+        "ar": "هل يوجد إصدار تجريبي مجاني؟"
+      },
+      "answer": {
+        "en": "Yes, we offer a 14-day free trial with full access to all features. No credit card required.",
+        "ar": "نعم، نقدم تجربة مجانية لمدة 14 يومًا مع وصول كامل لجميع الميزات. لا يلزم بطاقة ائتمان."
+      },
+      "category": "Pricing"
+    }
+  ]
+}

@@ -12,6 +12,11 @@ import { WarehouseShowcase } from "./landing/WarehouseShowcase";
 import { AnnouncementBar } from "./landing/AnnouncementBar";
 import { NewsSection } from "./landing/NewsSection";
 import { AgentsSection } from "./landing/AgentsSection";
+import { AnalyticsProvider } from "@/components/analytics/AnalyticsProvider";
+import { SEOHead } from "@/components/seo/SEOHead";
+import { CallbackWidget } from "@/components/widgets/CallbackWidget";
+import { ChatProvider } from "@/components/chat/ChatProvider";
+import { ChatWidget } from "@/components/chat/ChatWidget";
 
 function HomeContent() {
   const { dir, language } = useLanguage();
@@ -47,7 +52,19 @@ function HomeContent() {
 }
 
 function Home() {
-  return <HomeContent />;
+  return (
+    <AnalyticsProvider>
+      <ChatProvider>
+        <SEOHead 
+          title="TexaCore ERP - Enterprise Textile Management System"
+          description="Comprehensive ERP solution for textile wholesalers and retailers. RFID tracking, inventory management, and AI-powered analytics."
+        />
+        <HomeContent />
+        <CallbackWidget />
+        <ChatWidget />
+      </ChatProvider>
+    </AnalyticsProvider>
+  );
 }
 
 export default Home;

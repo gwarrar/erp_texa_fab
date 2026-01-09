@@ -1,8 +1,9 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import { Link } from "react-router-dom";
 import { useLanguage } from "./LanguageContext";
 import { getText, landingPageTranslations as t } from "@/lib/translations/pages";
 import { useSiteData, HeroContent } from "@/hooks/useSiteData";
+import { cms, type Language } from "@/lib/cms";
 import { Button } from "@/components/ui/button";
 import { 
   ArrowRight, 
@@ -24,18 +25,41 @@ import {
 import { TrialSignupModal } from "./TrialSignupModal";
 
 export function Hero() {
-  const { dir, language } = useLanguage();
+  const { dir, language, siteId } = useLanguage();
   const [isTrialModalOpen, setIsTrialModalOpen] = useState(false);
+  const [supabaseData, setSupabaseData] = useState<any>(null);
+  const loadedRef = useRef<string | null>(null);
   
-  // Load hero content from JSON
+  // Load hero content from JSON (fallback)
   const { data: heroData, loading } = useSiteData<HeroContent>('hero', language);
+  
+  // Load hero content from Supabase (with deduplication)
+  useEffect(() => {
+    const cacheKey = `${siteId}-${language}`;
+    if (loadedRef.current === cacheKey) return;
+    
+    const loadSupabaseData = async () => {
+      try {
+        const cmsLanguage = (language === 'ar' || language === 'en' || language === 'ru') ? language : 'en';
+        const data = await cms.hero.get(siteId as any, cmsLanguage as Language);
+        if (data) {
+          setSupabaseData(data);
+          loadedRef.current = cacheKey;
+        }
+      } catch (error) {
+        console.log('Using JSON fallback for hero data');
+      }
+    };
+    loadSupabaseData();
+  }, [language, siteId]);
 
-  // Use CMS data if available, fallback to static translations
-  const heroTitle = heroData?.title || getText(t.heroTitle, language);
-  const heroSubtitle = heroData?.subtitle || getText(t.heroSubtitle, language);
-  const heroBadge = heroData?.badge || getText(t.badge, language);
-  const primaryCta = heroData?.primaryCta || getText(t.ctaDemo, language);
-  const secondaryCta = heroData?.secondaryCta || getText(t.ctaTrial, language);
+  // Use Supabase data if available, then CMS data, fallback to static translations
+  const heroTitle = supabaseData?.title || heroData?.title || getText(t.heroTitle, language);
+  const heroSubtitle = supabaseData?.subtitle || heroData?.subtitle || getText(t.heroSubtitle, language);
+  const heroBadge = supabaseData?.badge || heroData?.badge || getText(t.badge, language);
+  const primaryCta = supabaseData?.cta_primary_text || heroData?.primaryCta || getText(t.ctaDemo, language);
+  const secondaryCta = supabaseData?.cta_secondary_text || heroData?.secondaryCta || getText(t.ctaTrial, language);
+  const backgroundImage = supabaseData?.background_image || heroData?.image;
 
   const stats = heroData?.stats || [
     { value: "500+", label: getText(t.statCompanies, language) },

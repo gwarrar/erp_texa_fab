@@ -6,6 +6,11 @@ import { NRHeader } from "@/components/nextrev/NRHeader";
 import { NRFooter } from "@/components/nextrev/NRFooter";
 import { Button } from "@/components/ui/button";
 import { ScrollToTop } from "@/components/ui/scroll-to-top";
+import { AnalyticsProvider } from "@/components/analytics/AnalyticsProvider";
+import { SEOHead } from "@/components/seo/SEOHead";
+import { CallbackWidget } from "@/components/widgets/CallbackWidget";
+import { ChatProvider } from "@/components/chat/ChatProvider";
+import { ChatWidget } from "@/components/chat/ChatWidget";
 import { 
   ArrowRight, ArrowLeft, Globe, Shield, Users, Building2, Zap, Award, 
   CheckCircle2, Code2, Layers, Database, Cloud, Cpu, LineChart, Lock, 
@@ -889,8 +894,14 @@ export default function NRHomePage() {
   }, [currentSeo.title, language, dir]);
 
   return (
-    <div className="min-h-screen bg-slate-950 text-white" dir={dir}>
-      <NRHeader />
+    <AnalyticsProvider>
+      <ChatProvider>
+        <SEOHead 
+          title={currentSeo.title}
+          description={currentSeo.description}
+        />
+        <div className="min-h-screen bg-slate-950 text-white" dir={dir}>
+          <NRHeader />
       
       {/* Hero Section */}
       <section className="relative min-h-screen flex items-center justify-center overflow-hidden pt-20">
@@ -1190,8 +1201,12 @@ export default function NRHomePage() {
         </div>
       </section>
       
-      <NRFooter />
-      <ScrollToTop />
-    </div>
+        <NRFooter />
+          <ScrollToTop />
+          <CallbackWidget />
+          <ChatWidget />
+        </div>
+      </ChatProvider>
+    </AnalyticsProvider>
   );
 }

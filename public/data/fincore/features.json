@@ -1,0 +1,98 @@
+{
+  "en": {
+    "title": "Powerful Features",
+    "subtitle": "Everything you need to power your financial services",
+    "items": [
+      {
+        "id": "realtime",
+        "icon": "Zap",
+        "title": "Real-time Transactions",
+        "description": "Process transactions instantly with our high-performance infrastructure.",
+        "stat": "< 100ms"
+      },
+      {
+        "id": "compliance",
+        "icon": "Shield",
+        "title": "Built-in Compliance",
+        "description": "Stay compliant with automated KYC/AML checks and regulatory reporting.",
+        "stat": "100% Compliant"
+      },
+      {
+        "id": "multicurrency",
+        "icon": "Globe",
+        "title": "Multi-Currency Support",
+        "description": "Support 150+ currencies with live exchange rates and automatic conversion.",
+        "stat": "150+ Currencies"
+      },
+      {
+        "id": "reporting",
+        "icon": "BarChart",
+        "title": "Advanced Reporting",
+        "description": "Comprehensive financial reports, analytics, and audit trails.",
+        "stat": "Real-time Analytics"
+      },
+      {
+        "id": "api",
+        "icon": "Code",
+        "title": "Developer-friendly API",
+        "description": "RESTful API with comprehensive documentation and SDKs.",
+        "stat": "99.99% Uptime"
+      },
+      {
+        "id": "security",
+        "icon": "Lock",
+        "title": "Bank-grade Security",
+        "description": "End-to-end encryption, fraud detection, and biometric authentication.",
+        "stat": "256-bit SSL"
+      }
+    ]
+  },
+  "ar": {
+    "title": "مميزات قوية",
+    "subtitle": "كل ما تحتاجه لتشغيل خدماتك المالية",
+    "items": [
+      {
+        "id": "realtime",
+        "icon": "Zap",
+        "title": "معاملات فورية",
+        "description": "معالجة المعاملات فورياً مع بنيتنا التحتية عالية الأداء.",
+        "stat": "< 100ms"
+      },
+      {
+        "id": "compliance",
+        "icon": "Shield",
+        "title": "امتثال مدمج",
+        "description": "كن ملتزماً مع فحوصات KYC/AML الآلية والتقارير التنظيمية.",
+        "stat": "100% ملتزم"
+      },
+      {
+        "id": "multicurrency",
+        "icon": "Globe",
+        "title": "دعم متعدد العملات",
+        "description": "دعم 150+ عملة مع أسعار صرف حية وتحويل تلقائي.",
+        "stat": "150+ عملة"
+      },
+      {
+        "id": "reporting",
+        "icon": "BarChart",
+        "title": "تقارير متقدمة",
+        "description": "تقارير مالية شاملة وتحليلات ومسارات التدقيق.",
+        "stat": "تحليلات فورية"
+      },
+      {
+        "id": "api",
+        "icon": "Code",
+        "title": "API صديق للمطورين",
+        "description": "RESTful API مع توثيق شامل و SDKs.",
+        "stat": "99.99% تشغيل"
+      },
+      {
+        "id": "security",
+        "icon": "Lock",
+        "title": "أمان بمستوى البنوك",
+        "description": "تشفير من طرف لطرف، كشف الاحتيال، ومصادقة بيومترية.",
+        "stat": "تشفير 256-bit"
+      }
+    ]
+  }
+}

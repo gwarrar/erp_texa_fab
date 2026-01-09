@@ -10,6 +10,11 @@ import { ExchangeRateTicker } from "@/components/fincore/ExchangeRateTicker";
 import { FCLogo } from "@/components/fincore/FCLogo";
 import { Button } from "@/components/ui/button";
 import { ScrollToTop } from "@/components/ui/scroll-to-top";
+import { AnalyticsProvider } from "@/components/analytics/AnalyticsProvider";
+import { SEOHead } from "@/components/seo/SEOHead";
+import { CallbackWidget } from "@/components/widgets/CallbackWidget";
+import { ChatProvider } from "@/components/chat/ChatProvider";
+import { ChatWidget } from "@/components/chat/ChatWidget";
 import { motion } from "framer-motion";
 import { 
   ArrowRight, ArrowLeft, Shield, Globe, Zap, Lock, 
@@ -1135,8 +1140,14 @@ export default function FCHomePage() {
   }, [currentSeo.title, language, dir]);
 
   return (
-    <div className="min-h-screen bg-white dark:bg-slate-950 text-slate-900 dark:text-white" dir={dir}>
-      <FCHeader />
+    <AnalyticsProvider>
+      <ChatProvider>
+        <SEOHead 
+          title={currentSeo.title}
+          description={currentSeo.description}
+        />
+        <div className="min-h-screen bg-white dark:bg-slate-950 text-slate-900 dark:text-white" dir={dir}>
+          <FCHeader />
       
       {/* Exchange Rate Ticker */}
       <div className="fixed top-20 left-0 right-0 z-40">
@@ -2032,9 +2043,13 @@ export default function FCHomePage() {
         </div>
       </section>
       
-      <FCFooter />
-      <ScrollToTop />
-      <FloatingAgentButton />
-    </div>
+          <FCFooter />
+          <ScrollToTop />
+          <FloatingAgentButton />
+          <CallbackWidget />
+          <ChatWidget />
+        </div>
+      </ChatProvider>
+    </AnalyticsProvider>
   );
 }

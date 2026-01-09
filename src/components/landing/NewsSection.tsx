@@ -1,6 +1,7 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useRef } from "react";
 import { Link } from "react-router-dom";
 import { useLanguage } from "./LanguageContext";
+import { cms, type Language } from "@/lib/cms";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
@@ -23,12 +24,15 @@ interface NewsData {
 }
 
 export function NewsSection() {
-  const { t, language, dir } = useLanguage();
+  const { t, language, dir, siteId } = useLanguage();
   const [newsData, setNewsData] = useState<NewsData | null>(null);
+  const loadedRef = useRef<string | null>(null);
   const isRTL = dir === "rtl";
   const ArrowIcon = isRTL ? ArrowLeft : ArrowRight;
 
   useEffect(() => {
+    const cacheKey = `${siteId}-${language}`;
+    if (loadedRef.current === cacheKey) return;
     // Default news data as fallback
     const defaultNews: NewsData = {
       title: "Latest News",
@@ -67,26 +71,51 @@ export function NewsSection() {
       ]
     };
 
-    fetch("/data/news.json")
-      .then((res) => {
-        if (!res.ok) {
-          throw new Error(`HTTP error! status: ${res.status}`);
+    // Try Supabase first, then fallback to JSON
+    const loadNews = async () => {
+      try {
+        const cmsLanguage = (language === 'ar' || language === 'en' || language === 'ru') ? language : 'en';
+        const supabaseData = await cms.news.getAll(siteId as any, cmsLanguage as Language);
+        if (supabaseData && supabaseData.length > 0) {
+          setNewsData({
+            title: "Latest News",
+            subtitle: "Stay updated with TexaCore",
+            items: supabaseData.map((item: any) => ({
+              id: item.id,
+              title: item.title,
+              excerpt: item.excerpt || item.content?.substring(0, 150) || '',
+              date: item.published_at || item.created_at,
+              image: item.image || "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=800&q=80",
+              href: `/news/${item.id}`,
+              category: item.category
+            }))
+          });
+          loadedRef.current = cacheKey;
+          return;
         }
-        const contentType = res.headers.get("content-type");
-        if (!contentType || !contentType.includes("application/json")) {
-          throw new Error("Response is not JSON");
-        }
-        return res.json();
-      })
-      .then((data) => {
-        const langData = data[language] || data["en"];
-        setNewsData(langData);
-      })
-      .catch(() => {
-        // Silently use default data on fetch failure
-        setNewsData(defaultNews);
-      });
-  }, [language]);
+      } catch (error) {
+        console.log('Supabase news fetch failed, trying JSON');
+      }
+      
+      // Fallback to JSON
+      fetch("/data/news.json")
+        .then((res) => {
+          if (!res.ok) throw new Error(`HTTP error! status: ${res.status}`);
+          const contentType = res.headers.get("content-type");
+          if (!contentType || !contentType.includes("application/json")) throw new Error("Response is not JSON");
+          return res.json();
+        })
+        .then((data) => {
+          const langData = data[language] || data["en"];
+          setNewsData(langData);
+        })
+        .catch(() => {
+          setNewsData(defaultNews);
+        });
+    };
+    
+    loadNews();
+  }, [language, siteId]);
 
   if (!newsData || !newsData.items || newsData.items.length === 0) {
     return null;

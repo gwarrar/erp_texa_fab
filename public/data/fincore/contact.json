@@ -1,0 +1,14 @@
+{
+  "email": "info@fincore.io",
+  "phone": "+1 (800) 555-CORE",
+  "whatsapp": "+1 800 555 2673",
+  "address": {
+    "en": "Financial District, New York, NY, USA",
+    "ar": "المنطقة المالية، نيويورك، الولايات المتحدة"
+  },
+  "socialLinks": {
+    "facebook": "https://facebook.com/fincore",
+    "twitter": "https://twitter.com/fincore",
+    "linkedin": "https://linkedin.com/company/fincore"
+  }
+}

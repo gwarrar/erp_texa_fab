@@ -1,6 +1,7 @@
-import React from "react";
+import React, { useState, useEffect, useRef } from "react";
 import { useLanguage } from "./LanguageContext";
 import { useSiteData, TestimonialsContent } from "@/hooks/useSiteData";
+import { cms, type Language } from "@/lib/cms";
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
 import { Card, CardContent } from "@/components/ui/card";
 import { Star, Quote, MessageSquare } from "lucide-react";
@@ -15,22 +16,46 @@ const defaultAvatars = [
 ];
 
 export function Testimonials() {
-  const { dir, language } = useLanguage();
+  const { dir, language, siteId } = useLanguage();
+  const [supabaseData, setSupabaseData] = useState<any[]>([]);
+  const loadedRef = useRef<string | null>(null);
   
-  // Load testimonials from CMS
+  // Load testimonials from CMS (JSON fallback)
   const { data: cmsData } = useSiteData<TestimonialsContent>('testimonials', language);
   
-  const getText = (translations: Record<string, string>) => {
-    return translations[language] || translations.en;
+  // Load testimonials from Supabase (with deduplication)
+  useEffect(() => {
+    const cacheKey = `${siteId}-${language}`;
+    if (loadedRef.current === cacheKey) return;
+    
+    const loadSupabaseData = async () => {
+      try {
+        const cmsLanguage = (language === 'ar' || language === 'en' || language === 'ru') ? language : 'en';
+        const data = await cms.testimonials.getAll(siteId as any, cmsLanguage as Language);
+        if (data && data.length > 0) {
+          setSupabaseData(data);
+          loadedRef.current = cacheKey;
+        }
+      } catch (error) {
+        console.log('Using JSON fallback for testimonials data');
+      }
+    };
+    loadSupabaseData();
+  }, [language, siteId]);
+  
+  const getText = (translations: Record<string, string> | undefined) => {
+    if (!translations) return '';
+    return translations[language] || translations.en || '';
   };
 
-  // Convert CMS data to component format
-  const testimonials = cmsData?.items?.map((item, index) => ({
-    text: { [language]: item.content, en: item.content },
-    author: { [language]: item.name, en: item.name },
-    role: { [language]: item.role, en: item.role },
-    company: item.company,
-    country: { [language]: item.location, en: item.location },
+  // Convert Supabase/CMS data to component format
+  const testimonialsSource = supabaseData.length > 0 ? supabaseData : cmsData?.items;
+  const testimonials = testimonialsSource?.map((item, index) => ({
+    text: { [language]: item.content || '', en: item.content || '' },
+    author: { [language]: item.name || '', en: item.name || '' },
+    role: { [language]: item.role || '', en: item.role || '' },
+    company: item.company || '',
+    country: { [language]: item.location || '', en: item.location || '' },
     rating: item.rating || 5,
     avatar: item.image || defaultAvatars[index % defaultAvatars.length],
   })) || [

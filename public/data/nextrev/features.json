@@ -1,0 +1,98 @@
+{
+  "en": {
+    "title": "Our Services",
+    "subtitle": "Comprehensive software development services",
+    "items": [
+      {
+        "id": "web-dev",
+        "icon": "Globe",
+        "title": "Web Development",
+        "description": "Custom web applications built with modern technologies. React, Vue, Angular, and more.",
+        "stat": "100+ Projects"
+      },
+      {
+        "id": "mobile-dev",
+        "icon": "Smartphone",
+        "title": "Mobile Development",
+        "description": "Native and cross-platform mobile applications. iOS, Android, React Native, Flutter.",
+        "stat": "50+ Apps"
+      },
+      {
+        "id": "cloud-services",
+        "icon": "Cloud",
+        "title": "Cloud Services",
+        "description": "Cloud architecture and deployment solutions. AWS, Azure, Google Cloud.",
+        "stat": "99.9% Uptime"
+      },
+      {
+        "id": "erp-solutions",
+        "icon": "Building2",
+        "title": "ERP Solutions",
+        "description": "Enterprise resource planning systems. Custom ERP development and integration.",
+        "stat": "500+ Users"
+      },
+      {
+        "id": "consulting",
+        "icon": "Lightbulb",
+        "title": "IT Consulting",
+        "description": "Strategic technology consulting for your business. Digital transformation experts.",
+        "stat": "Expert Team"
+      },
+      {
+        "id": "ecommerce",
+        "icon": "ShoppingCart",
+        "title": "E-Commerce",
+        "description": "Online store and marketplace development. Full-stack e-commerce solutions.",
+        "stat": "24/7 Support"
+      }
+    ]
+  },
+  "ar": {
+    "title": "خدماتنا",
+    "subtitle": "خدمات تطوير برمجيات شاملة",
+    "items": [
+      {
+        "id": "web-dev",
+        "icon": "Globe",
+        "title": "تطوير الويب",
+        "description": "تطبيقات ويب مخصصة بأحدث التقنيات. React، Vue، Angular، والمزيد.",
+        "stat": "100+ مشروع"
+      },
+      {
+        "id": "mobile-dev",
+        "icon": "Smartphone",
+        "title": "تطوير الموبايل",
+        "description": "تطبيقات جوال أصلية ومتعددة المنصات. iOS، Android، React Native، Flutter.",
+        "stat": "50+ تطبيق"
+      },
+      {
+        "id": "cloud-services",
+        "icon": "Cloud",
+        "title": "الخدمات السحابية",
+        "description": "حلول الهندسة والنشر السحابية. AWS، Azure، Google Cloud.",
+        "stat": "99.9% تشغيل"
+      },
+      {
+        "id": "erp-solutions",
+        "icon": "Building2",
+        "title": "حلول ERP",
+        "description": "أنظمة تخطيط موارد المؤسسات. تطوير وتكامل ERP مخصص.",
+        "stat": "500+ مستخدم"
+      },
+      {
+        "id": "consulting",
+        "icon": "Lightbulb",
+        "title": "استشارات تقنية",
+        "description": "استشارات تقنية استراتيجية لأعمالك. خبراء التحول الرقمي.",
+        "stat": "فريق خبير"
+      },
+      {
+        "id": "ecommerce",
+        "icon": "ShoppingCart",
+        "title": "التجارة الإلكترونية",
+        "description": "تطوير المتاجر والأسواق الإلكترونية. حلول تجارة إلكترونية متكاملة.",
+        "stat": "دعم 24/7"
+      }
+    ]
+  }
+}

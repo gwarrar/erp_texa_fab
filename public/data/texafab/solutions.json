@@ -1,0 +1,51 @@
+{
+  "sectionTitle": {
+    "en": "Our Solutions",
+    "ar": "حلولنا"
+  },
+  "sectionSubtitle": {
+    "en": "Comprehensive solutions for fabric industry",
+    "ar": "حلول شاملة لصناعة الأقمشة"
+  },
+  "items": [
+    {
+      "id": "sol_1",
+      "title": {
+        "en": "Roll Management",
+        "ar": "إدارة الرولات"
+      },
+      "description": {
+        "en": "Track every roll from supplier to customer with complete traceability.",
+        "ar": "تتبع كل رولة من المورد إلى العميل مع إمكانية التتبع الكامل."
+      },
+      "icon": "📦",
+      "image": ""
+    },
+    {
+      "id": "sol_2",
+      "title": {
+        "en": "Meter Tracking",
+        "ar": "تتبع الأمتار"
+      },
+      "description": {
+        "en": "Precise meter tracking for cutting operations and inventory management.",
+        "ar": "تتبع دقيق للأمتار لعمليات القص وإدارة المخزون."
+      },
+      "icon": "📏",
+      "image": ""
+    },
+    {
+      "id": "sol_3",
+      "title": {
+        "en": "Color Variants",
+        "ar": "متغيرات الألوان"
+      },
+      "description": {
+        "en": "Manage thousands of color variants with easy-to-use color management tools.",
+        "ar": "إدارة آلاف متغيرات الألوان مع أدوات إدارة الألوان سهلة الاستخدام."
+      },
+      "icon": "🎨",
+      "image": ""
+    }
+  ]
+}

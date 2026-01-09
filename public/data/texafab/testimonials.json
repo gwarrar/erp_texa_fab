@@ -1,0 +1,42 @@
+{
+  "sectionTitle": {
+    "en": "What Our Clients Say",
+    "ar": "ماذا يقول عملاؤنا"
+  },
+  "sectionSubtitle": {
+    "en": "Trusted by leading fabric companies worldwide",
+    "ar": "موثوق به من قبل شركات الأقمشة الرائدة حول العالم"
+  },
+  "items": [
+    {
+      "id": "test_1",
+      "name": "Ahmed Al-Rashid",
+      "company": "Gulf Textiles Co.",
+      "role": {
+        "en": "CEO",
+        "ar": "الرئيس التنفيذي"
+      },
+      "content": {
+        "en": "TexaFab has transformed our warehouse operations. The roll tracking system is incredibly efficient.",
+        "ar": "لقد حولت تكسافاب عمليات المستودعات لدينا. نظام تتبع الرولات فعال بشكل لا يصدق."
+      },
+      "avatar": "",
+      "rating": 5
+    },
+    {
+      "id": "test_2",
+      "name": "Maria Schmidt",
+      "company": "Euro Fabrics GmbH",
+      "role": {
+        "en": "Operations Director",
+        "ar": "مدير العمليات"
+      },
+      "content": {
+        "en": "The best ERP solution for fabric industry we've ever used. Highly recommend!",
+        "ar": "أفضل حل ERP لصناعة الأقمشة استخدمناه على الإطلاق. نوصي به بشدة!"
+      },
+      "avatar": "",
+      "rating": 5
+    }
+  ]
+}

@@ -1,0 +1,34 @@
+{
+  "en": {
+    "badge": "Innovation Leaders",
+    "title": "Next Revolution for Software Development",
+    "subtitle": "Building the future of software, one innovation at a time. We create cutting-edge solutions that transform businesses across the globe.",
+    "ctaDemo": "Get in Touch",
+    "ctaTrial": "Our Products",
+    "tagline": "Building the Future",
+    "stats": {
+      "products": { "value": "4+", "label": "Software Products" },
+      "clients": { "value": "500+", "label": "Happy Clients" },
+      "countries": { "value": "30+", "label": "Countries" },
+      "experience": { "value": "10+", "label": "Years Experience" }
+    },
+    "features": ["ERP Systems", "Banking Solutions", "E-Commerce", "Mobile Apps", "Cloud Services", "AI & ML"],
+    "image": "https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=1200&q=80"
+  },
+  "ar": {
+    "badge": "رواد الابتكار",
+    "title": "الثورة التالية لتطوير البرمجيات",
+    "subtitle": "نبني مستقبل البرمجيات، ابتكار تلو الآخر. نقدم حلولاً متطورة تحول الأعمال حول العالم.",
+    "ctaDemo": "تواصل معنا",
+    "ctaTrial": "منتجاتنا",
+    "tagline": "نبني المستقبل",
+    "stats": {
+      "products": { "value": "+4", "label": "منتج برمجي" },
+      "clients": { "value": "+500", "label": "عميل سعيد" },
+      "countries": { "value": "+30", "label": "دولة" },
+      "experience": { "value": "+10", "label": "سنة خبرة" }
+    },
+    "features": ["أنظمة ERP", "حلول مصرفية", "تجارة إلكترونية", "تطبيقات جوال", "خدمات سحابية", "ذكاء اصطناعي"],
+    "image": "https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=1200&q=80"
+  }
+}

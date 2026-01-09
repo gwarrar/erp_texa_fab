@@ -1,0 +1,126 @@
+{
+  "en": {
+    "title": "Our Services",
+    "subtitle": "Comprehensive construction and finishing solutions",
+    "items": [
+      {
+        "id": "construction",
+        "icon": "Building",
+        "title": "Construction",
+        "description": "Full-scale construction projects from foundation to completion. Residential and commercial.",
+        "href": "/dubai-stroy/services#construction"
+      },
+      {
+        "id": "interior",
+        "icon": "Palette",
+        "title": "Interior Design",
+        "description": "Creative interior design and space planning. Modern and classic styles.",
+        "href": "/dubai-stroy/services#interior"
+      },
+      {
+        "id": "finishing",
+        "icon": "Paintbrush",
+        "title": "Finishing Works",
+        "description": "Premium finishing including painting, flooring, ceilings, and gypsum works.",
+        "href": "/dubai-stroy/services#finishing"
+      },
+      {
+        "id": "renovation",
+        "icon": "Hammer",
+        "title": "Renovation",
+        "description": "Complete renovation and remodeling services. Transform old spaces into new.",
+        "href": "/dubai-stroy/services#renovation"
+      },
+      {
+        "id": "electrical",
+        "icon": "Zap",
+        "title": "Electrical Works",
+        "description": "Professional electrical installations and maintenance. Smart home systems.",
+        "href": "/dubai-stroy/services#electrical"
+      },
+      {
+        "id": "plumbing",
+        "icon": "Droplet",
+        "title": "Plumbing",
+        "description": "Expert plumbing solutions for all your needs. Installation and repair.",
+        "href": "/dubai-stroy/services#plumbing"
+      },
+      {
+        "id": "hvac",
+        "icon": "Wind",
+        "title": "HVAC Systems",
+        "description": "Heating, ventilation, and air conditioning. Installation and maintenance.",
+        "href": "/dubai-stroy/services#hvac"
+      },
+      {
+        "id": "landscaping",
+        "icon": "TreePine",
+        "title": "Landscaping",
+        "description": "Beautiful outdoor spaces and gardens. Design and maintenance.",
+        "href": "/dubai-stroy/services#landscaping"
+      }
+    ]
+  },
+  "ar": {
+    "title": "خدماتنا",
+    "subtitle": "حلول بناء وتشطيب شاملة",
+    "items": [
+      {
+        "id": "construction",
+        "icon": "Building",
+        "title": "البناء",
+        "description": "مشاريع بناء كاملة من الأساس حتى الإنجاز. سكني وتجاري.",
+        "href": "/dubai-stroy/services#construction"
+      },
+      {
+        "id": "interior",
+        "icon": "Palette",
+        "title": "التصميم الداخلي",
+        "description": "تصميم داخلي إبداعي وتخطيط المساحات. أنماط حديثة وكلاسيكية.",
+        "href": "/dubai-stroy/services#interior"
+      },
+      {
+        "id": "finishing",
+        "icon": "Paintbrush",
+        "title": "أعمال التشطيب",
+        "description": "تشطيبات فاخرة تشمل الدهان والأرضيات والأسقف وأعمال الجبس.",
+        "href": "/dubai-stroy/services#finishing"
+      },
+      {
+        "id": "renovation",
+        "icon": "Hammer",
+        "title": "التجديد",
+        "description": "خدمات تجديد وإعادة تصميم كاملة. حول الأماكن القديمة إلى جديدة.",
+        "href": "/dubai-stroy/services#renovation"
+      },
+      {
+        "id": "electrical",
+        "icon": "Zap",
+        "title": "الأعمال الكهربائية",
+        "description": "تركيبات وصيانة كهربائية احترافية. أنظمة المنزل الذكي.",
+        "href": "/dubai-stroy/services#electrical"
+      },
+      {
+        "id": "plumbing",
+        "icon": "Droplet",
+        "title": "السباكة",
+        "description": "حلول سباكة متخصصة لجميع احتياجاتك. تركيب وإصلاح.",
+        "href": "/dubai-stroy/services#plumbing"
+      },
+      {
+        "id": "hvac",
+        "icon": "Wind",
+        "title": "أنظمة التكييف",
+        "description": "التدفئة والتهوية وتكييف الهواء. تركيب وصيانة.",
+        "href": "/dubai-stroy/services#hvac"
+      },
+      {
+        "id": "landscaping",
+        "icon": "TreePine",
+        "title": "تنسيق الحدائق",
+        "description": "مساحات خارجية وحدائق جميلة. تصميم وصيانة.",
+        "href": "/dubai-stroy/services#landscaping"
+      }
+    ]
+  }
+}

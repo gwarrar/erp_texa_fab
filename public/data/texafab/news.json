@@ -1,0 +1,31 @@
+{
+  "sectionTitle": {
+    "en": "Latest News",
+    "ar": "آخر الأخبار"
+  },
+  "sectionSubtitle": {
+    "en": "Stay updated with TexaFab developments",
+    "ar": "ابق على اطلاع بتطورات تكسافاب"
+  },
+  "items": [
+    {
+      "id": "news_1",
+      "title": {
+        "en": "TexaFab 3.0 Released with AI Features",
+        "ar": "إصدار تكسافاب 3.0 مع ميزات الذكاء الاصطناعي"
+      },
+      "excerpt": {
+        "en": "We're excited to announce the release of TexaFab 3.0 with powerful AI-driven analytics.",
+        "ar": "يسعدنا الإعلان عن إصدار تكسافاب 3.0 مع تحليلات قوية مدعومة بالذكاء الاصطناعي."
+      },
+      "content": {
+        "en": "Full article content here...",
+        "ar": "محتوى المقال الكامل هنا..."
+      },
+      "image": "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=800&q=80",
+      "date": "2024-12-15",
+      "author": "TexaFab Team",
+      "category": "Product Updates"
+    }
+  ]
+}

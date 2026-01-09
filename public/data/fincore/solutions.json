@@ -1,0 +1,98 @@
+{
+  "en": {
+    "title": "Our Solutions",
+    "subtitle": "Tailored solutions for every financial need",
+    "items": [
+      {
+        "id": "core-banking",
+        "icon": "Building",
+        "title": "Core Banking",
+        "description": "Complete core banking system for modern banks. Account management, transactions, and more.",
+        "href": "/fincore/solutions#core-banking"
+      },
+      {
+        "id": "money-transfer",
+        "icon": "Send",
+        "title": "Money Transfer",
+        "description": "Fast, secure international money transfers. SWIFT, SEPA, and instant transfers.",
+        "href": "/fincore/solutions#money-transfer"
+      },
+      {
+        "id": "currency-exchange",
+        "icon": "ArrowLeftRight",
+        "title": "Currency Exchange",
+        "description": "Real-time currency exchange with competitive rates. 150+ currencies supported.",
+        "href": "/fincore/solutions#currency-exchange"
+      },
+      {
+        "id": "payment-processing",
+        "icon": "CreditCard",
+        "title": "Payment Processing",
+        "description": "Accept payments from anywhere in the world. Cards, e-wallets, and crypto.",
+        "href": "/fincore/solutions#payment-processing"
+      },
+      {
+        "id": "lending",
+        "icon": "TrendingUp",
+        "title": "Lending Platform",
+        "description": "Digital lending solutions for banks and NBFCs. Risk scoring and automation.",
+        "href": "/fincore/solutions#lending"
+      },
+      {
+        "id": "card-management",
+        "icon": "Wallet",
+        "title": "Card Management",
+        "description": "Issue and manage debit and credit cards. Virtual and physical cards.",
+        "href": "/fincore/solutions#card-management"
+      }
+    ]
+  },
+  "ar": {
+    "title": "حلولنا",
+    "subtitle": "حلول مصممة لكل احتياج مالي",
+    "items": [
+      {
+        "id": "core-banking",
+        "icon": "Building",
+        "title": "البنوك الأساسية",
+        "description": "نظام بنكي أساسي متكامل للبنوك الحديثة. إدارة الحسابات والمعاملات والمزيد.",
+        "href": "/fincore/solutions#core-banking"
+      },
+      {
+        "id": "money-transfer",
+        "icon": "Send",
+        "title": "تحويل الأموال",
+        "description": "تحويلات أموال دولية سريعة وآمنة. SWIFT و SEPA والتحويلات الفورية.",
+        "href": "/fincore/solutions#money-transfer"
+      },
+      {
+        "id": "currency-exchange",
+        "icon": "ArrowLeftRight",
+        "title": "صرف العملات",
+        "description": "صرف عملات فوري بأسعار تنافسية. دعم 150+ عملة.",
+        "href": "/fincore/solutions#currency-exchange"
+      },
+      {
+        "id": "payment-processing",
+        "icon": "CreditCard",
+        "title": "معالجة المدفوعات",
+        "description": "قبول المدفوعات من أي مكان في العالم. بطاقات، محافظ إلكترونية، وكريبتو.",
+        "href": "/fincore/solutions#payment-processing"
+      },
+      {
+        "id": "lending",
+        "icon": "TrendingUp",
+        "title": "منصة الإقراض",
+        "description": "حلول إقراض رقمية للبنوك والمؤسسات المالية. تسجيل المخاطر والأتمتة.",
+        "href": "/fincore/solutions#lending"
+      },
+      {
+        "id": "card-management",
+        "icon": "Wallet",
+        "title": "إدارة البطاقات",
+        "description": "إصدار وإدارة بطاقات الخصم والائتمان. بطاقات افتراضية وفعلية.",
+        "href": "/fincore/solutions#card-management"
+      }
+    ]
+  }
+}

@@ -1,0 +1,40 @@
+{
+  "en": {
+    "badge": "First Choice in Europe & Gulf",
+    "title": "First ERP System For Fabric Industry",
+    "subtitle": "The world's first system designed specifically for fabric companies. Supports meters, rolls, colors, cutting, and everything you need.",
+    "ctaDemo": "Start Free Trial",
+    "ctaTrial": "Watch Demo",
+    "tagline": "Quality Worth Trusting",
+    "noCreditCard": "No credit card",
+    "quickSetup": "Quick setup",
+    "arabicSupport": "Arabic support",
+    "stats": {
+      "companies": { "value": "500+", "label": "Fabric Companies" },
+      "rolls": { "value": "10M+", "label": "Rolls Tracked" },
+      "countries": { "value": "25+", "label": "Countries" },
+      "industry": { "value": "15+", "label": "Years in Fabric Industry" }
+    },
+    "features": ["Meters", "Rolls", "Colors", "Cutting", "Warehouses", "Accounting"],
+    "image": "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=1200&q=80"
+  },
+  "ar": {
+    "badge": "الخيار الأول في أوروبا والخليج",
+    "title": "أول نظام ERP لصناعة الأقمشة",
+    "subtitle": "أول نظام في العالم مصمم خصيصاً لشركات الأقمشة. يدعم الأمتار، الرولات، الألوان، القص، وكل ما تحتاجه.",
+    "ctaDemo": "ابدأ تجربة مجانية",
+    "ctaTrial": "شاهد العرض",
+    "tagline": "جودة تستحق الثقة",
+    "noCreditCard": "بدون بطاقة ائتمان",
+    "quickSetup": "إعداد سريع",
+    "arabicSupport": "دعم عربي كامل",
+    "stats": {
+      "companies": { "value": "+500", "label": "شركة أقمشة" },
+      "rolls": { "value": "+10M", "label": "رولة متتبعة" },
+      "countries": { "value": "+25", "label": "دولة" },
+      "industry": { "value": "+15", "label": "سنة في صناعة الأقمشة" }
+    },
+    "features": ["أمتار", "رولات", "ألوان", "قص", "مخازن", "محاسبة"],
+    "image": "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=1200&q=80"
+  }
+}

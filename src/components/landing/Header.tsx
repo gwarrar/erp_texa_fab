@@ -354,21 +354,21 @@ export function Header() {
       }`}>
         <div className="container mx-auto px-4 py-6 space-y-2">
           {[
-            { href: "/features", labelKey: "nav.features" },
-            { href: "/comparison", labelKey: "nav.whyTexaCore" },
-            { href: "/workflow", labelKey: "nav.workflow" },
-            { href: "/container-tracking", labelKey: "solutions.containerTracking" },
-            { href: "/roll-management", labelKey: "solutions.rollManagement" },
-            { href: "/pos-system", labelKey: "solutions.posSystem" },
-            { href: "/agents-dealers", labelKey: "solutions.agentsDealers" },
-            { href: "/reports-analytics", labelKey: "solutions.reportsAnalytics" },
-            { href: "/shipping", labelKey: "solutions.shipping" },
-            { href: "/pricing", labelKey: "nav.pricing" },
-            { href: "/contact", labelKey: "nav.contact" },
-            { href: "/agents-dealers", labelKey: "nav.becomeAgent" },
+            { href: "/features", labelKey: "nav.features", key: "features" },
+            { href: "/comparison", labelKey: "nav.whyTexaCore", key: "comparison" },
+            { href: "/workflow", labelKey: "nav.workflow", key: "workflow" },
+            { href: "/container-tracking", labelKey: "solutions.containerTracking", key: "container-tracking" },
+            { href: "/roll-management", labelKey: "solutions.rollManagement", key: "roll-management" },
+            { href: "/pos-system", labelKey: "solutions.posSystem", key: "pos-system" },
+            { href: "/agents-dealers", labelKey: "solutions.agentsDealers", key: "agents-dealers" },
+            { href: "/reports-analytics", labelKey: "solutions.reportsAnalytics", key: "reports-analytics" },
+            { href: "/shipping", labelKey: "solutions.shipping", key: "shipping" },
+            { href: "/pricing", labelKey: "nav.pricing", key: "pricing" },
+            { href: "/contact", labelKey: "nav.contact", key: "contact" },
+            { href: "/agents-dealers", labelKey: "nav.becomeAgent", key: "become-agent" },
           ].map((item) => (
             <Link 
-              key={item.href}
+              key={item.key}
               to={item.href} 
               className="block px-4 py-3 text-gray-600 dark:text-gray-300 hover:text-texafab-emerald dark:hover:text-texafab-teal hover:bg-texafab-emerald/5 dark:hover:bg-texafab-teal/10 rounded-xl font-medium transition-colors"
               onClick={() => setIsMobileMenuOpen(false)}

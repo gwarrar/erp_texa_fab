@@ -1,0 +1,98 @@
+{
+  "en": {
+    "title": "Everything You Need in One System",
+    "subtitle": "Complete ERP system covering all your business needs from accounting to inventory management and sales",
+    "items": [
+      {
+        "id": "barcode",
+        "icon": "Barcode",
+        "title": "Advanced Barcode",
+        "description": "Unique barcode for each roll with complete tracking from import to sale.",
+        "stat": "Complete Tracking"
+      },
+      {
+        "id": "color",
+        "icon": "Palette",
+        "title": "Color Management",
+        "description": "Classify fabrics by color and shade with accurate sample matching.",
+        "stat": "Smart Matching"
+      },
+      {
+        "id": "fabric",
+        "icon": "Ruler",
+        "title": "Fabric by Meter & Roll",
+        "description": "Support for all units: meter, roll, yard, kg with auto-conversion.",
+        "stat": "Auto-Convert"
+      },
+      {
+        "id": "warehouse",
+        "icon": "Warehouse",
+        "title": "Multi-Warehouse",
+        "description": "Manage multiple warehouses with shelf location for each roll.",
+        "stat": "Complete Tracking"
+      },
+      {
+        "id": "accounting",
+        "icon": "Calculator",
+        "title": "Complete Accounting",
+        "description": "Full accounting system for textile trading with multi-currency.",
+        "stat": "Financial Reports"
+      },
+      {
+        "id": "ecommerce",
+        "icon": "ShoppingCart",
+        "title": "E-Commerce Store",
+        "description": "Ready-made online store with NO additional fees for design or setup.",
+        "stat": "No Extra Fees"
+      }
+    ]
+  },
+  "ar": {
+    "title": "كل ما تحتاجه في نظام واحد",
+    "subtitle": "نظام ERP متكامل يغطي جميع احتياجات عملك من المحاسبة إلى إدارة المخزون والمبيعات",
+    "items": [
+      {
+        "id": "barcode",
+        "icon": "Barcode",
+        "title": "باركود متقدم",
+        "description": "باركود فريد لكل رولة مع تتبع كامل من الاستيراد حتى البيع.",
+        "stat": "تتبع كامل"
+      },
+      {
+        "id": "color",
+        "icon": "Palette",
+        "title": "إدارة الألوان",
+        "description": "تصنيف الأقمشة حسب اللون والدرجة مع مطابقة دقيقة للعينات.",
+        "stat": "مطابقة ذكية"
+      },
+      {
+        "id": "fabric",
+        "icon": "Ruler",
+        "title": "القماش بالمتر والرولة",
+        "description": "دعم جميع الوحدات: متر، رولة، ياردة، كجم مع تحويل تلقائي.",
+        "stat": "تحويل تلقائي"
+      },
+      {
+        "id": "warehouse",
+        "icon": "Warehouse",
+        "title": "متعدد المخازن",
+        "description": "إدارة عدة مخازن مع تحديد موقع الرف لكل رولة.",
+        "stat": "تتبع كامل"
+      },
+      {
+        "id": "accounting",
+        "icon": "Calculator",
+        "title": "محاسبة كاملة",
+        "description": "نظام محاسبة كامل لتجارة الأقمشة مع دعم متعدد العملات.",
+        "stat": "تقارير مالية"
+      },
+      {
+        "id": "ecommerce",
+        "icon": "ShoppingCart",
+        "title": "متجر إلكتروني",
+        "description": "متجر جاهز بدون رسوم إضافية للتصميم أو الإعداد.",
+        "stat": "بدون رسوم إضافية"
+      }
+    ]
+  }
+}

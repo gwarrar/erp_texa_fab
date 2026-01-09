@@ -1,0 +1,15 @@
+{
+  "enabled": true,
+  "provider": "whatsapp",
+  "whatsappNumber": "+1 555 123 4567",
+  "tawkId": "",
+  "crispId": "",
+  "welcomeMessage": {
+    "en": "Hello! How can we help you with TexaFab today?",
+    "ar": "مرحباً! كيف يمكننا مساعدتك مع تكسافاب اليوم؟"
+  },
+  "offlineMessage": {
+    "en": "We're currently offline. Please leave a message and we'll get back to you soon.",
+    "ar": "نحن حالياً غير متصلين. يرجى ترك رسالة وسنعود إليك قريباً."
+  }
+}

@@ -36,10 +36,30 @@ export function WhatsAppChat({
     showOnMobile: boolean;
   } | null>(null);
 
-  // Load settings from localStorage
+  // Detect current site from URL
+  const getCurrentSite = (): string => {
+    const path = window.location.pathname;
+    if (path.startsWith('/fincore')) return 'fincore';
+    if (path.startsWith('/dubai-stroy')) return 'dubai-stroy';
+    if (path.startsWith('/next-revolution')) return 'nextrev';
+    return 'texafab';
+  };
+
+  // Load settings from localStorage based on current site
   useEffect(() => {
     const loadSettings = () => {
       try {
+        const currentSite = getCurrentSite();
+        
+        // First try site-specific settings
+        const siteSettings = localStorage.getItem(`${currentSite}_chat_settings`);
+        if (siteSettings) {
+          const parsed = JSON.parse(siteSettings);
+          setSettings(parsed);
+          return;
+        }
+        
+        // Fallback to global settings (for backward compatibility)
         const savedData = localStorage.getItem("texacore_admin_data");
         if (savedData) {
           const parsed = JSON.parse(savedData);
@@ -54,13 +74,17 @@ export function WhatsAppChat({
 
     loadSettings();
     window.addEventListener("storage", loadSettings);
-    return () => window.removeEventListener("storage", loadSettings);
+    // Also listen to URL changes
+    window.addEventListener("popstate", loadSettings);
+    return () => {
+      window.removeEventListener("storage", loadSettings);
+      window.removeEventListener("popstate", loadSettings);
+    };
   }, []);
 
   // Check if WhatsApp should be shown
-  const shouldShow = settings 
-    ? settings.enabled && (settings.chatType === "whatsapp" || settings.chatType === "both")
-    : true;
+  // WhatsApp floating widget is disabled - use Contact page instead
+  const shouldShow = false; // Disabled - WhatsApp is available on Contact page
 
   const actualPhoneNumber = settings?.phoneNumber || phoneNumber;
   const actualWelcomeMessage = settings?.welcomeMessage || welcomeMessage;

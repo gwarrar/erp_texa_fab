@@ -5,6 +5,11 @@ import { useTheme } from "@/components/landing/ThemeContext";
 import { DSHeader } from "@/components/dubai-stroy/DSHeader";
 import { DSFooter } from "@/components/dubai-stroy/DSFooter";
 import { ScrollToTop } from "@/components/ui/scroll-to-top";
+import { AnalyticsProvider } from "@/components/analytics/AnalyticsProvider";
+import { SEOHead } from "@/components/seo/SEOHead";
+import { CallbackWidget } from "@/components/widgets/CallbackWidget";
+import { ChatProvider } from "@/components/chat/ChatProvider";
+import { ChatWidget } from "@/components/chat/ChatWidget";
 import {
   ArrowRight,
   ArrowLeft,
@@ -128,8 +133,14 @@ export default function DSHomePage() {
   const featuredProjects = portfolioData?.items.filter((p) => p.featured).slice(0, 3) || [];
 
   return (
-    <div className={cn("min-h-screen bg-white dark:bg-slate-950", isRTL ? "rtl" : "ltr")} dir={dir}>
-      <DSHeader />
+    <AnalyticsProvider>
+      <ChatProvider>
+        <SEOHead 
+          title="Dubai Stroy - Premium Construction & Building Materials"
+          description="Quality construction materials and interior solutions for your dream home."
+        />
+        <div className={cn("min-h-screen bg-white dark:bg-slate-950", isRTL ? "rtl" : "ltr")} dir={dir}>
+          <DSHeader />
 
       {/* Hero Section */}
       <section className="relative min-h-screen flex items-center overflow-hidden">
@@ -373,8 +384,12 @@ export default function DSHomePage() {
         </div>
       </section>
 
-      <DSFooter />
-      <ScrollToTop />
-    </div>
+          <DSFooter />
+          <ScrollToTop />
+          <CallbackWidget />
+          <ChatWidget />
+        </div>
+      </ChatProvider>
+    </AnalyticsProvider>
   );
 }

@@ -1,6 +1,7 @@
 import React, { createContext, useContext, useState, useEffect } from "react";
 
 export type Language = "en" | "ar" | "ru" | "uk" | "ro" | "pl" | "it" | "tr";
+export type SiteId = "texafab" | "fincore" | "dubai-stroy" | "nextrev" | "exchange";
 
 export const languageNames: Record<Language, string> = {
   en: "English",
@@ -21,6 +22,8 @@ interface LanguageContextType {
   toggleLanguage: () => void;
   t: (key: string) => string;
   dir: "ltr" | "rtl";
+  siteId: SiteId;
+  setSiteId: (id: SiteId) => void;
 }
 
 // Language context with default fallback support
@@ -1122,6 +1125,7 @@ const translations: Record<Language, Record<string, string>> = {
 };
 
 const LANGUAGE_STORAGE_KEY = "texacore-language";
+const SITE_STORAGE_KEY = "texacore-site";
 
 export function LanguageProvider({ children }: { children: React.ReactNode }) {
   const [language, setLanguageState] = useState<Language>(() => {
@@ -1132,6 +1136,16 @@ export function LanguageProvider({ children }: { children: React.ReactNode }) {
       }
     }
     return "en";
+  });
+  
+  const [siteId, setSiteIdState] = useState<SiteId>(() => {
+    if (typeof window !== "undefined") {
+      const saved = localStorage.getItem(SITE_STORAGE_KEY);
+      if (saved && ["texafab", "fincore", "dubai-stroy", "nextrev", "exchange"].includes(saved)) {
+        return saved as SiteId;
+      }
+    }
+    return "texafab";
   });
 
   const dir = rtlLanguages.includes(language) ? "rtl" : "ltr";
@@ -1180,9 +1194,16 @@ export function LanguageProvider({ children }: { children: React.ReactNode }) {
   const t = (key: string) => {
     return translations[language][key] || translations.en[key] || key;
   };
+  
+  const setSiteId = (id: SiteId) => {
+    setSiteIdState(id);
+    if (typeof window !== "undefined") {
+      localStorage.setItem(SITE_STORAGE_KEY, id);
+    }
+  };
 
   return (
-    <LanguageContext.Provider value={{ language, setLanguage, toggleLanguage, t, dir }}>
+    <LanguageContext.Provider value={{ language, setLanguage, toggleLanguage, t, dir, siteId, setSiteId }}>
       {children}
     </LanguageContext.Provider>
   );
@@ -1198,6 +1219,8 @@ export function useLanguage() {
       toggleLanguage: () => {},
       t: (key: string) => translations.en[key] || key,
       dir: "ltr" as const,
+      siteId: "texafab" as SiteId,
+      setSiteId: () => {},
     };
   }
   return context;

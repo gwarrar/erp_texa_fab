@@ -1,8 +1,9 @@
-import React from "react";
+import React, { useState, useEffect, useRef } from "react";
 import { Link } from "react-router-dom";
 import { useLanguage } from "./LanguageContext";
 import { getText, landingPageTranslations as t } from "@/lib/translations/pages";
 import { useSiteData, FeaturesContent } from "@/hooks/useSiteData";
+import { cms, type Language } from "@/lib/cms";
 import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { 
@@ -35,10 +36,32 @@ const iconMap: Record<string, LucideIcon> = {
 };
 
 export function Features() {
-  const { language, dir } = useLanguage();
+  const { language, dir, siteId } = useLanguage();
+  const [supabaseFeatures, setSupabaseFeatures] = useState<any[]>([]);
+  const loadedRef = useRef<string | null>(null);
   
-  // Load features from CMS
+  // Load features from CMS (JSON fallback)
   const { data: cmsFeatures } = useSiteData<FeaturesContent>('features', language);
+  
+  // Load features from Supabase (with deduplication)
+  useEffect(() => {
+    const cacheKey = `${siteId}-${language}`;
+    if (loadedRef.current === cacheKey) return;
+    
+    const loadSupabaseData = async () => {
+      try {
+        const cmsLanguage = (language === 'ar' || language === 'en' || language === 'ru') ? language : 'en';
+        const data = await cms.features.getAll(siteId as any, cmsLanguage as Language);
+        if (data && data.length > 0) {
+          setSupabaseFeatures(data);
+          loadedRef.current = cacheKey;
+        }
+      } catch (error) {
+        console.log('Using JSON fallback for features data');
+      }
+    };
+    loadSupabaseData();
+  }, [language, siteId]);
 
   // Default features with gradients and images
   const defaultFeatures = [
@@ -50,19 +73,20 @@ export function Features() {
     { id: "ecommerce", icon: "ShoppingCart", gradient: "from-indigo-500 to-indigo-600", image: "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=300&q=80" },
   ];
 
-  // Merge CMS data with default styling
-  const features = cmsFeatures?.items?.map((item, index) => {
+  // Merge Supabase/CMS data with default styling
+  const featuresSource = supabaseFeatures.length > 0 ? supabaseFeatures : cmsFeatures?.items;
+  const features = featuresSource?.map((item, index) => {
     const defaults = defaultFeatures[index] || defaultFeatures[0];
     const IconComponent = iconMap[item.icon || defaults.icon] || Package;
     return {
       icon: <IconComponent className="w-6 h-6" />,
       title: item.title,
       desc: item.description,
-      stat: "",
+      stat: item.stat_value || "",
       gradient: defaults.gradient,
       size: "",
       featured: false,
-      image: defaults.image
+      image: item.image || defaults.image
     };
   }) || [
     {

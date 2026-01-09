@@ -32,65 +32,67 @@ import {
 function AIAnalyticsContent() {
   const { language, dir } = useLanguage();
 
+  const getText = (translations: Record<string, string>) => {
+    return translations[language] || translations.en;
+  };
+
   const aiFeatures = [
     {
       icon: TrendingUp,
-      titleAr: "توقعات المبيعات",
-      titleEn: "Sales Forecasting",
-      descAr: "توقعات دقيقة للمبيعات المستقبلية باستخدام خوارزميات التعلم الآلي",
-      descEn: "Accurate future sales predictions using machine learning algorithms",
+      title: { ar: "توقعات المبيعات", en: "Sales Forecasting", ru: "Прогнозирование продаж", uk: "Прогнозування продажів", ro: "Prognoza vânzărilor", pl: "Prognozowanie sprzedaży", tr: "Satış Tahmini" },
+      desc: { ar: "توقعات دقيقة للمبيعات المستقبلية باستخدام خوارزميات التعلم الآلي", en: "Accurate future sales predictions using machine learning algorithms", ru: "Точные прогнозы будущих продаж с использованием алгоритмов машинного обучения", uk: "Точні прогнози майбутніх продажів з використанням алгоритмів машинного навчання", ro: "Predicții precise ale vânzărilor viitoare folosind algoritmi de învățare automată", pl: "Dokładne prognozy przyszłej sprzedaży przy użyciu algorytmów uczenia maszynowego", tr: "Makine öğrenimi algoritmaları kullanarak gelecekteki satışların doğru tahminleri" },
       color: "from-violet-500 to-violet-600"
     },
     {
       icon: Package,
-      titleAr: "توصيات إعادة الطلب",
-      titleEn: "Reorder Recommendations",
-      descAr: "اقتراحات ذكية لإعادة طلب المنتجات بناءً على أنماط البيع",
-      descEn: "Smart suggestions for reordering products based on sales patterns",
+      title: { ar: "توصيات إعادة الطلب", en: "Reorder Recommendations", ru: "Рекомендации по дозаказу", uk: "Рекомендації по дозамовленню", ro: "Recomandări de reordonare", pl: "Rekomendacje ponownego zamówienia", tr: "Yeniden Sipariş Önerileri" },
+      desc: { ar: "اقتراحات ذكية لإعادة طلب المنتجات بناءً على أنماط البيع", en: "Smart suggestions for reordering products based on sales patterns", ru: "Умные предложения по дозаказу продуктов на основе паттернов продаж", uk: "Розумні пропозиції щодо дозамовлення продуктів на основі патернів продажів", ro: "Sugestii inteligente pentru reordonarea produselor pe baza modelelor de vânzare", pl: "Inteligentne sugestie ponownego zamówienia produktów na podstawie wzorców sprzedaży", tr: "Satış kalıplarına göre ürünlerin yeniden siparişi için akıllı öneriler" },
       color: "from-blue-500 to-blue-600"
     },
     {
       icon: Users,
-      titleAr: "تحليل سلوك العملاء",
-      titleEn: "Customer Behavior Analysis",
-      descAr: "فهم أعمق لسلوك العملاء وتفضيلاتهم الشرائية",
-      descEn: "Deeper understanding of customer behavior and purchase preferences",
+      title: { ar: "تحليل سلوك العملاء", en: "Customer Behavior Analysis", ru: "Анализ поведения клиентов", uk: "Аналіз поведінки клієнтів", ro: "Analiza comportamentului clienților", pl: "Analiza zachowań klientów", tr: "Müşteri Davranış Analizi" },
+      desc: { ar: "فهم أعمق لسلوك العملاء وتفضيلاتهم الشرائية", en: "Deeper understanding of customer behavior and purchase preferences", ru: "Глубокое понимание поведения клиентов и их покупательских предпочтений", uk: "Глибоке розуміння поведінки клієнтів та їх купівельних уподобань", ro: "Înțelegere mai profundă a comportamentului clienților și preferințelor de cumpărare", pl: "Głębsze zrozumienie zachowań klientów i preferencji zakupowych", tr: "Müşteri davranışı ve satın alma tercihlerinin daha derin anlaşılması" },
       color: "from-emerald-500 to-emerald-600"
     },
     {
       icon: Target,
-      titleAr: "تحديد الفرص البيعية",
-      titleEn: "Sales Opportunity Detection",
-      descAr: "تحديد العملاء الأكثر احتمالاً للشراء والمنتجات المناسبة لهم",
-      descEn: "Identify customers most likely to buy and suitable products for them",
+      title: { ar: "تحديد الفرص البيعية", en: "Sales Opportunity Detection", ru: "Определение возможностей продаж", uk: "Визначення можливостей продажів", ro: "Detectarea oportunităților de vânzare", pl: "Wykrywanie możliwości sprzedaży", tr: "Satış Fırsatı Tespiti" },
+      desc: { ar: "تحديد العملاء الأكثر احتمالاً للشراء والمنتجات المناسبة لهم", en: "Identify customers most likely to buy and suitable products for them", ru: "Определите клиентов, наиболее вероятно совершающих покупку, и подходящие для них продукты", uk: "Визначте клієнтів, які найімовірніше зроблять покупку, та відповідні для них продукти", ro: "Identificați clienții cel mai probabil să cumpere și produsele potrivite pentru ei", pl: "Zidentyfikuj klientów najbardziej prawdopodobnych do zakupu i odpowiednie dla nich produkty", tr: "Satın alma olasılığı en yüksek müşterileri ve onlar için uygun ürünleri belirleyin" },
       color: "from-amber-500 to-amber-600"
     },
     {
       icon: Mic,
-      titleAr: "تحليل المكالمات",
-      titleEn: "Call Analysis",
-      descAr: "تحليل المكالمات بالذكاء الاصطناعي واستخراج الرؤى المهمة",
-      descEn: "AI call analysis and extracting important insights",
+      title: { ar: "تحليل المكالمات", en: "Call Analysis", ru: "Анализ звонков", uk: "Аналіз дзвінків", ro: "Analiza apelurilor", pl: "Analiza połączeń", tr: "Çağrı Analizi" },
+      desc: { ar: "تحليل المكالمات بالذكاء الاصطناعي واستخراج الرؤى المهمة", en: "AI call analysis and extracting important insights", ru: "ИИ-анализ звонков и извлечение важных выводов", uk: "ШІ-аналіз дзвінків та вилучення важливих висновків", ro: "Analiza apelurilor cu IA și extragerea informațiilor importante", pl: "Analiza połączeń AI i wyodrębnianie ważnych spostrzeżeń", tr: "AI çağrı analizi ve önemli içgörülerin çıkarılması" },
       color: "from-pink-500 to-pink-600"
     },
     {
       icon: MessageCircle,
-      titleAr: "Chatbot ذكي",
-      titleEn: "Smart Chatbot",
-      descAr: "روبوت محادثة ذكي لخدمة العملاء على مدار الساعة",
-      descEn: "Smart chatbot for 24/7 customer service",
+      title: { ar: "Chatbot ذكي", en: "Smart Chatbot", ru: "Умный чат-бот", uk: "Розумний чат-бот", ro: "Chatbot inteligent", pl: "Inteligentny chatbot", tr: "Akıllı Chatbot" },
+      desc: { ar: "روبوت محادثة ذكي لخدمة العملاء على مدار الساعة", en: "Smart chatbot for 24/7 customer service", ru: "Умный чат-бот для обслуживания клиентов 24/7", uk: "Розумний чат-бот для обслуговування клієнтів 24/7", ro: "Chatbot inteligent pentru serviciul clienți 24/7", pl: "Inteligentny chatbot do obsługi klienta 24/7", tr: "7/24 müşteri hizmetleri için akıllı chatbot" },
       color: "from-cyan-500 to-cyan-600"
     }
   ];
 
   const pbxFeatures = [
-    { ar: "تكامل مع أنظمة PBX", en: "PBX system integration" },
-    { ar: "Click-to-Call من النظام", en: "Click-to-Call from system" },
-    { ar: "تسجيل المكالمات تلقائياً", en: "Automatic call recording" },
-    { ar: "ظهور بيانات العميل عند الاتصال", en: "Customer data popup on call" },
-    { ar: "تحليل مدة وجودة المكالمات", en: "Call duration and quality analysis" },
-    { ar: "تقارير أداء موظفي المبيعات", en: "Sales staff performance reports" }
+    { ar: "تكامل مع أنظمة PBX", en: "PBX system integration", ru: "Интеграция с системами PBX", uk: "Інтеграція з системами PBX", ro: "Integrare cu sisteme PBX", pl: "Integracja z systemami PBX", tr: "PBX sistem entegrasyonu" },
+    { ar: "Click-to-Call من النظام", en: "Click-to-Call from system", ru: "Click-to-Call из системы", uk: "Click-to-Call з системи", ro: "Click-to-Call din sistem", pl: "Click-to-Call z systemu", tr: "Sistemden Click-to-Call" },
+    { ar: "تسجيل المكالمات تلقائياً", en: "Automatic call recording", ru: "Автоматическая запись звонков", uk: "Автоматичний запис дзвінків", ro: "Înregistrarea automată a apelurilor", pl: "Automatyczne nagrywanie rozmów", tr: "Otomatik çağrı kaydı" },
+    { ar: "ظهور بيانات العميل عند الاتصال", en: "Customer data popup on call", ru: "Всплывающее окно с данными клиента при звонке", uk: "Спливаюче вікно з даними клієнта при дзвінку", ro: "Popup cu datele clientului la apel", pl: "Wyskakujące okno z danymi klienta podczas połączenia", tr: "Aramada müşteri verileri açılır penceresi" },
+    { ar: "تحليل مدة وجودة المكالمات", en: "Call duration and quality analysis", ru: "Анализ продолжительности и качества звонков", uk: "Аналіз тривалості та якості дзвінків", ro: "Analiza duratei și calității apelurilor", pl: "Analiza czasu trwania i jakości połączeń", tr: "Çağrı süresi ve kalite analizi" },
+    { ar: "تقارير أداء موظفي المبيعات", en: "Sales staff performance reports", ru: "Отчеты о производительности сотрудников продаж", uk: "Звіти про продуктивність співробітників продажів", ro: "Rapoarte de performanță ale personalului de vânzări", pl: "Raporty wydajności pracowników sprzedaży", tr: "Satış personeli performans raporları" }
   ];
+
+  const pageText = {
+    badge: { ar: "الذكاء الاصطناعي والتحليلات", en: "AI & Analytics", ru: "ИИ и аналитика", uk: "ШІ та аналітика", ro: "IA și analiză", pl: "AI i analityka", tr: "Yapay Zeka ve Analitik" },
+    heroTitle1: { ar: "قرارات ذكية", en: "Smart Decisions", ru: "Умные решения", uk: "Розумні рішення", ro: "Decizii inteligente", pl: "Inteligentne decyzje", tr: "Akıllı Kararlar" },
+    heroTitle2: { ar: "بالذكاء الاصطناعي", en: "with AI", ru: "с ИИ", uk: "з ШІ", ro: "cu IA", pl: "z AI", tr: "Yapay Zeka ile" },
+    heroDesc: { ar: "نظام تحليلات متقدم مدعوم بالذكاء الاصطناعي لاتخاذ قرارات أذكى وزيادة المبيعات", en: "Advanced analytics system powered by AI for smarter decisions and increased sales", ru: "Продвинутая система аналитики на базе ИИ для более умных решений и увеличения продаж", uk: "Просунута система аналітики на базі ШІ для розумніших рішень та збільшення продажів", ro: "Sistem avansat de analiză alimentat de IA pentru decizii mai inteligente și vânzări crescute", pl: "Zaawansowany system analityczny oparty na AI dla mądrzejszych decyzji i zwiększonej sprzedaży", tr: "Daha akıllı kararlar ve artan satışlar için yapay zeka destekli gelişmiş analitik sistemi" },
+    featuresTitle: { ar: "مميزات الذكاء الاصطناعي", en: "AI Features", ru: "Функции ИИ", uk: "Функції ШІ", ro: "Caracteristici IA", pl: "Funkcje AI", tr: "Yapay Zeka Özellikleri" },
+    featuresDesc: { ar: "أدوات ذكية لتحسين الأداء والتنبؤ بالاتجاهات", en: "Smart tools to improve performance and predict trends", ru: "Умные инструменты для улучшения производительности и прогнозирования трендов", uk: "Розумні інструменти для покращення продуктивності та прогнозування трендів", ro: "Instrumente inteligente pentru îmbunătățirea performanței și prezicerea tendințelor", pl: "Inteligentne narzędzia do poprawy wydajności i przewidywania trendów", tr: "Performansı artırmak ve trendleri tahmin etmek için akıllı araçlar" },
+    bookDemo: { ar: "احجز عرض توضيحي", en: "Book a Demo", ru: "Заказать демо", uk: "Замовити демо", ro: "Rezervă o demonstrație", pl: "Zarezerwuj demo", tr: "Demo Rezervasyonu" }
+  };
 
   const insights = [
     { 
@@ -139,28 +141,22 @@ function AIAnalyticsContent() {
             <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-violet-500/10 border border-violet-500/20 mb-6">
               <Brain className="w-4 h-4 text-violet-500" />
               <span className="text-sm font-semibold text-violet-600">
-                {language === "ar" ? "الذكاء الاصطناعي والتحليلات" : "AI & Analytics"}
+                {getText(pageText.badge)}
               </span>
             </div>
 
             <h1 className="text-4xl md:text-6xl font-black text-texafab-slate dark:text-white mb-6 leading-tight">
-              {language === "ar" ? (
-                <>قرارات أذكى مع <span className="text-violet-500">الذكاء الاصطناعي</span></>
-              ) : (
-                <>Smarter Decisions with <span className="text-violet-500">AI</span></>
-              )}
+              {getText(pageText.heroTitle1)} <span className="text-violet-500">{getText(pageText.heroTitle2)}</span>
             </h1>
 
             <p className="text-xl text-gray-600 dark:text-gray-300 mb-8 leading-relaxed max-w-3xl mx-auto">
-              {language === "ar" 
-                ? "استفد من قوة الذكاء الاصطناعي لتحليل البيانات والتنبؤ بالمستقبل واتخاذ قرارات أفضل"
-                : "Leverage the power of AI to analyze data, predict the future, and make better decisions"}
+              {getText(pageText.heroDesc)}
             </p>
 
             <div className="flex flex-col sm:flex-row justify-center gap-4">
               <Link to="/contact">
                 <Button className="h-14 px-8 bg-violet-500 hover:bg-violet-600 text-white text-base font-semibold rounded-xl shadow-lg shadow-violet-500/25">
-                  {language === "ar" ? "احجز عرض توضيحي" : "Book a Demo"}
+                  {getText(pageText.bookDemo)}
                   <ArrowRight className={`w-5 h-5 ${dir === "rtl" ? "rotate-180 me-2" : "ms-2"}`} />
                 </Button>
               </Link>
@@ -197,12 +193,10 @@ function AIAnalyticsContent() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6">
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-bold text-texafab-slate dark:text-white mb-4">
-              {language === "ar" ? "تحليلات الذكاء الاصطناعي" : "AI Analytics Features"}
+              {getText(pageText.featuresTitle)}
             </h2>
             <p className="text-lg text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
-              {language === "ar" 
-                ? "خوارزميات متقدمة لفهم أعمق لأعمالك"
-                : "Advanced algorithms for deeper business understanding"}
+              {getText(pageText.featuresDesc)}
             </p>
           </div>
 
@@ -213,10 +207,10 @@ function AIAnalyticsContent() {
                   <feature.icon className="w-7 h-7 text-white" />
                 </div>
                 <h3 className="text-xl font-bold text-texafab-slate dark:text-white mb-2">
-                  {language === "ar" ? feature.titleAr : feature.titleEn}
+                  {getText(feature.title)}
                 </h3>
                 <p className="text-gray-600 dark:text-gray-300">
-                  {language === "ar" ? feature.descAr : feature.descEn}
+                  {getText(feature.desc)}
                 </p>
               </Card>
             ))}
@@ -250,7 +244,7 @@ function AIAnalyticsContent() {
                 {pbxFeatures.map((feature, index) => (
                   <div key={index} className="flex items-center gap-3 p-3 bg-gray-50 dark:bg-gray-800 rounded-xl">
                     <CheckCircle2 className="w-5 h-5 text-blue-500 dark:text-blue-400 flex-shrink-0" />
-                    <span className="text-gray-700 dark:text-gray-200">{language === "ar" ? feature.ar : feature.en}</span>
+                    <span className="text-gray-700 dark:text-gray-200">{getText(feature)}</span>
                   </div>
                 ))}
               </div>

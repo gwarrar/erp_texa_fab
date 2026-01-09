@@ -4848,6 +4848,26 @@ export const loginPageTranslations = {
     it: "Tempo di attività",
     tr: "Çalışma Süresi",
   },
+  continueWithGoogle: {
+    en: "Continue with Google",
+    ar: "المتابعة مع Google",
+    ru: "Продолжить с Google",
+    uk: "Продовжити з Google",
+    ro: "Continuă cu Google",
+    pl: "Kontynuuj z Google",
+    it: "Continua con Google",
+    tr: "Google ile devam et",
+  },
+  continueWithApple: {
+    en: "Continue with Apple",
+    ar: "المتابعة مع Apple",
+    ru: "Продолжить с Apple",
+    uk: "Продовжити з Apple",
+    ro: "Continuă cu Apple",
+    pl: "Kontynuuj z Apple",
+    it: "Continua con Apple",
+    tr: "Apple ile devam et",
+  },
 };
 
 // =====================================================

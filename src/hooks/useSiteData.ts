@@ -44,7 +44,8 @@ export function useSiteData<T>(file: string, language: string = 'en') {
         }
       }
       
-      // Get language-specific data or fallback to English
+      // Get language-specific data - always try to get the data
+      // Components will handle fallback to static translations if needed
       const langData = allData[language] || allData['en'] || allData;
       setData(langData);
     } catch (err) {

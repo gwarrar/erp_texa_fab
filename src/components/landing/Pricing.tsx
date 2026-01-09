@@ -59,11 +59,11 @@ export function Pricing() {
 
   // Currency based on selected currency (default USD)
   const currencyInfo = currencyConfig[selectedCurrency] || currencyConfig.USD;
-  const currency = cmsPricing?.currency || currencyInfo.symbol;
+  const currency = currencyInfo.symbol;
   
-  // Section titles from CMS or Supabase
-  const sectionTitle = cmsPricing?.title || getText(pt.mainTitle, language);
-  const sectionSubtitle = cmsPricing?.subtitle || getText(pt.subtitle, language);
+  // Always use static translations for section titles
+  const sectionTitle = getText(pt.mainTitle, language);
+  const sectionSubtitle = getText(pt.subtitle, language);
   
   // Use Supabase pricing if available
   const hasSupabasePlans = supabasePricing.length > 0;
@@ -73,11 +73,18 @@ export function Pricing() {
     return Math.round(usdPrice * currencyInfo.rate);
   };
 
-  // Base prices in USD
+  // Base prices in USD (Original prices)
   const basePrices = {
     basic: 99,
-    professional: 499,
-    enterprise: 999,
+    professional: 799,
+    enterprise: 1199,
+  };
+
+  // Offer prices (50% OFF - Limited Time)
+  const offerPrices = {
+    basic: 49,
+    professional: 399,
+    enterprise: 599,
   };
 
   // Feature categories for organized display
@@ -93,7 +100,8 @@ export function Pricing() {
   const plans = [
     {
       name: getText(pt.basicPlan, language),
-      priceUSD: basePrices.basic,
+      priceUSD: offerPrices.basic,
+      originalPriceUSD: basePrices.basic,
       desc: getText(pt.basicDesc, language),
       target: getText(t.targetSingle, language),
       targetIcon: User,
@@ -131,7 +139,8 @@ export function Pricing() {
     },
     {
       name: getText(pt.professionalPlan, language),
-      priceUSD: basePrices.professional,
+      priceUSD: offerPrices.professional,
+      originalPriceUSD: basePrices.professional,
       desc: getText(pt.professionalDesc, language),
       target: getText(t.targetAmbitious, language),
       targetIcon: Briefcase,
@@ -174,7 +183,8 @@ export function Pricing() {
     },
     {
       name: getText(pt.enterprisePlan, language),
-      priceUSD: basePrices.enterprise,
+      priceUSD: offerPrices.enterprise,
+      originalPriceUSD: basePrices.enterprise,
       desc: getText(pt.enterpriseDesc, language),
       target: getText(t.targetLarge, language),
       targetIcon: Building2,
@@ -355,7 +365,7 @@ export function Pricing() {
                       ? "bg-white/10 border border-white/20" 
                       : "bg-gray-50 dark:bg-gray-700/50 border border-gray-200 dark:border-gray-600"
                   }`}>
-                    <TargetIcon className={`w-4 h-4 ${plan.popular ? "text-texafab-gold" : "text-texafab-emerald"}`} />
+                    <TargetIcon className={`w-4 h-4 ${plan.popular ? "text-yellow-300" : "text-texafab-emerald"}`} />
                     <span className={`text-xs font-medium ${plan.popular ? "text-white" : "text-gray-700 dark:text-gray-200"}`}>
                       {plan.target}
                     </span>
@@ -469,7 +479,7 @@ export function Pricing() {
                           <TrendingUp className="w-3.5 h-3.5 inline me-1" />
                           {getText(t.metricSales, language)}
                         </span>
-                        <span className={`text-sm font-bold ${plan.popular ? "text-texafab-gold" : "text-green-600 dark:text-green-400"}`}>
+                        <span className={`text-sm font-bold ${plan.popular ? "text-yellow-300" : "text-green-600 dark:text-green-400"}`}>
                           {returns.salesIncrease}{getText(t.perYear, language)}
                         </span>
                       </div>
@@ -478,7 +488,7 @@ export function Pricing() {
                           <Heart className="w-3.5 h-3.5 inline me-1" />
                           {getText(t.metricRetention, language)}
                         </span>
-                        <span className={`text-sm font-bold ${plan.popular ? "text-texafab-gold" : "text-green-600 dark:text-green-400"}`}>
+                        <span className={`text-sm font-bold ${plan.popular ? "text-yellow-300" : "text-green-600 dark:text-green-400"}`}>
                           {returns.customerRetention}{getText(t.perYear, language)}
                         </span>
                       </div>
@@ -495,7 +505,7 @@ export function Pricing() {
                           <span className={`text-xs ${plan.popular ? "text-white/90" : "text-gray-500 dark:text-gray-400"}`}>
                             ROI
                           </span>
-                          <span className={`text-sm font-bold ${plan.popular ? "text-texafab-gold" : "text-emerald-600 dark:text-emerald-400"}`}>
+                          <span className={`text-sm font-bold ${plan.popular ? "text-yellow-300" : "text-emerald-600 dark:text-emerald-400"}`}>
                             {returns.roi}
                           </span>
                         </div>
@@ -504,7 +514,7 @@ export function Pricing() {
                             <span className={`text-xs ${plan.popular ? "text-white/90" : "text-gray-500 dark:text-gray-400"}`}>
                               {getText(t.metricEdge, language)}
                             </span>
-                            <span className={`text-sm font-bold ${plan.popular ? "text-texafab-gold" : "text-blue-600 dark:text-blue-400"}`}>
+                            <span className={`text-sm font-bold ${plan.popular ? "text-yellow-300" : "text-blue-600 dark:text-blue-400"}`}>
                               {returns.competitiveEdge}
                             </span>
                           </div>

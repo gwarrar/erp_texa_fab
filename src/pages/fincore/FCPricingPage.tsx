@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useMemo } from "react";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import { useLanguage } from "@/components/landing/LanguageContext";
@@ -9,8 +9,64 @@ import { ScrollToTop } from "@/components/ui/scroll-to-top";
 import { 
   ArrowRight, ArrowLeft, Check, X, HelpCircle, Building2,
   Zap, Shield, Globe, Users, MessageSquare, Code, BarChart3,
-  Lock, Server, Palette, Smartphone, Bot, Plus
+  Lock, Server, Palette, Smartphone, Bot, Plus, Clock, Percent
 } from "lucide-react";
+
+// Month names in different languages
+const monthNames = {
+  en: ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"],
+  ar: ["يناير", "فبراير", "مارس", "أبريل", "مايو", "يونيو", "يوليو", "أغسطس", "سبتمبر", "أكتوبر", "نوفمبر", "ديسمبر"],
+  tr: ["Ocak", "Şubat", "Mart", "Nisan", "Mayıs", "Haziran", "Temmuz", "Ağustos", "Eylül", "Ekim", "Kasım", "Aralık"],
+  ru: ["Январь", "Февраль", "Март", "Апрель", "Май", "Июнь", "Июль", "Август", "Сентябрь", "Октябрь", "Ноябрь", "Декабрь"],
+  uk: ["Січень", "Лютий", "Березень", "Квітень", "Травень", "Червень", "Липень", "Серпень", "Вересень", "Жовтень", "Листопад", "Грудень"],
+  pl: ["Styczeń", "Luty", "Marzec", "Kwiecień", "Maj", "Czerwiec", "Lipiec", "Sierpień", "Wrzesień", "Październik", "Listopad", "Grudzień"],
+  ro: ["Ianuarie", "Februarie", "Martie", "Aprilie", "Mai", "Iunie", "Iulie", "August", "Septembrie", "Octombrie", "Noiembrie", "Decembrie"],
+  de: ["Januar", "Februar", "März", "April", "Mai", "Juni", "Juli", "August", "September", "Oktober", "November", "Dezember"],
+};
+
+// Countdown timer hook
+function useCountdown() {
+  const [timeLeft, setTimeLeft] = useState({ days: 0, hours: 0, minutes: 0, seconds: 0 });
+
+  useEffect(() => {
+    const calculateTimeLeft = () => {
+      const now = new Date();
+      const endOfMonth = new Date(now.getFullYear(), now.getMonth() + 1, 0, 23, 59, 59);
+      const difference = endOfMonth.getTime() - now.getTime();
+
+      if (difference > 0) {
+        setTimeLeft({
+          days: Math.floor(difference / (1000 * 60 * 60 * 24)),
+          hours: Math.floor((difference / (1000 * 60 * 60)) % 24),
+          minutes: Math.floor((difference / 1000 / 60) % 60),
+          seconds: Math.floor((difference / 1000) % 60),
+        });
+      }
+    };
+
+    calculateTimeLeft();
+    const timer = setInterval(calculateTimeLeft, 1000);
+
+    return () => clearInterval(timer);
+  }, []);
+
+  return timeLeft;
+}
+
+function getEndOfMonthDate(language: string) {
+  const now = new Date();
+  const endOfMonth = new Date(now.getFullYear(), now.getMonth() + 1, 0);
+  const day = endOfMonth.getDate();
+  const month = endOfMonth.getMonth();
+  const year = endOfMonth.getFullYear();
+  
+  const months = monthNames[language as keyof typeof monthNames] || monthNames.en;
+  
+  if (language === "ar") {
+    return `${day} ${months[month]} ${year}`;
+  }
+  return `${months[month]} ${day}, ${year}`;
+}
 
 const translations = {
   en: {
@@ -27,10 +83,21 @@ const translations = {
     professionalBadge: "The Ambitious Banker",
     enterpriseBadge: "Large Corporations & Groups",
     
+    // Limited Time Offer
+    limitedOffer: "🔥 Limited Time Offer",
+    offerEnds: "Offer ends",
+    days: "Days",
+    hours: "Hours",
+    minutes: "Min",
+    seconds: "Sec",
+    discount50: "50% OFF",
+    originalPrice: "Original Price",
+    
     // Starter Plan - Basic
     starterName: "Basic Plan",
     starterDesc: "For small exchange houses and startups",
     starterPrice: "$99",
+    starterOfferPrice: "$49",
     starterPeriod: "/month",
     
     // Starter - Business Management
@@ -64,7 +131,8 @@ const translations = {
     // Professional Plan
     professionalName: "Professional Plan",
     professionalDesc: "For growing financial institutions",
-    professionalPrice: "$499",
+    professionalPrice: "$799",
+    professionalOfferPrice: "$399",
     professionalPeriod: "/month",
     
     // Professional - Business Management
@@ -115,7 +183,8 @@ const translations = {
     // Enterprise Plan
     enterpriseName: "Enterprise Plan",
     enterpriseDesc: "For large banks and financial groups",
-    enterprisePrice: "$999",
+    enterprisePrice: "$1,199",
+    enterpriseOfferPrice: "$599",
     enterprisePeriod: "/month",
     
     // Enterprise - Business Management
@@ -244,10 +313,21 @@ const translations = {
     professionalBadge: "رائد الأعمال الطموح",
     enterpriseBadge: "الشركات الكبيرة والمجموعات",
     
+    // Limited Time Offer
+    limitedOffer: "🔥 عرض محدود",
+    offerEnds: "ينتهي العرض في",
+    days: "يوم",
+    hours: "ساعة",
+    minutes: "دقيقة",
+    seconds: "ثانية",
+    discount50: "خصم 50%",
+    originalPrice: "السعر الأصلي",
+    
     // Starter Plan - Basic
     starterName: "الباقة الأساسية",
     starterDesc: "للشركات الصغيرة",
     starterPrice: "$99",
+    starterOfferPrice: "$49",
     starterPeriod: "/شهر",
     
     // Starter - Business Management
@@ -281,7 +361,8 @@ const translations = {
     // Professional Plan
     professionalName: "الباقة الاحترافية",
     professionalDesc: "للشركات المتوسطة",
-    professionalPrice: "$499",
+    professionalPrice: "$799",
+    professionalOfferPrice: "$399",
     professionalPeriod: "/شهر",
     
     // Professional - Business Management
@@ -332,7 +413,8 @@ const translations = {
     // Enterprise Plan
     enterpriseName: "باقة المؤسسات",
     enterpriseDesc: "للمؤسسات الكبيرة",
-    enterprisePrice: "$999",
+    enterprisePrice: "$1,199",
+    enterpriseOfferPrice: "$599",
     enterprisePeriod: "/شهر",
     
     // Enterprise - Business Management
@@ -464,6 +546,8 @@ export default function FCPricingPage() {
   const currentSeo = seoMeta[language as keyof typeof seoMeta] || seoMeta.en;
   const ArrowIcon = dir === "rtl" ? ArrowLeft : ArrowRight;
   const [isAnnual, setIsAnnual] = useState(false);
+  const countdown = useCountdown();
+  const offerEndDate = useMemo(() => getEndOfMonthDate(language), [language]);
 
   useEffect(() => {
     document.title = currentSeo.title;
@@ -545,6 +629,57 @@ export default function FCPricingPage() {
         </div>
       </section>
 
+      {/* Limited Time Offer Banner */}
+      <div className="bg-gradient-to-r from-red-600 via-orange-500 to-red-600 py-4 relative overflow-hidden">
+        {/* Animated background */}
+        <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAiIGhlaWdodD0iMjAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGNpcmNsZSBjeD0iMTAiIGN5PSIxMCIgcj0iMSIgZmlsbD0icmdiYSgyNTUsMjU1LDI1NSwwLjEpIi8+PC9zdmc+')] opacity-50" />
+        
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+          {/* Main offer text */}
+          <div className="flex flex-col md:flex-row items-center justify-center gap-4 md:gap-8">
+            <div className="flex items-center gap-3">
+              <span className="bg-white text-red-600 px-3 py-1 rounded-full text-sm font-bold animate-pulse">
+                {t.discount50}
+              </span>
+              <span className="text-white font-bold text-lg md:text-xl">
+                {t.limitedOffer}
+              </span>
+            </div>
+            
+            {/* Countdown Timer */}
+            <div className="flex items-center gap-3">
+              <Clock className="w-5 h-5 text-white animate-pulse" />
+              <div className="flex items-center gap-2">
+                <div className="bg-white/20 backdrop-blur rounded-lg px-3 py-2 text-center min-w-[60px]">
+                  <span className="text-2xl font-bold text-white">{countdown.days}</span>
+                  <p className="text-xs text-white/80">{t.days}</p>
+                </div>
+                <span className="text-white text-2xl font-bold">:</span>
+                <div className="bg-white/20 backdrop-blur rounded-lg px-3 py-2 text-center min-w-[60px]">
+                  <span className="text-2xl font-bold text-white">{countdown.hours}</span>
+                  <p className="text-xs text-white/80">{t.hours}</p>
+                </div>
+                <span className="text-white text-2xl font-bold">:</span>
+                <div className="bg-white/20 backdrop-blur rounded-lg px-3 py-2 text-center min-w-[60px]">
+                  <span className="text-2xl font-bold text-white">{countdown.minutes}</span>
+                  <p className="text-xs text-white/80">{t.minutes}</p>
+                </div>
+                <span className="text-white text-2xl font-bold">:</span>
+                <div className="bg-white/20 backdrop-blur rounded-lg px-3 py-2 text-center min-w-[60px]">
+                  <span className="text-2xl font-bold text-white">{countdown.seconds}</span>
+                  <p className="text-xs text-white/80">{t.seconds}</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          {/* Offer end date */}
+          <p className="text-center text-white/90 text-sm mt-3">
+            {t.offerEnds}: <span className="font-bold">{offerEndDate}</span>
+          </p>
+        </div>
+      </div>
+
       {/* Announcement Banner */}
       <div className="bg-[#0D9488]/10 border-y border-[#0D9488]/20 py-3">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
@@ -577,12 +712,21 @@ export default function FCPricingPage() {
               </div>
               
               {/* Price */}
-              <div className="p-6 text-center border-b border-slate-200 dark:border-slate-700">
-                <div className="flex items-baseline justify-center gap-1">
-                  <span className="text-4xl font-bold text-slate-900 dark:text-white">
+              <div className="p-6 text-center border-b border-slate-200 dark:border-slate-700 relative">
+                {/* Discount Badge */}
+                <div className="absolute top-2 end-2 bg-red-500 text-white text-xs font-bold px-2 py-1 rounded-full">
+                  {t.discount50}
+                </div>
+                <div className="flex flex-col items-center gap-1">
+                  <span className="text-lg text-slate-400 line-through">
                     {isAnnual ? "$79" : t.starterPrice}
                   </span>
-                  <span className="text-slate-500">{t.starterPeriod}</span>
+                  <div className="flex items-baseline justify-center gap-1">
+                    <span className="text-4xl font-bold text-emerald-600 dark:text-emerald-400">
+                      {isAnnual ? "$39" : t.starterOfferPrice}
+                    </span>
+                    <span className="text-slate-500">{t.starterPeriod}</span>
+                  </div>
                 </div>
               </div>
               
@@ -690,12 +834,21 @@ export default function FCPricingPage() {
               </div>
               
               {/* Price */}
-              <div className="p-6 text-center border-b border-white/20">
-                <div className="flex items-baseline justify-center gap-1">
-                  <span className="text-4xl font-bold text-white">
-                    {isAnnual ? "$399" : t.professionalPrice}
+              <div className="p-6 text-center border-b border-white/20 relative">
+                {/* Discount Badge */}
+                <div className="absolute top-2 end-2 bg-amber-400 text-slate-900 text-xs font-bold px-2 py-1 rounded-full animate-pulse">
+                  {t.discount50}
+                </div>
+                <div className="flex flex-col items-center gap-1">
+                  <span className="text-lg text-white/50 line-through">
+                    {isAnnual ? "$639" : t.professionalPrice}
                   </span>
-                  <span className="text-white/70">{t.professionalPeriod}</span>
+                  <div className="flex items-baseline justify-center gap-1">
+                    <span className="text-4xl font-bold text-white">
+                      {isAnnual ? "$319" : t.professionalOfferPrice}
+                    </span>
+                    <span className="text-white/70">{t.professionalPeriod}</span>
+                  </div>
                 </div>
               </div>
               
@@ -829,12 +982,21 @@ export default function FCPricingPage() {
               </div>
               
               {/* Price */}
-              <div className="p-6 text-center border-b border-slate-200 dark:border-slate-700">
-                <div className="flex items-baseline justify-center gap-1">
-                  <span className="text-4xl font-bold text-slate-900 dark:text-white">
-                    {isAnnual ? "$799" : t.enterprisePrice}
+              <div className="p-6 text-center border-b border-slate-200 dark:border-slate-700 relative">
+                {/* Discount Badge */}
+                <div className="absolute top-2 end-2 bg-red-500 text-white text-xs font-bold px-2 py-1 rounded-full">
+                  {t.discount50}
+                </div>
+                <div className="flex flex-col items-center gap-1">
+                  <span className="text-lg text-slate-400 line-through">
+                    {isAnnual ? "$959" : t.enterprisePrice}
                   </span>
-                  <span className="text-slate-500">{t.enterprisePeriod}</span>
+                  <div className="flex items-baseline justify-center gap-1">
+                    <span className="text-4xl font-bold text-emerald-600 dark:text-emerald-400">
+                      {isAnnual ? "$479" : t.enterpriseOfferPrice}
+                    </span>
+                    <span className="text-slate-500">{t.enterprisePeriod}</span>
+                  </div>
                 </div>
               </div>
               

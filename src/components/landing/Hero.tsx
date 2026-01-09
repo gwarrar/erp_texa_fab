@@ -53,15 +53,16 @@ export function Hero() {
     loadSupabaseData();
   }, [language, siteId]);
 
-  // Use Supabase data if available, then CMS data, fallback to static translations
-  const heroTitle = supabaseData?.title || heroData?.title || getText(t.heroTitle, language);
-  const heroSubtitle = supabaseData?.subtitle || heroData?.subtitle || getText(t.heroSubtitle, language);
-  const heroBadge = supabaseData?.badge || heroData?.badge || getText(t.badge, language);
-  const primaryCta = supabaseData?.cta_primary_text || heroData?.primaryCta || getText(t.ctaDemo, language);
-  const secondaryCta = supabaseData?.cta_secondary_text || heroData?.secondaryCta || getText(t.ctaTrial, language);
+  // Use Supabase data first, then static translations (always use static translations for consistency)
+  const heroTitle = supabaseData?.title || getText(t.heroTitle, language);
+  const heroSubtitle = supabaseData?.subtitle || getText(t.heroSubtitle, language);
+  const heroBadge = supabaseData?.badge || getText(t.badge, language);
+  const primaryCta = supabaseData?.cta_primary_text || getText(t.ctaDemo, language);
+  const secondaryCta = supabaseData?.cta_secondary_text || getText(t.ctaTrial, language);
   const backgroundImage = supabaseData?.background_image || heroData?.image;
 
-  const stats = heroData?.stats || [
+  // Always use static translations for stats
+  const stats = [
     { value: "500+", label: getText(t.statCompanies, language) },
     { value: "10M+", label: getText(t.statRolls, language) },
     { value: "50+", label: getText(t.statCountries, language) },

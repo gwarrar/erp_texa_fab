@@ -31,74 +31,77 @@ import {
 function FabricManufacturingContent() {
   const { language, dir } = useLanguage();
 
+  const getText = (translations: Record<string, string>) => {
+    return translations[language] || translations.en;
+  };
+
   const features = [
     {
       icon: ClipboardList,
-      titleAr: "أوامر الإنتاج",
-      titleEn: "Production Orders",
-      descAr: "إنشاء وإدارة أوامر الإنتاج مع تتبع كامل للحالة والتقدم",
-      descEn: "Create and manage production orders with full status and progress tracking",
+      title: { ar: "أوامر الإنتاج", en: "Production Orders", ru: "Производственные заказы", uk: "Виробничі замовлення", ro: "Comenzi de producție", pl: "Zlecenia produkcyjne", tr: "Üretim Siparişleri" },
+      desc: { ar: "إنشاء وإدارة أوامر الإنتاج مع تتبع كامل للحالة والتقدم", en: "Create and manage production orders with full status and progress tracking", ru: "Создание и управление производственными заказами с полным отслеживанием статуса и прогресса", uk: "Створення та управління виробничими замовленнями з повним відстеженням статусу та прогресу", ro: "Creați și gestionați comenzile de producție cu urmărire completă a statutului și progresului", pl: "Twórz i zarządzaj zleceniami produkcyjnymi z pełnym śledzeniem statusu i postępu", tr: "Tam durum ve ilerleme takibi ile üretim siparişleri oluşturun ve yönetin" },
       color: "from-indigo-500 to-indigo-600"
     },
     {
       icon: Cog,
-      titleAr: "إدارة خطوط الإنتاج",
-      titleEn: "Production Line Management",
-      descAr: "تخصيص وجدولة خطوط الإنتاج لتحقيق أقصى كفاءة",
-      descEn: "Allocate and schedule production lines for maximum efficiency",
+      title: { ar: "إدارة خطوط الإنتاج", en: "Production Line Management", ru: "Управление производственными линиями", uk: "Управління виробничими лініями", ro: "Gestionarea liniilor de producție", pl: "Zarządzanie liniami produkcyjnymi", tr: "Üretim Hattı Yönetimi" },
+      desc: { ar: "تخصيص وجدولة خطوط الإنتاج لتحقيق أقصى كفاءة", en: "Allocate and schedule production lines for maximum efficiency", ru: "Распределение и планирование производственных линий для максимальной эффективности", uk: "Розподіл та планування виробничих ліній для максимальної ефективності", ro: "Alocați și programați liniile de producție pentru eficiență maximă", pl: "Przydzielaj i planuj linie produkcyjne dla maksymalnej wydajności", tr: "Maksimum verimlilik için üretim hatlarını tahsis edin ve planlayın" },
       color: "from-blue-500 to-blue-600"
     },
     {
       icon: Box,
-      titleAr: "تتبع المواد الخام",
-      titleEn: "Raw Material Tracking",
-      descAr: "مراقبة المواد الخام من الاستلام حتى استخدامها في الإنتاج",
-      descEn: "Monitor raw materials from receipt to use in production",
+      title: { ar: "تتبع المواد الخام", en: "Raw Material Tracking", ru: "Отслеживание сырья", uk: "Відстеження сировини", ro: "Urmărirea materiilor prime", pl: "Śledzenie surowców", tr: "Hammadde Takibi" },
+      desc: { ar: "مراقبة المواد الخام من الاستلام حتى استخدامها في الإنتاج", en: "Monitor raw materials from receipt to use in production", ru: "Мониторинг сырья от получения до использования в производстве", uk: "Моніторинг сировини від отримання до використання у виробництві", ro: "Monitorizați materiile prime de la primire până la utilizare în producție", pl: "Monitoruj surowce od odbioru do wykorzystania w produkcji", tr: "Hammaddeleri teslim almadan üretime kullanmaya kadar izleyin" },
       color: "from-emerald-500 to-emerald-600"
     },
     {
       icon: Clock,
-      titleAr: "جدولة الإنتاج",
-      titleEn: "Production Scheduling",
-      descAr: "تخطيط وجدولة ذكية للإنتاج مع تحسين استغلال الموارد",
-      descEn: "Smart planning and scheduling with resource optimization",
+      title: { ar: "جدولة الإنتاج", en: "Production Scheduling", ru: "Планирование производства", uk: "Планування виробництва", ro: "Programarea producției", pl: "Planowanie produkcji", tr: "Üretim Planlaması" },
+      desc: { ar: "تخطيط وجدولة ذكية للإنتاج مع تحسين استغلال الموارد", en: "Smart planning and scheduling with resource optimization", ru: "Умное планирование с оптимизацией ресурсов", uk: "Розумне планування з оптимізацією ресурсів", ro: "Planificare inteligentă cu optimizarea resurselor", pl: "Inteligentne planowanie z optymalizacją zasobów", tr: "Kaynak optimizasyonu ile akıllı planlama" },
       color: "from-amber-500 to-amber-600"
     },
     {
       icon: Target,
-      titleAr: "مراقبة الجودة",
-      titleEn: "Quality Control",
-      descAr: "فحوصات جودة في كل مرحلة مع توثيق النتائج",
-      descEn: "Quality checks at every stage with documented results",
+      title: { ar: "مراقبة الجودة", en: "Quality Control", ru: "Контроль качества", uk: "Контроль якості", ro: "Controlul calității", pl: "Kontrola jakości", tr: "Kalite Kontrol" },
+      desc: { ar: "فحوصات جودة في كل مرحلة مع توثيق النتائج", en: "Quality checks at every stage with documented results", ru: "Проверка качества на каждом этапе с документированием результатов", uk: "Перевірка якості на кожному етапі з документуванням результатів", ro: "Verificări de calitate la fiecare etapă cu rezultate documentate", pl: "Kontrole jakości na każdym etapie z udokumentowanymi wynikami", tr: "Her aşamada kalite kontrolleri ve belgelenmiş sonuçlar" },
       color: "from-purple-500 to-purple-600"
     },
     {
       icon: Scale,
-      titleAr: "حساب تكاليف التصنيع",
-      titleEn: "Manufacturing Cost",
-      descAr: "حساب دقيق لتكلفة الإنتاج شاملة المواد والعمالة والنفقات",
-      descEn: "Accurate production cost calculation including materials, labor, and overhead",
+      title: { ar: "حساب تكاليف التصنيع", en: "Manufacturing Cost", ru: "Производственные затраты", uk: "Виробничі витрати", ro: "Costuri de fabricație", pl: "Koszty produkcji", tr: "Üretim Maliyeti" },
+      desc: { ar: "حساب دقيق لتكلفة الإنتاج شاملة المواد والعمالة والنفقات", en: "Accurate production cost calculation including materials, labor, and overhead", ru: "Точный расчет производственных затрат включая материалы, труд и накладные расходы", uk: "Точний розрахунок виробничих витрат включаючи матеріали, працю та накладні витрати", ro: "Calculul precis al costurilor de producție incluzând materiale, forță de muncă și cheltuieli generale", pl: "Dokładne obliczanie kosztów produkcji włącznie z materiałami, pracą i kosztami ogólnymi", tr: "Malzeme, işçilik ve genel giderler dahil doğru üretim maliyeti hesaplaması" },
       color: "from-red-500 to-red-600"
     }
   ];
 
   const productionStages = [
-    { titleAr: "استلام المواد الخام", titleEn: "Raw Material Receipt", icon: Package },
-    { titleAr: "فحص الجودة الأولي", titleEn: "Initial Quality Check", icon: Target },
-    { titleAr: "التحضير والتجهيز", titleEn: "Preparation", icon: Settings },
-    { titleAr: "النسج / الحياكة", titleEn: "Weaving / Knitting", icon: Layers },
-    { titleAr: "الصباغة والتشطيب", titleEn: "Dyeing & Finishing", icon: Thermometer },
-    { titleAr: "الفحص النهائي", titleEn: "Final Inspection", icon: CheckCircle2 },
-    { titleAr: "التعبئة والتغليف", titleEn: "Packaging", icon: Box },
-    { titleAr: "التخزين والشحن", titleEn: "Storage & Shipping", icon: Factory }
+    { title: { ar: "استلام المواد الخام", en: "Raw Material Receipt", ru: "Приемка сырья", uk: "Приймання сировини", ro: "Recepție materii prime", pl: "Przyjęcie surowców", tr: "Hammadde Teslim Alma" }, icon: Package },
+    { title: { ar: "فحص الجودة الأولي", en: "Initial Quality Check", ru: "Первичный контроль качества", uk: "Первинний контроль якості", ro: "Control inițial al calității", pl: "Wstępna kontrola jakości", tr: "İlk Kalite Kontrolü" }, icon: Target },
+    { title: { ar: "التحضير والتجهيز", en: "Preparation", ru: "Подготовка", uk: "Підготовка", ro: "Pregătire", pl: "Przygotowanie", tr: "Hazırlık" }, icon: Settings },
+    { title: { ar: "النسج / الحياكة", en: "Weaving / Knitting", ru: "Ткачество / Вязание", uk: "Ткацтво / В'язання", ro: "Țesere / Tricotat", pl: "Tkanie / Dzianie", tr: "Dokuma / Örme" }, icon: Layers },
+    { title: { ar: "الصباغة والتشطيب", en: "Dyeing & Finishing", ru: "Крашение и отделка", uk: "Фарбування та оздоблення", ro: "Vopsire și finisare", pl: "Barwienie i wykańczanie", tr: "Boyama ve Finisaj" }, icon: Thermometer },
+    { title: { ar: "الفحص النهائي", en: "Final Inspection", ru: "Финальная проверка", uk: "Фінальна перевірка", ro: "Inspecție finală", pl: "Końcowa kontrola", tr: "Son Muayene" }, icon: CheckCircle2 },
+    { title: { ar: "التعبئة والتغليف", en: "Packaging", ru: "Упаковка", uk: "Пакування", ro: "Ambalare", pl: "Pakowanie", tr: "Paketleme" }, icon: Box },
+    { title: { ar: "التخزين والشحن", en: "Storage & Shipping", ru: "Хранение и отгрузка", uk: "Зберігання та відвантаження", ro: "Depozitare și expediere", pl: "Magazynowanie i wysyłka", tr: "Depolama ve Sevkiyat" }, icon: Factory }
   ];
 
   const kpis = [
-    { titleAr: "كفاءة الإنتاج", titleEn: "Production Efficiency", value: "94%", trend: "+5%" },
-    { titleAr: "معدل الجودة", titleEn: "Quality Rate", value: "98.5%", trend: "+2%" },
-    { titleAr: "وقت التسليم", titleEn: "Delivery Time", value: "3 أيام", trend: "-1 يوم" },
-    { titleAr: "الهدر", titleEn: "Waste", value: "2.1%", trend: "-0.5%" }
+    { title: { ar: "كفاءة الإنتاج", en: "Production Efficiency", ru: "Эффективность производства", uk: "Ефективність виробництва", ro: "Eficiența producției", pl: "Wydajność produkcji", tr: "Üretim Verimliliği" }, value: "94%", trend: "+5%" },
+    { title: { ar: "معدل الجودة", en: "Quality Rate", ru: "Показатель качества", uk: "Показник якості", ro: "Rata de calitate", pl: "Wskaźnik jakości", tr: "Kalite Oranı" }, value: "98.5%", trend: "+2%" },
+    { title: { ar: "وقت التسليم", en: "Delivery Time", ru: "Время доставки", uk: "Час доставки", ro: "Timp de livrare", pl: "Czas dostawy", tr: "Teslimat Süresi" }, value: "3", trend: "-1" },
+    { title: { ar: "الهدر", en: "Waste", ru: "Отходы", uk: "Відходи", ro: "Deșeuri", pl: "Odpady", tr: "Atık" }, value: "2.1%", trend: "-0.5%" }
   ];
+
+  const pageText = {
+    badge: { ar: "إدارة تصنيع الأقمشة", en: "Fabric Manufacturing", ru: "Производство тканей", uk: "Виробництво тканин", ro: "Fabricarea țesăturilor", pl: "Produkcja tkanin", tr: "Kumaş Üretimi" },
+    heroTitle1: { ar: "تصنيع أقمشة", en: "Professional", ru: "Профессиональное", uk: "Професійне", ro: "Fabricare profesională", pl: "Profesjonalna", tr: "Profesyonel" },
+    heroTitle2: { ar: "باحترافية", en: "Fabric Manufacturing", ru: "производство тканей", uk: "виробництво тканин", ro: "a țesăturilor", pl: "produkcja tkanin", tr: "Kumaş Üretimi" },
+    heroDesc: { ar: "نظام متكامل لإدارة مصانع الأقمشة من المواد الخام إلى المنتج النهائي", en: "Complete system for managing fabric factories from raw materials to finished products", ru: "Комплексная система управления тканевыми фабриками от сырья до готовой продукции", uk: "Комплексна система управління тканинними фабриками від сировини до готової продукції", ro: "Sistem complet pentru gestionarea fabricilor de țesături de la materii prime la produse finite", pl: "Kompletny system do zarządzania fabrykami tkanin od surowców do gotowych produktów", tr: "Hammaddelerden bitmiş ürünlere kadar kumaş fabrikalarını yönetmek için eksiksiz sistem" },
+    featuresTitle: { ar: "مميزات إدارة التصنيع", en: "Manufacturing Management Features", ru: "Функции управления производством", uk: "Функції управління виробництвом", ro: "Caracteristici de gestionare a producției", pl: "Funkcje zarządzania produkcją", tr: "Üretim Yönetimi Özellikleri" },
+    featuresDesc: { ar: "أدوات متقدمة لإدارة عمليات تصنيع الأقمشة", en: "Advanced tools for managing fabric manufacturing operations", ru: "Передовые инструменты для управления операциями по производству тканей", uk: "Передові інструменти для управління операціями з виробництва тканин", ro: "Instrumente avansate pentru gestionarea operațiunilor de fabricare a țesăturilor", pl: "Zaawansowane narzędzia do zarządzania operacjami produkcji tkanin", tr: "Kumaş üretim operasyonlarını yönetmek için gelişmiş araçlar" },
+    productionStages: { ar: "مراحل الإنتاج", en: "Production Stages", ru: "Этапы производства", uk: "Етапи виробництва", ro: "Etape de producție", pl: "Etapy produkcji", tr: "Üretim Aşamaları" },
+    bookDemo: { ar: "احجز عرض توضيحي", en: "Book a Demo", ru: "Заказать демо", uk: "Замовити демо", ro: "Rezervă o demonstrație", pl: "Zarezerwuj demo", tr: "Demo Rezervasyonu" }
+  };
 
   return (
     <div className={`min-h-screen bg-gradient-to-b from-gray-50 to-white dark:from-gray-900 dark:to-gray-800 ${dir === "rtl" ? "rtl" : "ltr"}`} dir={dir}>
@@ -116,28 +119,22 @@ function FabricManufacturingContent() {
             <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-indigo-500/10 border border-indigo-500/20 mb-6">
               <Factory className="w-4 h-4 text-indigo-500" />
               <span className="text-sm font-semibold text-indigo-600">
-                {language === "ar" ? "إدارة تصنيع الأقمشة" : "Fabric Manufacturing"}
+                {getText(pageText.badge)}
               </span>
             </div>
 
             <h1 className="text-4xl md:text-6xl font-black text-texafab-slate mb-6 leading-tight">
-              {language === "ar" ? (
-                <>تصنيع أقمشة <span className="text-indigo-500">باحترافية</span></>
-              ) : (
-                <>Professional <span className="text-indigo-500">Fabric Manufacturing</span></>
-              )}
+              {getText(pageText.heroTitle1)} <span className="text-indigo-500">{getText(pageText.heroTitle2)}</span>
             </h1>
 
             <p className="text-xl text-gray-600 mb-8 leading-relaxed max-w-3xl mx-auto">
-              {language === "ar" 
-                ? "نظام متكامل لإدارة مصانع الأقمشة من المواد الخام إلى المنتج النهائي"
-                : "Complete system for managing fabric factories from raw materials to finished products"}
+              {getText(pageText.heroDesc)}
             </p>
 
             <div className="flex flex-col sm:flex-row justify-center gap-4">
               <Link to="/contact">
                 <Button className="h-14 px-8 bg-indigo-500 hover:bg-indigo-600 text-white text-base font-semibold rounded-xl shadow-lg shadow-indigo-500/25">
-                  {language === "ar" ? "احجز عرض توضيحي" : "Book a Demo"}
+                  {getText(pageText.bookDemo)}
                   <ArrowRight className={`w-5 h-5 ${dir === "rtl" ? "rotate-180 me-2" : "ms-2"}`} />
                 </Button>
               </Link>
@@ -154,7 +151,7 @@ function FabricManufacturingContent() {
               <Card key={index} className="p-6 text-center border-0 shadow-lg rounded-2xl">
                 <p className="text-3xl font-black text-indigo-500 mb-1">{kpi.value}</p>
                 <p className="font-semibold text-texafab-slate text-sm mb-1">
-                  {language === "ar" ? kpi.titleAr : kpi.titleEn}
+                  {getText(kpi.title)}
                 </p>
                 <p className="text-xs text-emerald-600 font-medium">{kpi.trend}</p>
               </Card>
@@ -168,12 +165,10 @@ function FabricManufacturingContent() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6">
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-bold text-texafab-slate mb-4">
-              {language === "ar" ? "مميزات إدارة التصنيع" : "Manufacturing Management Features"}
+              {getText(pageText.featuresTitle)}
             </h2>
             <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-              {language === "ar" 
-                ? "أدوات متقدمة لإدارة عمليات تصنيع الأقمشة"
-                : "Advanced tools for managing fabric manufacturing operations"}
+              {getText(pageText.featuresDesc)}
             </p>
           </div>
 
@@ -184,10 +179,10 @@ function FabricManufacturingContent() {
                   <feature.icon className="w-7 h-7 text-white" />
                 </div>
                 <h3 className="text-xl font-bold text-texafab-slate mb-2">
-                  {language === "ar" ? feature.titleAr : feature.titleEn}
+                  {getText(feature.title)}
                 </h3>
                 <p className="text-gray-600">
-                  {language === "ar" ? feature.descAr : feature.descEn}
+                  {getText(feature.desc)}
                 </p>
               </Card>
             ))}
@@ -200,7 +195,7 @@ function FabricManufacturingContent() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6">
           <div className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-bold text-texafab-slate mb-4">
-              {language === "ar" ? "مراحل الإنتاج" : "Production Stages"}
+              {getText(pageText.productionStages)}
             </h2>
           </div>
 
@@ -216,7 +211,7 @@ function FabricManufacturingContent() {
                   </div>
                 </div>
                 <h3 className="mt-3 font-semibold text-texafab-slate">
-                  {language === "ar" ? stage.titleAr : stage.titleEn}
+                  {getText(stage.title)}
                 </h3>
               </Card>
             ))}

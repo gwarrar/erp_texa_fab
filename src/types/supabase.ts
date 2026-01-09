@@ -47,6 +47,102 @@ export type Database = {
         }
         Relationships: []
       }
+      users: {
+        Row: {
+          avatar_url: string | null
+          company_name: string | null
+          created_at: string | null
+          currency: string | null
+          email: string | null
+          full_name: string | null
+          id: string
+          phone: string | null
+          provider: string | null
+          updated_at: string | null
+        }
+        Insert: {
+          avatar_url?: string | null
+          company_name?: string | null
+          created_at?: string | null
+          currency?: string | null
+          email?: string | null
+          full_name?: string | null
+          id: string
+          phone?: string | null
+          provider?: string | null
+          updated_at?: string | null
+        }
+        Update: {
+          avatar_url?: string | null
+          company_name?: string | null
+          created_at?: string | null
+          currency?: string | null
+          email?: string | null
+          full_name?: string | null
+          id?: string
+          phone?: string | null
+          provider?: string | null
+          updated_at?: string | null
+        }
+        Relationships: []
+      }
+    }
+    Views: {
+      [_ in never]: never
+    }
+    Functions: {
+      [_ in never]: never
+    }
+    Enums: {
+      [_ in never]: never
+    }
+    CompositeTypes: {
+      [_ in never]: never
+    }
+  }
+}
+
+export type Database = {
+  // Allows to automatically instantiate createClient with right options
+  // instead of createClient<Database, { PostgrestVersion: 'XX' }>(URL, KEY)
+  __InternalSupabase: {
+    PostgrestVersion: "14.1"
+  }
+  public: {
+    Tables: {
+      analytics_settings: {
+        Row: {
+          created_at: string | null
+          google_analytics_id: string | null
+          google_tag_manager_id: string | null
+          id: string
+          is_enabled: boolean | null
+          meta_pixel_id: string | null
+          site_id: string
+          updated_at: string | null
+        }
+        Insert: {
+          created_at?: string | null
+          google_analytics_id?: string | null
+          google_tag_manager_id?: string | null
+          id?: string
+          is_enabled?: boolean | null
+          meta_pixel_id?: string | null
+          site_id: string
+          updated_at?: string | null
+        }
+        Update: {
+          created_at?: string | null
+          google_analytics_id?: string | null
+          google_tag_manager_id?: string | null
+          id?: string
+          is_enabled?: boolean | null
+          meta_pixel_id?: string | null
+          site_id?: string
+          updated_at?: string | null
+        }
+        Relationships: []
+      }
       announcement_settings: {
         Row: {
           animation_speed: number | null
@@ -849,6 +945,45 @@ export type Database = {
             referencedColumns: ["id"]
           },
         ]
+      }
+      users: {
+        Row: {
+          avatar_url: string | null
+          company_name: string | null
+          created_at: string | null
+          currency: string | null
+          email: string | null
+          full_name: string | null
+          id: string
+          phone: string | null
+          provider: string | null
+          updated_at: string | null
+        }
+        Insert: {
+          avatar_url?: string | null
+          company_name?: string | null
+          created_at?: string | null
+          currency?: string | null
+          email?: string | null
+          full_name?: string | null
+          id: string
+          phone?: string | null
+          provider?: string | null
+          updated_at?: string | null
+        }
+        Update: {
+          avatar_url?: string | null
+          company_name?: string | null
+          created_at?: string | null
+          currency?: string | null
+          email?: string | null
+          full_name?: string | null
+          id?: string
+          phone?: string | null
+          provider?: string | null
+          updated_at?: string | null
+        }
+        Relationships: []
       }
       widget_settings: {
         Row: {

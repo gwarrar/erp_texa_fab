@@ -30,72 +30,75 @@ import {
 function GarmentManufacturingContent() {
   const { language, dir } = useLanguage();
 
+  const getText = (translations: Record<string, string>) => {
+    return translations[language] || translations.en;
+  };
+
   const features = [
     {
       icon: FileText,
-      titleAr: "BOM - قائمة المواد",
-      titleEn: "Bill of Materials (BOM)",
-      descAr: "قائمة مواد تفصيلية لكل منتج مع الكميات والتكاليف",
-      descEn: "Detailed material list for each product with quantities and costs",
+      title: { ar: "BOM - قائمة المواد", en: "Bill of Materials (BOM)", ru: "Спецификация материалов", uk: "Специфікація матеріалів", ro: "Lista de materiale", pl: "Lista materiałów", tr: "Malzeme Listesi" },
+      desc: { ar: "قائمة مواد تفصيلية لكل منتج مع الكميات والتكاليف", en: "Detailed material list for each product with quantities and costs", ru: "Детальный список материалов для каждого продукта с количествами и затратами", uk: "Детальний список матеріалів для кожного продукту з кількостями та витратами", ro: "Lista detaliată de materiale pentru fiecare produs cu cantități și costuri", pl: "Szczegółowa lista materiałów dla każdego produktu z ilościami i kosztami", tr: "Her ürün için miktar ve maliyetlerle detaylı malzeme listesi" },
       color: "from-rose-500 to-rose-600"
     },
     {
       icon: Ruler,
-      titleAr: "إدارة المقاسات والألوان",
-      titleEn: "Size & Color Management",
-      descAr: "إدارة شاملة للمقاسات والألوان مع مصفوفة SKU ذكية",
-      descEn: "Comprehensive size and color management with smart SKU matrix",
+      title: { ar: "إدارة المقاسات والألوان", en: "Size & Color Management", ru: "Управление размерами и цветами", uk: "Управління розмірами та кольорами", ro: "Gestionarea mărimilor și culorilor", pl: "Zarządzanie rozmiarami i kolorami", tr: "Beden ve Renk Yönetimi" },
+      desc: { ar: "إدارة شاملة للمقاسات والألوان مع مصفوفة SKU ذكية", en: "Comprehensive size and color management with smart SKU matrix", ru: "Комплексное управление размерами и цветами с умной матрицей SKU", uk: "Комплексне управління розмірами та кольорами з розумною матрицею SKU", ro: "Gestionare cuprinzătoare a mărimilor și culorilor cu matrice SKU inteligentă", pl: "Kompleksowe zarządzanie rozmiarami i kolorami z inteligentną matrycą SKU", tr: "Akıllı SKU matrisi ile kapsamlı beden ve renk yönetimi" },
       color: "from-purple-500 to-purple-600"
     },
     {
       icon: Scissors,
-      titleAr: "تتبع مراحل التصنيع",
-      titleEn: "Manufacturing Stage Tracking",
-      descAr: "تتبع كل قطعة من القص للخياطة للتشطيب والتعبئة",
-      descEn: "Track each piece from cutting to sewing to finishing and packing",
+      title: { ar: "تتبع مراحل التصنيع", en: "Manufacturing Stage Tracking", ru: "Отслеживание этапов производства", uk: "Відстеження етапів виробництва", ro: "Urmărirea etapelor de fabricație", pl: "Śledzenie etapów produkcji", tr: "Üretim Aşaması Takibi" },
+      desc: { ar: "تتبع كل قطعة من القص للخياطة للتشطيب والتعبئة", en: "Track each piece from cutting to sewing to finishing and packing", ru: "Отслеживайте каждую деталь от раскроя до шитья, отделки и упаковки", uk: "Відстежуйте кожну деталь від розкрою до шиття, оздоблення та пакування", ro: "Urmăriți fiecare piesă de la tăiere la cusut, finisare și ambalare", pl: "Śledź każdą sztukę od krojenia przez szycie do wykończenia i pakowania", tr: "Her parçayı kesimden dikişe, bitişe ve paketlemeye kadar takip edin" },
       color: "from-blue-500 to-blue-600"
     },
     {
       icon: Users,
-      titleAr: "إدارة العمال والورشات",
-      titleEn: "Workers & Workshops",
-      descAr: "توزيع العمل على الورشات وتتبع إنتاجية كل عامل",
-      descEn: "Distribute work to workshops and track each worker's productivity",
+      title: { ar: "إدارة العمال والورشات", en: "Workers & Workshops", ru: "Работники и мастерские", uk: "Працівники та майстерні", ro: "Muncitori și ateliere", pl: "Pracownicy i warsztaty", tr: "İşçiler ve Atölyeler" },
+      desc: { ar: "توزيع العمل على الورشات وتتبع إنتاجية كل عامل", en: "Distribute work to workshops and track each worker's productivity", ru: "Распределяйте работу по мастерским и отслеживайте производительность каждого работника", uk: "Розподіляйте роботу по майстерням та відстежуйте продуктивність кожного працівника", ro: "Distribuiți munca către ateliere și urmăriți productivitatea fiecărui muncitor", pl: "Rozdzielaj pracę do warsztatów i śledź produktywność każdego pracownika", tr: "İşi atölyelere dağıtın ve her işçinin verimliliğini takip edin" },
       color: "from-emerald-500 to-emerald-600"
     },
     {
       icon: Scale,
-      titleAr: "حساب تكلفة القطعة",
-      titleEn: "Per-Piece Costing",
-      descAr: "حساب دقيق لتكلفة كل قطعة شاملة المواد والعمالة",
-      descEn: "Accurate per-piece cost calculation including materials and labor",
+      title: { ar: "حساب تكلفة القطعة", en: "Per-Piece Costing", ru: "Расчет стоимости за штуку", uk: "Розрахунок вартості за штуку", ro: "Costul pe bucată", pl: "Koszt za sztukę", tr: "Parça Başına Maliyet" },
+      desc: { ar: "حساب دقيق لتكلفة كل قطعة شاملة المواد والعمالة", en: "Accurate per-piece cost calculation including materials and labor", ru: "Точный расчет стоимости за штуку включая материалы и работу", uk: "Точний розрахунок вартості за штуку включаючи матеріали та роботу", ro: "Calculul precis al costului pe bucată incluzând materiale și manoperă", pl: "Dokładne obliczenie kosztu za sztukę włącznie z materiałami i robocizną", tr: "Malzeme ve işçilik dahil parça başına doğru maliyet hesaplaması" },
       color: "from-amber-500 to-amber-600"
     },
     {
       icon: Palette,
-      titleAr: "نظام العينات والموديلات",
-      titleEn: "Samples & Models",
-      descAr: "إدارة العينات من التصميم للموافقة للإنتاج",
-      descEn: "Manage samples from design to approval to production",
+      title: { ar: "نظام العينات والموديلات", en: "Samples & Models", ru: "Образцы и модели", uk: "Зразки та моделі", ro: "Mostre și modele", pl: "Próbki i modele", tr: "Numuneler ve Modeller" },
+      desc: { ar: "إدارة العينات من التصميم للموافقة للإنتاج", en: "Manage samples from design to approval to production", ru: "Управляйте образцами от дизайна до утверждения и производства", uk: "Керуйте зразками від дизайну до затвердження та виробництва", ro: "Gestionați mostrele de la design la aprobare și producție", pl: "Zarządzaj próbkami od projektu przez zatwierdzenie do produkcji", tr: "Numuneleri tasarımdan onaya ve üretime kadar yönetin" },
       color: "from-pink-500 to-pink-600"
     }
   ];
 
   const productionStages = [
-    { titleAr: "التصميم والموديل", titleEn: "Design & Model", percentage: 100, color: "bg-purple-500" },
-    { titleAr: "القص", titleEn: "Cutting", percentage: 85, color: "bg-blue-500" },
-    { titleAr: "الخياطة", titleEn: "Sewing", percentage: 70, color: "bg-emerald-500" },
-    { titleAr: "التشطيب", titleEn: "Finishing", percentage: 55, color: "bg-amber-500" },
-    { titleAr: "مراقبة الجودة", titleEn: "Quality Control", percentage: 45, color: "bg-red-500" },
-    { titleAr: "الكي والتعبئة", titleEn: "Ironing & Packing", percentage: 30, color: "bg-pink-500" }
+    { title: { ar: "التصميم والموديل", en: "Design & Model", ru: "Дизайн и модель", uk: "Дизайн та модель", ro: "Design și model", pl: "Projekt i model", tr: "Tasarım ve Model" }, percentage: 100, color: "bg-purple-500" },
+    { title: { ar: "القص", en: "Cutting", ru: "Раскрой", uk: "Розкрій", ro: "Tăiere", pl: "Krojenie", tr: "Kesim" }, percentage: 85, color: "bg-blue-500" },
+    { title: { ar: "الخياطة", en: "Sewing", ru: "Шитье", uk: "Шиття", ro: "Cusut", pl: "Szycie", tr: "Dikiş" }, percentage: 70, color: "bg-emerald-500" },
+    { title: { ar: "التشطيب", en: "Finishing", ru: "Отделка", uk: "Оздоблення", ro: "Finisare", pl: "Wykończenie", tr: "Finisaj" }, percentage: 55, color: "bg-amber-500" },
+    { title: { ar: "مراقبة الجودة", en: "Quality Control", ru: "Контроль качества", uk: "Контроль якості", ro: "Controlul calității", pl: "Kontrola jakości", tr: "Kalite Kontrol" }, percentage: 45, color: "bg-red-500" },
+    { title: { ar: "الكي والتعبئة", en: "Ironing & Packing", ru: "Глажка и упаковка", uk: "Прасування та пакування", ro: "Călcat și ambalare", pl: "Prasowanie i pakowanie", tr: "Ütüleme ve Paketleme" }, percentage: 30, color: "bg-pink-500" }
   ];
 
   const stats = [
-    { valueAr: "50,000+", valueEn: "50,000+", labelAr: "قطعة/شهر", labelEn: "Pieces/Month" },
-    { valueAr: "98%", valueEn: "98%", labelAr: "معدل الجودة", labelEn: "Quality Rate" },
-    { valueAr: "40%", valueEn: "40%", labelAr: "تقليل الهدر", labelEn: "Waste Reduction" },
-    { valueAr: "2x", valueEn: "2x", labelAr: "سرعة الإنتاج", labelEn: "Production Speed" }
+    { value: "50,000+", label: { ar: "قطعة/شهر", en: "Pieces/Month", ru: "Шт./месяц", uk: "Шт./місяць", ro: "Piese/lună", pl: "Szt./miesiąc", tr: "Adet/Ay" } },
+    { value: "98%", label: { ar: "معدل الجودة", en: "Quality Rate", ru: "Показатель качества", uk: "Показник якості", ro: "Rata de calitate", pl: "Wskaźnik jakości", tr: "Kalite Oranı" } },
+    { value: "40%", label: { ar: "تقليل الهدر", en: "Waste Reduction", ru: "Сокращение отходов", uk: "Скорочення відходів", ro: "Reducerea deșeurilor", pl: "Redukcja odpadów", tr: "Atık Azaltma" } },
+    { value: "2x", label: { ar: "سرعة الإنتاج", en: "Production Speed", ru: "Скорость производства", uk: "Швидкість виробництва", ro: "Viteza producției", pl: "Szybkość produkcji", tr: "Üretim Hızı" } }
   ];
+
+  const pageText = {
+    badge: { ar: "إدارة تصنيع الملابس", en: "Garment Manufacturing", ru: "Производство одежды", uk: "Виробництво одягу", ro: "Fabricarea îmbrăcămintei", pl: "Produkcja odzieży", tr: "Giyim Üretimi" },
+    heroTitle1: { ar: "تصنيع ملابس", en: "Professional", ru: "Профессиональное", uk: "Професійне", ro: "Fabricare profesională", pl: "Profesjonalna", tr: "Profesyonel" },
+    heroTitle2: { ar: "باحترافية", en: "Garment Manufacturing", ru: "производство одежды", uk: "виробництво одягу", ro: "a îmbrăcămintei", pl: "produkcja odzieży", tr: "Giyim Üretimi" },
+    heroDesc: { ar: "نظام متكامل لإدارة مصانع الملابس من القص إلى التعبئة مع تتبع كل قطعة", en: "Complete system for managing garment factories from cutting to packing with tracking every piece", ru: "Комплексная система управления швейными фабриками от раскроя до упаковки с отслеживанием каждой детали", uk: "Комплексна система управління швейними фабриками від розкрою до пакування з відстеженням кожної деталі", ro: "Sistem complet pentru gestionarea fabricilor de îmbrăcăminte de la tăiere la ambalare cu urmărirea fiecărei piese", pl: "Kompletny system do zarządzania fabrykami odzieży od krojenia do pakowania ze śledzeniem każdej sztuki", tr: "Her parçanın takibi ile kesimden paketlemeye kadar giyim fabrikalarını yönetmek için eksiksiz sistem" },
+    featuresTitle: { ar: "مميزات إدارة تصنيع الملابس", en: "Garment Manufacturing Features", ru: "Функции производства одежды", uk: "Функції виробництва одягу", ro: "Caracteristici de fabricare a îmbrăcămintei", pl: "Funkcje produkcji odzieży", tr: "Giyim Üretimi Özellikleri" },
+    featuresDesc: { ar: "أدوات متقدمة لإدارة جميع جوانب تصنيع الملابس", en: "Advanced tools for managing all aspects of garment manufacturing", ru: "Передовые инструменты для управления всеми аспектами производства одежды", uk: "Передові інструменти для управління всіма аспектами виробництва одягу", ro: "Instrumente avansate pentru gestionarea tuturor aspectelor fabricării îmbrăcămintei", pl: "Zaawansowane narzędzia do zarządzania wszystkimi aspektami produkcji odzieży", tr: "Giyim üretiminin tüm yönlerini yönetmek için gelişmiş araçlar" },
+    productionStages: { ar: "مراحل الإنتاج الحالية", en: "Current Production Stages", ru: "Текущие этапы производства", uk: "Поточні етапи виробництва", ro: "Etapele actuale de producție", pl: "Aktualne etapy produkcji", tr: "Mevcut Üretim Aşamaları" },
+    bookDemo: { ar: "احجز عرض توضيحي", en: "Book a Demo", ru: "Заказать демо", uk: "Замовити демо", ro: "Rezervă o demonstrație", pl: "Zarezerwuj demo", tr: "Demo Rezervasyonu" }
+  };
 
   return (
     <div className={`min-h-screen bg-gradient-to-b from-gray-50 to-white dark:from-gray-900 dark:to-gray-800 ${dir === "rtl" ? "rtl" : "ltr"}`} dir={dir}>
@@ -113,28 +116,22 @@ function GarmentManufacturingContent() {
             <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-rose-500/10 border border-rose-500/20 mb-6">
               <Shirt className="w-4 h-4 text-rose-500" />
               <span className="text-sm font-semibold text-rose-600">
-                {language === "ar" ? "إدارة تصنيع الألبسة" : "Garment Manufacturing"}
+                {getText(pageText.badge)}
               </span>
             </div>
 
             <h1 className="text-4xl md:text-6xl font-black text-texafab-slate dark:text-white mb-6 leading-tight">
-              {language === "ar" ? (
-                <>تصنيع ألبسة <span className="text-rose-500">متقدم</span></>
-              ) : (
-                <>Advanced <span className="text-rose-500">Garment Manufacturing</span></>
-              )}
+              {getText(pageText.heroTitle1)} <span className="text-rose-500">{getText(pageText.heroTitle2)}</span>
             </h1>
 
             <p className="text-xl text-gray-600 dark:text-gray-300 mb-8 leading-relaxed max-w-3xl mx-auto">
-              {language === "ar" 
-                ? "نظام متخصص لإدارة مصانع الألبسة من التصميم للإنتاج للتسليم"
-                : "Specialized system for managing garment factories from design to production to delivery"}
+              {getText(pageText.heroDesc)}
             </p>
 
             <div className="flex flex-col sm:flex-row justify-center gap-4">
               <Link to="/contact">
                 <Button className="h-14 px-8 bg-rose-500 hover:bg-rose-600 text-white text-base font-semibold rounded-xl shadow-lg shadow-rose-500/25">
-                  {language === "ar" ? "احجز عرض توضيحي" : "Book a Demo"}
+                  {getText(pageText.bookDemo)}
                   <ArrowRight className={`w-5 h-5 ${dir === "rtl" ? "rotate-180 me-2" : "ms-2"}`} />
                 </Button>
               </Link>
@@ -150,10 +147,10 @@ function GarmentManufacturingContent() {
             {stats.map((stat, index) => (
               <Card key={index} className="p-6 text-center border-0 shadow-lg rounded-2xl bg-white dark:bg-gray-800">
                 <p className="text-3xl font-black text-rose-500 dark:text-rose-400 mb-1">
-                  {language === "ar" ? stat.valueAr : stat.valueEn}
+                  {stat.value}
                 </p>
                 <p className="text-gray-600 dark:text-gray-300 text-sm">
-                  {language === "ar" ? stat.labelAr : stat.labelEn}
+                  {getText(stat.label)}
                 </p>
               </Card>
             ))}
@@ -166,12 +163,10 @@ function GarmentManufacturingContent() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6">
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-bold text-texafab-slate dark:text-white mb-4">
-              {language === "ar" ? "مميزات إدارة تصنيع الألبسة" : "Garment Manufacturing Features"}
+              {getText(pageText.featuresTitle)}
             </h2>
             <p className="text-lg text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
-              {language === "ar" 
-                ? "أدوات متخصصة لصناعة الملابس الجاهزة"
-                : "Specialized tools for ready-made garment industry"}
+              {getText(pageText.featuresDesc)}
             </p>
           </div>
 
@@ -182,10 +177,10 @@ function GarmentManufacturingContent() {
                   <feature.icon className="w-7 h-7 text-white" />
                 </div>
                 <h3 className="text-xl font-bold text-texafab-slate dark:text-white mb-2">
-                  {language === "ar" ? feature.titleAr : feature.titleEn}
+                  {getText(feature.title)}
                 </h3>
                 <p className="text-gray-600 dark:text-gray-300">
-                  {language === "ar" ? feature.descAr : feature.descEn}
+                  {getText(feature.desc)}
                 </p>
               </Card>
             ))}
@@ -240,7 +235,7 @@ function GarmentManufacturingContent() {
                   <div key={index}>
                     <div className="flex justify-between text-sm mb-1">
                       <span className="font-medium text-gray-700 dark:text-gray-200">
-                        {language === "ar" ? stage.titleAr : stage.titleEn}
+                        {getText(stage.title)}
                       </span>
                       <span className="text-gray-500 dark:text-gray-400">{stage.percentage}%</span>
                     </div>

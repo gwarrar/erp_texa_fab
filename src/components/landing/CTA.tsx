@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { useLanguage } from "./LanguageContext";
-import { useSiteData, CTAContent } from "@/hooks/useSiteData";
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Sparkles, CheckCircle2, Play, Phone } from "lucide-react";
 import { TrialSignupModal } from "./TrialSignupModal";
@@ -10,17 +9,14 @@ export function CTA() {
   const { t, dir, language } = useLanguage();
   const [isTrialModalOpen, setIsTrialModalOpen] = useState(false);
   
-  // Load CTA content from CMS
-  const { data: ctaData } = useSiteData<CTAContent>('cta', language);
-
-  // Use CMS data or fallback to translations
-  const badge = ctaData?.badge || t("cta.digitalTransformation");
-  const title = ctaData?.title || t("cta.ready");
-  const subtitle = ctaData?.subtitle || t("cta.joinCompanies");
-  const primaryButton = ctaData?.primaryButton || t("cta.button");
-  const secondaryButton = ctaData?.secondaryButton || t("cta.contactSales");
+  // Always use static translations from LanguageContext
+  const badge = t("cta.digitalTransformation");
+  const title = t("cta.ready");
+  const subtitle = t("cta.joinCompanies");
+  const primaryButton = t("cta.button");
+  const secondaryButton = t("cta.contactSales");
   
-  const benefits = ctaData?.benefits || [
+  const benefits = [
     t("cta.benefit1"),
     t("cta.benefit2"),
     t("cta.benefit3")

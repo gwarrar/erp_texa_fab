@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect, useMemo } from "react";
 import { useLanguage } from "@/components/landing/LanguageContext";
 import { Header } from "@/components/landing/Header";
 import { Footer } from "@/components/landing/Footer";
@@ -35,6 +35,71 @@ import {
 } from "lucide-react";
 import { TrialSignupModal } from "@/components/landing/TrialSignupModal";
 
+// Month names in different languages
+const monthNames: Record<string, string[]> = {
+  en: ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"],
+  ar: ["يناير", "فبراير", "مارس", "أبريل", "مايو", "يونيو", "يوليو", "أغسطس", "سبتمبر", "أكتوبر", "نوفمبر", "ديسمبر"],
+  tr: ["Ocak", "Şubat", "Mart", "Nisan", "Mayıs", "Haziran", "Temmuz", "Ağustos", "Eylül", "Ekim", "Kasım", "Aralık"],
+  ru: ["Январь", "Февраль", "Март", "Апрель", "Май", "Июнь", "Июль", "Август", "Сентябрь", "Октябрь", "Ноябрь", "Декабрь"],
+  uk: ["Січень", "Лютий", "Березень", "Квітень", "Травень", "Червень", "Липень", "Серпень", "Вересень", "Жовтень", "Листопад", "Грудень"],
+  pl: ["Styczeń", "Luty", "Marzec", "Kwiecień", "Maj", "Czerwiec", "Lipiec", "Sierpień", "Wrzesień", "Październik", "Listopad", "Grudzień"],
+  ro: ["Ianuarie", "Februarie", "Martie", "Aprilie", "Mai", "Iunie", "Iulie", "August", "Septembrie", "Octombrie", "Noiembrie", "Decembrie"],
+};
+
+// Countdown timer hook
+function useCountdown() {
+  const [timeLeft, setTimeLeft] = useState({ days: 0, hours: 0, minutes: 0, seconds: 0 });
+
+  useEffect(() => {
+    const calculateTimeLeft = () => {
+      const now = new Date();
+      const endOfMonth = new Date(now.getFullYear(), now.getMonth() + 1, 0, 23, 59, 59);
+      const difference = endOfMonth.getTime() - now.getTime();
+
+      if (difference > 0) {
+        setTimeLeft({
+          days: Math.floor(difference / (1000 * 60 * 60 * 24)),
+          hours: Math.floor((difference / (1000 * 60 * 60)) % 24),
+          minutes: Math.floor((difference / 1000 / 60) % 60),
+          seconds: Math.floor((difference / 1000) % 60),
+        });
+      }
+    };
+
+    calculateTimeLeft();
+    const timer = setInterval(calculateTimeLeft, 1000);
+    return () => clearInterval(timer);
+  }, []);
+
+  return timeLeft;
+}
+
+function getEndOfMonthDate(language: string) {
+  const now = new Date();
+  const endOfMonth = new Date(now.getFullYear(), now.getMonth() + 1, 0);
+  const day = endOfMonth.getDate();
+  const month = endOfMonth.getMonth();
+  const year = endOfMonth.getFullYear();
+  
+  const months = monthNames[language] || monthNames.en;
+  
+  if (language === "ar") {
+    return `${day} ${months[month]} ${year}`;
+  }
+  return `${months[month]} ${day}, ${year}`;
+}
+
+// Offer translations
+const offerTranslations: Record<string, { limitedOffer: string; offerEnds: string; days: string; hours: string; minutes: string; seconds: string }> = {
+  en: { limitedOffer: "🔥 Limited Time Offer", offerEnds: "Offer ends", days: "Days", hours: "Hours", minutes: "Min", seconds: "Sec" },
+  ar: { limitedOffer: "🔥 عرض محدود", offerEnds: "ينتهي العرض في", days: "يوم", hours: "ساعة", minutes: "دقيقة", seconds: "ثانية" },
+  tr: { limitedOffer: "🔥 Sınırlı Teklif", offerEnds: "Teklif bitiş tarihi", days: "Gün", hours: "Saat", minutes: "Dk", seconds: "Sn" },
+  ru: { limitedOffer: "🔥 Ограниченное предложение", offerEnds: "Предложение заканчивается", days: "Дней", hours: "Часов", minutes: "Мин", seconds: "Сек" },
+  uk: { limitedOffer: "🔥 Обмежена пропозиція", offerEnds: "Пропозиція закінчується", days: "Днів", hours: "Годин", minutes: "Хв", seconds: "Сек" },
+  pl: { limitedOffer: "🔥 Oferta Ograniczona", offerEnds: "Oferta kończy się", days: "Dni", hours: "Godz", minutes: "Min", seconds: "Sek" },
+  ro: { limitedOffer: "🔥 Ofertă Limitată", offerEnds: "Oferta se termină", days: "Zile", hours: "Ore", minutes: "Min", seconds: "Sec" },
+};
+
 // Currency configuration
 const currencyConfig: Record<string, { symbol: string; code: string; rate: number; nameKey: string }> = {
   USD: { symbol: "$", code: "USD", rate: 1, nameKey: "currUSD" },
@@ -53,11 +118,18 @@ const currencyConfig: Record<string, { symbol: string; code: string; rate: numbe
   OMR: { symbol: "ر.ع", code: "OMR", rate: 0.39, nameKey: "currOMR" },
 };
 
-// Base prices in USD
+// Base prices in USD (Original prices before 50% discount)
 const basePricesUSD = {
   basic: 99,
-  professional: 499,
-  enterprise: 999,
+  professional: 799,
+  enterprise: 1199,
+};
+
+// Offer prices (50% OFF - Limited Time)
+const offerPricesUSD = {
+  basic: 49,
+  professional: 399,
+  enterprise: 599,
 };
 
 function PricingContent() {
@@ -65,16 +137,27 @@ function PricingContent() {
   const [isTrialModalOpen, setIsTrialModalOpen] = useState(false);
   const [billingPeriod, setBillingPeriod] = useState<"monthly" | "yearly">("monthly");
   const [selectedCurrency, setSelectedCurrency] = useState("USD");
+  
+  // Countdown timer for limited offer
+  const countdown = useCountdown();
+  const offerEndDate = useMemo(() => getEndOfMonthDate(language), [language]);
+  const offerText = offerTranslations[language] || offerTranslations.en;
 
   // Currency based on selected currency (default USD)
   const currencyInfo = currencyConfig[selectedCurrency] || currencyConfig.USD;
   const currency = currencyInfo.symbol;
   const currencyCode = currencyInfo.code;
 
-  // Convert USD price to local currency
+  // Convert USD price to local currency (for offer prices)
   const convertPrice = (usdPrice: number) => {
     const localPrice = Math.round(usdPrice * currencyInfo.rate);
     return billingPeriod === "yearly" ? Math.round(localPrice * 10 * 0.8) : localPrice; // 20% discount for yearly
+  };
+
+  // Convert original price (before discount)
+  const convertOriginalPrice = (usdPrice: number) => {
+    const localPrice = Math.round(usdPrice * currencyInfo.rate);
+    return billingPeriod === "yearly" ? Math.round(localPrice * 10) : localPrice;
   };
 
   const formatPrice = (price: number) => {
@@ -94,7 +177,8 @@ function PricingContent() {
   const plans = [
     {
       name: getText(pt.basicPlan, language),
-      priceUSD: basePricesUSD.basic,
+      priceUSD: offerPricesUSD.basic,
+      originalPriceUSD: basePricesUSD.basic,
       desc: getText(pt.basicDesc, language),
       target: getText(lt.targetSingle, language),
       targetIcon: User,
@@ -132,7 +216,8 @@ function PricingContent() {
     },
     {
       name: getText(pt.professionalPlan, language),
-      priceUSD: basePricesUSD.professional,
+      priceUSD: offerPricesUSD.professional,
+      originalPriceUSD: basePricesUSD.professional,
       desc: getText(pt.professionalDesc, language),
       target: getText(lt.targetAmbitious, language),
       targetIcon: Briefcase,
@@ -175,7 +260,8 @@ function PricingContent() {
     },
     {
       name: getText(pt.enterprisePlan, language),
-      priceUSD: basePricesUSD.enterprise,
+      priceUSD: offerPricesUSD.enterprise,
+      originalPriceUSD: basePricesUSD.enterprise,
       desc: getText(pt.enterpriseDesc, language),
       target: getText(lt.targetLarge, language),
       targetIcon: Building2,
@@ -383,6 +469,54 @@ function PricingContent() {
         </div>
       </section>
 
+      {/* Limited Time Offer Banner */}
+      <div className="bg-gradient-to-r from-red-600 via-orange-500 to-red-600 py-4 relative overflow-hidden">
+        <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAiIGhlaWdodD0iMjAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGNpcmNsZSBjeD0iMTAiIGN5PSIxMCIgcj0iMSIgZmlsbD0icmdiYSgyNTUsMjU1LDI1NSwwLjEpIi8+PC9zdmc+')] opacity-50" />
+        
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+          <div className="flex flex-col md:flex-row items-center justify-center gap-4 md:gap-8">
+            <div className="flex items-center gap-3">
+              <span className="bg-white text-red-600 px-3 py-1 rounded-full text-sm font-bold animate-pulse">
+                {language === "ar" ? "خصم 50%" : "50% OFF"}
+              </span>
+              <span className="text-white font-bold text-lg md:text-xl">
+                {offerText.limitedOffer}
+              </span>
+            </div>
+            
+            {/* Countdown Timer */}
+            <div className="flex items-center gap-3">
+              <Clock className="w-5 h-5 text-white animate-pulse" />
+              <div className="flex items-center gap-2">
+                <div className="bg-white/20 backdrop-blur rounded-lg px-3 py-2 text-center min-w-[55px]">
+                  <span className="text-2xl font-bold text-white">{countdown.days}</span>
+                  <p className="text-xs text-white/80">{offerText.days}</p>
+                </div>
+                <span className="text-white text-2xl font-bold">:</span>
+                <div className="bg-white/20 backdrop-blur rounded-lg px-3 py-2 text-center min-w-[55px]">
+                  <span className="text-2xl font-bold text-white">{countdown.hours}</span>
+                  <p className="text-xs text-white/80">{offerText.hours}</p>
+                </div>
+                <span className="text-white text-2xl font-bold">:</span>
+                <div className="bg-white/20 backdrop-blur rounded-lg px-3 py-2 text-center min-w-[55px]">
+                  <span className="text-2xl font-bold text-white">{countdown.minutes}</span>
+                  <p className="text-xs text-white/80">{offerText.minutes}</p>
+                </div>
+                <span className="text-white text-2xl font-bold">:</span>
+                <div className="bg-white/20 backdrop-blur rounded-lg px-3 py-2 text-center min-w-[55px]">
+                  <span className="text-2xl font-bold text-white">{countdown.seconds}</span>
+                  <p className="text-xs text-white/80">{offerText.seconds}</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <p className="text-center text-white/90 text-sm mt-3">
+            {offerText.offerEnds}: <span className="font-bold">{offerEndDate}</span>
+          </p>
+        </div>
+      </div>
+
       {/* Pricing Cards */}
       <section className="py-16 bg-gray-50/50 dark:bg-gray-800/30">
         <div className="container mx-auto px-4">
@@ -396,7 +530,9 @@ function PricingContent() {
               const mobileFeatures = plan.mobileFeatures;
               const returns = plan.returns;
               const localPrice = convertPrice(plan.priceUSD);
+              const originalLocalPrice = convertOriginalPrice(plan.originalPriceUSD);
               const displayPrice = formatPrice(localPrice);
+              const originalDisplayPrice = formatPrice(originalLocalPrice);
               const categories = featureCategories;
               
               return (
@@ -408,6 +544,11 @@ function PricingContent() {
                       : `bg-gradient-to-br ${plan.gradient} border border-gray-100 dark:border-gray-700 hover:shadow-xl hover:border-texafab-emerald/30`
                   }`}
                 >
+                  {/* Discount Badge */}
+                  <div className={`absolute top-2 ${dir === "rtl" ? "left-2" : "right-2"} bg-red-500 text-white text-xs font-bold px-2 py-1 rounded-full z-20`}>
+                    {language === "ar" ? "خصم 50%" : "50% OFF"}
+                  </div>
+                  
                   {/* Popular Badge */}
                   {plan.popular && (
                     <div className="absolute top-0 right-0 left-0 bg-texafab-gold text-texafab-slate px-4 py-1 text-xs font-bold uppercase tracking-wider text-center">
@@ -425,11 +566,16 @@ function PricingContent() {
                       {plan.name}
                     </h3>
                     
+                    {/* Original Price - Strikethrough */}
+                    <div className={`text-sm ${plan.popular ? "text-white/50" : "text-gray-400"} line-through mb-1`}>
+                      {currency}{originalDisplayPrice}
+                    </div>
+                    
                     <div className="flex items-baseline gap-1 mb-2">
                       <span className={`text-sm ${plan.popular ? "text-white/70" : "text-gray-500 dark:text-gray-400"}`}>
                         {currency}
                       </span>
-                      <span className={`text-2xl font-black ${plan.popular ? "text-white" : "text-texafab-slate dark:text-white"}`}>
+                      <span className={`text-2xl font-black ${plan.popular ? "text-white" : "text-texafab-emerald dark:text-texafab-emerald"}`}>
                         {displayPrice}
                       </span>
                       <span className={`text-xs ${plan.popular ? "text-white/70" : "text-gray-500 dark:text-gray-400"}`}>
@@ -454,7 +600,7 @@ function PricingContent() {
                         ? "bg-white/10 border border-white/20" 
                         : "bg-gray-50 dark:bg-gray-700/50 border border-gray-200 dark:border-gray-600"
                     }`}>
-                      <TargetIcon className={`w-4 h-4 ${plan.popular ? "text-texafab-gold" : "text-texafab-emerald"}`} />
+                      <TargetIcon className={`w-4 h-4 ${plan.popular ? "text-yellow-300" : "text-texafab-emerald"}`} />
                       <span className={`text-xs font-medium ${plan.popular ? "text-white" : "text-gray-700 dark:text-gray-200"}`}>
                         {plan.target}
                       </span>
@@ -568,7 +714,7 @@ function PricingContent() {
                             <TrendingUp className="w-3.5 h-3.5 inline me-1" />
                             {getText(lt.metricSales, language)}
                           </span>
-                          <span className={`text-sm font-bold ${plan.popular ? "text-texafab-gold" : "text-green-600 dark:text-green-400"}`}>
+                          <span className={`text-sm font-bold ${plan.popular ? "text-yellow-300" : "text-green-600 dark:text-green-400"}`}>
                             {returns.salesIncrease}{getText(lt.perYear, language)}
                           </span>
                         </div>
@@ -577,7 +723,7 @@ function PricingContent() {
                             <Heart className="w-3.5 h-3.5 inline me-1" />
                             {getText(lt.metricRetention, language)}
                           </span>
-                          <span className={`text-sm font-bold ${plan.popular ? "text-texafab-gold" : "text-green-600 dark:text-green-400"}`}>
+                          <span className={`text-sm font-bold ${plan.popular ? "text-yellow-300" : "text-green-600 dark:text-green-400"}`}>
                             {returns.customerRetention}{getText(lt.perYear, language)}
                           </span>
                         </div>
@@ -594,7 +740,7 @@ function PricingContent() {
                             <span className={`text-xs ${plan.popular ? "text-white/90" : "text-gray-500 dark:text-gray-400"}`}>
                               ROI
                             </span>
-                            <span className={`text-sm font-bold ${plan.popular ? "text-texafab-gold" : "text-emerald-600 dark:text-emerald-400"}`}>
+                            <span className={`text-sm font-bold ${plan.popular ? "text-yellow-300" : "text-emerald-600 dark:text-emerald-400"}`}>
                               {returns.roi}
                             </span>
                           </div>

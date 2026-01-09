@@ -240,28 +240,22 @@ function EmployeeManagementContent() {
             <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-blue-500/10 border border-blue-500/20 mb-6">
               <Users className="w-4 h-4 text-blue-500" />
               <span className="text-sm font-semibold text-blue-600">
-                {language === "ar" ? "إدارة الموظفين والأداء" : "Employee & Performance Management"}
+                {getText({ ar: "إدارة الموظفين والأداء", en: "Employee & Performance Management", ru: "Управление сотрудниками и производительностью", uk: "Управління співробітниками та продуктивністю", ro: "Management angajați și performanță", pl: "Zarządzanie pracownikami i wydajnością", it: "Gestione dipendenti e prestazioni", tr: "Çalışan ve Performans Yönetimi" })}
               </span>
             </div>
 
             <h1 className="text-4xl md:text-6xl font-black text-texafab-slate mb-6 leading-tight">
-              {language === "ar" ? (
-                <>فريق عمل <span className="text-blue-500">أكثر إنتاجية</span></>
-              ) : (
-                <>A More <span className="text-blue-500">Productive Team</span></>
-              )}
+              {getText({ ar: "فريق عمل", en: "A More", ru: "Более", uk: "Більш", ro: "O Echipă Mai", pl: "Bardziej", it: "Un Team Più", tr: "Daha" })} <span className="text-blue-500">{getText({ ar: "أكثر إنتاجية", en: "Productive Team", ru: "Продуктивная команда", uk: "Продуктивна команда", ro: "Productivă", pl: "Produktywny Zespół", it: "Produttivo", tr: "Üretken Ekip" })}</span>
             </h1>
 
             <p className="text-xl text-gray-600 mb-8 leading-relaxed max-w-3xl mx-auto">
-              {language === "ar" 
-                ? "أدوات متقدمة لإدارة فريق العمل وتتبع الأداء ومكافأة المتميزين"
-                : "Advanced tools to manage your team, track performance, and reward top performers"}
+              {getText({ ar: "أدوات متقدمة لإدارة فريق العمل وتتبع الأداء ومكافأة المتميزين", en: "Advanced tools to manage your team, track performance, and reward top performers", ru: "Продвинутые инструменты для управления командой, отслеживания производительности и поощрения лучших", uk: "Передові інструменти для управління командою, відстеження продуктивності та заохочення найкращих", ro: "Instrumente avansate pentru gestionarea echipei, urmărirea performanței și recompensarea celor mai buni", pl: "Zaawansowane narzędzia do zarządzania zespołem, śledzenia wydajności i nagradzania najlepszych", it: "Strumenti avanzati per gestire il team, monitorare le prestazioni e premiare i migliori", tr: "Ekibinizi yönetmek, performansı takip etmek ve en iyileri ödüllendirmek için gelişmiş araçlar" })}
             </p>
 
             <div className="flex flex-col sm:flex-row justify-center gap-4">
               <Link to="/contact">
                 <Button className="h-14 px-8 bg-blue-500 hover:bg-blue-600 text-white text-base font-semibold rounded-xl shadow-lg shadow-blue-500/25">
-                  {language === "ar" ? "احجز عرض توضيحي" : "Book a Demo"}
+                  {getText({ ar: "احجز عرض توضيحي", en: "Book a Demo", ru: "Заказать демо", uk: "Замовити демо", ro: "Rezervă o demonstrație", pl: "Zarezerwuj demo", it: "Prenota una demo", tr: "Demo Rezervasyonu Yap" })}
                   <ArrowRight className={`w-5 h-5 ${dir === "rtl" ? "rotate-180 me-2" : "ms-2"}`} />
                 </Button>
               </Link>
@@ -275,18 +269,18 @@ function EmployeeManagementContent() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
             {[
-              { icon: Users, valueAr: "250+", valueEn: "250+", labelAr: "موظف مدار", labelEn: "Employees Managed" },
-              { icon: TrendingUp, valueAr: "35%", valueEn: "35%", labelAr: "زيادة الإنتاجية", labelEn: "Productivity Increase" },
-              { icon: Clock, valueAr: "50%", valueEn: "50%", labelAr: "توفير وقت الإدارة", labelEn: "Admin Time Saved" },
-              { icon: Star, valueAr: "95%", valueEn: "95%", labelAr: "رضا الموظفين", labelEn: "Employee Satisfaction" }
+              { icon: Users, value: "250+", label: { ar: "موظف مدار", en: "Employees Managed", ru: "Управляемых сотрудников", uk: "Керованих співробітників", ro: "Angajați gestionați", pl: "Zarządzanych pracowników", tr: "Yönetilen Çalışan" } },
+              { icon: TrendingUp, value: "35%", label: { ar: "زيادة الإنتاجية", en: "Productivity Increase", ru: "Рост производительности", uk: "Зростання продуктивності", ro: "Creștere productivitate", pl: "Wzrost produktywności", tr: "Verimlilik Artışı" } },
+              { icon: Clock, value: "50%", label: { ar: "توفير وقت الإدارة", en: "Admin Time Saved", ru: "Экономия времени управления", uk: "Економія часу управління", ro: "Timp admin economisit", pl: "Zaoszczędzony czas admina", tr: "Yönetim Zamanı Tasarrufu" } },
+              { icon: Star, value: "95%", label: { ar: "رضا الموظفين", en: "Employee Satisfaction", ru: "Удовлетворенность сотрудников", uk: "Задоволеність співробітників", ro: "Satisfacția angajaților", pl: "Satysfakcja pracowników", tr: "Çalışan Memnuniyeti" } }
             ].map((stat, index) => (
               <Card key={index} className="p-6 text-center border-0 shadow-lg rounded-2xl">
                 <stat.icon className="w-8 h-8 text-blue-500 mx-auto mb-3" />
                 <p className="text-3xl font-black text-texafab-slate mb-1">
-                  {language === "ar" ? stat.valueAr : stat.valueEn}
+                  {stat.value}
                 </p>
                 <p className="text-gray-600 text-sm">
-                  {language === "ar" ? stat.labelAr : stat.labelEn}
+                  {getText(stat.label)}
                 </p>
               </Card>
             ))}
@@ -299,12 +293,10 @@ function EmployeeManagementContent() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6">
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-bold text-texafab-slate mb-4">
-              {language === "ar" ? "مميزات إدارة الموظفين" : "Employee Management Features"}
+              {getText({ ar: "مميزات إدارة الموظفين", en: "Employee Management Features", ru: "Функции управления сотрудниками", uk: "Функції управління співробітниками", ro: "Funcții de management angajați", pl: "Funkcje zarządzania pracownikami", it: "Funzionalità gestione dipendenti", tr: "Çalışan Yönetimi Özellikleri" })}
             </h2>
             <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-              {language === "ar" 
-                ? "كل ما تحتاجه لإدارة فريق عمل ناجح"
-                : "Everything you need to manage a successful team"}
+              {getText({ ar: "كل ما تحتاجه لإدارة فريق عمل ناجح", en: "Everything you need to manage a successful team", ru: "Всё необходимое для управления успешной командой", uk: "Все необхідне для управління успішною командою", ro: "Tot ce ai nevoie pentru a gestiona o echipă de succes", pl: "Wszystko czego potrzebujesz do zarządzania udanym zespołem", it: "Tutto ciò che serve per gestire un team di successo", tr: "Başarılı bir ekip yönetmek için ihtiyacınız olan her şey" })}
             </p>
           </div>
 
@@ -334,18 +326,16 @@ function EmployeeManagementContent() {
               <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-purple-500/10 border border-purple-500/20 mb-6">
                 <Shield className="w-4 h-4 text-purple-500" />
                 <span className="text-sm font-semibold text-purple-600">
-                  {language === "ar" ? "الأدوار والصلاحيات" : "Roles & Permissions"}
+                  {getText({ ar: "الأدوار والصلاحيات", en: "Roles & Permissions", ru: "Роли и разрешения", uk: "Ролі та дозволи", ro: "Roluri și permisiuni", pl: "Role i uprawnienia", it: "Ruoli e permessi", tr: "Roller ve İzinler" })}
                 </span>
               </div>
 
               <h2 className="text-3xl md:text-4xl font-bold text-texafab-slate mb-4">
-                {language === "ar" ? "تحكم دقيق في الصلاحيات" : "Precise Permission Control"}
+                {getText({ ar: "تحكم دقيق في الصلاحيات", en: "Precise Permission Control", ru: "Точный контроль разрешений", uk: "Точний контроль дозволів", ro: "Control precis al permisiunilor", pl: "Precyzyjna kontrola uprawnień", it: "Controllo preciso dei permessi", tr: "Hassas İzin Kontrolü" })}
               </h2>
 
               <p className="text-lg text-gray-600 mb-8">
-                {language === "ar" 
-                  ? "حدد صلاحيات كل موظف بدقة حسب دوره ومسؤولياته"
-                  : "Define each employee's permissions precisely according to their role and responsibilities"}
+                {getText({ ar: "حدد صلاحيات كل موظف بدقة حسب دوره ومسؤولياته", en: "Define each employee's permissions precisely according to their role and responsibilities", ru: "Определите права каждого сотрудника точно в соответствии с его ролью и обязанностями", uk: "Визначте права кожного співробітника точно відповідно до його ролі та обов'язків", ro: "Definiți permisiunile fiecărui angajat cu precizie în funcție de rol și responsabilități", pl: "Określ uprawnienia każdego pracownika precyzyjnie według roli i obowiązków", it: "Definisci i permessi di ogni dipendente precisamente in base al ruolo e alle responsabilità", tr: "Her çalışanın izinlerini rolüne ve sorumluluklarına göre hassas bir şekilde tanımlayın" })}
               </p>
 
               <div className="grid grid-cols-2 gap-4">
@@ -364,22 +354,22 @@ function EmployeeManagementContent() {
 
             <Card className="p-8 bg-gradient-to-br from-purple-50 to-blue-50 border-0 shadow-xl rounded-3xl">
               <h3 className="text-xl font-bold text-texafab-slate mb-6">
-                {language === "ar" ? "مثال على صلاحيات المستخدم" : "User Permission Example"}
+                {getText({ ar: "مثال على صلاحيات المستخدم", en: "User Permission Example", ru: "Пример прав пользователя", uk: "Приклад прав користувача", ro: "Exemplu de permisiuni utilizator", pl: "Przykład uprawnień użytkownika", it: "Esempio permessi utente", tr: "Kullanıcı İzin Örneği" })}
               </h3>
               
               <div className="space-y-3">
                 {[
-                  { ar: "عرض المبيعات", en: "View Sales", enabled: true },
-                  { ar: "إنشاء فاتورة", en: "Create Invoice", enabled: true },
-                  { ar: "حذف فاتورة", en: "Delete Invoice", enabled: false },
-                  { ar: "عرض التقارير المالية", en: "View Financial Reports", enabled: false },
-                  { ar: "إدارة المخزون", en: "Manage Inventory", enabled: true },
-                  { ar: "إضافة موظف", en: "Add Employee", enabled: false },
-                  { ar: "تعديل الأسعار", en: "Edit Prices", enabled: false },
-                  { ar: "عرض العملاء", en: "View Customers", enabled: true }
+                  { label: { ar: "عرض المبيعات", en: "View Sales", ru: "Просмотр продаж", uk: "Перегляд продажів", ro: "Vizualizare vânzări", pl: "Wyświetl sprzedaż", it: "Visualizza vendite", tr: "Satışları Görüntüle" }, enabled: true },
+                  { label: { ar: "إنشاء فاتورة", en: "Create Invoice", ru: "Создать счет", uk: "Створити рахунок", ro: "Creează factură", pl: "Utwórz fakturę", it: "Crea fattura", tr: "Fatura Oluştur" }, enabled: true },
+                  { label: { ar: "حذف فاتورة", en: "Delete Invoice", ru: "Удалить счет", uk: "Видалити рахунок", ro: "Șterge factură", pl: "Usuń fakturę", it: "Elimina fattura", tr: "Fatura Sil" }, enabled: false },
+                  { label: { ar: "عرض التقارير المالية", en: "View Financial Reports", ru: "Просмотр финансовых отчетов", uk: "Перегляд фінансових звітів", ro: "Vizualizare rapoarte financiare", pl: "Wyświetl raporty finansowe", it: "Visualizza report finanziari", tr: "Mali Raporları Görüntüle" }, enabled: false },
+                  { label: { ar: "إدارة المخزون", en: "Manage Inventory", ru: "Управление запасами", uk: "Управління запасами", ro: "Gestionare inventar", pl: "Zarządzaj zapasami", it: "Gestisci inventario", tr: "Envanteri Yönet" }, enabled: true },
+                  { label: { ar: "إضافة موظف", en: "Add Employee", ru: "Добавить сотрудника", uk: "Додати співробітника", ro: "Adaugă angajat", pl: "Dodaj pracownika", it: "Aggiungi dipendente", tr: "Çalışan Ekle" }, enabled: false },
+                  { label: { ar: "تعديل الأسعار", en: "Edit Prices", ru: "Редактировать цены", uk: "Редагувати ціни", ro: "Editează prețuri", pl: "Edytuj ceny", it: "Modifica prezzi", tr: "Fiyatları Düzenle" }, enabled: false },
+                  { label: { ar: "عرض العملاء", en: "View Customers", ru: "Просмотр клиентов", uk: "Перегляд клієнтів", ro: "Vizualizare clienți", pl: "Wyświetl klientów", it: "Visualizza clienti", tr: "Müşterileri Görüntüle" }, enabled: true }
                 ].map((perm, index) => (
                   <div key={index} className="flex items-center justify-between p-3 bg-white rounded-lg">
-                    <span className="text-gray-700">{language === "ar" ? perm.ar : perm.en}</span>
+                    <span className="text-gray-700">{getText(perm.label)}</span>
                     <div className={`w-10 h-6 rounded-full flex items-center p-1 ${perm.enabled ? 'bg-emerald-500 justify-end' : 'bg-gray-300 justify-start'}`}>
                       <div className="w-4 h-4 bg-white rounded-full shadow"></div>
                     </div>
@@ -396,10 +386,10 @@ function EmployeeManagementContent() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6">
           <div className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
-              {language === "ar" ? "لوحة المتميزين" : "Top Performers Board"}
+              {getText({ ar: "لوحة المتميزين", en: "Top Performers Board", ru: "Доска лучших", uk: "Дошка найкращих", ro: "Tabloul performerilor de top", pl: "Tablica najlepszych", it: "Bacheca migliori performer", tr: "En İyi Performans Tablosu" })}
             </h2>
             <p className="text-lg text-white/80">
-              {language === "ar" ? "تتبع أداء فريقك ومكافأة الأفضل" : "Track your team's performance and reward the best"}
+              {getText({ ar: "تتبع أداء فريقك ومكافأة الأفضل", en: "Track your team's performance and reward the best", ru: "Отслеживайте производительность команды и награждайте лучших", uk: "Відстежуйте продуктивність команди та нагороджуйте найкращих", ro: "Urmăriți performanța echipei și recompensați-i pe cei mai buni", pl: "Śledź wydajność zespołu i nagradzaj najlepszych", it: "Monitora le prestazioni del team e premia i migliori", tr: "Ekibinizin performansını takip edin ve en iyileri ödüllendirin" })}
             </p>
           </div>
 
@@ -412,10 +402,10 @@ function EmployeeManagementContent() {
                   </div>
                   <div>
                     <p className={`font-bold text-lg ${index === 0 ? 'text-texafab-slate' : 'text-white'}`}>
-                      {language === "ar" ? performer.name : performer.nameEn}
+                      {performer.nameEn}
                     </p>
                     <p className={`text-sm ${index === 0 ? 'text-gray-600' : 'text-white/60'}`}>
-                      {language === "ar" ? "موظف مبيعات" : "Sales Rep"}
+                      {getText({ ar: "موظف مبيعات", en: "Sales Rep", ru: "Торговый представитель", uk: "Торговий представник", ro: "Reprezentant vânzări", pl: "Przedstawiciel handlowy", it: "Rappresentante vendite", tr: "Satış Temsilcisi" })}
                     </p>
                   </div>
                   {index === 0 && <Star className="w-6 h-6 text-amber-500 fill-amber-500 ms-auto" />}
@@ -423,15 +413,15 @@ function EmployeeManagementContent() {
                 
                 <div className="space-y-3">
                   <div className="flex justify-between items-center">
-                    <span className={index === 0 ? 'text-gray-600' : 'text-white/60'}>{language === "ar" ? "المبيعات" : "Sales"}</span>
+                    <span className={index === 0 ? 'text-gray-600' : 'text-white/60'}>{getText({ ar: "المبيعات", en: "Sales", ru: "Продажи", uk: "Продажі", ro: "Vânzări", pl: "Sprzedaż", it: "Vendite", tr: "Satışlar" })}</span>
                     <span className={`font-bold ${index === 0 ? 'text-texafab-slate' : 'text-white'}`}>${performer.sales.toLocaleString()}</span>
                   </div>
                   <div className="flex justify-between items-center">
-                    <span className={index === 0 ? 'text-gray-600' : 'text-white/60'}>{language === "ar" ? "تحقيق الهدف" : "Target"}</span>
+                    <span className={index === 0 ? 'text-gray-600' : 'text-white/60'}>{getText({ ar: "تحقيق الهدف", en: "Target", ru: "Цель", uk: "Ціль", ro: "Țintă", pl: "Cel", it: "Obiettivo", tr: "Hedef" })}</span>
                     <span className={`font-bold ${index === 0 ? 'text-emerald-600' : 'text-emerald-400'}`}>{performer.target}%</span>
                   </div>
                   <div className="flex justify-between items-center">
-                    <span className={index === 0 ? 'text-gray-600' : 'text-white/60'}>{language === "ar" ? "التقييم" : "Rating"}</span>
+                    <span className={index === 0 ? 'text-gray-600' : 'text-white/60'}>{getText({ ar: "التقييم", en: "Rating", ru: "Рейтинг", uk: "Рейтинг", ro: "Evaluare", pl: "Ocena", it: "Valutazione", tr: "Değerlendirme" })}</span>
                     <div className="flex items-center gap-1">
                       {[1,2,3,4,5].map((star) => (
                         <Star key={star} className={`w-4 h-4 ${star <= Math.round(performer.rating/20) ? (index === 0 ? 'text-amber-500 fill-amber-500' : 'text-amber-400 fill-amber-400') : 'text-gray-300'}`} />
@@ -452,16 +442,14 @@ function EmployeeManagementContent() {
             <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-blue-500/10 border border-blue-500/20 mb-6">
               <Monitor className="w-4 h-4 text-blue-500" />
               <span className="text-sm font-semibold text-blue-600">
-                {language === "ar" ? "واجهة الموارد البشرية" : "HR Interface"}
+                {getText({ ar: "واجهة الموارد البشرية", en: "HR Interface", ru: "Интерфейс HR", uk: "Інтерфейс HR", ro: "Interfață HR", pl: "Interfejs HR", it: "Interfaccia HR", tr: "İK Arayüzü" })}
               </span>
             </div>
             <h2 className="text-3xl md:text-4xl font-bold text-texafab-slate dark:text-white mb-4">
-              {language === "ar" ? "لوحة إدارة الموظفين" : "Employee Management Dashboard"}
+              {getText({ ar: "لوحة إدارة الموظفين", en: "Employee Management Dashboard", ru: "Панель управления сотрудниками", uk: "Панель управління співробітниками", ro: "Tablou de bord pentru gestionarea angajaților", pl: "Panel zarządzania pracownikami", it: "Dashboard gestione dipendenti", tr: "Çalışan Yönetimi Paneli" })}
             </h2>
             <p className="text-lg text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
-              {language === "ar" 
-                ? "إدارة شاملة لبيانات الموظفين والأداء"
-                : "Comprehensive management of employee data and performance"}
+              {getText({ ar: "إدارة شاملة لبيانات الموظفين والأداء", en: "Comprehensive management of employee data and performance", ru: "Комплексное управление данными и производительностью сотрудников", uk: "Комплексне управління даними та продуктивністю співробітників", ro: "Management cuprinzător al datelor și performanței angajaților", pl: "Kompleksowe zarządzanie danymi i wydajnością pracowników", it: "Gestione completa dei dati e delle prestazioni dei dipendenti", tr: "Çalışan verileri ve performansının kapsamlı yönetimi" })}
             </p>
           </div>
 
@@ -469,11 +457,11 @@ function EmployeeManagementContent() {
             <div className="group">
               <BrowserMockup 
                 src="https://images.unsplash.com/photo-1521737711867-e3b97375f902?w=1200&q=90" 
-                alt={language === "ar" ? "إدارة الموظفين" : "Employee Management"}
+                alt={getText({ ar: "إدارة الموظفين", en: "Employee Management", ru: "Управление сотрудниками", uk: "Управління співробітниками", ro: "Managementul angajaților", pl: "Zarządzanie pracownikami", it: "Gestione dipendenti", tr: "Çalışan Yönetimi" })}
                 className="transform group-hover:scale-[1.02] transition-transform duration-300"
               />
               <p className="mt-4 text-center font-medium text-gray-700 dark:text-gray-300">
-                {language === "ar" ? "لوحة أداء الموظفين والتقارير" : "Employee Performance & Reports Dashboard"}
+                {getText({ ar: "لوحة أداء الموظفين والتقارير", en: "Employee Performance & Reports Dashboard", ru: "Панель производительности и отчетов сотрудников", uk: "Панель продуктивності та звітів співробітників", ro: "Tablou de bord pentru performanța și rapoartele angajaților", pl: "Panel wydajności i raportów pracowników", it: "Dashboard prestazioni e report dipendenti", tr: "Çalışan Performansı ve Raporlar Paneli" })}
               </p>
             </div>
           </div>
@@ -485,32 +473,26 @@ function EmployeeManagementContent() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6">
           <div className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-bold text-texafab-slate dark:text-white mb-4">
-              {language === "ar" ? "نظام العمولات الذكي" : "Smart Commission System"}
+              {getText({ ar: "نظام العمولات الذكي", en: "Smart Commission System", ru: "Умная система комиссий", uk: "Розумна система комісій", ro: "Sistem inteligent de comisioane", pl: "Inteligentny system prowizji", it: "Sistema commissioni intelligente", tr: "Akıllı Komisyon Sistemi" })}
             </h2>
           </div>
 
           <div className="grid md:grid-cols-3 gap-6">
             {[
               {
-                titleAr: "عمولة ثابتة",
-                titleEn: "Fixed Commission",
-                descAr: "نسبة ثابتة على كل عملية بيع",
-                descEn: "Fixed percentage on each sale",
-                example: "5% على كل فاتورة"
+                title: { ar: "عمولة ثابتة", en: "Fixed Commission", ru: "Фиксированная комиссия", uk: "Фіксована комісія", ro: "Comision fix", pl: "Stała prowizja", tr: "Sabit Komisyon" },
+                desc: { ar: "نسبة ثابتة على كل عملية بيع", en: "Fixed percentage on each sale", ru: "Фиксированный процент с каждой продажи", uk: "Фіксований відсоток з кожного продажу", ro: "Procent fix pentru fiecare vânzare", pl: "Stały procent od każdej sprzedaży", tr: "Her satışta sabit yüzde" },
+                example: { ar: "5% على كل فاتورة", en: "5% on each invoice", ru: "5% с каждого счета", uk: "5% з кожного рахунку", ro: "5% pe fiecare factură", pl: "5% od każdej faktury", tr: "Her faturada %5" }
               },
               {
-                titleAr: "عمولة متدرجة",
-                titleEn: "Tiered Commission",
-                descAr: "نسبة تزيد مع زيادة المبيعات",
-                descEn: "Percentage increases with sales",
-                example: "5% → 7% → 10%"
+                title: { ar: "عمولة متدرجة", en: "Tiered Commission", ru: "Многоуровневая комиссия", uk: "Багаторівнева комісія", ro: "Comision pe niveluri", pl: "Prowizja wielopoziomowa", tr: "Kademeli Komisyon" },
+                desc: { ar: "نسبة تزيد مع زيادة المبيعات", en: "Percentage increases with sales", ru: "Процент растет с ростом продаж", uk: "Відсоток зростає з ростом продажів", ro: "Procentul crește cu vânzările", pl: "Procent rośnie ze sprzedażą", tr: "Satışlarla birlikte yüzde artar" },
+                example: { ar: "5% → 7% → 10%", en: "5% → 7% → 10%", ru: "5% → 7% → 10%", uk: "5% → 7% → 10%", ro: "5% → 7% → 10%", pl: "5% → 7% → 10%", tr: "5% → 7% → 10%" }
               },
               {
-                titleAr: "عمولة الأهداف",
-                titleEn: "Target Commission",
-                descAr: "مكافأة عند تحقيق الهدف",
-                descEn: "Bonus when target is achieved",
-                example: "1000$ عند 100%"
+                title: { ar: "عمولة الأهداف", en: "Target Commission", ru: "Целевая комиссия", uk: "Цільова комісія", ro: "Comision țintă", pl: "Prowizja docelowa", tr: "Hedef Komisyonu" },
+                desc: { ar: "مكافأة عند تحقيق الهدف", en: "Bonus when target is achieved", ru: "Бонус при достижении цели", uk: "Бонус при досягненні цілі", ro: "Bonus când ținta este atinsă", pl: "Bonus po osiągnięciu celu", tr: "Hedefe ulaşıldığında bonus" },
+                example: { ar: "1000$ عند 100%", en: "$1000 at 100%", ru: "1000$ при 100%", uk: "1000$ при 100%", ro: "1000$ la 100%", pl: "1000$ przy 100%", tr: "%100'de 1000$" }
               }
             ].map((type, index) => (
               <Card key={index} className="p-6 bg-white border-0 shadow-lg rounded-2xl">
@@ -518,13 +500,13 @@ function EmployeeManagementContent() {
                   <Percent className="w-6 h-6 text-amber-600" />
                 </div>
                 <h3 className="text-xl font-bold text-texafab-slate mb-2">
-                  {language === "ar" ? type.titleAr : type.titleEn}
+                  {getText(type.title)}
                 </h3>
                 <p className="text-gray-600 mb-4">
-                  {language === "ar" ? type.descAr : type.descEn}
+                  {getText(type.desc)}
                 </p>
                 <div className="p-3 bg-amber-50 rounded-lg">
-                  <p className="text-sm text-amber-700 font-medium">{type.example}</p>
+                  <p className="text-sm text-amber-700 font-medium">{getText(type.example)}</p>
                 </div>
               </Card>
             ))}

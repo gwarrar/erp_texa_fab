@@ -73,8 +73,8 @@ export function Features() {
     { id: "ecommerce", icon: "ShoppingCart", gradient: "from-indigo-500 to-indigo-600", image: "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=300&q=80" },
   ];
 
-  // Merge Supabase/CMS data with default styling
-  const featuresSource = supabaseFeatures.length > 0 ? supabaseFeatures : cmsFeatures?.items;
+  // Only use Supabase data, otherwise fallback to static translations
+  const featuresSource = supabaseFeatures.length > 0 ? supabaseFeatures : null;
   const features = featuresSource?.map((item, index) => {
     const defaults = defaultFeatures[index] || defaultFeatures[0];
     const IconComponent = iconMap[item.icon || defaults.icon] || Package;

@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { useLanguage } from "@/components/landing/LanguageContext";
 import { Button } from "@/components/ui/button";
@@ -17,7 +17,26 @@ import {
   Sparkles,
   ArrowRight,
   Globe,
+  Loader2,
 } from "lucide-react";
+import { supabase } from "@/lib/supabase";
+
+// Google Icon Component
+const GoogleIcon = ({ className }: { className?: string }) => (
+  <svg className={className} viewBox="0 0 24 24" fill="currentColor">
+    <path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/>
+    <path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/>
+    <path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z" fill="#FBBC05"/>
+    <path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/>
+  </svg>
+);
+
+// Apple Icon Component
+const AppleIcon = ({ className }: { className?: string }) => (
+  <svg className={className} viewBox="0 0 24 24" fill="currentColor">
+    <path d="M17.05 20.28c-.98.95-2.05.8-3.08.35-1.09-.46-2.09-.48-3.24 0-1.44.62-2.2.44-3.06-.35C2.79 15.25 3.51 7.59 9.05 7.31c1.35.07 2.29.74 3.08.8 1.18-.24 2.31-.93 3.57-.84 1.51.12 2.65.72 3.4 1.8-3.12 1.87-2.38 5.98.48 7.13-.57 1.5-1.31 2.99-2.54 4.09l.01-.01zM12.03 7.25c-.15-2.23 1.66-4.07 3.74-4.25.29 2.58-2.34 4.5-3.74 4.25z"/>
+  </svg>
+);
 
 export default function LoginPage() {
   const { language, dir, setLanguage } = useLanguage();
@@ -27,19 +46,183 @@ export default function LoginPage() {
   const [password, setPassword] = useState("");
   const [rememberMe, setRememberMe] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
+  const [oauthLoading, setOauthLoading] = useState(false);
+  const [magicLinkSent, setMagicLinkSent] = useState(false);
+
+  // Check for existing session
+  useEffect(() => {
+    const checkSession = async () => {
+      const { data: { session } } = await supabase.auth.getSession();
+      if (session) {
+        navigate('/');
+      }
+    };
+    checkSession();
+
+    // Listen for auth state changes
+    const { data: { subscription } } = supabase.auth.onAuthStateChange((event, session) => {
+      if (event === 'SIGNED_IN' && session) {
+        navigate('/');
+      }
+    });
+
+    return () => {
+      subscription.unsubscribe();
+    };
+  }, [navigate]);
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsLoading(true);
-    // Simulate API call
-    setTimeout(() => {
+    
+    try {
+      const { data, error } = await supabase.auth.signInWithPassword({
+        email,
+        password,
+      });
+
+      if (error) {
+        console.error('Login error:', error);
+        alert(getText({
+          ar: error.message.includes('Invalid') ? "البريد الإلكتروني أو كلمة المرور غير صحيحة" : "حدث خطأ أثناء تسجيل الدخول",
+          en: error.message.includes('Invalid') ? "Invalid email or password" : "Error during login",
+          ru: error.message.includes('Invalid') ? "Неверный email или пароль" : "Ошибка при входе",
+          uk: error.message.includes('Invalid') ? "Невірний email або пароль" : "Помилка при вході",
+          ro: error.message.includes('Invalid') ? "Email sau parolă invalidă" : "Eroare la autentificare",
+          pl: error.message.includes('Invalid') ? "Nieprawidłowy email lub hasło" : "Błąd podczas logowania",
+          it: error.message.includes('Invalid') ? "Email o password non validi" : "Errore durante l'accesso",
+          tr: error.message.includes('Invalid') ? "Geçersiz e-posta veya şifre" : "Giriş sırasında hata"
+        }, language));
+        return;
+      }
+
+      // Redirect to home on successful login
+      navigate('/');
+    } catch (err) {
+      console.error('Login exception:', err);
+    } finally {
       setIsLoading(false);
-      // Handle login logic here
-    }, 1500);
+    }
   };
 
-  const handleMagicLink = () => {
-    // Handle magic link logic
+  const handleMagicLink = async () => {
+    if (!email) {
+      alert(getText({
+        ar: "يرجى إدخال البريد الإلكتروني أولاً",
+        en: "Please enter your email first",
+        ru: "Сначала введите email",
+        uk: "Спочатку введіть email",
+        ro: "Introduceți mai întâi emailul",
+        pl: "Najpierw wprowadź email",
+        it: "Prima inserisci l'email",
+        tr: "Önce e-postanızı girin"
+      }, language));
+      return;
+    }
+
+    setIsLoading(true);
+    try {
+      const { error } = await supabase.auth.signInWithOtp({
+        email,
+        options: {
+          emailRedirectTo: `${window.location.origin}/`,
+        },
+      });
+
+      if (error) {
+        alert(getText({
+          ar: "حدث خطأ أثناء إرسال رابط الدخول",
+          en: "Error sending magic link",
+          ru: "Ошибка при отправке ссылки",
+          uk: "Помилка при надсиланні посилання",
+          ro: "Eroare la trimiterea linkului",
+          pl: "Błąd podczas wysyłania linku",
+          it: "Errore nell'invio del link",
+          tr: "Link gönderilirken hata"
+        }, language));
+        return;
+      }
+
+      setMagicLinkSent(true);
+      alert(getText({
+        ar: "تم إرسال رابط الدخول إلى بريدك الإلكتروني",
+        en: "Magic link sent to your email",
+        ru: "Ссылка для входа отправлена на email",
+        uk: "Посилання для входу надіслано на email",
+        ro: "Linkul a fost trimis pe email",
+        pl: "Link został wysłany na email",
+        it: "Link inviato alla tua email",
+        tr: "Link e-postanıza gönderildi"
+      }, language));
+    } catch (err) {
+      console.error('Magic link error:', err);
+    } finally {
+      setIsLoading(false);
+    }
+  };
+
+  const handleGoogleLogin = async () => {
+    try {
+      setOauthLoading(true);
+      const { error } = await supabase.auth.signInWithOAuth({
+        provider: 'google',
+        options: {
+          redirectTo: `${window.location.origin}/login`,
+          queryParams: {
+            access_type: 'offline',
+            prompt: 'consent',
+          },
+        },
+      });
+      
+      if (error) {
+        console.error('Google OAuth error:', error);
+        alert(getText({
+          ar: "حدث خطأ أثناء تسجيل الدخول بـ Google",
+          en: "Error signing in with Google",
+          ru: "Ошибка входа через Google",
+          uk: "Помилка входу через Google",
+          ro: "Eroare la autentificarea cu Google",
+          pl: "Błąd logowania przez Google",
+          it: "Errore nell'accesso con Google",
+          tr: "Google ile giriş hatası"
+        }, language));
+      }
+    } catch (err) {
+      console.error('Google OAuth exception:', err);
+    } finally {
+      setOauthLoading(false);
+    }
+  };
+
+  const handleAppleLogin = async () => {
+    try {
+      setOauthLoading(true);
+      const { error } = await supabase.auth.signInWithOAuth({
+        provider: 'apple',
+        options: {
+          redirectTo: `${window.location.origin}/login`,
+        },
+      });
+      
+      if (error) {
+        console.error('Apple OAuth error:', error);
+        alert(getText({
+          ar: "حدث خطأ أثناء تسجيل الدخول بـ Apple",
+          en: "Error signing in with Apple",
+          ru: "Ошибка входа через Apple",
+          uk: "Помилка входу через Apple",
+          ro: "Eroare la autentificarea cu Apple",
+          pl: "Błąd logowania przez Apple",
+          it: "Errore nell'accesso con Apple",
+          tr: "Apple ile giriş hatası"
+        }, language));
+      }
+    } catch (err) {
+      console.error('Apple OAuth exception:', err);
+    } finally {
+      setOauthLoading(false);
+    }
   };
 
   const features = [
@@ -72,9 +255,9 @@ export default function LoginPage() {
   ];
 
   return (
-    <div className={`min-h-screen flex ${dir === "rtl" ? "flex-row-reverse rtl" : "flex-row ltr"}`} dir={dir}>
+    <div className={`h-screen flex ${dir === "rtl" ? "flex-row rtl" : "flex-row ltr"}`} dir={dir}>
       {/* Form Side - Left in LTR, Right in RTL */}
-      <div className="flex-1 flex flex-col justify-center px-8 py-12 lg:px-16 bg-white dark:bg-gray-900">
+      <div className="flex-1 flex flex-col justify-center px-8 py-6 lg:px-12 bg-white dark:bg-gray-900 overflow-y-auto">
         <div className="max-w-md mx-auto w-full">
           {/* Logo */}
           <Link to="/" className="inline-flex items-center gap-3 mb-8">
@@ -229,16 +412,57 @@ export default function LoginPage() {
             </div>
           </div>
 
-          {/* Magic Link */}
-          <Button
-            type="button"
-            variant="outline"
-            onClick={handleMagicLink}
-            className="w-full h-12 border-2 border-gray-200 dark:border-gray-700 hover:border-texafab-emerald rounded-xl font-medium"
-          >
-            <Sparkles className="w-4 h-4 me-2 text-texafab-gold" />
-            {getText(t.sendMagicLink, language)}
-          </Button>
+          {/* Social Login Buttons */}
+          <div className="space-y-3">
+            <Button
+              type="button"
+              variant="outline"
+              onClick={handleGoogleLogin}
+              disabled={oauthLoading || isLoading}
+              className="w-full h-11 border-2 border-gray-200 dark:border-gray-700 hover:border-texafab-emerald hover:bg-gray-50 dark:hover:bg-gray-800 rounded-xl font-medium transition-all duration-200 text-gray-700 dark:text-gray-200 hover:text-gray-900 dark:hover:text-white disabled:opacity-50"
+            >
+              {oauthLoading ? (
+                <Loader2 className="w-5 h-5 me-3 animate-spin" />
+              ) : (
+                <GoogleIcon className="w-5 h-5 me-3" />
+              )}
+              {getText(t.continueWithGoogle, language)}
+            </Button>
+            
+            <Button
+              type="button"
+              variant="outline"
+              onClick={handleAppleLogin}
+              disabled={oauthLoading || isLoading}
+              className="w-full h-11 border-2 border-gray-200 dark:border-gray-700 hover:border-texafab-slate hover:bg-gray-50 dark:hover:bg-gray-800 rounded-xl font-medium transition-all duration-200 text-gray-700 dark:text-gray-200 hover:text-gray-900 dark:hover:text-white disabled:opacity-50"
+            >
+              {oauthLoading ? (
+                <Loader2 className="w-5 h-5 me-3 animate-spin" />
+              ) : (
+                <AppleIcon className="w-5 h-5 me-3" />
+              )}
+              {getText(t.continueWithApple, language)}
+            </Button>
+
+            {/* Magic Link */}
+            <Button
+              type="button"
+              variant="outline"
+              onClick={handleMagicLink}
+              disabled={isLoading || oauthLoading}
+              className="w-full h-11 border-2 border-gray-200 dark:border-gray-700 hover:border-texafab-gold hover:bg-gray-50 dark:hover:bg-gray-800 rounded-xl font-medium transition-all duration-200 text-gray-700 dark:text-gray-200 hover:text-gray-900 dark:hover:text-white disabled:opacity-50"
+            >
+              {isLoading && !password ? (
+                <Loader2 className="w-4 h-4 me-2 animate-spin text-texafab-gold" />
+              ) : (
+                <Sparkles className="w-4 h-4 me-2 text-texafab-gold" />
+              )}
+              {magicLinkSent 
+                ? getText({ ar: "تم الإرسال! تحقق من بريدك", en: "Sent! Check your email", ru: "Отправлено! Проверьте email", uk: "Надіслано! Перевірте email", ro: "Trimis! Verificați emailul", pl: "Wysłano! Sprawdź email", it: "Inviato! Controlla email", tr: "Gönderildi! E-postanızı kontrol edin" }, language)
+                : getText(t.sendMagicLink, language)
+              }
+            </Button>
+          </div>
 
           {/* Sign Up Link */}
           <p className="text-center mt-6 text-gray-600 dark:text-gray-400">

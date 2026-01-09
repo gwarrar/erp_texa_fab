@@ -34,103 +34,201 @@ import {
 function WarehouseManagementContent() {
   const { language, dir } = useLanguage();
 
+  const getText = (translations: Record<string, string>) => {
+    return translations[language] || translations.en;
+  };
+
   const features = [
     {
       icon: QrCode,
-      titleAr: "تتبع الرولونات بالباركود/QR",
-      titleEn: "Barcode/QR Roll Tracking",
-      descAr: "مسح سريع لكل رولون مع تتبع كامل للحركة والموقع داخل المستودع",
-      descEn: "Quick scanning for each roll with complete tracking of movement and location within the warehouse",
+      title: {
+        ar: "تتبع الرولونات بالباركود/QR",
+        en: "Barcode/QR Roll Tracking",
+        ru: "Отслеживание рулонов по штрих-коду/QR",
+        uk: "Відстеження рулонів за штрих-кодом/QR",
+        ro: "Urmărire role prin cod de bare/QR",
+        pl: "Śledzenie rolek przez kod kreskowy/QR",
+        tr: "Barkod/QR Rulo Takibi"
+      },
+      desc: {
+        ar: "مسح سريع لكل رولون مع تتبع كامل للحركة والموقع داخل المستودع",
+        en: "Quick scanning for each roll with complete tracking of movement and location within the warehouse",
+        ru: "Быстрое сканирование каждого рулона с полным отслеживанием движения и местоположения на складе",
+        uk: "Швидке сканування кожного рулону з повним відстеженням руху та місцезнаходження на складі",
+        ro: "Scanare rapidă pentru fiecare rolă cu urmărire completă a mișcării și locației în depozit",
+        pl: "Szybkie skanowanie każdej rolki z pełnym śledzeniem ruchu i lokalizacji w magazynie",
+        tr: "Her rulo için hızlı tarama ve depodaki hareket ve konumun tam takibi"
+      },
       color: "from-blue-500 to-blue-600"
     },
     {
       icon: Building2,
-      titleAr: "إدارة متعدد المستودعات",
-      titleEn: "Multi-Warehouse Management",
-      descAr: "تزامن فوري بين جميع الفروع والمواقع مع نقل سلس للمخزون",
-      descEn: "Instant synchronization between all branches and locations with seamless inventory transfer",
+      title: {
+        ar: "إدارة متعدد المستودعات",
+        en: "Multi-Warehouse Management",
+        ru: "Управление несколькими складами",
+        uk: "Управління кількома складами",
+        ro: "Gestionarea mai multor depozite",
+        pl: "Zarządzanie wieloma magazynami",
+        tr: "Çoklu Depo Yönetimi"
+      },
+      desc: {
+        ar: "تزامن فوري بين جميع الفروع والمواقع مع نقل سلس للمخزون",
+        en: "Instant synchronization between all branches and locations with seamless inventory transfer",
+        ru: "Мгновенная синхронизация между всеми филиалами с беспрепятственным перемещением запасов",
+        uk: "Миттєва синхронізація між усіма філіями з безперешкодним переміщенням запасів",
+        ro: "Sincronizare instantanee între toate sucursalele cu transfer fără probleme al stocurilor",
+        pl: "Natychmiastowa synchronizacja między wszystkimi oddziałami z płynnym transferem zapasów",
+        tr: "Tüm şubeler arasında anlık senkronizasyon ve sorunsuz stok transferi"
+      },
       color: "from-emerald-500 to-emerald-600"
     },
     {
       icon: ClipboardList,
-      titleAr: "جرد دوري وفوري",
-      titleEn: "Periodic & Instant Inventory",
-      descAr: "جرد جزئي أو كلي بضغطة واحدة مع تقارير الفروقات التلقائية",
-      descEn: "Partial or complete inventory count with one click and automatic variance reports",
+      title: {
+        ar: "جرد دوري وفوري",
+        en: "Periodic & Instant Inventory",
+        ru: "Периодическая и мгновенная инвентаризация",
+        uk: "Періодична та миттєва інвентаризація",
+        ro: "Inventar periodic și instantaneu",
+        pl: "Inwentaryzacja okresowa i natychmiastowa",
+        tr: "Periyodik ve Anlık Envanter"
+      },
+      desc: {
+        ar: "جرد جزئي أو كلي بضغطة واحدة مع تقارير الفروقات التلقائية",
+        en: "Partial or complete inventory count with one click and automatic variance reports",
+        ru: "Частичный или полный подсчет запасов одним кликом с автоматическими отчетами об отклонениях",
+        uk: "Частковий або повний підрахунок запасів одним кліком з автоматичними звітами про відхилення",
+        ro: "Numărătoare parțială sau completă a stocurilor cu un singur clic și rapoarte automate de varianță",
+        pl: "Częściowe lub pełne liczenie zapasów jednym kliknięciem z automatycznymi raportami odchyleń",
+        tr: "Tek tıkla kısmi veya tam envanter sayımı ve otomatik varyans raporları"
+      },
       color: "from-purple-500 to-purple-600"
     },
     {
       icon: Bell,
-      titleAr: "تنبيهات المخزون الذكية",
-      titleEn: "Smart Stock Alerts",
-      descAr: "تنبيهات تلقائية عند الوصول للحد الأدنى أو الأقصى للمخزون",
-      descEn: "Automatic alerts when reaching minimum or maximum stock levels",
+      title: {
+        ar: "تنبيهات المخزون الذكية",
+        en: "Smart Stock Alerts",
+        ru: "Умные оповещения о запасах",
+        uk: "Розумні сповіщення про запаси",
+        ro: "Alerte inteligente de stoc",
+        pl: "Inteligentne alerty magazynowe",
+        tr: "Akıllı Stok Uyarıları"
+      },
+      desc: {
+        ar: "تنبيهات تلقائية عند الوصول للحد الأدنى أو الأقصى للمخزون",
+        en: "Automatic alerts when reaching minimum or maximum stock levels",
+        ru: "Автоматические оповещения при достижении минимального или максимального уровня запасов",
+        uk: "Автоматичні сповіщення при досягненні мінімального або максимального рівня запасів",
+        ro: "Alerte automate la atingerea nivelurilor minime sau maxime de stoc",
+        pl: "Automatyczne alerty przy osiągnięciu minimalnych lub maksymalnych poziomów zapasów",
+        tr: "Minimum veya maksimum stok seviyelerine ulaşıldığında otomatik uyarılar"
+      },
       color: "from-orange-500 to-orange-600"
     },
     {
       icon: Layers,
-      titleAr: "تتبع الدفعات (Batch)",
-      titleEn: "Batch Tracking",
-      descAr: "معرفة مصدر كل رولون، تاريخ الوصول، والمورد الأصلي",
-      descEn: "Know the source of each roll, arrival date, and original supplier",
+      title: {
+        ar: "تتبع الدفعات (Batch)",
+        en: "Batch Tracking",
+        ru: "Отслеживание партий",
+        uk: "Відстеження партій",
+        ro: "Urmărirea loturilor",
+        pl: "Śledzenie partii",
+        tr: "Parti Takibi"
+      },
+      desc: {
+        ar: "معرفة مصدر كل رولون، تاريخ الوصول، والمورد الأصلي",
+        en: "Know the source of each roll, arrival date, and original supplier",
+        ru: "Знайте источник каждого рулона, дату прибытия и первоначального поставщика",
+        uk: "Знайте джерело кожного рулону, дату прибуття та початкового постачальника",
+        ro: "Cunoașteți sursa fiecărei role, data sosirii și furnizorul original",
+        pl: "Poznaj źródło każdej rolki, datę przybycia i oryginalnego dostawcę",
+        tr: "Her rulonun kaynağını, varış tarihini ve orijinal tedarikçiyi bilin"
+      },
       color: "from-cyan-500 to-cyan-600"
     },
     {
       icon: MapPin,
-      titleAr: "إدارة المواقع (Bin Location)",
-      titleEn: "Bin Location Management",
-      descAr: "تحديد موقع كل رولون داخل المستودع بدقة (رف، صف، عمود)",
-      descEn: "Precisely locate each roll within the warehouse (shelf, row, column)",
+      title: {
+        ar: "إدارة المواقع (Bin Location)",
+        en: "Bin Location Management",
+        ru: "Управление местами хранения",
+        uk: "Управління місцями зберігання",
+        ro: "Gestionarea locațiilor de depozitare",
+        pl: "Zarządzanie lokalizacjami magazynowymi",
+        tr: "Depo Konumu Yönetimi"
+      },
+      desc: {
+        ar: "تحديد موقع كل رولون داخل المستودع بدقة (رف، صف، عمود)",
+        en: "Precisely locate each roll within the warehouse (shelf, row, column)",
+        ru: "Точно определите местоположение каждого рулона на складе (полка, ряд, колонка)",
+        uk: "Точно визначте місцезнаходження кожного рулону на складі (полиця, ряд, колонка)",
+        ro: "Localizați precis fiecare rolă în depozit (raft, rând, coloană)",
+        pl: "Precyzyjnie zlokalizuj każdą rolkę w magazynie (półka, rząd, kolumna)",
+        tr: "Depodaki her rulonun konumunu hassas bir şekilde belirleyin (raf, sıra, sütun)"
+      },
       color: "from-pink-500 to-pink-600"
     }
   ];
 
   const stats = [
-    { valueAr: "99.9%", valueEn: "99.9%", labelAr: "دقة الجرد", labelEn: "Inventory Accuracy" },
-    { valueAr: "70%", valueEn: "70%", labelAr: "تقليل وقت البحث", labelEn: "Search Time Reduction" },
-    { valueAr: "50%", valueEn: "50%", labelAr: "تقليل الهدر", labelEn: "Waste Reduction" },
-    { valueAr: "3x", valueEn: "3x", labelAr: "سرعة الجرد", labelEn: "Inventory Speed" }
+    { value: "99.9%", label: { ar: "دقة الجرد", en: "Inventory Accuracy", ru: "Точность инвентаризации", uk: "Точність інвентаризації", ro: "Precizia inventarului", pl: "Dokładność inwentaryzacji", tr: "Envanter Doğruluğu" } },
+    { value: "70%", label: { ar: "تقليل وقت البحث", en: "Search Time Reduction", ru: "Сокращение времени поиска", uk: "Скорочення часу пошуку", ro: "Reducerea timpului de căutare", pl: "Redukcja czasu wyszukiwania", tr: "Arama Süresi Azaltma" } },
+    { value: "50%", label: { ar: "تقليل الهدر", en: "Waste Reduction", ru: "Сокращение отходов", uk: "Скорочення відходів", ro: "Reducerea deșeurilor", pl: "Redukcja odpadów", tr: "Atık Azaltma" } },
+    { value: "3x", label: { ar: "سرعة الجرد", en: "Inventory Speed", ru: "Скорость инвентаризации", uk: "Швидкість інвентаризації", ro: "Viteza inventarului", pl: "Szybkość inwentaryzacji", tr: "Envanter Hızı" } }
   ];
 
   const workflowSteps = [
     {
       icon: Package,
-      titleAr: "استلام البضاعة",
-      titleEn: "Goods Receipt",
-      descAr: "مسح الباركود وتسجيل البضاعة الواردة تلقائياً",
-      descEn: "Scan barcode and automatically record incoming goods"
+      title: { ar: "استلام البضاعة", en: "Goods Receipt", ru: "Приемка товаров", uk: "Приймання товарів", ro: "Recepție mărfuri", pl: "Przyjęcie towaru", tr: "Mal Teslim Alma" },
+      desc: { ar: "مسح الباركود وتسجيل البضاعة الواردة تلقائياً", en: "Scan barcode and automatically record incoming goods", ru: "Сканирование штрих-кода и автоматическая регистрация входящих товаров", uk: "Сканування штрих-коду та автоматична реєстрація вхідних товарів", ro: "Scanați codul de bare și înregistrați automat mărfurile primite", pl: "Zeskanuj kod kreskowy i automatycznie zarejestruj przychodzące towary", tr: "Barkodu tarayın ve gelen malları otomatik olarak kaydedin" }
     },
     {
       icon: MapPin,
-      titleAr: "تحديد الموقع",
-      titleEn: "Location Assignment",
-      descAr: "اقتراح ذكي لأفضل موقع تخزين حسب النوع والحركة",
-      descEn: "Smart suggestion for best storage location based on type and movement"
+      title: { ar: "تحديد الموقع", en: "Location Assignment", ru: "Назначение местоположения", uk: "Призначення місцезнаходження", ro: "Atribuirea locației", pl: "Przypisanie lokalizacji", tr: "Konum Atama" },
+      desc: { ar: "اقتراح ذكي لأفضل موقع تخزين حسب النوع والحركة", en: "Smart suggestion for best storage location based on type and movement", ru: "Умное предложение лучшего места хранения на основе типа и движения", uk: "Розумна пропозиція найкращого місця зберігання на основі типу та руху", ro: "Sugestie inteligentă pentru cea mai bună locație de depozitare pe baza tipului și mișcării", pl: "Inteligentna sugestia najlepszej lokalizacji magazynowej na podstawie typu i ruchu", tr: "Tür ve harekete göre en iyi depolama konumu için akıllı öneri" }
     },
     {
       icon: Search,
-      titleAr: "البحث والاسترجاع",
-      titleEn: "Search & Retrieve",
-      descAr: "العثور على أي رولون في ثوانٍ مع توجيهات الموقع",
-      descEn: "Find any roll in seconds with location guidance"
+      title: { ar: "البحث والاسترجاع", en: "Search & Retrieve", ru: "Поиск и получение", uk: "Пошук та отримання", ro: "Căutare și recuperare", pl: "Wyszukiwanie i pobieranie", tr: "Ara ve Al" },
+      desc: { ar: "العثور على أي رولون في ثوانٍ مع توجيهات الموقع", en: "Find any roll in seconds with location guidance", ru: "Найдите любой рулон за секунды с указанием местоположения", uk: "Знайдіть будь-який рулон за секунди з вказівкою місцезнаходження", ro: "Găsiți orice rolă în câteva secunde cu ghidare de locație", pl: "Znajdź dowolną rolkę w sekundach z przewodnikiem lokalizacji", tr: "Konum rehberliği ile saniyeler içinde herhangi bir ruloyu bulun" }
     },
     {
       icon: RefreshCw,
-      titleAr: "نقل المخزون",
-      titleEn: "Stock Transfer",
-      descAr: "نقل سلس بين المستودعات مع تحديث فوري",
-      descEn: "Seamless transfer between warehouses with instant update"
+      title: { ar: "نقل المخزون", en: "Stock Transfer", ru: "Перемещение запасов", uk: "Переміщення запасів", ro: "Transfer de stoc", pl: "Transfer zapasów", tr: "Stok Transferi" },
+      desc: { ar: "نقل سلس بين المستودعات مع تحديث فوري", en: "Seamless transfer between warehouses with instant update", ru: "Беспрепятственное перемещение между складами с мгновенным обновлением", uk: "Безперешкодне переміщення між складами з миттєвим оновленням", ro: "Transfer fără probleme între depozite cu actualizare instantanee", pl: "Płynny transfer między magazynami z natychmiastową aktualizacją", tr: "Anında güncelleme ile depolar arası sorunsuz transfer" }
     }
   ];
 
   const reports = [
-    { titleAr: "تقرير حركة المخزون اليومية", titleEn: "Daily Stock Movement Report" },
-    { titleAr: "تقرير الأصناف الراكدة", titleEn: "Slow-Moving Items Report" },
-    { titleAr: "تقرير فروقات الجرد", titleEn: "Inventory Variance Report" },
-    { titleAr: "تقرير تقادم المخزون", titleEn: "Stock Aging Report" },
-    { titleAr: "تقرير المخزون حسب الفرع", titleEn: "Stock by Branch Report" },
-    { titleAr: "تقرير التنبيهات والإشعارات", titleEn: "Alerts & Notifications Report" }
+    { title: { ar: "تقرير حركة المخزون اليومية", en: "Daily Stock Movement Report", ru: "Ежедневный отчет о движении запасов", uk: "Щоденний звіт про рух запасів", ro: "Raport zilnic de mișcare a stocurilor", pl: "Dzienny raport ruchu zapasów", tr: "Günlük Stok Hareket Raporu" } },
+    { title: { ar: "تقرير الأصناف الراكدة", en: "Slow-Moving Items Report", ru: "Отчет о медленно движущихся товарах", uk: "Звіт про повільно рухомі товари", ro: "Raport articole cu mișcare lentă", pl: "Raport wolno rotujących towarów", tr: "Yavaş Hareket Eden Ürünler Raporu" } },
+    { title: { ar: "تقرير فروقات الجرد", en: "Inventory Variance Report", ru: "Отчет об отклонениях инвентаризации", uk: "Звіт про відхилення інвентаризації", ro: "Raport varianță inventar", pl: "Raport odchyleń inwentaryzacji", tr: "Envanter Varyans Raporu" } },
+    { title: { ar: "تقرير تقادم المخزون", en: "Stock Aging Report", ru: "Отчет о старении запасов", uk: "Звіт про старіння запасів", ro: "Raport vechime stoc", pl: "Raport starzenia się zapasów", tr: "Stok Yaşlanma Raporu" } },
+    { title: { ar: "تقرير المخزون حسب الفرع", en: "Stock by Branch Report", ru: "Отчет о запасах по филиалам", uk: "Звіт про запаси за філіями", ro: "Raport stoc pe sucursale", pl: "Raport zapasów według oddziałów", tr: "Şubeye Göre Stok Raporu" } },
+    { title: { ar: "تقرير التنبيهات والإشعارات", en: "Alerts & Notifications Report", ru: "Отчет об оповещениях и уведомлениях", uk: "Звіт про сповіщення та повідомлення", ro: "Raport alerte și notificări", pl: "Raport alertów i powiadomień", tr: "Uyarılar ve Bildirimler Raporu" } }
   ];
+
+  // Page translations
+  const pageText = {
+    badge: { ar: "إدارة المستودعات المتقدمة", en: "Advanced Warehouse Management", ru: "Расширенное управление складом", uk: "Розширене управління складом", ro: "Gestionare avansată a depozitelor", pl: "Zaawansowane zarządzanie magazynem", tr: "Gelişmiş Depo Yönetimi" },
+    heroTitle1: { ar: "تحكم كامل", en: "Complete Control", ru: "Полный контроль", uk: "Повний контроль", ro: "Control complet", pl: "Pełna kontrola", tr: "Tam Kontrol" },
+    heroTitle2: { ar: "بمستودعاتك", en: "Over Your Warehouses", ru: "над вашими складами", uk: "над вашими складами", ro: "asupra depozitelor dvs.", pl: "nad magazynami", tr: "Depolarınız Üzerinde" },
+    heroDesc: { ar: "نظام متكامل لإدارة المستودعات بتقنية الباركود والـ QR مع تتبع دقيق لكل رولون وموقعه في الوقت الفعلي", en: "Integrated warehouse management system with barcode and QR technology for precise tracking of every roll and its location in real-time", ru: "Интегрированная система управления складом с технологией штрих-кода и QR для точного отслеживания каждого рулона и его местоположения в реальном времени", uk: "Інтегрована система управління складом з технологією штрих-коду та QR для точного відстеження кожного рулону та його місцезнаходження в реальному часі", ro: "Sistem integrat de gestionare a depozitelor cu tehnologie de coduri de bare și QR pentru urmărirea precisă a fiecărei role și a locației sale în timp real", pl: "Zintegrowany system zarządzania magazynem z technologią kodów kreskowych i QR do precyzyjnego śledzenia każdej rolki i jej lokalizacji w czasie rzeczywistym", tr: "Her rulonun ve konumunun gerçek zamanlı olarak hassas takibi için barkod ve QR teknolojisi ile entegre depo yönetim sistemi" },
+    featuresTitle: { ar: "مميزات إدارة المستودعات", en: "Warehouse Management Features", ru: "Функции управления складом", uk: "Функції управління складом", ro: "Funcții de gestionare a depozitelor", pl: "Funkcje zarządzania magazynem", tr: "Depo Yönetimi Özellikleri" },
+    featuresDesc: { ar: "أدوات متقدمة لإدارة مخزونك بكفاءة ودقة عالية", en: "Advanced tools to manage your inventory with efficiency and high accuracy", ru: "Передовые инструменты для управления вашими запасами с эффективностью и высокой точностью", uk: "Передові інструменти для управління вашими запасами з ефективністю та високою точністю", ro: "Instrumente avansate pentru gestionarea inventarului cu eficiență și precizie ridicată", pl: "Zaawansowane narzędzia do zarządzania zapasami z wydajnością i wysoką dokładnością", tr: "Envanterinizi verimlilik ve yüksek doğrulukla yönetmek için gelişmiş araçlar" },
+    workflowTitle: { ar: "سير العمل في المستودع", en: "Warehouse Workflow", ru: "Рабочий процесс склада", uk: "Робочий процес складу", ro: "Flux de lucru în depozit", pl: "Przepływ pracy w magazynie", tr: "Depo İş Akışı" },
+    systemInterface: { ar: "واجهة النظام", en: "System Interface", ru: "Интерфейс системы", uk: "Інтерфейс системи", ro: "Interfața sistemului", pl: "Interfejs systemu", tr: "Sistem Arayüzü" },
+    warehouseDashboard: { ar: "لوحة إدارة المستودعات", en: "Warehouse Dashboard", ru: "Панель управления складом", uk: "Панель управління складом", ro: "Tablou de bord depozit", pl: "Panel magazynu", tr: "Depo Kontrol Paneli" },
+    reportsTitle: { ar: "التقارير المتوفرة", en: "Available Reports", ru: "Доступные отчеты", uk: "Доступні звіти", ro: "Rapoarte disponibile", pl: "Dostępne raporty", tr: "Mevcut Raporlar" },
+    ctaTitle: { ar: "جاهز لتحسين إدارة مستودعاتك؟", en: "Ready to Optimize Your Warehouse Management?", ru: "Готовы оптимизировать управление вашим складом?", uk: "Готові оптимізувати управління вашим складом?", ro: "Gata să vă optimizați gestionarea depozitelor?", pl: "Gotowy do optymalizacji zarządzania magazynem?", tr: "Depo Yönetiminizi Optimize Etmeye Hazır mısınız?" },
+    ctaDesc: { ar: "ابدأ تجربتك المجانية اليوم واكتشف قوة نظام إدارة المستودعات المتقدم", en: "Start your free trial today and discover the power of advanced warehouse management", ru: "Начните бесплатную пробную версию сегодня и откройте для себя мощь расширенного управления складом", uk: "Почніть безкоштовну пробну версію сьогодні та відкрийте для себе силу розширеного управління складом", ro: "Începeți perioada de probă gratuită astăzi și descoperiți puterea gestionării avansate a depozitelor", pl: "Rozpocznij bezpłatny okres próbny już dziś i odkryj moc zaawansowanego zarządzania magazynem", tr: "Bugün ücretsiz denemenizi başlatın ve gelişmiş depo yönetiminin gücünü keşfedin" },
+    freeTrial: { ar: "ابدأ تجربة مجانية", en: "Start Free Trial", ru: "Начать бесплатную пробную версию", uk: "Почати безкоштовну пробну версію", ro: "Începeți perioada de probă gratuită", pl: "Rozpocznij bezpłatny okres próbny", tr: "Ücretsiz Denemeyi Başlat" },
+    contactSales: { ar: "تواصل مع المبيعات", en: "Contact Sales", ru: "Связаться с отделом продаж", uk: "Зв'язатися з відділом продажів", ro: "Contactați vânzările", pl: "Skontaktuj się z działem sprzedaży", tr: "Satışla İletişime Geçin" }
+  };
 
   return (
     <div className={`min-h-screen bg-gradient-to-b from-gray-50 to-white dark:from-gray-900 dark:to-gray-800 ${dir === "rtl" ? "rtl" : "ltr"}`} dir={dir}>
@@ -148,22 +246,16 @@ function WarehouseManagementContent() {
             <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-blue-500/10 border border-blue-500/20 mb-6">
               <Warehouse className="w-4 h-4 text-blue-500" />
               <span className="text-sm font-semibold text-blue-600">
-                {language === "ar" ? "إدارة المستودعات المتقدمة" : "Advanced Warehouse Management"}
+                {getText(pageText.badge)}
               </span>
             </div>
 
             <h1 className="text-4xl md:text-6xl font-black text-texafab-slate mb-6 leading-tight">
-              {language === "ar" ? (
-                <>تحكم كامل <span className="text-blue-500">بمستودعاتك</span></>
-              ) : (
-                <>Complete Control <span className="text-blue-500">Over Your Warehouses</span></>
-              )}
+              {getText(pageText.heroTitle1)} <span className="text-blue-500">{getText(pageText.heroTitle2)}</span>
             </h1>
 
             <p className="text-xl text-gray-600 mb-8 leading-relaxed max-w-3xl mx-auto">
-              {language === "ar" 
-                ? "نظام متكامل لإدارة المستودعات بتقنية الباركود والـ QR مع تتبع دقيق لكل رولون وموقعه في الوقت الفعلي"
-                : "Integrated warehouse management system with barcode and QR technology for precise tracking of every roll and its location in real-time"}
+              {getText(pageText.heroDesc)}
             </p>
 
             <div className="flex flex-col sm:flex-row justify-center gap-4">
@@ -185,10 +277,10 @@ function WarehouseManagementContent() {
             {stats.map((stat, index) => (
               <Card key={index} className="p-6 text-center border-0 shadow-lg rounded-2xl">
                 <p className="text-4xl font-black text-blue-500 mb-2">
-                  {language === "ar" ? stat.valueAr : stat.valueEn}
+                  {stat.value}
                 </p>
                 <p className="text-gray-600 font-medium">
-                  {language === "ar" ? stat.labelAr : stat.labelEn}
+                  {getText(stat.label)}
                 </p>
               </Card>
             ))}
@@ -201,12 +293,10 @@ function WarehouseManagementContent() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6">
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-bold text-texafab-slate mb-4">
-              {language === "ar" ? "مميزات إدارة المستودعات" : "Warehouse Management Features"}
+              {getText(pageText.featuresTitle)}
             </h2>
             <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-              {language === "ar" 
-                ? "أدوات متقدمة لإدارة مخزونك بكفاءة ودقة عالية"
-                : "Advanced tools to manage your inventory with efficiency and high accuracy"}
+              {getText(pageText.featuresDesc)}
             </p>
           </div>
 
@@ -217,10 +307,10 @@ function WarehouseManagementContent() {
                   <feature.icon className="w-7 h-7 text-white" />
                 </div>
                 <h3 className="text-xl font-bold text-texafab-slate mb-2">
-                  {language === "ar" ? feature.titleAr : feature.titleEn}
+                  {getText(feature.title)}
                 </h3>
                 <p className="text-gray-600">
-                  {language === "ar" ? feature.descAr : feature.descEn}
+                  {getText(feature.desc)}
                 </p>
               </Card>
             ))}
@@ -233,7 +323,7 @@ function WarehouseManagementContent() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6">
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-bold text-texafab-slate mb-4">
-              {language === "ar" ? "سير العمل في المستودع" : "Warehouse Workflow"}
+              {getText(pageText.workflowTitle)}
             </h2>
           </div>
 
@@ -248,10 +338,10 @@ function WarehouseManagementContent() {
                     <step.icon className="w-6 h-6 text-blue-500" />
                   </div>
                   <h3 className="text-lg font-bold text-texafab-slate mb-2">
-                    {language === "ar" ? step.titleAr : step.titleEn}
+                    {getText(step.title)}
                   </h3>
                   <p className="text-sm text-gray-600">
-                    {language === "ar" ? step.descAr : step.descEn}
+                    {getText(step.desc)}
                   </p>
                 </Card>
                 {index < workflowSteps.length - 1 && (
@@ -272,11 +362,11 @@ function WarehouseManagementContent() {
             <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-blue-500/10 dark:bg-blue-500/20 border border-blue-500/20 dark:border-blue-500/30 mb-6">
               <Monitor className="w-4 h-4 text-blue-500" />
               <span className="text-sm font-semibold text-blue-600 dark:text-blue-400">
-                {language === "ar" ? "واجهة النظام" : "System Interface"}
+                {getText(pageText.systemInterface)}
               </span>
             </div>
             <h2 className="text-3xl md:text-4xl font-bold text-texafab-slate dark:text-white mb-4">
-              {language === "ar" ? "لوحة إدارة المستودعات" : "Warehouse Dashboard"}
+              {getText(pageText.warehouseDashboard)}
             </h2>
             <p className="text-lg text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
               {language === "ar" 
@@ -520,7 +610,7 @@ function WarehouseManagementContent() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6">
           <div className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-bold text-texafab-slate mb-4">
-              {language === "ar" ? "تقارير المستودعات" : "Warehouse Reports"}
+              {getText(pageText.reportsTitle)}
             </h2>
           </div>
 
@@ -531,7 +621,7 @@ function WarehouseManagementContent() {
                   <FileText className="w-5 h-5 text-blue-500" />
                 </div>
                 <span className="font-medium text-texafab-slate">
-                  {language === "ar" ? report.titleAr : report.titleEn}
+                  {getText(report.title)}
                 </span>
               </Card>
             ))}

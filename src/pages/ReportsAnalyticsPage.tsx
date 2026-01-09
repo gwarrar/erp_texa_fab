@@ -33,121 +33,121 @@ import {
 function ReportsAnalyticsContent() {
   const { language, dir } = useLanguage();
 
+  const getText = (translations: Record<string, string>) => {
+    return translations[language] || translations.en;
+  };
+
   const reportTypes = [
     {
       icon: DollarSign,
-      titleAr: "تقارير المبيعات",
-      titleEn: "Sales Reports",
-      descAr: "تحليل شامل لجميع المبيعات حسب الفترة والمنتج والعميل",
-      descEn: "Comprehensive analysis of all sales by period, product, and customer",
+      title: { ar: "تقارير المبيعات", en: "Sales Reports", ru: "Отчеты о продажах", uk: "Звіти про продажі", ro: "Rapoarte de vânzări", pl: "Raporty sprzedaży", tr: "Satış Raporları" },
+      desc: { ar: "تحليل شامل لجميع المبيعات حسب الفترة والمنتج والعميل", en: "Comprehensive analysis of all sales by period, product, and customer", ru: "Комплексный анализ всех продаж по периоду, продукту и клиенту", uk: "Комплексний аналіз усіх продажів за періодом, продуктом та клієнтом", ro: "Analiza cuprinzătoare a tuturor vânzărilor pe perioadă, produs și client", pl: "Kompleksowa analiza wszystkich sprzedaży według okresu, produktu i klienta", tr: "Dönem, ürün ve müşteriye göre tüm satışların kapsamlı analizi" },
       color: "from-emerald-500 to-emerald-600",
       metrics: [
-        { ar: "المبيعات اليومية/الشهرية/السنوية", en: "Daily/Monthly/Yearly Sales" },
-        { ar: "مقارنة الفترات", en: "Period Comparison" },
-        { ar: "أفضل المنتجات مبيعاً", en: "Top Selling Products" }
+        { ar: "المبيعات اليومية/الشهرية/السنوية", en: "Daily/Monthly/Yearly Sales", ru: "Ежедневные/месячные/годовые продажи", uk: "Щоденні/місячні/річні продажі", ro: "Vânzări zilnice/lunare/anuale", pl: "Sprzedaż dzienna/miesięczna/roczna", tr: "Günlük/Aylık/Yıllık Satışlar" },
+        { ar: "مقارنة الفترات", en: "Period Comparison", ru: "Сравнение периодов", uk: "Порівняння періодів", ro: "Comparație perioadă", pl: "Porównanie okresów", tr: "Dönem Karşılaştırması" },
+        { ar: "أفضل المنتجات مبيعاً", en: "Top Selling Products", ru: "Самые продаваемые товары", uk: "Найпопулярніші товари", ro: "Produsele cele mai vândute", pl: "Najlepiej sprzedające się produkty", tr: "En Çok Satan Ürünler" }
       ]
     },
     {
       icon: Package,
-      titleAr: "تقارير المخزون",
-      titleEn: "Inventory Reports",
-      descAr: "متابعة دقيقة لحركة المخزون والرولونات والمنتجات",
-      descEn: "Precise tracking of inventory movement, rolls, and products",
+      title: { ar: "تقارير المخزون", en: "Inventory Reports", ru: "Отчеты о запасах", uk: "Звіти про запаси", ro: "Rapoarte de inventar", pl: "Raporty magazynowe", tr: "Envanter Raporları" },
+      desc: { ar: "متابعة دقيقة لحركة المخزون والرولونات والمنتجات", en: "Precise tracking of inventory movement, rolls, and products", ru: "Точное отслеживание движения запасов, рулонов и продуктов", uk: "Точне відстеження руху запасів, рулонів та продуктів", ro: "Urmărirea precisă a mișcării inventarului, rolelor și produselor", pl: "Precyzyjne śledzenie ruchu zapasów, rolek i produktów", tr: "Envanter hareketi, rulolar ve ürünlerin hassas takibi" },
       color: "from-blue-500 to-blue-600",
       metrics: [
-        { ar: "حركة المخزون", en: "Inventory Movement" },
-        { ar: "الرولونات المتوفرة", en: "Available Rolls" },
-        { ar: "تقارير الجرد", en: "Stock Count Reports" }
+        { ar: "حركة المخزون", en: "Inventory Movement", ru: "Движение запасов", uk: "Рух запасів", ro: "Mișcarea inventarului", pl: "Ruch zapasów", tr: "Envanter Hareketi" },
+        { ar: "الرولونات المتوفرة", en: "Available Rolls", ru: "Доступные рулоны", uk: "Доступні рулони", ro: "Role disponibile", pl: "Dostępne rolki", tr: "Mevcut Rulolar" },
+        { ar: "تقارير الجرد", en: "Stock Count Reports", ru: "Отчеты об инвентаризации", uk: "Звіти про інвентаризацію", ro: "Rapoarte de inventariere", pl: "Raporty inwentaryzacyjne", tr: "Stok Sayım Raporları" }
       ]
     },
     {
       icon: Users,
-      titleAr: "تقارير العملاء",
-      titleEn: "Customer Reports",
-      descAr: "تحليل أداء العملاء ومشترياتهم وتاريخهم",
-      descEn: "Customer performance analysis, purchases, and history",
+      title: { ar: "تقارير العملاء", en: "Customer Reports", ru: "Отчеты о клиентах", uk: "Звіти про клієнтів", ro: "Rapoarte despre clienți", pl: "Raporty o klientach", tr: "Müşteri Raporları" },
+      desc: { ar: "تحليل أداء العملاء ومشترياتهم وتاريخهم", en: "Customer performance analysis, purchases, and history", ru: "Анализ производительности клиентов, покупок и истории", uk: "Аналіз продуктивності клієнтів, покупок та історії", ro: "Analiza performanței clienților, achizițiilor și istoricului", pl: "Analiza wydajności klientów, zakupów i historii", tr: "Müşteri performans analizi, satın almalar ve geçmiş" },
       color: "from-purple-500 to-purple-600",
       metrics: [
-        { ar: "أفضل العملاء", en: "Top Customers" },
-        { ar: "الذمم المدينة", en: "Accounts Receivable" },
-        { ar: "تاريخ العميل", en: "Customer History" }
+        { ar: "أفضل العملاء", en: "Top Customers", ru: "Лучшие клиенты", uk: "Найкращі клієнти", ro: "Cei mai buni clienți", pl: "Najlepsi klienci", tr: "En İyi Müşteriler" },
+        { ar: "الذمم المدينة", en: "Accounts Receivable", ru: "Дебиторская задолженность", uk: "Дебіторська заборгованість", ro: "Conturi de încasat", pl: "Należności", tr: "Alacak Hesapları" },
+        { ar: "تاريخ العميل", en: "Customer History", ru: "История клиента", uk: "Історія клієнта", ro: "Istoricul clientului", pl: "Historia klienta", tr: "Müşteri Geçmişi" }
       ]
     },
     {
       icon: TrendingUp,
-      titleAr: "تقارير الأرباح",
-      titleEn: "Profit Reports",
-      descAr: "حساب دقيق للأرباح والهوامش الربحية لكل منتج وعميل",
-      descEn: "Accurate profit and margin calculation for each product and customer",
+      title: { ar: "تقارير الأرباح", en: "Profit Reports", ru: "Отчеты о прибыли", uk: "Звіти про прибуток", ro: "Rapoarte de profit", pl: "Raporty o zyskach", tr: "Kâr Raporları" },
+      desc: { ar: "حساب دقيق للأرباح والهوامش الربحية لكل منتج وعميل", en: "Accurate profit and margin calculation for each product and customer", ru: "Точный расчет прибыли и маржи для каждого продукта и клиента", uk: "Точний розрахунок прибутку та маржі для кожного продукту та клієнта", ro: "Calculul precis al profitului și marjei pentru fiecare produs și client", pl: "Dokładne obliczenie zysku i marży dla każdego produktu i klienta", tr: "Her ürün ve müşteri için doğru kâr ve marj hesaplaması" },
       color: "from-amber-500 to-amber-600",
       metrics: [
-        { ar: "هامش الربح", en: "Profit Margin" },
-        { ar: "ربحية المنتجات", en: "Product Profitability" },
-        { ar: "تحليل التكاليف", en: "Cost Analysis" }
+        { ar: "هامش الربح", en: "Profit Margin", ru: "Маржа прибыли", uk: "Маржа прибутку", ro: "Marja de profit", pl: "Marża zysku", tr: "Kâr Marjı" },
+        { ar: "ربحية المنتجات", en: "Product Profitability", ru: "Прибыльность продуктов", uk: "Прибутковість продуктів", ro: "Profitabilitatea produselor", pl: "Rentowność produktów", tr: "Ürün Karlılığı" },
+        { ar: "تحليل التكاليف", en: "Cost Analysis", ru: "Анализ затрат", uk: "Аналіз витрат", ro: "Analiza costurilor", pl: "Analiza kosztów", tr: "Maliyet Analizi" }
       ]
     },
     {
       icon: Award,
-      titleAr: "تقارير الأداء",
-      titleEn: "Performance Reports",
-      descAr: "مؤشرات أداء الموظفين والوكلاء والفروع",
-      descEn: "Employee, agent, and branch performance indicators",
+      title: { ar: "تقارير الأداء", en: "Performance Reports", ru: "Отчеты о производительности", uk: "Звіти про продуктивність", ro: "Rapoarte de performanță", pl: "Raporty wydajności", tr: "Performans Raporları" },
+      desc: { ar: "مؤشرات أداء الموظفين والوكلاء والفروع", en: "Employee, agent, and branch performance indicators", ru: "Показатели производительности сотрудников, агентов и филиалов", uk: "Показники продуктивності співробітників, агентів та філій", ro: "Indicatorii de performanță ai angajaților, agenților și sucursalelor", pl: "Wskaźniki wydajności pracowników, agentów i oddziałów", tr: "Çalışan, acente ve şube performans göstergeleri" },
       color: "from-pink-500 to-pink-600",
       metrics: [
-        { ar: "أداء الموظفين", en: "Employee Performance" },
-        { ar: "KPIs شاملة", en: "Comprehensive KPIs" },
-        { ar: "أداء الفروع", en: "Branch Performance" }
+        { ar: "أداء الموظفين", en: "Employee Performance", ru: "Производительность сотрудников", uk: "Продуктивність співробітників", ro: "Performanța angajaților", pl: "Wydajność pracowników", tr: "Çalışan Performansı" },
+        { ar: "KPIs شاملة", en: "Comprehensive KPIs", ru: "Комплексные KPI", uk: "Комплексні KPI", ro: "KPI-uri cuprinzătoare", pl: "Kompleksowe KPI", tr: "Kapsamlı KPI'lar" },
+        { ar: "أداء الفروع", en: "Branch Performance", ru: "Производительность филиалов", uk: "Продуктивність філій", ro: "Performanța sucursalelor", pl: "Wydajność oddziałów", tr: "Şube Performansı" }
       ]
     },
     {
       icon: ShoppingCart,
-      titleAr: "تقارير نقاط البيع",
-      titleEn: "POS Reports",
-      descAr: "تحليل مبيعات الكاشير والفواتير والإيرادات",
-      descEn: "Cashier sales analysis, invoices, and revenue",
+      title: { ar: "تقارير نقاط البيع", en: "POS Reports", ru: "Отчеты о продажах", uk: "Звіти про продажі", ro: "Rapoarte POS", pl: "Raporty POS", tr: "POS Raporları" },
+      desc: { ar: "تحليل مبيعات الكاشير والفواتير والإيرادات", en: "Cashier sales analysis, invoices, and revenue", ru: "Анализ продаж кассира, счетов и выручки", uk: "Аналіз продажів касира, рахунків та виручки", ro: "Analiza vânzărilor casierului, facturilor și veniturilor", pl: "Analiza sprzedaży kasjera, faktur i przychodów", tr: "Kasiyer satış analizi, faturalar ve gelir" },
       color: "from-cyan-500 to-cyan-600",
       metrics: [
-        { ar: "مبيعات الكاشير", en: "Cashier Sales" },
-        { ar: "طرق الدفع", en: "Payment Methods" },
-        { ar: "الفواتير الملغية", en: "Cancelled Invoices" }
+        { ar: "مبيعات الكاشير", en: "Cashier Sales", ru: "Продажи кассира", uk: "Продажі касира", ro: "Vânzări casier", pl: "Sprzedaż kasjera", tr: "Kasiyer Satışları" },
+        { ar: "طرق الدفع", en: "Payment Methods", ru: "Способы оплаты", uk: "Способи оплати", ro: "Metode de plată", pl: "Metody płatności", tr: "Ödeme Yöntemleri" },
+        { ar: "الفواتير الملغية", en: "Cancelled Invoices", ru: "Отмененные счета", uk: "Скасовані рахунки", ro: "Facturi anulate", pl: "Anulowane faktury", tr: "İptal Edilen Faturalar" }
       ]
     }
   ];
 
   const dashboardMetrics = [
     { 
-      labelAr: "إجمالي المبيعات", 
-      labelEn: "Total Sales", 
+      label: { ar: "إجمالي المبيعات", en: "Total Sales", ru: "Общие продажи", uk: "Загальні продажі", ro: "Vânzări totale", pl: "Całkowita sprzedaż", tr: "Toplam Satışlar" }, 
       value: "$2.4M", 
       change: "+12.5%", 
       isPositive: true,
       icon: DollarSign 
     },
     { 
-      labelAr: "الأرباح", 
-      labelEn: "Profits", 
+      label: { ar: "الأرباح", en: "Profits", ru: "Прибыль", uk: "Прибуток", ro: "Profituri", pl: "Zyski", tr: "Kârlar" }, 
       value: "$450K", 
       change: "+8.2%", 
       isPositive: true,
       icon: TrendingUp 
     },
     { 
-      labelAr: "العملاء الجدد", 
-      labelEn: "New Customers", 
+      label: { ar: "العملاء الجدد", en: "New Customers", ru: "Новые клиенты", uk: "Нові клієнти", ro: "Clienți noi", pl: "Nowi klienci", tr: "Yeni Müşteriler" }, 
       value: "156", 
       change: "+23%", 
       isPositive: true,
       icon: Users 
     },
     { 
-      labelAr: "الرولونات المباعة", 
-      labelEn: "Rolls Sold", 
+      label: { ar: "الرولونات المباعة", en: "Rolls Sold", ru: "Проданные рулоны", uk: "Продані рулони", ro: "Role vândute", pl: "Sprzedane rolki", tr: "Satılan Rulolar" }, 
       value: "3,420", 
       change: "-2.1%", 
       isPositive: false,
       icon: Package 
     }
   ];
+
+  const pageText = {
+    badge: { ar: "التقارير والتحليلات", en: "Reports & Analytics", ru: "Отчеты и аналитика", uk: "Звіти та аналітика", ro: "Rapoarte și analize", pl: "Raporty i analizy", tr: "Raporlar ve Analitik" },
+    heroTitle1: { ar: "قرارات ذكية", en: "Smart Decisions", ru: "Умные решения", uk: "Розумні рішення", ro: "Decizii inteligente", pl: "Inteligentne decyzje", tr: "Akıllı Kararlar" },
+    heroTitle2: { ar: "مبنية على البيانات", en: "Based on Data", ru: "на основе данных", uk: "на основі даних", ro: "bazate pe date", pl: "oparte na danych", tr: "Verilere Dayalı" },
+    heroDesc: { ar: "لوحة تحكم متكاملة وتقارير شاملة تمنحك رؤية كاملة لأداء شركتك في الوقت الفعلي", en: "Integrated dashboard and comprehensive reports giving you complete visibility into your company's real-time performance", ru: "Интегрированная панель управления и комплексные отчеты, дающие вам полное представление о производительности вашей компании в реальном времени", uk: "Інтегрована панель управління та комплексні звіти, що дають вам повне уявлення про продуктивність вашої компанії в реальному часі", ro: "Tablou de bord integrat și rapoarte cuprinzătoare care vă oferă vizibilitate completă asupra performanței companiei în timp real", pl: "Zintegrowany pulpit i kompleksowe raporty dające pełny wgląd w wydajność firmy w czasie rzeczywistym", tr: "Şirketinizin gerçek zamanlı performansını tam olarak görmenizi sağlayan entegre gösterge paneli ve kapsamlı raporlar" },
+    dashboardTitle: { ar: "لوحة التحكم التفاعلية", en: "Interactive Dashboard", ru: "Интерактивная панель", uk: "Інтерактивна панель", ro: "Tablou de bord interactiv", pl: "Interaktywny pulpit", tr: "Etkileşimli Gösterge Paneli" },
+    dashboardDesc: { ar: "نظرة شاملة على أداء شركتك في لحظة واحدة", en: "Comprehensive view of your company's performance at a glance", ru: "Комплексный обзор производительности вашей компании с одного взгляда", uk: "Комплексний огляд продуктивності вашої компанії з одного погляду", ro: "Viziune cuprinzătoare asupra performanței companiei dvs. dintr-o privire", pl: "Kompleksowy widok wydajności firmy na pierwszy rzut oka", tr: "Şirketinizin performansının bir bakışta kapsamlı görünümü" },
+    reportTypes: { ar: "أنواع التقارير", en: "Report Types", ru: "Типы отчетов", uk: "Типи звітів", ro: "Tipuri de rapoarte", pl: "Typy raportów", tr: "Rapor Türleri" },
+    reportTypesDesc: { ar: "تقارير شاملة لجميع جوانب أعمالك", en: "Comprehensive reports for all aspects of your business", ru: "Комплексные отчеты для всех аспектов вашего бизнеса", uk: "Комплексні звіти для всіх аспектів вашого бізнесу", ro: "Rapoarte cuprinzătoare pentru toate aspectele afacerii dvs.", pl: "Kompleksowe raporty dla wszystkich aspektów Twojej firmy", tr: "İşinizin tüm yönleri için kapsamlı raporlar" },
+    bookDemo: { ar: "احجز عرض توضيحي", en: "Book a Demo", ru: "Заказать демо", uk: "Замовити демо", ro: "Rezervă o demonstrație", pl: "Zarezerwuj demo", tr: "Demo Rezervasyonu" }
+  };
 
   const exportFormats = [
     { format: "Excel", icon: "📊" },
@@ -172,28 +172,22 @@ function ReportsAnalyticsContent() {
             <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-emerald-500/10 border border-emerald-500/20 mb-6">
               <BarChart3 className="w-4 h-4 text-emerald-500" />
               <span className="text-sm font-semibold text-emerald-600">
-                {language === "ar" ? "التقارير والتحليلات" : "Reports & Analytics"}
+                {getText(pageText.badge)}
               </span>
             </div>
 
             <h1 className="text-4xl md:text-6xl font-black text-texafab-slate mb-6 leading-tight">
-              {language === "ar" ? (
-                <>قرارات ذكية <span className="text-emerald-500">مبنية على البيانات</span></>
-              ) : (
-                <>Smart Decisions <span className="text-emerald-500">Based on Data</span></>
-              )}
+              {getText(pageText.heroTitle1)} <span className="text-emerald-500">{getText(pageText.heroTitle2)}</span>
             </h1>
 
             <p className="text-xl text-gray-600 mb-8 leading-relaxed max-w-3xl mx-auto">
-              {language === "ar" 
-                ? "لوحة تحكم متكاملة وتقارير شاملة تمنحك رؤية كاملة لأداء شركتك في الوقت الفعلي"
-                : "Integrated dashboard and comprehensive reports giving you complete visibility into your company's real-time performance"}
+              {getText(pageText.heroDesc)}
             </p>
 
             <div className="flex flex-col sm:flex-row justify-center gap-4">
               <Link to="/contact">
                 <Button className="h-14 px-8 bg-emerald-500 hover:bg-emerald-600 text-white text-base font-semibold rounded-xl shadow-lg shadow-emerald-500/25">
-                  {language === "ar" ? "احجز عرض توضيحي" : "Book a Demo"}
+                  {getText(pageText.bookDemo)}
                   <ArrowRight className={`w-5 h-5 ${dir === "rtl" ? "rotate-180 me-2" : "ms-2"}`} />
                 </Button>
               </Link>
@@ -207,12 +201,10 @@ function ReportsAnalyticsContent() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6">
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-bold text-texafab-slate mb-4">
-              {language === "ar" ? "لوحة التحكم التفاعلية" : "Interactive Dashboard"}
+              {getText(pageText.dashboardTitle)}
             </h2>
             <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-              {language === "ar" 
-                ? "نظرة شاملة على أداء شركتك في لحظة واحدة"
-                : "Comprehensive view of your company's performance at a glance"}
+              {getText(pageText.dashboardDesc)}
             </p>
           </div>
 
@@ -232,7 +224,7 @@ function ReportsAnalyticsContent() {
                   </span>
                 </div>
                 <p className="text-sm text-gray-500 mb-1">
-                  {language === "ar" ? metric.labelAr : metric.labelEn}
+                  {getText(metric.label)}
                 </p>
                 <p className="text-3xl font-bold text-texafab-slate">{metric.value}</p>
               </Card>
@@ -274,12 +266,10 @@ function ReportsAnalyticsContent() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6">
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-bold text-texafab-slate mb-4">
-              {language === "ar" ? "أنواع التقارير" : "Report Types"}
+              {getText(pageText.reportTypes)}
             </h2>
             <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-              {language === "ar" 
-                ? "تقارير شاملة تغطي جميع جوانب عملك"
-                : "Comprehensive reports covering all aspects of your business"}
+              {getText(pageText.reportTypesDesc)}
             </p>
           </div>
 
@@ -290,16 +280,16 @@ function ReportsAnalyticsContent() {
                   <report.icon className="w-7 h-7 text-white" />
                 </div>
                 <h3 className="text-xl font-bold text-texafab-slate mb-2">
-                  {language === "ar" ? report.titleAr : report.titleEn}
+                  {getText(report.title)}
                 </h3>
                 <p className="text-gray-600 mb-4">
-                  {language === "ar" ? report.descAr : report.descEn}
+                  {getText(report.desc)}
                 </p>
                 <ul className="space-y-2">
                   {report.metrics.map((metric, i) => (
                     <li key={i} className="flex items-center gap-2 text-sm text-gray-600">
                       <CheckCircle2 className="w-4 h-4 text-emerald-500 flex-shrink-0" />
-                      <span>{language === "ar" ? metric.ar : metric.en}</span>
+                      <span>{getText(metric)}</span>
                     </li>
                   ))}
                 </ul>
@@ -644,24 +634,18 @@ function ReportsAnalyticsContent() {
             {[
               {
                 icon: Zap,
-                titleAr: "تحديث لحظي",
-                titleEn: "Instant Updates",
-                descAr: "كل عملية بيع أو شراء تظهر فوراً",
-                descEn: "Every sale or purchase appears instantly"
+                title: { ar: "تحديث لحظي", en: "Instant Updates", ru: "Мгновенные обновления", uk: "Миттєві оновлення", ro: "Actualizări instantanee", pl: "Natychmiastowe aktualizacje", tr: "Anlık Güncellemeler" },
+                desc: { ar: "كل عملية بيع أو شراء تظهر فوراً", en: "Every sale or purchase appears instantly", ru: "Каждая продажа или покупка отображается мгновенно", uk: "Кожен продаж або покупка відображається миттєво", ro: "Fiecare vânzare sau achiziție apare instantaneu", pl: "Każda sprzedaż lub zakup pojawia się natychmiast", tr: "Her satış veya satın alma anında görünür" }
               },
               {
                 icon: RefreshCcw,
-                titleAr: "مزامنة تلقائية",
-                titleEn: "Auto Sync",
-                descAr: "مزامنة بين جميع الفروع والأجهزة",
-                descEn: "Sync between all branches and devices"
+                title: { ar: "مزامنة تلقائية", en: "Auto Sync", ru: "Автосинхронизация", uk: "Автосинхронізація", ro: "Sincronizare automată", pl: "Automatyczna synchronizacja", tr: "Otomatik Senkronizasyon" },
+                desc: { ar: "مزامنة بين جميع الفروع والأجهزة", en: "Sync between all branches and devices", ru: "Синхронизация между всеми филиалами и устройствами", uk: "Синхронізація між усіма філіями та пристроями", ro: "Sincronizare între toate sucursalele și dispozitivele", pl: "Synchronizacja między wszystkimi oddziałami i urządzeniami", tr: "Tüm şubeler ve cihazlar arasında senkronizasyon" }
               },
               {
                 icon: Clock,
-                titleAr: "تنبيهات ذكية",
-                titleEn: "Smart Alerts",
-                descAr: "إشعارات عند تجاوز الأهداف أو الانخفاض",
-                descEn: "Notifications when exceeding or falling below targets"
+                title: { ar: "تنبيهات ذكية", en: "Smart Alerts", ru: "Умные оповещения", uk: "Розумні сповіщення", ro: "Alerte inteligente", pl: "Inteligentne alerty", tr: "Akıllı Uyarılar" },
+                desc: { ar: "إشعارات عند تجاوز الأهداف أو الانخفاض", en: "Notifications when exceeding or falling below targets", ru: "Уведомления при превышении или падении ниже целей", uk: "Сповіщення при перевищенні або падінні нижче цілей", ro: "Notificări când se depășesc sau scad sub obiective", pl: "Powiadomienia gdy przekroczono lub spadły poniżej celów", tr: "Hedefleri aştığınızda veya altına düştüğünüzde bildirimler" }
               }
             ].map((item, index) => (
               <Card key={index} className="p-6 bg-white/10 backdrop-blur-xl border-white/20 rounded-2xl hover:bg-white/20 transition-all">
@@ -669,10 +653,10 @@ function ReportsAnalyticsContent() {
                   <item.icon className="w-7 h-7 text-white" />
                 </div>
                 <h3 className="text-xl font-bold text-white mb-2">
-                  {language === "ar" ? item.titleAr : item.titleEn}
+                  {getText(item.title)}
                 </h3>
                 <p className="text-white/70">
-                  {language === "ar" ? item.descAr : item.descEn}
+                  {getText(item.desc)}
                 </p>
               </Card>
             ))}

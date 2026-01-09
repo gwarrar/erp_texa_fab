@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState, useMemo } from "react";
 import { Link } from "react-router-dom";
 import { useLanguage } from "@/components/landing/LanguageContext";
 import { useTheme } from "@/components/landing/ThemeContext";
@@ -20,8 +20,64 @@ import {
   ArrowRight, ArrowLeft, Shield, Globe, Zap, Lock, 
   Building2, CreditCard, RefreshCcw, BarChart3, Users, 
   CheckCircle2, Wallet, Send, Landmark, PiggyBank,
-  FileCheck, Clock, TrendingUp, BadgeCheck, Server
+  FileCheck, Clock, TrendingUp, BadgeCheck, Server, Percent
 } from "lucide-react";
+
+// Month names in different languages
+const monthNames = {
+  en: ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"],
+  ar: ["يناير", "فبراير", "مارس", "أبريل", "مايو", "يونيو", "يوليو", "أغسطس", "سبتمبر", "أكتوبر", "نوفمبر", "ديسمبر"],
+  tr: ["Ocak", "Şubat", "Mart", "Nisan", "Mayıs", "Haziran", "Temmuz", "Ağustos", "Eylül", "Ekim", "Kasım", "Aralık"],
+  ru: ["Январь", "Февраль", "Март", "Апрель", "Май", "Июнь", "Июль", "Август", "Сентябрь", "Октябрь", "Ноябрь", "Декабрь"],
+  uk: ["Січень", "Лютий", "Березень", "Квітень", "Травень", "Червень", "Липень", "Серпень", "Вересень", "Жовтень", "Листопад", "Грудень"],
+  pl: ["Styczeń", "Luty", "Marzec", "Kwiecień", "Maj", "Czerwiec", "Lipiec", "Sierpień", "Wrzesień", "Październik", "Listopad", "Grudzień"],
+  ro: ["Ianuarie", "Februarie", "Martie", "Aprilie", "Mai", "Iunie", "Iulie", "August", "Septembrie", "Octombrie", "Noiembrie", "Decembrie"],
+  it: ["Gennaio", "Febbraio", "Marzo", "Aprile", "Maggio", "Giugno", "Luglio", "Agosto", "Settembre", "Ottobre", "Novembre", "Dicembre"],
+};
+
+// Countdown timer hook
+function useCountdown() {
+  const [timeLeft, setTimeLeft] = useState({ days: 0, hours: 0, minutes: 0, seconds: 0 });
+
+  useEffect(() => {
+    const calculateTimeLeft = () => {
+      const now = new Date();
+      const endOfMonth = new Date(now.getFullYear(), now.getMonth() + 1, 0, 23, 59, 59);
+      const difference = endOfMonth.getTime() - now.getTime();
+
+      if (difference > 0) {
+        setTimeLeft({
+          days: Math.floor(difference / (1000 * 60 * 60 * 24)),
+          hours: Math.floor((difference / (1000 * 60 * 60)) % 24),
+          minutes: Math.floor((difference / 1000 / 60) % 60),
+          seconds: Math.floor((difference / 1000) % 60),
+        });
+      }
+    };
+
+    calculateTimeLeft();
+    const timer = setInterval(calculateTimeLeft, 1000);
+
+    return () => clearInterval(timer);
+  }, []);
+
+  return timeLeft;
+}
+
+function getEndOfMonthDate(language: string) {
+  const now = new Date();
+  const endOfMonth = new Date(now.getFullYear(), now.getMonth() + 1, 0);
+  const day = endOfMonth.getDate();
+  const month = endOfMonth.getMonth();
+  const year = endOfMonth.getFullYear();
+  
+  const months = monthNames[language as keyof typeof monthNames] || monthNames.en;
+  
+  if (language === "ar") {
+    return `${day} ${months[month]} ${year}`;
+  }
+  return `${months[month]} ${day}, ${year}`;
+}
 
 const translations = {
   en: {
@@ -163,10 +219,16 @@ const translations = {
     professionalBadge: "The Ambitious Banker",
     enterpriseBadge: "Large Corporations & Groups",
     
+    // Limited Time Offer
+    limitedOffer: "🔥 Limited Time Offer - 50% OFF",
+    offerEnds: "Offer ends",
+    discount50: "50% OFF",
+    
     // Starter Plan - Basic
     starterName: "Basic Plan",
     starterDesc: "For small exchange houses and startups",
     starterPrice: "$99",
+    starterOfferPrice: "$49",
     starterPeriod: "/month",
     
     // Starter - Business Management
@@ -200,7 +262,8 @@ const translations = {
     // Professional Plan
     professionalName: "Professional Plan",
     professionalDesc: "For growing financial institutions",
-    professionalPrice: "$499",
+    professionalPrice: "$799",
+    professionalOfferPrice: "$399",
     professionalPeriod: "/month",
     
     // Professional - Business Management
@@ -251,7 +314,8 @@ const translations = {
     // Enterprise Plan
     enterpriseName: "Enterprise Plan",
     enterpriseDesc: "For large banks and financial groups",
-    enterprisePrice: "$999",
+    enterprisePrice: "$1,199",
+    enterpriseOfferPrice: "$599",
     enterprisePeriod: "/month",
     
     // Enterprise - Business Management
@@ -448,10 +512,16 @@ const translations = {
     professionalBadge: "رائد الأعمال الطموح",
     enterpriseBadge: "الشركات الكبيرة والمجموعات",
     
+    // Limited Time Offer
+    limitedOffer: "🔥 عرض محدود - خصم 50%",
+    offerEnds: "ينتهي العرض في",
+    discount50: "خصم 50%",
+    
     // Starter Plan - Basic
     starterName: "الباقة الأساسية",
     starterDesc: "للشركات الصغيرة",
     starterPrice: "$99",
+    starterOfferPrice: "$49",
     starterPeriod: "/شهر",
     
     // Starter - Business Management
@@ -485,7 +555,8 @@ const translations = {
     // Professional Plan
     professionalName: "الباقة الاحترافية",
     professionalDesc: "للشركات المتوسطة",
-    professionalPrice: "$499",
+    professionalPrice: "$799",
+    professionalOfferPrice: "$399",
     professionalPeriod: "/شهر",
     
     // Professional - Business Management
@@ -536,7 +607,8 @@ const translations = {
     // Enterprise Plan
     enterpriseName: "باقة المؤسسات",
     enterpriseDesc: "للمؤسسات الكبيرة",
-    enterprisePrice: "$999",
+    enterprisePrice: "$1,199",
+    enterpriseOfferPrice: "$599",
     enterprisePeriod: "/شهر",
     
     // Enterprise - Business Management
@@ -664,9 +736,12 @@ const translations = {
     // Pricing Section
     pricingTitle: "Простые, прозрачные цены",
     pricingSubtitle: "Выберите план, подходящий для вашего учреждения",
-    starterPlan: "Базовый", starterDesc: "Для малых обменников", starterPrice: "$99",
-    businessPlan: "Профессиональный", businessDesc: "Для растущих финансовых учреждений", businessPrice: "$499", businessPopular: "Популярный",
-    enterprisePlan: "Корпоративный", enterpriseDesc: "Для банков и финансовых групп", enterprisePrice: "$999",
+    limitedOffer: "🔥 Ограниченное предложение - Скидка 50%",
+    offerEnds: "Предложение заканчивается",
+    discount50: "Скидка 50%",
+    starterPlan: "Базовый", starterDesc: "Для малых обменников", starterPrice: "$99", starterOfferPrice: "$49",
+    businessPlan: "Профессиональный", businessDesc: "Для растущих финансовых учреждений", businessPrice: "$799", businessOfferPrice: "$399", businessPopular: "Популярный",
+    enterprisePlan: "Корпоративный", enterpriseDesc: "Для банков и финансовых групп", enterprisePrice: "$1,199", enterpriseOfferPrice: "$599",
     perMonth: "/месяц", getStarted: "Начать", contactSales: "Связаться", viewAllPlans: "Все планы",
     pf1: "1 компания", pf2: "3 польз. • 2 POS", pf3: "Базовый банковский модуль", pf4: "Email поддержка",
     pf5: "2 компании", pf6: "10 польз. • Безлимит POS", pf7: "Сайт бесплатно на год 🎁", pf8: "📱 Мобильное приложение", pf9: "AI отчеты еженедельно",
@@ -745,9 +820,12 @@ const translations = {
     // Pricing Section
     pricingTitle: "Прості, прозорі ціни",
     pricingSubtitle: "Оберіть план, що підходить вашій установі",
-    starterPlan: "Базовий", starterDesc: "Для малих обмінників", starterPrice: "$99",
-    businessPlan: "Професійний", businessDesc: "Для зростаючих фінансових установ", businessPrice: "$499", businessPopular: "Популярний",
-    enterprisePlan: "Корпоративний", enterpriseDesc: "Для банків та фінансових груп", enterprisePrice: "$999",
+    limitedOffer: "🔥 Обмежена пропозиція - Знижка 50%",
+    offerEnds: "Пропозиція закінчується",
+    discount50: "Знижка 50%",
+    starterPlan: "Базовий", starterDesc: "Для малих обмінників", starterPrice: "$99", starterOfferPrice: "$49",
+    businessPlan: "Професійний", businessDesc: "Для зростаючих фінансових установ", businessPrice: "$799", businessOfferPrice: "$399", businessPopular: "Популярний",
+    enterprisePlan: "Корпоративний", enterpriseDesc: "Для банків та фінансових груп", enterprisePrice: "$1,199", enterpriseOfferPrice: "$599",
     perMonth: "/місяць", getStarted: "Почати", contactSales: "Зв'язатися", viewAllPlans: "Усі плани",
     pf1: "1 компанія", pf2: "3 корист. • 2 POS", pf3: "Базовий банківський модуль", pf4: "Email підтримка",
     pf5: "2 компанії", pf6: "10 корист. • Безліміт POS", pf7: "Сайт безкоштовно на рік 🎁", pf8: "📱 Мобільний додаток для клієнтів", pf9: "Щотижневі AI звіти",
@@ -826,9 +904,12 @@ const translations = {
     // Pricing Section
     pricingTitle: "Basit, Şeffaf Fiyatlandırma",
     pricingSubtitle: "Kurumunuza uygun planı seçin",
-    starterPlan: "Temel", starterDesc: "Küçük döviz büroları için", starterPrice: "$99",
-    businessPlan: "Profesyonel", businessDesc: "Büyüyen finans kurumları için", businessPrice: "$499", businessPopular: "En Popüler",
-    enterprisePlan: "Kurumsal", enterpriseDesc: "Bankalar ve finans grupları için", enterprisePrice: "$999",
+    limitedOffer: "🔥 Sınırlı Teklif - %50 İndirim",
+    offerEnds: "Teklif bitiş tarihi",
+    discount50: "%50 İndirim",
+    starterPlan: "Temel", starterDesc: "Küçük döviz büroları için", starterPrice: "$99", starterOfferPrice: "$49",
+    businessPlan: "Profesyonel", businessDesc: "Büyüyen finans kurumları için", businessPrice: "$799", businessOfferPrice: "$399", businessPopular: "En Popüler",
+    enterprisePlan: "Kurumsal", enterpriseDesc: "Bankalar ve finans grupları için", enterprisePrice: "$1,199", enterpriseOfferPrice: "$599",
     perMonth: "/ay", getStarted: "Başla", contactSales: "İletişim", viewAllPlans: "Tüm Planlar",
     pf1: "1 şirket", pf2: "3 kull. • 2 POS", pf3: "Temel bankacılık modülü", pf4: "E-posta Destek",
     pf5: "2 şirket", pf6: "10 kull. • Sınırsız POS", pf7: "1 yıl ücretsiz site 🎁", pf8: "📱 Müşteri Mobil Uygulama", pf9: "Haftalık AI Raporlar",
@@ -907,9 +988,12 @@ const translations = {
     // Pricing Section
     pricingTitle: "Proste, Przejrzyste Ceny",
     pricingSubtitle: "Wybierz plan odpowiedni dla Twojej instytucji",
-    starterPlan: "Podstawowy", starterDesc: "Dla małych kantorów", starterPrice: "$99",
-    businessPlan: "Profesjonalny", businessDesc: "Dla rosnących instytucji finansowych", businessPrice: "$499", businessPopular: "Najpopularniejszy",
-    enterprisePlan: "Korporacyjny", enterpriseDesc: "Dla banków i grup finansowych", enterprisePrice: "$999",
+    limitedOffer: "🔥 Oferta Ograniczona - 50% Zniżki",
+    offerEnds: "Oferta kończy się",
+    discount50: "50% Zniżki",
+    starterPlan: "Podstawowy", starterDesc: "Dla małych kantorów", starterPrice: "$99", starterOfferPrice: "$49",
+    businessPlan: "Profesjonalny", businessDesc: "Dla rosnących instytucji finansowych", businessPrice: "$799", businessOfferPrice: "$399", businessPopular: "Najpopularniejszy",
+    enterprisePlan: "Korporacyjny", enterpriseDesc: "Dla banków i grup finansowych", enterprisePrice: "$1,199", enterpriseOfferPrice: "$599",
     perMonth: "/miesiąc", getStarted: "Rozpocznij", contactSales: "Kontakt", viewAllPlans: "Wszystkie Plany",
     pf1: "1 firma", pf2: "3 użyt. • 2 POS", pf3: "Podstawowy moduł bankowy", pf4: "Wsparcie Email",
     pf5: "2 firmy", pf6: "10 użyt. • Bez limitu POS", pf7: "Strona gratis na rok 🎁", pf8: "📱 Aplikacja dla klientów", pf9: "Tygodniowe raporty AI",
@@ -988,9 +1072,12 @@ const translations = {
     // Pricing Section
     pricingTitle: "Prețuri Simple și Transparente",
     pricingSubtitle: "Alege planul potrivit pentru instituția ta",
-    starterPlan: "Basic", starterDesc: "Pentru case de schimb mici", starterPrice: "$99",
-    businessPlan: "Profesional", businessDesc: "Pentru instituții financiare în creștere", businessPrice: "$499", businessPopular: "Cel Mai Popular",
-    enterprisePlan: "Enterprise", enterpriseDesc: "Pentru bănci și grupuri financiare", enterprisePrice: "$999",
+    limitedOffer: "🔥 Ofertă Limitată - 50% Reducere",
+    offerEnds: "Oferta se termină",
+    discount50: "50% Reducere",
+    starterPlan: "Basic", starterDesc: "Pentru case de schimb mici", starterPrice: "$99", starterOfferPrice: "$49",
+    businessPlan: "Profesional", businessDesc: "Pentru instituții financiare în creștere", businessPrice: "$799", businessOfferPrice: "$399", businessPopular: "Cel Mai Popular",
+    enterprisePlan: "Enterprise", enterpriseDesc: "Pentru bănci și grupuri financiare", enterprisePrice: "$1,199", enterpriseOfferPrice: "$599",
     perMonth: "/lună", getStarted: "Începe", contactSales: "Contact", viewAllPlans: "Toate Planurile",
     pf1: "1 companie", pf2: "3 util. • 2 POS", pf3: "Modul bancar de bază", pf4: "Suport Email",
     pf5: "2 companii", pf6: "10 util. • POS nelimitat", pf7: "Site gratuit 1 an 🎁", pf8: "📱 Aplicație mobilă pentru clienți", pf9: "Rapoarte AI săptămânale",
@@ -1069,9 +1156,12 @@ const translations = {
     // Pricing Section
     pricingTitle: "Prezzi Semplici e Trasparenti",
     pricingSubtitle: "Scegli il piano adatto alla tua istituzione",
-    starterPlan: "Base", starterDesc: "Per piccoli uffici di cambio", starterPrice: "$99",
-    businessPlan: "Professionale", businessDesc: "Per istituzioni finanziarie in crescita", businessPrice: "$499", businessPopular: "Più Popolare",
-    enterprisePlan: "Enterprise", enterpriseDesc: "Per banche e gruppi finanziari", enterprisePrice: "$999",
+    limitedOffer: "🔥 Offerta Limitata - 50% di Sconto",
+    offerEnds: "L'offerta scade",
+    discount50: "50% di Sconto",
+    starterPlan: "Base", starterDesc: "Per piccoli uffici di cambio", starterPrice: "$99", starterOfferPrice: "$49",
+    businessPlan: "Professionale", businessDesc: "Per istituzioni finanziarie in crescita", businessPrice: "$799", businessOfferPrice: "$399", businessPopular: "Più Popolare",
+    enterprisePlan: "Enterprise", enterpriseDesc: "Per banche e gruppi finanziari", enterprisePrice: "$1,199", enterpriseOfferPrice: "$599",
     perMonth: "/mese", getStarted: "Inizia", contactSales: "Contatta", viewAllPlans: "Tutti i Piani",
     pf1: "1 azienda", pf2: "3 utenti • 2 POS", pf3: "Modulo bancario di base", pf4: "Supporto Email",
     pf5: "2 aziende", pf6: "10 utenti • POS illimitati", pf7: "Sito gratis 1 anno 🎁", pf8: "📱 App mobile per clienti", pf9: "Report AI settimanali",
@@ -1091,6 +1181,8 @@ export default function FCHomePage() {
   const [isAnnual, setIsAnnual] = React.useState(false);
   const t = translations[language as keyof typeof translations] || translations.en;
   const ArrowIcon = dir === "rtl" ? ArrowLeft : ArrowRight;
+  const countdown = useCountdown();
+  const offerEndDate = useMemo(() => getEndOfMonthDate(language), [language]);
 
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -1565,6 +1657,57 @@ export default function FCHomePage() {
         </div>
       </section>
 
+      {/* Limited Time Offer Banner */}
+      <div className="bg-gradient-to-r from-red-600 via-orange-500 to-red-600 py-4 relative overflow-hidden">
+        {/* Animated background */}
+        <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAiIGhlaWdodD0iMjAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGNpcmNsZSBjeD0iMTAiIGN5PSIxMCIgcj0iMSIgZmlsbD0icmdiYSgyNTUsMjU1LDI1NSwwLjEpIi8+PC9zdmc+')] opacity-50" />
+        
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+          {/* Main offer text */}
+          <div className="flex flex-col md:flex-row items-center justify-center gap-4 md:gap-8">
+            <div className="flex items-center gap-3">
+              <span className="bg-white text-red-600 px-3 py-1 rounded-full text-sm font-bold animate-pulse">
+                {t.discount50 || "50% OFF"}
+              </span>
+              <span className="text-white font-bold text-lg md:text-xl">
+                {t.limitedOffer || "🔥 Limited Time Offer - 50% OFF"}
+              </span>
+            </div>
+            
+            {/* Countdown Timer */}
+            <div className="flex items-center gap-3">
+              <Clock className="w-5 h-5 text-white animate-pulse" />
+              <div className="flex items-center gap-2">
+                <div className="bg-white/20 backdrop-blur rounded-lg px-3 py-2 text-center min-w-[50px]">
+                  <span className="text-xl font-bold text-white">{countdown.days}</span>
+                  <p className="text-xs text-white/80">{language === "ar" ? "يوم" : "D"}</p>
+                </div>
+                <span className="text-white text-xl font-bold">:</span>
+                <div className="bg-white/20 backdrop-blur rounded-lg px-3 py-2 text-center min-w-[50px]">
+                  <span className="text-xl font-bold text-white">{countdown.hours}</span>
+                  <p className="text-xs text-white/80">{language === "ar" ? "ساعة" : "H"}</p>
+                </div>
+                <span className="text-white text-xl font-bold">:</span>
+                <div className="bg-white/20 backdrop-blur rounded-lg px-3 py-2 text-center min-w-[50px]">
+                  <span className="text-xl font-bold text-white">{countdown.minutes}</span>
+                  <p className="text-xs text-white/80">{language === "ar" ? "دقيقة" : "M"}</p>
+                </div>
+                <span className="text-white text-xl font-bold">:</span>
+                <div className="bg-white/20 backdrop-blur rounded-lg px-3 py-2 text-center min-w-[50px]">
+                  <span className="text-xl font-bold text-white">{countdown.seconds}</span>
+                  <p className="text-xs text-white/80">{language === "ar" ? "ثانية" : "S"}</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          {/* Offer end date */}
+          <p className="text-center text-white/90 text-sm mt-3">
+            {t.offerEnds || "Offer ends"}: <span className="font-bold">{offerEndDate}</span>
+          </p>
+        </div>
+      </div>
+
       {/* Pricing Section */}
       <section className="py-24 bg-gradient-to-b from-white via-slate-50/50 to-white dark:from-slate-950 dark:via-slate-900/50 dark:to-slate-950">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -1633,12 +1776,21 @@ export default function FCHomePage() {
               </div>
               
               {/* Price */}
-              <div className="p-6 text-center border-b border-slate-200 dark:border-slate-700">
-                <div className="flex items-baseline justify-center gap-1">
-                  <span className="text-4xl font-bold text-slate-900 dark:text-white">
+              <div className="p-6 text-center border-b border-slate-200 dark:border-slate-700 relative">
+                {/* Discount Badge */}
+                <div className="absolute top-2 end-2 bg-red-500 text-white text-xs font-bold px-2 py-1 rounded-full">
+                  {t.discount50 || "50% OFF"}
+                </div>
+                <div className="flex flex-col items-center gap-1">
+                  <span className="text-lg text-slate-400 line-through">
                     {isAnnual ? "$79" : t.starterPrice}
                   </span>
-                  <span className="text-slate-500">{t.starterPeriod || "/month"}</span>
+                  <div className="flex items-baseline justify-center gap-1">
+                    <span className="text-4xl font-bold text-emerald-600 dark:text-emerald-400">
+                      {isAnnual ? "$39" : (t.starterOfferPrice || "$49")}
+                    </span>
+                    <span className="text-slate-500">{t.starterPeriod || "/month"}</span>
+                  </div>
                 </div>
               </div>
               
@@ -1746,12 +1898,21 @@ export default function FCHomePage() {
               </div>
               
               {/* Price */}
-              <div className="p-6 text-center border-b border-white/20">
-                <div className="flex items-baseline justify-center gap-1">
-                  <span className="text-4xl font-bold text-white">
-                    {isAnnual ? "$399" : (t.professionalPrice || t.businessPrice)}
+              <div className="p-6 text-center border-b border-white/20 relative">
+                {/* Discount Badge */}
+                <div className="absolute top-2 end-2 bg-amber-400 text-slate-900 text-xs font-bold px-2 py-1 rounded-full animate-pulse">
+                  {t.discount50 || "50% OFF"}
+                </div>
+                <div className="flex flex-col items-center gap-1">
+                  <span className="text-lg text-white/50 line-through">
+                    {isAnnual ? "$639" : (t.professionalPrice || t.businessPrice || "$799")}
                   </span>
-                  <span className="text-white/70">{t.professionalPeriod || "/month"}</span>
+                  <div className="flex items-baseline justify-center gap-1">
+                    <span className="text-4xl font-bold text-white">
+                      {isAnnual ? "$319" : (t.professionalOfferPrice || t.businessOfferPrice || "$399")}
+                    </span>
+                    <span className="text-white/70">{t.professionalPeriod || "/month"}</span>
+                  </div>
                 </div>
               </div>
               
@@ -1885,12 +2046,21 @@ export default function FCHomePage() {
               </div>
               
               {/* Price */}
-              <div className="p-6 text-center border-b border-slate-200 dark:border-slate-700">
-                <div className="flex items-baseline justify-center gap-1">
-                  <span className="text-4xl font-bold text-slate-900 dark:text-white">
-                    {isAnnual ? "$799" : t.enterprisePrice}
+              <div className="p-6 text-center border-b border-slate-200 dark:border-slate-700 relative">
+                {/* Discount Badge */}
+                <div className="absolute top-2 end-2 bg-red-500 text-white text-xs font-bold px-2 py-1 rounded-full">
+                  {t.discount50 || "50% OFF"}
+                </div>
+                <div className="flex flex-col items-center gap-1">
+                  <span className="text-lg text-slate-400 line-through">
+                    {isAnnual ? "$959" : t.enterprisePrice}
                   </span>
-                  <span className="text-slate-500">{t.enterprisePeriod || "/month"}</span>
+                  <div className="flex items-baseline justify-center gap-1">
+                    <span className="text-4xl font-bold text-emerald-600 dark:text-emerald-400">
+                      {isAnnual ? "$479" : (t.enterpriseOfferPrice || "$599")}
+                    </span>
+                    <span className="text-slate-500">{t.enterprisePeriod || "/month"}</span>
+                  </div>
                 </div>
               </div>
               

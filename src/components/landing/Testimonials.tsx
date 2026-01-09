@@ -48,8 +48,8 @@ export function Testimonials() {
     return translations[language] || translations.en || '';
   };
 
-  // Convert Supabase/CMS data to component format
-  const testimonialsSource = supabaseData.length > 0 ? supabaseData : cmsData?.items;
+  // Only use Supabase data, otherwise fallback to static translations
+  const testimonialsSource = supabaseData.length > 0 ? supabaseData : null;
   const testimonials = testimonialsSource?.map((item, index) => ({
     text: { [language]: item.content || '', en: item.content || '' },
     author: { [language]: item.name || '', en: item.name || '' },
@@ -88,10 +88,10 @@ export function Testimonials() {
     },
   ];
   
-  // Use CMS data for section titles if available
-  const sectionTitle = { [language]: cmsData?.title || "Client Testimonials", ar: "آراء العملاء", en: "Client Testimonials", ru: "Отзывы клиентов", uk: "Відгуки клієнтів", ro: "Testimoniale clienți", pl: "Opinie klientów", it: "Testimonianze clienti", tr: "Müşteri Görüşleri" };
-  const mainTitle = { [language]: cmsData?.title || "Client Success Stories", ar: "قصص نجاح عملائنا", en: "Client Success Stories", ru: "Истории успеха клиентов", uk: "Історії успіху клієнтів", ro: "Povești de succes ale clienților", pl: "Historie sukcesu klientów", it: "Storie di successo dei clienti", tr: "Müşteri Başarı Hikayeleri" };
-  const description = { [language]: cmsData?.subtitle || "See how leading companies have transformed their operations with TexaCore", ar: "اكتشف كيف حوّلت الشركات الرائدة عملياتها مع TexaCore", en: "See how leading companies have transformed their operations with TexaCore", ru: "Узнайте, как ведущие компании трансформировали свои операции с TexaCore", uk: "Дізнайтеся, як провідні компанії трансформували свої операції з TexaCore", ro: "Vedeți cum companiile de top și-au transformat operațiunile cu TexaCore", pl: "Zobacz, jak wiodące firmy przekształciły swoje operacje z TexaCore", it: "Scopri come le aziende leader hanno trasformato le loro operazioni con TexaCore", tr: "Önde gelen şirketlerin operasyonlarını TexaCore ile nasıl dönüştürdüğünü görün" };
+  // Always use static translations for section titles
+  const sectionTitle = { ar: "آراء العملاء", en: "Client Testimonials", ru: "Отзывы клиентов", uk: "Відгуки клієнтів", ro: "Testimoniale clienți", pl: "Opinie klientów", it: "Testimonianze clienti", tr: "Müşteri Görüşleri" };
+  const mainTitle = { ar: "قصص نجاح عملائنا", en: "Client Success Stories", ru: "Истории успеха клиентов", uk: "Історії успіху клієнтів", ro: "Povești de succes ale clienților", pl: "Historie sukcesu klientów", it: "Storie di successo dei clienti", tr: "Müşteri Başarı Hikayeleri" };
+  const description = { ar: "اكتشف كيف حوّلت الشركات الرائدة عملياتها مع TexaCore", en: "See how leading companies have transformed their operations with TexaCore", ru: "Узнайте, как ведущие компании трансформировали свои операции с TexaCore", uk: "Дізнайтеся, як провідні компанії трансформували свої операції з TexaCore", ro: "Vedeți cum companiile de top și-au transformat operațiunile cu TexaCore", pl: "Zobacz, jak wiodące firmy przekształciły swoje operacje z TexaCore", it: "Scopri come le aziende leader hanno trasformato le loro operazioni con TexaCore", tr: "Önde gelen şirketlerin operasyonlarını TexaCore ile nasıl dönüştürdüğünü görün" };
 
   return (
     <section className="py-20 bg-texafab-cream relative overflow-hidden">

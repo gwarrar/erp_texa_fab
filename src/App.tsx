@@ -182,6 +182,17 @@ function AppContent() {
           {/* ============================================ */}
           {/* NEXT REVOLUTION ROUTES (Parent Company) */}
           {/* ============================================ */}
+          <Route path="/nextrev" element={<NRHomePage />} />
+          <Route path="/nextrev/about" element={<NRAboutPage />} />
+          <Route path="/nextrev/services" element={<NRServicesPage />} />
+          <Route path="/nextrev/services/*" element={<NRServicesPage />} />
+          <Route path="/nextrev/products" element={<NRProductsPage />} />
+          <Route path="/nextrev/investments" element={<NRInvestmentsPage />} />
+          <Route path="/nextrev/contact" element={<NRContactPage />} />
+          <Route path="/nextrev/blog" element={<NRBlogPage />} />
+          <Route path="/nextrev/blog/:id" element={<NRBlogPostPage />} />
+          
+          {/* Legacy routes - redirect from old URLs */}
           <Route path="/next-revolution" element={<NRHomePage />} />
           <Route path="/next-revolution/about" element={<NRAboutPage />} />
           <Route path="/next-revolution/services" element={<NRServicesPage />} />

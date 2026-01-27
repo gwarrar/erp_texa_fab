@@ -164,6 +164,24 @@ function loadTawkTo(settings: ChatSettings) {
   // Check if Tawk is already loaded
   if ((window as any).Tawk_API && (window as any).Tawk_API.onLoaded) return;
 
+  // Suppress noisy Tawk console.error output in embedded/dev environments.
+  // Some third-party bundles (Tawk logger) call console.error with boolean values
+  // which triggers Tempo devtools console error capture.
+  const originalConsoleError = console.error;
+  console.error = (...args: any[]) => {
+    const first = args?.[0];
+    const msg = typeof first === 'string' ? first : '';
+
+    // Known noisy patterns from Tawk logger
+    if (first === true) return;
+    if (msg.includes('[Tawk/Logger]')) return;
+
+    // If any arg references the Tawk embed URL, suppress
+    if (args.some((a) => typeof a === 'string' && a.includes('embed.tawk.to'))) return;
+
+    originalConsoleError(...args);
+  };
+
   // Initialize Tawk.to API before script loads
   (window as any).Tawk_API = (window as any).Tawk_API || {};
   (window as any).Tawk_LoadStart = new Date();
@@ -174,12 +192,20 @@ function loadTawkTo(settings: ChatSettings) {
   script.src = `https://embed.tawk.to/${settings.tawkto_property_id}/${settings.tawkto_widget_id}`;
   script.charset = 'UTF-8';
   script.setAttribute('crossorigin', '*');
-  
+
   // Handle script errors
   script.onerror = () => {
     console.warn('Failed to load Tawk.to script');
+    console.error = originalConsoleError;
   };
-  
+
+  script.onload = () => {
+    // Restore console.error after the widget finishes booting
+    setTimeout(() => {
+      console.error = originalConsoleError;
+    }, 3000);
+  };
+
   document.head.appendChild(script);
 }
 

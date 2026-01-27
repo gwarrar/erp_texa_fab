@@ -1,0 +1,114 @@
+{
+  "en": {
+    "title": "Simple, Transparent Pricing",
+    "subtitle": "Choose the plan that fits your healthcare institution",
+    "plans": [
+      {
+        "id": "starter",
+        "name": "Starter",
+        "description": "Perfect for small clinics",
+        "price": { "monthly": 199, "yearly": 159 },
+        "users": 5,
+        "patients": "5,000",
+        "features": [
+          "Electronic Medical Records",
+          "Appointment Scheduling",
+          "Medical Billing",
+          "Basic Analytics",
+          "Email Support"
+        ]
+      },
+      {
+        "id": "professional",
+        "name": "Professional",
+        "description": "For growing healthcare facilities",
+        "price": { "monthly": 499, "yearly": 399 },
+        "users": 25,
+        "patients": "25,000",
+        "popular": true,
+        "features": [
+          "All Starter features",
+          "Pharmacy Management",
+          "Laboratory Integration",
+          "Advanced Analytics & AI",
+          "Custom Reports",
+          "API Access",
+          "Priority Support"
+        ]
+      },
+      {
+        "id": "enterprise",
+        "name": "Enterprise",
+        "description": "For large hospitals and networks",
+        "price": { "monthly": null, "yearly": null },
+        "users": null,
+        "patients": "Unlimited",
+        "features": [
+          "All Professional features",
+          "24/7 Priority Support",
+          "99.9% SLA",
+          "On-site Training",
+          "Full Customization",
+          "Multi-location Support",
+          "Dedicated Account Manager"
+        ]
+      }
+    ]
+  },
+  "ar": {
+    "title": "أسعار بسيطة وشفافة",
+    "subtitle": "اختر الخطة المناسبة لمؤسستك الصحية",
+    "plans": [
+      {
+        "id": "starter",
+        "name": "المبتدئ",
+        "description": "مثالي للعيادات الصغيرة",
+        "price": { "monthly": 199, "yearly": 159 },
+        "users": 5,
+        "patients": "5,000",
+        "features": [
+          "السجلات الطبية الإلكترونية",
+          "جدولة المواعيد",
+          "الفوترة الطبية",
+          "تحليلات أساسية",
+          "دعم بالبريد الإلكتروني"
+        ]
+      },
+      {
+        "id": "professional",
+        "name": "المحترف",
+        "description": "للمرافق الصحية النامية",
+        "price": { "monthly": 499, "yearly": 399 },
+        "users": 25,
+        "patients": "25,000",
+        "popular": true,
+        "features": [
+          "جميع مميزات المبتدئ",
+          "إدارة الصيدلية",
+          "تكامل المختبر",
+          "تحليلات متقدمة وذكاء اصطناعي",
+          "تقارير مخصصة",
+          "الوصول للـ API",
+          "دعم مميز"
+        ]
+      },
+      {
+        "id": "enterprise",
+        "name": "المؤسسات",
+        "description": "للمستشفيات الكبيرة والشبكات",
+        "price": { "monthly": null, "yearly": null },
+        "users": null,
+        "patients": "غير محدود",
+        "features": [
+          "جميع مميزات المحترف",
+          "دعم 24/7 مميز",
+          "SLA 99.9%",
+          "تدريب في الموقع",
+          "تخصيص كامل",
+          "دعم متعدد المواقع",
+          "مدير حساب مخصص"
+        ]
+      }
+    ]
+  }
+}

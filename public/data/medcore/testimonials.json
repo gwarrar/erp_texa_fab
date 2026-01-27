@@ -1,0 +1,62 @@
+{
+  "en": {
+    "title": "What Our Clients Say",
+    "subtitle": "Hear from healthcare professionals using MedCore",
+    "testimonials": [
+      {
+        "id": 1,
+        "name": "Dr. Sarah Mitchell",
+        "role": "Medical Director",
+        "company": "Dublin Central Hospital",
+        "image": "https://images.unsplash.com/photo-1559839734-2b71ea197ec2?w=100&h=100&fit=crop",
+        "quote": "MedCore has transformed how we manage patient care. The integration between departments is seamless."
+      },
+      {
+        "id": 2,
+        "name": "Dr. Ahmed Al-Rashid",
+        "role": "Chief of Surgery",
+        "company": "Gulf Medical Center",
+        "image": "https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?w=100&h=100&fit=crop",
+        "quote": "The laboratory integration and real-time results have significantly improved our diagnosis speed."
+      },
+      {
+        "id": 3,
+        "name": "Maria Santos",
+        "role": "Hospital Administrator",
+        "company": "European Health Network",
+        "image": "https://images.unsplash.com/photo-1594824476967-48c8b964273f?w=100&h=100&fit=crop",
+        "quote": "Managing billing and insurance claims is now effortless. We've reduced processing time by 60%."
+      }
+    ]
+  },
+  "ar": {
+    "title": "ماذا يقول عملاؤنا",
+    "subtitle": "استمع لمتخصصي الرعاية الصحية الذين يستخدمون MedCore",
+    "testimonials": [
+      {
+        "id": 1,
+        "name": "د. سارة ميتشل",
+        "role": "المديرة الطبية",
+        "company": "مستشفى دبلن المركزي",
+        "image": "https://images.unsplash.com/photo-1559839734-2b71ea197ec2?w=100&h=100&fit=crop",
+        "quote": "MedCore غيّر طريقة إدارتنا لرعاية المرضى. التكامل بين الأقسام سلس تماماً."
+      },
+      {
+        "id": 2,
+        "name": "د. أحمد الراشد",
+        "role": "رئيس قسم الجراحة",
+        "company": "مركز الخليج الطبي",
+        "image": "https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?w=100&h=100&fit=crop",
+        "quote": "تكامل المختبر والنتائج الفورية حسّنت سرعة التشخيص لدينا بشكل كبير."
+      },
+      {
+        "id": 3,
+        "name": "ماريا سانتوس",
+        "role": "مديرة المستشفى",
+        "company": "شبكة الصحة الأوروبية",
+        "image": "https://images.unsplash.com/photo-1594824476967-48c8b964273f?w=100&h=100&fit=crop",
+        "quote": "إدارة الفوترة ومطالبات التأمين أصبحت سهلة الآن. قللنا وقت المعالجة بنسبة 60%."
+      }
+    ]
+  }
+}

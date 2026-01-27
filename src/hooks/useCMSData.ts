@@ -84,7 +84,23 @@ export function useCMSData<T>(
         }
       }
     } catch (err) {
-      console.error('CMS fetch error:', err);
+      // Avoid noisy console.error spam for transient network/CORS issues.
+      // Fall back to the JSON file whenever Supabase fetch fails.
+      const message = err instanceof Error ? err.message : String(err);
+      const isNetworkError =
+        message.includes('Failed to fetch') ||
+        message.includes('NetworkError') ||
+        message.includes('Load failed') ||
+        message.includes('fetch');
+
+      if (import.meta.env.DEV) {
+        if (isNetworkError) {
+          console.warn('CMS fetch warning:', err);
+        } else {
+          console.error('CMS fetch error:', err);
+        }
+      }
+
       // Fallback to JSON on Supabase error
       try {
         const result = await fetchData<T>(file);

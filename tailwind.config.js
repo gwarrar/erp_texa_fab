@@ -62,12 +62,12 @@ module.exports = {
   				ring: 'hsl(var(--sidebar-ring))'
   			},
         texafab: {
-          emerald: '#0D9488',
+          emerald: '#059669',
           slate: '#1E293B',
           cream: '#F8FAFC',
           gold: '#F97316',
           dark: '#0F172A',
-          teal: '#14B8A6',
+          teal: '#10B981',
           navy: '#1E3A5F',
         }
   		},

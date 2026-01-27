@@ -69,8 +69,25 @@ class CMSCache {
 
         return data;
       } catch (error) {
-        console.error(`Cache fetch error for ${key}:`, error);
-        return null;
+        const message = error instanceof Error ? error.message : String(error);
+        const isNetworkError =
+          message.includes('Failed to fetch') ||
+          message.includes('NetworkError') ||
+          message.includes('Load failed') ||
+          message.includes('fetch');
+
+        // Avoid noisy console errors for transient network/CORS issues.
+        // IMPORTANT: Tempo devtools treats console.error as a surfaced "dev error".
+        // These failed fetches are expected when Supabase is unreachable/misconfigured,
+        // so keep them as warnings to avoid breaking the canvas experience.
+        if (import.meta.env.DEV) {
+          const prefix = isNetworkError ? 'Cache fetch warning' : 'Cache fetch error';
+          console.warn(`${prefix} for ${key}:`, error);
+        }
+
+        // Returning a resolved value prevents unhandled promise rejections and keeps
+        // downstream hooks/components from treating this as a hard runtime error.
+        return null as T | null;
       } finally {
         // Clean up pending request
         this.pendingRequests.delete(key);

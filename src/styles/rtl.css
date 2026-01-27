@@ -26,10 +26,8 @@ html.rtl .mr-auto {
   margin-left: auto;
 }
 
-/* Flexbox direction */
-html.rtl .flex-row {
-  flex-direction: row-reverse;
-}
+/* Flexbox direction - removed auto-reverse as dir="rtl" handles this natively */
+/* Use explicit rtl:flex-row-reverse when needed */
 
 /* Border radius for RTL */
 html.rtl .rounded-l-lg {

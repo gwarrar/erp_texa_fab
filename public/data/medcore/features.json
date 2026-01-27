@@ -1,0 +1,86 @@
+{
+  "en": {
+    "title": "Everything You Need in One System",
+    "subtitle": "Complete ERP system covering all your healthcare needs",
+    "features": [
+      {
+        "id": "emr",
+        "title": "Electronic Medical Records",
+        "description": "Complete patient records with clinical history, diagnoses, treatments, and lab results in one secure platform.",
+        "icon": "Heart"
+      },
+      {
+        "id": "appointments",
+        "title": "Smart Scheduling",
+        "description": "Intelligent appointment booking with doctor availability, specialty matching, and automated reminders.",
+        "icon": "Calendar"
+      },
+      {
+        "id": "pharmacy",
+        "title": "Pharmacy Management",
+        "description": "Full pharmacy operations including inventory, prescriptions, dispensing, and drug interaction alerts.",
+        "icon": "Pill"
+      },
+      {
+        "id": "laboratory",
+        "title": "Laboratory Integration",
+        "description": "Seamless lab management with test ordering, results tracking, and automatic reporting.",
+        "icon": "FlaskConical"
+      },
+      {
+        "id": "billing",
+        "title": "Medical Billing & Insurance",
+        "description": "Comprehensive billing system with insurance claims, payment tracking, and financial reporting.",
+        "icon": "Receipt"
+      },
+      {
+        "id": "analytics",
+        "title": "Healthcare Analytics",
+        "description": "Real-time dashboards, clinical insights, and AI-powered predictions for better decision making.",
+        "icon": "BarChart3"
+      }
+    ]
+  },
+  "ar": {
+    "title": "كل ما تحتاجه في نظام واحد",
+    "subtitle": "نظام ERP متكامل يغطي جميع احتياجات الرعاية الصحية",
+    "features": [
+      {
+        "id": "emr",
+        "title": "السجلات الطبية الإلكترونية",
+        "description": "سجلات مرضى كاملة مع التاريخ السريري والتشخيصات والعلاجات ونتائج المختبر في منصة آمنة واحدة.",
+        "icon": "Heart"
+      },
+      {
+        "id": "appointments",
+        "title": "جدولة ذكية",
+        "description": "حجز مواعيد ذكي مع توفر الأطباء ومطابقة التخصص والتذكيرات التلقائية.",
+        "icon": "Calendar"
+      },
+      {
+        "id": "pharmacy",
+        "title": "إدارة الصيدلية",
+        "description": "عمليات صيدلية كاملة تشمل المخزون والوصفات والصرف وتنبيهات تفاعل الأدوية.",
+        "icon": "Pill"
+      },
+      {
+        "id": "laboratory",
+        "title": "تكامل المختبر",
+        "description": "إدارة مختبر سلسة مع طلب الفحوصات وتتبع النتائج والتقارير التلقائية.",
+        "icon": "FlaskConical"
+      },
+      {
+        "id": "billing",
+        "title": "الفوترة الطبية والتأمين",
+        "description": "نظام فوترة شامل مع مطالبات التأمين وتتبع المدفوعات والتقارير المالية.",
+        "icon": "Receipt"
+      },
+      {
+        "id": "analytics",
+        "title": "تحليلات الرعاية الصحية",
+        "description": "لوحات معلومات في الوقت الفعلي ورؤى سريرية وتنبؤات مدعومة بالذكاء الاصطناعي.",
+        "icon": "BarChart3"
+      }
+    ]
+  }
+}

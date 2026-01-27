@@ -1,17 +1,20 @@
 import React, { createContext, useContext, useState, useEffect } from "react";
 
-export type Language = "en" | "ar" | "ru" | "uk" | "ro" | "pl" | "it" | "tr";
+export type Language = "en" | "ar" | "ru" | "uk" | "ro" | "pl" | "it" | "tr" | "fr" | "de" | "nl";
 export type SiteId = "texafab" | "fincore" | "dubai-stroy" | "nextrev" | "exchange";
 
 export const languageNames: Record<Language, string> = {
   en: "English",
   ar: "العربية",
+  fr: "Français",
+  de: "Deutsch",
+  nl: "Nederlands",
+  it: "Italiano",
+  tr: "Türkçe",
   ru: "Русский",
   uk: "Українська",
   ro: "Română",
   pl: "Polski",
-  it: "Italiano",
-  tr: "Türkçe",
 };
 
 export const rtlLanguages: Language[] = ["ar"];
@@ -22,6 +25,7 @@ interface LanguageContextType {
   toggleLanguage: () => void;
   t: (key: string) => string;
   dir: "ltr" | "rtl";
+  isRTL: boolean;
   siteId: SiteId;
   setSiteId: (id: SiteId) => void;
 }
@@ -987,6 +991,67 @@ const translations: Record<Language, Record<string, string>> = {
     "floating.boostSales": "Vendite +70%",
     "floating.seeTheDifference": "Scopri la differenza",
   },
+  fr: {
+    // Navigation
+    "nav.features": "Fonctionnalités",
+    "nav.pricing": "Tarifs",
+    "nav.contact": "Contact",
+    "nav.becomeAgent": "Devenir agent",
+    "nav.solutions": "Solutions",
+    "nav.industries": "Industries",
+    "nav.about": "À propos",
+    "nav.whyTexaCore": "Pourquoi TexaCore?",
+    "nav.workflow": "Workflow",
+    "nav.viewAllSolutions": "Voir tout",
+    "nav.signIn": "Connexion",
+    "nav.startFree": "Essai gratuit",
+    "nav.selectLanguage": "Langue",
+    "nav.selectTheme": "Thème",
+    // Basic keys fallback to English for now
+    "global.bookDemo": "Réserver démo",
+    "floating.boostSales": "Ventes +70%",
+    "floating.seeTheDifference": "Voir la différence",
+  },
+  de: {
+    // Navigation
+    "nav.features": "Funktionen",
+    "nav.pricing": "Preise",
+    "nav.contact": "Kontakt",
+    "nav.becomeAgent": "Agent werden",
+    "nav.solutions": "Lösungen",
+    "nav.industries": "Branchen",
+    "nav.about": "Über uns",
+    "nav.whyTexaCore": "Warum TexaCore?",
+    "nav.workflow": "Workflow",
+    "nav.viewAllSolutions": "Alle anzeigen",
+    "nav.signIn": "Anmelden",
+    "nav.startFree": "Kostenlos starten",
+    "nav.selectLanguage": "Sprache",
+    "nav.selectTheme": "Design",
+    "global.bookDemo": "Demo buchen",
+    "floating.boostSales": "Umsatz +70%",
+    "floating.seeTheDifference": "Unterschied sehen",
+  },
+  nl: {
+    // Navigation
+    "nav.features": "Functies",
+    "nav.pricing": "Prijzen",
+    "nav.contact": "Contact",
+    "nav.becomeAgent": "Word agent",
+    "nav.solutions": "Oplossingen",
+    "nav.industries": "Sectoren",
+    "nav.about": "Over ons",
+    "nav.whyTexaCore": "Waarom TexaCore?",
+    "nav.workflow": "Workflow",
+    "nav.viewAllSolutions": "Alles bekijken",
+    "nav.signIn": "Inloggen",
+    "nav.startFree": "Gratis starten",
+    "nav.selectLanguage": "Taal",
+    "nav.selectTheme": "Thema",
+    "global.bookDemo": "Demo boeken",
+    "floating.boostSales": "Verkoop +70%",
+    "floating.seeTheDifference": "Zie het verschil",
+  },
   tr: {
     // Navigation
     "nav.features": "Özellikler",
@@ -1203,7 +1268,7 @@ export function LanguageProvider({ children }: { children: React.ReactNode }) {
   };
 
   return (
-    <LanguageContext.Provider value={{ language, setLanguage, toggleLanguage, t, dir, siteId, setSiteId }}>
+    <LanguageContext.Provider value={{ language, setLanguage, toggleLanguage, t, dir, isRTL: dir === "rtl", siteId, setSiteId }}>
       {children}
     </LanguageContext.Provider>
   );
@@ -1219,6 +1284,7 @@ export function useLanguage() {
       toggleLanguage: () => {},
       t: (key: string) => translations.en[key] || key,
       dir: "ltr" as const,
+      isRTL: false,
       siteId: "texafab" as SiteId,
       setSiteId: () => {},
     };

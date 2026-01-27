@@ -1,0 +1,16 @@
+{
+  "enabled": true,
+  "provider": "whatsapp",
+  "whatsapp": {
+    "phoneNumber": "+353123456789",
+    "message": {
+      "en": "Hello! I'm interested in MedCore Healthcare ERP.",
+      "ar": "مرحباً! أنا مهتم بنظام MedCore للرعاية الصحية."
+    }
+  },
+  "welcomeMessage": {
+    "en": "Welcome to MedCore! How can we help you today?",
+    "ar": "مرحباً بك في MedCore! كيف يمكننا مساعدتك اليوم؟"
+  },
+  "position": "bottom-right"
+}

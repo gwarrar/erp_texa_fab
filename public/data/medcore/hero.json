@@ -1,0 +1,28 @@
+{
+  "en": {
+    "title": "First ERP System For Healthcare Industry",
+    "subtitle": "The world's first system designed specifically for healthcare institutions. Supports patients, appointments, pharmacy, laboratory, and everything you need.",
+    "badge": "First Choice in Europe & Gulf",
+    "ctaDemo": "Start Free Trial",
+    "ctaTrial": "Watch Demo",
+    "stats": [
+      { "value": "500+", "label": "Healthcare Institutions" },
+      { "value": "2M+", "label": "Patients Managed" },
+      { "value": "45+", "label": "Countries" },
+      { "value": "15+", "label": "Years Experience" }
+    ]
+  },
+  "ar": {
+    "title": "أول نظام ERP لصناعة الرعاية الصحية",
+    "subtitle": "أول نظام في العالم مصمم خصيصاً للمؤسسات الصحية. يدعم المرضى، المواعيد، الصيدلية، المختبر، وكل ما تحتاجه.",
+    "badge": "الخيار الأول في أوروبا والخليج",
+    "ctaDemo": "ابدأ تجربة مجانية",
+    "ctaTrial": "شاهد العرض",
+    "stats": [
+      { "value": "+500", "label": "مؤسسة صحية" },
+      { "value": "+2 مليون", "label": "مريض مُدار" },
+      { "value": "+45", "label": "دولة" },
+      { "value": "+15", "label": "سنة خبرة" }
+    ]
+  }
+}

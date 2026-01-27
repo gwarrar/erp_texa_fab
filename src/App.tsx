@@ -122,6 +122,71 @@ import FCRegisterPage from "@/pages/fincore/FCRegisterPage";
 // ============================================
 import ExchangeHomePage from "@/pages/exchange/ExchangeHomePage";
 
+// ============================================
+// MEDCORE PAGES (Healthcare)
+// ============================================
+import MCHomePage from "@/pages/medcore/MCHomePage";
+import MCContactPage from "@/pages/medcore/MCContactPage";
+import MCPricingPage from "@/pages/medcore/MCPricingPage";
+import MCFeaturesPage from "@/pages/medcore/MCFeaturesPage";
+import MCLoginPage from "@/pages/medcore/MCLoginPage";
+import MCRegisterPage from "@/pages/medcore/MCRegisterPage";
+import MCSolutionsPage from "@/pages/medcore/MCSolutionsPage";
+import MCEMRPage from "@/pages/medcore/solutions/MCEMRPage";
+import MCAppointmentsPage from "@/pages/medcore/solutions/MCAppointmentsPage";
+import MCPharmacyPage from "@/pages/medcore/solutions/MCPharmacyPage";
+import MCLaboratoryPage from "@/pages/medcore/solutions/MCLaboratoryPage";
+import MCBillingPage from "@/pages/medcore/solutions/MCBillingPage";
+import MCAnalyticsPage from "@/pages/medcore/solutions/MCAnalyticsPage";
+import MCTelemedicinePage from "@/pages/medcore/solutions/MCTelemedicinePage";
+import MCWorkflowPage from "@/pages/medcore/MCWorkflowPage";
+import MCWhyChoosePage from "@/pages/medcore/MCWhyChoosePage";
+
+// ============================================
+// INDUCORE PAGES (Manufacturing)
+// ============================================
+import ICHomePage from "@/pages/inducore/ICHomePage";
+import ICContactPage from "@/pages/inducore/ICContactPage";
+import ICPricingPage from "@/pages/inducore/ICPricingPage";
+import ICFeaturesPage from "@/pages/inducore/ICFeaturesPage";
+import ICWorkflowPage from "@/pages/inducore/ICWorkflowPage";
+import ICWhyChoosePage from "@/pages/inducore/ICWhyChoosePage";
+import ICSolutionsPage from "@/pages/inducore/ICSolutionsPage";
+import ICLoginPage from "@/pages/inducore/ICLoginPage";
+import ICRegisterPage from "@/pages/inducore/ICRegisterPage";
+import ICProductionPage from "@/pages/inducore/solutions/ICProductionPage";
+import ICInventoryPage from "@/pages/inducore/solutions/ICInventoryPage";
+import ICWarehousePage from "@/pages/inducore/solutions/ICWarehousePage";
+import ICOrdersPage from "@/pages/inducore/solutions/ICOrdersPage";
+import ICMetalSteelPage from "@/pages/inducore/solutions/ICMetalSteelPage";
+import ICFoodBeveragePage from "@/pages/inducore/solutions/ICFoodBeveragePage";
+import ICPharmaceuticalPage from "@/pages/inducore/solutions/ICPharmaceuticalPage";
+import ICTextilePage from "@/pages/inducore/solutions/ICTextilePage";
+import ICChemicalPage from "@/pages/inducore/solutions/ICChemicalPage";
+import ICElectronicsPage from "@/pages/inducore/solutions/ICElectronicsPage";
+import ICAutomotivePage from "@/pages/inducore/solutions/ICAutomotivePage";
+import ICPlasticsPage from "@/pages/inducore/solutions/ICPlasticsPage";
+
+// ============================================
+// NEXACORE PAGES (Business ERP)
+// ============================================
+import NCHomePage from "@/pages/nexacore/NCHomePage";
+import NCFeaturesPage from "@/pages/nexacore/NCFeaturesPage";
+import NCWorkflowPage from "@/pages/nexacore/NCWorkflowPage";
+import NCContactPage from "@/pages/nexacore/NCContactPage";
+import NCPricingPage from "@/pages/nexacore/NCPricingPage";
+import NCRegisterPage from "@/pages/nexacore/NCRegisterPage";
+import NCLoginPage from "@/pages/nexacore/NCLoginPage";
+import NCSolutionsPage from "@/pages/nexacore/NCSolutionsPage";
+import NCSalesPage from "@/pages/nexacore/solutions/NCSalesPage";
+import NCPurchasesPage from "@/pages/nexacore/solutions/NCPurchasesPage";
+import NCInventoryPage from "@/pages/nexacore/solutions/NCInventoryPage";
+import NCAccountingPage from "@/pages/nexacore/solutions/NCAccountingPage";
+import NCCRMPage from "@/pages/nexacore/solutions/NCCRMPage";
+import NCHRPage from "@/pages/nexacore/solutions/NCHRPage";
+import NCAIPage from "@/pages/nexacore/solutions/NCAIPage";
+import NCBranchesPage from "@/pages/nexacore/solutions/NCBranchesPage";
+
 // Get secret admin path from environment
 const getAdminSecretPath = () => {
   const path = import.meta.env.VITE_ADMIN_SECRET_PATH || '/admin-portal';
@@ -136,7 +201,10 @@ function AppContent() {
   const isFinCoreRoute = location.pathname.startsWith('/fincore');
   const isDubaiStroyRoute = location.pathname.startsWith('/dubai-stroy');
   const isExchangeRoute = location.pathname.startsWith('/exchange');
-  const showButton = !isAdminRoute && !isNextRevolutionRoute && !isFinCoreRoute && !isDubaiStroyRoute && !isExchangeRoute;
+  const isMedCoreRoute = location.pathname.startsWith('/medcore');
+  const isInduCoreRoute = location.pathname.startsWith('/inducore');
+  const isNexaCoreRoute = location.pathname.startsWith('/nexacore');
+  const showButton = !isAdminRoute && !isNextRevolutionRoute && !isFinCoreRoute && !isDubaiStroyRoute && !isExchangeRoute && !isMedCoreRoute && !isInduCoreRoute && !isNexaCoreRoute;
   
   return (
     <>
@@ -237,6 +305,74 @@ function AppContent() {
           {/* ============================================ */}
           <Route path="/exchange" element={<ExchangeHomePage />} />
           <Route path="/exchange/*" element={<ExchangeHomePage />} />
+          
+          {/* ============================================ */}
+          {/* MEDCORE ROUTES (Healthcare) */}
+          {/* ============================================ */}
+          <Route path="/medcore" element={<MCHomePage />} />
+          <Route path="/medcore/features" element={<MCFeaturesPage />} />
+          <Route path="/medcore/pricing" element={<MCPricingPage />} />
+          <Route path="/medcore/contact" element={<MCContactPage />} />
+          <Route path="/medcore/login" element={<MCLoginPage />} />
+          <Route path="/medcore/register" element={<MCRegisterPage />} />
+          <Route path="/medcore/solutions" element={<MCSolutionsPage />} />
+          <Route path="/medcore/solutions/emr" element={<MCEMRPage />} />
+          <Route path="/medcore/solutions/appointments" element={<MCAppointmentsPage />} />
+          <Route path="/medcore/solutions/pharmacy" element={<MCPharmacyPage />} />
+          <Route path="/medcore/solutions/laboratory" element={<MCLaboratoryPage />} />
+          <Route path="/medcore/solutions/billing" element={<MCBillingPage />} />
+          <Route path="/medcore/solutions/analytics" element={<MCAnalyticsPage />} />
+          <Route path="/medcore/solutions/telemedicine" element={<MCTelemedicinePage />} />
+          <Route path="/medcore/workflow" element={<MCWorkflowPage />} />
+          <Route path="/medcore/why-medcore" element={<MCWhyChoosePage />} />
+          <Route path="/medcore/*" element={<MCHomePage />} />
+          
+          {/* ============================================ */}
+          {/* INDUCORE ROUTES (Manufacturing) */}
+          {/* ============================================ */}
+          <Route path="/inducore" element={<ICHomePage />} />
+          <Route path="/inducore/features" element={<ICFeaturesPage />} />
+          <Route path="/inducore/pricing" element={<ICPricingPage />} />
+          <Route path="/inducore/contact" element={<ICContactPage />} />
+          <Route path="/inducore/workflow" element={<ICWorkflowPage />} />
+          <Route path="/inducore/why-inducore" element={<ICWhyChoosePage />} />
+          <Route path="/inducore/solutions" element={<ICSolutionsPage />} />
+          <Route path="/inducore/solutions/production" element={<ICProductionPage />} />
+          <Route path="/inducore/solutions/inventory" element={<ICInventoryPage />} />
+          <Route path="/inducore/solutions/warehouse" element={<ICWarehousePage />} />
+          <Route path="/inducore/solutions/orders" element={<ICOrdersPage />} />
+          <Route path="/inducore/solutions/metal-steel" element={<ICMetalSteelPage />} />
+          <Route path="/inducore/solutions/food-beverage" element={<ICFoodBeveragePage />} />
+          <Route path="/inducore/solutions/pharmaceutical" element={<ICPharmaceuticalPage />} />
+          <Route path="/inducore/solutions/textile" element={<ICTextilePage />} />
+          <Route path="/inducore/solutions/chemical" element={<ICChemicalPage />} />
+          <Route path="/inducore/solutions/electronics" element={<ICElectronicsPage />} />
+          <Route path="/inducore/solutions/automotive" element={<ICAutomotivePage />} />
+          <Route path="/inducore/solutions/plastics" element={<ICPlasticsPage />} />
+          <Route path="/inducore/login" element={<ICLoginPage />} />
+          <Route path="/inducore/register" element={<ICRegisterPage />} />
+          <Route path="/inducore/*" element={<ICHomePage />} />
+          
+          {/* ============================================ */}
+          {/* NEXACORE ROUTES (Business ERP) */}
+          {/* ============================================ */}
+          <Route path="/nexacore" element={<NCHomePage />} />
+          <Route path="/nexacore/features" element={<NCFeaturesPage />} />
+          <Route path="/nexacore/workflow" element={<NCWorkflowPage />} />
+          <Route path="/nexacore/contact" element={<NCContactPage />} />
+          <Route path="/nexacore/pricing" element={<NCPricingPage />} />
+          <Route path="/nexacore/register" element={<NCRegisterPage />} />
+          <Route path="/nexacore/login" element={<NCLoginPage />} />
+          <Route path="/nexacore/solutions" element={<NCSolutionsPage />} />
+          <Route path="/nexacore/solutions/sales" element={<NCSalesPage />} />
+          <Route path="/nexacore/solutions/purchases" element={<NCPurchasesPage />} />
+          <Route path="/nexacore/solutions/inventory" element={<NCInventoryPage />} />
+          <Route path="/nexacore/solutions/accounting" element={<NCAccountingPage />} />
+          <Route path="/nexacore/solutions/crm" element={<NCCRMPage />} />
+          <Route path="/nexacore/solutions/hr" element={<NCHRPage />} />
+          <Route path="/nexacore/solutions/ai" element={<NCAIPage />} />
+          <Route path="/nexacore/solutions/branches" element={<NCBranchesPage />} />
+          <Route path="/nexacore/*" element={<NCHomePage />} />
           
           {/* ============================================ */}
           {/* ADMIN V2 ROUTES (New Admin Panel) */}
